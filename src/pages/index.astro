@@ -2,10 +2,10 @@
 import '../styles/global.css';
 import { getTranslations } from '../i18n/utils';
 
-const t = getTranslations('en');
+const t = getTranslations('ko');
 ---
 
-<html lang="en">
+<html lang="ko">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
@@ -14,15 +14,16 @@ const t = getTranslations('en');
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 		<title>{t.meta.title}</title>
 		<style>
 			body {
-				font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+				font-family: 'Pretendard', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 				line-height: 1.6;
 				font-weight: 400;
 			}
 			h1, h2, h3, h4, h5, h6 {
-				font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+				font-family: 'Pretendard', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 				font-weight: 700;
 				letter-spacing: -0.02em;
 				line-height: 1.2;
@@ -74,13 +75,13 @@ const t = getTranslations('en');
 							<div class="absolute left-0 mt-2 w-48 bg-[#fafaf8] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
 								<div class="py-2">
 									<a href="/services/proteomics" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-										Proteomics
+										프로테오믹스
 									</a>
 									<a href="/services/multi-omics" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-										Multi-Omics
+										멀티오믹스
 									</a>
 									<a href="/services/biomarkers" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-										Biomarkers
+										바이오마커
 									</a>
 									<a href="/services/ai-bi" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
 										AI x BI
@@ -94,9 +95,9 @@ const t = getTranslations('en');
 
 					<div class="flex items-center justify-end gap-6">
 						<div class="flex items-center gap-1 text-sm">
-							<a href="/ko" class="text-gray-400 hover:text-[#09bc8a]">한</a>
+							<span class="text-[#09bc8a] font-semibold">한</span>
 							<span class="text-gray-600">/</span>
-							<span class="text-[#09bc8a] font-semibold">EN</span>
+							<a href="/en" class="text-gray-400 hover:text-[#09bc8a]">EN</a>
 						</div>
 						<div class="flex items-center gap-3">
 							<a href="http://210.92.36.12:11331" target="_blank" rel="noopener noreferrer" class="bg-[#508991] text-white px-6 py-2 rounded-full hover:bg-[#004346]">
@@ -120,9 +121,9 @@ const t = getTranslations('en');
 								</svg>
 							</button>
 							<div id="mobile-services-dropdown" class="hidden mt-2 ml-4 space-y-2">
-								<a href="/services/proteomics" class="block text-gray-300 hover:text-[#09bc8a]">Proteomics</a>
-								<a href="/services/multi-omics" class="block text-gray-300 hover:text-[#09bc8a]">Multi-Omics</a>
-								<a href="/services/biomarkers" class="block text-gray-300 hover:text-[#09bc8a]">Biomarkers</a>
+								<a href="/services/proteomics" class="block text-gray-300 hover:text-[#09bc8a]">프로테오믹스</a>
+								<a href="/services/multi-omics" class="block text-gray-300 hover:text-[#09bc8a]">멀티오믹스</a>
+								<a href="/services/biomarkers" class="block text-gray-300 hover:text-[#09bc8a]">바이오마커</a>
 								<a href="/services/ai-bi" class="block text-gray-300 hover:text-[#09bc8a]">AI x BI</a>
 							</div>
 						</div>
@@ -130,9 +131,9 @@ const t = getTranslations('en');
 						<a href="/about" class="text-gray-300 hover:text-[#09bc8a]">{t.nav.about}</a>
 						<div class="border-t border-gray-600 pt-4">
 							<div class="flex items-center gap-2 mb-4">
-								<a href="/ko" class="text-gray-400 hover:text-[#09bc8a]">한</a>
+								<span class="text-[#09bc8a] font-semibold">한</span>
 								<span class="text-gray-600">/</span>
-								<span class="text-[#09bc8a] font-semibold">EN</span>
+								<a href="/en" class="text-gray-400 hover:text-[#09bc8a]">EN</a>
 							</div>
 							<div class="flex flex-col gap-3">
 								<a href="http://210.92.36.12:11331" target="_blank" rel="noopener noreferrer" class="bg-[#508991] text-white px-6 py-2 rounded-full hover:bg-[#004346] text-center">Demo</a>

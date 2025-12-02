@@ -3,10 +3,10 @@ import '../../styles/global.css';
 import Layout from '../../components/Layout.astro';
 import { getTranslations } from '../../i18n/utils';
 
-const t = getTranslations('en');
+const t = getTranslations('ko');
 
 export async function getStaticPaths() {
-  const serviceFiles = import.meta.glob('../../content/services/en/*.json');
+  const serviceFiles = import.meta.glob('../../content/services/ko/*.json');
   const services = await Promise.all(
     Object.entries(serviceFiles).map(async ([path, resolver]) => {
       const service = await resolver();
@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 const { service } = Astro.props;
 ---
 
-<Layout lang="en" title={`${service.title} - OmixAI`} currentPage="services" serviceSlug={service.slug}>
+<Layout lang="ko" title={`${service.title} - 오믹스AI`} currentPage="services" serviceSlug={service.slug} lightHeader={true}>
 
 	<!-- Hero Section -->
 	<section class="bg-[#74b3ce]/20 py-16">

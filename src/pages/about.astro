@@ -3,10 +3,10 @@ import '../styles/global.css';
 import Layout from '../components/Layout.astro';
 import { getTranslations } from '../i18n/utils';
 
-const t = getTranslations('en');
+const t = getTranslations('ko');
 ---
 
-<Layout lang="en" title="About Us - OmixAI" currentPage="about">
+<Layout lang="ko" title="회사 소개 - 오믹스AI" currentPage="about" lightHeader={true}>
 
 	<!-- Hero Section -->
 	<section class="bg-[#74b3ce]/20 py-16">
@@ -38,7 +38,7 @@ const t = getTranslations('en');
 
 									<div class="grid md:grid-cols-2 gap-8">
 										<div>
-											<h3 class="text-lg font-bold text-gray-900 mb-3">Education</h3>
+											<h3 class="text-lg font-bold text-gray-900 mb-3">학력</h3>
 											<ul class="space-y-2">
 												{member.education.map((item) => (
 													<li class="text-gray-700 text-sm">{item}</li>
@@ -47,7 +47,7 @@ const t = getTranslations('en');
 										</div>
 
 										<div>
-											<h3 class="text-lg font-bold text-gray-900 mb-3">Experience</h3>
+											<h3 class="text-lg font-bold text-gray-900 mb-3">경력사항</h3>
 											<ul class="space-y-2">
 												{member.experience.map((item) => (
 													<li class="text-gray-700 text-sm">{item}</li>

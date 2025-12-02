@@ -3,10 +3,10 @@ import '../../styles/global.css';
 import Layout from '../../components/Layout.astro';
 import { getTranslations } from '../../i18n/utils';
 
-const t = getTranslations('ko');
+const t = getTranslations('en');
 ---
 
-<Layout lang="ko" title={`${t.resources.title} - ${t.meta.title}`} currentPage="resources">
+<Layout lang="en" title={`${t.resources.title} - ${t.meta.title}`} currentPage="resources" lightHeader={true}>
 	<style>
 		details > summary {
 			cursor: pointer;
@@ -30,43 +30,43 @@ const t = getTranslations('ko');
 	</style>
 
 	<!-- Hero Section -->
-	<section class="bg-[#172a3a] py-16">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="text-center">
-				<h1 class="text-4xl md:text-5xl font-bold text-[#faf9f6] mb-4">
-					{t.resources.title}
-				</h1>
-				<p class="text-xl text-[#f5f5f0]">
-					{t.resources.subtitle}
-				</p>
-			</div>
+	<section class="bg-[#74b3ce]/20 py-16">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+				{t.resources.title}
+			</h1>
+			<p class="text-xl text-gray-700">
+				{t.resources.subtitle}
+			</p>
 		</div>
 	</section>
 
 	<!-- Tabs -->
-	<section class="bg-[#fafaf8] pt-8">
+	<section class="bg-white pt-8">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="flex justify-center gap-8 border-b border-gray-300">
-				<button
-					class="tab-button active px-4 py-3 font-semibold text-gray-700 border-b-2 border-transparent"
+				<a
+					href="#faq"
+					class="tab-button active px-4 py-3 font-semibold text-gray-700 border-b-2 border-transparent no-underline"
 					data-tab="faq"
 				>
 					FAQ
-				</button>
-				<button
-					class="tab-button px-4 py-3 font-semibold text-gray-700 border-b-2 border-transparent"
+				</a>
+				<a
+					href="#technical"
+					class="tab-button px-4 py-3 font-semibold text-gray-700 border-b-2 border-transparent no-underline"
 					data-tab="technical"
 				>
-					기술 문서
-				</button>
+					Technical Documentation
+				</a>
 			</div>
 		</div>
 	</section>
 
 	<!-- FAQ Tab -->
-	<section class="tab-panel active py-12 bg-[#fafaf8]" id="faq-panel">
+	<section class="tab-panel active py-12 bg-white" id="faq-panel">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl font-bold text-center mb-12">자주 묻는 질문</h2>
+			<h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
 
 				<!-- Ordering & Pricing -->
 				<div class="mb-12">
@@ -121,86 +121,86 @@ const t = getTranslations('ko');
 
 			<!-- CTA -->
 			<div class="text-center mt-16">
-				<p class="text-xl text-gray-700 mb-6">더 궁금한 점이 있으신가요?</p>
+				<p class="text-xl text-gray-700 mb-6">Have more questions?</p>
 				<a href="mailto:omixai@omixai.com" class="inline-block bg-[#09bc8a] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#004346]">
-					문의하기
+					Contact Us
 				</a>
 			</div>
 		</div>
 	</section>
 
 	<!-- Technical Documentation Tab -->
-	<section class="tab-panel py-12 bg-[#fafaf8]" id="technical-panel">
+	<section class="tab-panel py-12 bg-white" id="technical-panel">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl font-bold text-center mb-12">기술 문서</h2>
+			<h2 class="text-3xl font-bold text-center mb-12">Technical Documentation</h2>
 
 			<!-- Platform Specs -->
 			<div class="mb-12">
-				<h3 class="text-2xl font-bold mb-6 text-[#172a3a]">질량분석 플랫폼</h3>
+				<h3 class="text-2xl font-bold mb-6 text-[#172a3a]">Mass Spectrometry Platform</h3>
 				<div class="bg-white rounded-lg shadow-sm p-6">
 					<h4 class="font-semibold text-lg mb-4">Thermo Fisher Orbitrap Astral</h4>
 					<ul class="space-y-2 text-gray-700">
-						<li><strong>해상도:</strong> 240,000 FWHM (m/z 200)</li>
-						<li><strong>질량 정확도:</strong> &lt; 1 ppm</li>
-						<li><strong>스캔 속도:</strong> 200 Hz</li>
-						<li><strong>동적 범위:</strong> &gt; 5 orders of magnitude</li>
-						<li><strong>감도:</strong> 서브-펨토몰 검출 한계</li>
+						<li><strong>Resolution:</strong> 240,000 FWHM at m/z 200</li>
+						<li><strong>Mass Accuracy:</strong> &lt; 1 ppm</li>
+						<li><strong>Scan Speed:</strong> 200 Hz</li>
+						<li><strong>Dynamic Range:</strong> &gt; 5 orders of magnitude</li>
+						<li><strong>Sensitivity:</strong> Sub-femtomole detection limits</li>
 					</ul>
 				</div>
 			</div>
 
 			<!-- Proteomics Workflow -->
 			<div class="mb-12">
-				<h3 class="text-2xl font-bold mb-6 text-[#172a3a]">표준 프로테오믹스 워크플로우</h3>
+				<h3 class="text-2xl font-bold mb-6 text-[#172a3a]">Standard Proteomics Workflow</h3>
 				<div class="bg-white rounded-lg shadow-sm p-6 space-y-4">
 					<div>
-						<h4 class="font-semibold mb-2">1. 샘플 준비</h4>
-						<p class="text-gray-700">각 샘플 유형에 최적화된 프로토콜을 사용한 단백질 추출, 환원, 알킬화 및 트립신 소화.</p>
+						<h4 class="font-semibold mb-2">1. Sample Preparation</h4>
+						<p class="text-gray-700">Protein extraction, reduction, alkylation, and tryptic digestion using optimized protocols for each sample type.</p>
 					</div>
 					<div>
-						<h4 class="font-semibold mb-2">2. 펩타이드 정제</h4>
-						<p class="text-gray-700">C18 고체상 추출을 통한 염분 및 오염물질 제거.</p>
+						<h4 class="font-semibold mb-2">2. Peptide Cleanup</h4>
+						<p class="text-gray-700">C18 solid-phase extraction to remove salts and contaminants.</p>
 					</div>
 					<div>
-						<h4 class="font-semibold mb-2">3. LC-MS/MS 분석</h4>
-						<p class="text-gray-700">데이터 의존적 획득(DDA)을 사용하는 Orbitrap Astral과 결합된 나노플로우 HPLC에서 90-120분 그라디언트.</p>
+						<h4 class="font-semibold mb-2">3. LC-MS/MS Analysis</h4>
+						<p class="text-gray-700">90-120 minute gradient on nanoflow HPLC coupled to Orbitrap Astral with data-dependent acquisition (DDA).</p>
 					</div>
 					<div>
-						<h4 class="font-semibold mb-2">4. 데이터 처리</h4>
-						<p class="text-gray-700">FragPipe 또는 MaxQuant를 사용한 데이터베이스 검색, 단백질 및 펩타이드 수준에서 1% FDR 필터링.</p>
+						<h4 class="font-semibold mb-2">4. Data Processing</h4>
+						<p class="text-gray-700">Database searching with FragPipe or MaxQuant, FDR filtering at 1% protein and peptide level.</p>
 					</div>
 					<div>
-						<h4 class="font-semibold mb-2">5. 정량 및 분석</h4>
-						<p class="text-gray-700">라벨 프리 정량화(LFQ) 또는 동위원소 라벨링(TMT), 통계 분석, 경로 농축.</p>
+						<h4 class="font-semibold mb-2">5. Quantification & Analysis</h4>
+						<p class="text-gray-700">Label-free quantification (LFQ) or isobaric labeling (TMT), statistical analysis, pathway enrichment.</p>
 					</div>
 				</div>
 			</div>
 
 			<!-- Performance Metrics -->
 			<div class="mb-12">
-				<h3 class="text-2xl font-bold mb-6 text-[#172a3a]">일반적인 성능 지표</h3>
+				<h3 class="text-2xl font-bold mb-6 text-[#172a3a]">Typical Performance Metrics</h3>
 				<div class="bg-white rounded-lg shadow-sm p-6">
 					<table class="w-full">
 						<thead>
 							<tr class="border-b">
-								<th class="text-left py-2">샘플 유형</th>
-								<th class="text-left py-2">식별된 단백질</th>
-								<th class="text-left py-2">식별된 펩타이드</th>
+								<th class="text-left py-2">Sample Type</th>
+								<th class="text-left py-2">Proteins Identified</th>
+								<th class="text-left py-2">Peptides Identified</th>
 							</tr>
 						</thead>
 						<tbody class="text-gray-700">
 							<tr class="border-b">
-								<td class="py-2">인간 세포주 (1 μg)</td>
+								<td class="py-2">Human cell line (1 μg)</td>
 								<td class="py-2">8,000-10,000</td>
 								<td class="py-2">80,000-100,000</td>
 							</tr>
 							<tr class="border-b">
-								<td class="py-2">인간 조직 (10 mg)</td>
+								<td class="py-2">Human tissue (10 mg)</td>
 								<td class="py-2">9,000-12,000</td>
 								<td class="py-2">90,000-120,000</td>
 							</tr>
 							<tr>
-								<td class="py-2">인간 혈장 (10 μL)</td>
+								<td class="py-2">Human plasma (10 μL)</td>
 								<td class="py-2">500-800</td>
 								<td class="py-2">5,000-8,000</td>
 							</tr>
@@ -211,9 +211,9 @@ const t = getTranslations('ko');
 
 			<!-- CTA -->
 			<div class="text-center mt-16">
-				<p class="text-xl text-gray-700 mb-6">더 자세한 기술 정보가 필요하신가요?</p>
+				<p class="text-xl text-gray-700 mb-6">Need more technical details?</p>
 				<a href="mailto:omixai@omixai.com" class="inline-block bg-[#09bc8a] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#004346]">
-					문의하기
+					Contact Us
 				</a>
 			</div>
 		</div>
@@ -224,18 +224,35 @@ const t = getTranslations('ko');
 		const tabButtons = document.querySelectorAll('.tab-button');
 		const tabPanels = document.querySelectorAll('.tab-panel');
 
-		tabButtons.forEach(button => {
-			button.addEventListener('click', () => {
-				const tabName = button.getAttribute('data-tab');
+		function switchTab(tabName: string) {
+			// Remove active class from all buttons and panels
+			tabButtons.forEach(btn => btn.classList.remove('active'));
+			tabPanels.forEach(panel => panel.classList.remove('active'));
 
-				// Remove active class from all buttons and panels
-				tabButtons.forEach(btn => btn.classList.remove('active'));
-				tabPanels.forEach(panel => panel.classList.remove('active'));
+			// Add active class to clicked button and corresponding panel
+			const activeButton = document.querySelector(`[data-tab="${tabName}"]`);
+			const activePanel = document.getElementById(`${tabName}-panel`);
 
-				// Add active class to clicked button and corresponding panel
-				button.classList.add('active');
-				document.getElementById(`${tabName}-panel`).classList.add('active');
-			});
-		});
+			if (activeButton && activePanel) {
+				activeButton.classList.add('active');
+				activePanel.classList.add('active');
+			}
+		}
+
+		// Handle hash changes
+		function handleHashChange() {
+			const hash = window.location.hash.slice(1); // Remove the '#'
+			if (hash === 'faq' || hash === 'technical') {
+				switchTab(hash);
+			} else {
+				switchTab('faq'); // Default to FAQ
+			}
+		}
+
+		// Listen for hash changes
+		window.addEventListener('hashchange', handleHashChange);
+
+		// Initialize on page load
+		handleHashChange();
 	</script>
 </Layout>

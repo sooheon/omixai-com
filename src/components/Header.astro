@@ -5,27 +5,36 @@ interface Props {
 	lang: 'en' | 'ko';
 	currentPage?: 'home' | 'services' | 'resources' | 'about';
 	serviceSlug?: string;
+	lightHeader?: boolean;
 }
 
-const { lang, currentPage = 'home', serviceSlug } = Astro.props;
+const { lang, currentPage = 'home', serviceSlug, lightHeader = false } = Astro.props;
 const t = getTranslations(lang);
 
-const homeUrl = lang === 'ko' ? '/ko' : '/';
-const resourcesUrl = lang === 'ko' ? '/ko/resources' : '/resources';
-const aboutUrl = lang === 'ko' ? '/ko/about' : '/about';
-const serviceUrlPrefix = lang === 'ko' ? '/ko/services' : '/services';
+const homeUrl = lang === 'en' ? '/en' : '/';
+const resourcesUrl = lang === 'en' ? '/en/resources' : '/resources';
+const aboutUrl = lang === 'en' ? '/en/about' : '/about';
+const serviceUrlPrefix = lang === 'en' ? '/en/services' : '/services';
 
-const otherLangUrl = lang === 'ko'
+const otherLangUrl = lang === 'en'
 	? (serviceSlug ? `/services/${serviceSlug}` : currentPage === 'resources' ? '/resources' : currentPage === 'about' ? '/about' : '/')
-	: (serviceSlug ? `/ko/services/${serviceSlug}` : currentPage === 'resources' ? '/ko/resources' : currentPage === 'about' ? '/ko/about' : '/ko');
+	: (serviceSlug ? `/en/services/${serviceSlug}` : currentPage === 'resources' ? '/en/resources' : currentPage === 'about' ? '/en/about' : '/en');
+
+// Color classes based on light/dark header
+const headerBg = lightHeader ? 'bg-[#74b3ce]/20' : 'bg-[#172a3a]';
+const textColor = lightHeader ? 'text-gray-700' : 'text-gray-300';
+const textHover = lightHeader ? 'hover:text-[#09bc8a]' : 'hover:text-[#09bc8a]';
+const textInactive = lightHeader ? 'text-gray-500' : 'text-gray-400';
+const borderColor = lightHeader ? 'border-gray-300' : 'border-gray-600';
+const logoFilter = lightHeader ? '' : 'invert';
 ---
 
-<header id="header" class="bg-[#172a3a]">
+<header id="header" class={headerBg}>
 	<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 		<!-- Mobile Header -->
 		<div class="flex md:hidden items-center justify-between">
-			<a href={homeUrl} class="flex items-center"><img src="/bwlogo.png" alt="OmixAI" class="h-10 invert" /></a>
-			<button id="mobile-menu-button" class="text-gray-300 hover:text-[#09bc8a]" aria-label="Toggle menu">
+			<a href={homeUrl} class="flex items-center"><img src="/bwlogo.png" alt="OmixAI" class={`h-10 ${logoFilter}`} /></a>
+			<button id="mobile-menu-button" class={`${textColor} ${textHover}`} aria-label="Toggle menu">
 				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
 				</svg>
@@ -34,11 +43,11 @@ const otherLangUrl = lang === 'ko'
 
 		<!-- Desktop Header -->
 		<div class="hidden md:grid grid-cols-3 items-center">
-			<a href={homeUrl} class="flex items-center"><img src="/bwlogo.png" alt="OmixAI" class="h-12 invert" /></a>
+			<a href={homeUrl} class="flex items-center"><img src="/bwlogo.png" alt="OmixAI" class={`h-12 ${logoFilter}`} /></a>
 
 			<div class="flex items-center justify-center gap-8">
 				<div class="relative group">
-					<button class={`flex items-center gap-1 cursor-pointer ${currentPage === 'services' ? 'text-[#09bc8a] font-semibold' : 'text-gray-300 hover:text-[#09bc8a]'}`}>
+					<button class={`flex items-center gap-1 cursor-pointer ${currentPage === 'services' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}`}>
 						{t.nav.services}
 						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -47,13 +56,13 @@ const otherLangUrl = lang === 'ko'
 					<div class="absolute left-0 mt-2 w-48 bg-[#fafaf8] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
 						<div class="py-2">
 							<a href={`${serviceUrlPrefix}/proteomics`} class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-								{lang === 'ko' ? '프로테오믹스' : 'Proteomics'}
+								{lang === 'en' ? 'Proteomics' : '프로테오믹스'}
 							</a>
 							<a href={`${serviceUrlPrefix}/multi-omics`} class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-								{lang === 'ko' ? '멀티오믹스' : 'Multi-Omics'}
+								{lang === 'en' ? 'Multi-Omics' : '멀티오믹스'}
 							</a>
 							<a href={`${serviceUrlPrefix}/biomarkers`} class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-								{lang === 'ko' ? '바이오마커' : 'Biomarkers'}
+								{lang === 'en' ? 'Biomarkers' : '바이오마커'}
 							</a>
 							<a href={`${serviceUrlPrefix}/ai-bi`} class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
 								AI x BI
@@ -61,23 +70,23 @@ const otherLangUrl = lang === 'ko'
 						</div>
 					</div>
 				</div>
-				<a href={resourcesUrl} class={currentPage === 'resources' ? 'text-[#09bc8a] font-semibold' : 'text-gray-300 hover:text-[#09bc8a]'}>{t.nav.resources}</a>
-				<a href={aboutUrl} class={currentPage === 'about' ? 'text-[#09bc8a] font-semibold' : 'text-gray-300 hover:text-[#09bc8a]'}>{t.nav.about}</a>
+				<a href={resourcesUrl} class={currentPage === 'resources' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.resources}</a>
+				<a href={aboutUrl} class={currentPage === 'about' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.about}</a>
 			</div>
 
 			<div class="flex items-center justify-end gap-6">
 				<div class="flex items-center gap-1 text-sm">
-					{lang === 'ko' ? (
+					{lang === 'en' ? (
 						<>
-							<span class="text-[#09bc8a] font-semibold">한</span>
-							<span class="text-gray-600">/</span>
-							<a href={otherLangUrl} class="text-gray-400 hover:text-[#09bc8a]">EN</a>
+							<a href={otherLangUrl} class={`${textInactive} ${textHover}`}>한</a>
+							<span class={lightHeader ? 'text-gray-400' : 'text-gray-600'}>/</span>
+							<span class="text-[#09bc8a] font-semibold">EN</span>
 						</>
 					) : (
 						<>
-							<a href={otherLangUrl} class="text-gray-400 hover:text-[#09bc8a]">한</a>
-							<span class="text-gray-600">/</span>
-							<span class="text-[#09bc8a] font-semibold">EN</span>
+							<span class="text-[#09bc8a] font-semibold">한</span>
+							<span class={lightHeader ? 'text-gray-400' : 'text-gray-600'}>/</span>
+							<a href={otherLangUrl} class={`${textInactive} ${textHover}`}>EN</a>
 						</>
 					)}
 				</div>
@@ -97,44 +106,44 @@ const otherLangUrl = lang === 'ko'
 			<div class="flex flex-col space-y-4">
 				<!-- Services Dropdown -->
 				<div>
-					<button id="mobile-services-button" class={`w-full text-left flex items-center justify-between ${currentPage === 'services' ? 'text-[#09bc8a] font-semibold' : 'text-gray-300'}`}>
+					<button id="mobile-services-button" class={`w-full text-left flex items-center justify-between ${currentPage === 'services' ? 'text-[#09bc8a] font-semibold' : textColor}`}>
 						<span>{t.nav.services}</span>
 						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 						</svg>
 					</button>
 					<div id="mobile-services-dropdown" class="hidden mt-2 ml-4 space-y-2">
-						<a href={`${serviceUrlPrefix}/proteomics`} class="block text-gray-300 hover:text-[#09bc8a]">
-							{lang === 'ko' ? '프로테오믹스' : 'Proteomics'}
+						<a href={`${serviceUrlPrefix}/proteomics`} class={`block ${textColor} ${textHover}`}>
+							{lang === 'en' ? 'Proteomics' : '프로테오믹스'}
 						</a>
-						<a href={`${serviceUrlPrefix}/multi-omics`} class="block text-gray-300 hover:text-[#09bc8a]">
-							{lang === 'ko' ? '멀티오믹스' : 'Multi-Omics'}
+						<a href={`${serviceUrlPrefix}/multi-omics`} class={`block ${textColor} ${textHover}`}>
+							{lang === 'en' ? 'Multi-Omics' : '멀티오믹스'}
 						</a>
-						<a href={`${serviceUrlPrefix}/biomarkers`} class="block text-gray-300 hover:text-[#09bc8a]">
-							{lang === 'ko' ? '바이오마커' : 'Biomarkers'}
+						<a href={`${serviceUrlPrefix}/biomarkers`} class={`block ${textColor} ${textHover}`}>
+							{lang === 'en' ? 'Biomarkers' : '바이오마커'}
 						</a>
-						<a href={`${serviceUrlPrefix}/ai-bi`} class="block text-gray-300 hover:text-[#09bc8a]">
+						<a href={`${serviceUrlPrefix}/ai-bi`} class={`block ${textColor} ${textHover}`}>
 							AI x BI
 						</a>
 					</div>
 				</div>
 
-				<a href={resourcesUrl} class={currentPage === 'resources' ? 'text-[#09bc8a] font-semibold' : 'text-gray-300 hover:text-[#09bc8a]'}>{t.nav.resources}</a>
-				<a href={aboutUrl} class={currentPage === 'about' ? 'text-[#09bc8a] font-semibold' : 'text-gray-300 hover:text-[#09bc8a]'}>{t.nav.about}</a>
+				<a href={resourcesUrl} class={currentPage === 'resources' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.resources}</a>
+				<a href={aboutUrl} class={currentPage === 'about' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.about}</a>
 
-				<div class="border-t border-gray-600 pt-4">
+				<div class={`border-t ${borderColor} pt-4`}>
 					<div class="flex items-center gap-2 mb-4">
-						{lang === 'ko' ? (
+						{lang === 'en' ? (
 							<>
-								<span class="text-[#09bc8a] font-semibold">한</span>
-								<span class="text-gray-600">/</span>
-								<a href={otherLangUrl} class="text-gray-400 hover:text-[#09bc8a]">EN</a>
+								<a href={otherLangUrl} class={`${textInactive} ${textHover}`}>한</a>
+								<span class={lightHeader ? 'text-gray-400' : 'text-gray-600'}>/</span>
+								<span class="text-[#09bc8a] font-semibold">EN</span>
 							</>
 						) : (
 							<>
-								<a href={otherLangUrl} class="text-gray-400 hover:text-[#09bc8a]">한</a>
-								<span class="text-gray-600">/</span>
-								<span class="text-[#09bc8a] font-semibold">EN</span>
+								<span class="text-[#09bc8a] font-semibold">한</span>
+								<span class={lightHeader ? 'text-gray-400' : 'text-gray-600'}>/</span>
+								<a href={otherLangUrl} class={`${textInactive} ${textHover}`}>EN</a>
 							</>
 						)}
 					</div>
