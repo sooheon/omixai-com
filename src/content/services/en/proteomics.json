@@ -1,0 +1,20 @@
+{
+  "slug": "proteomics",
+  "title": "Proteomics",
+  "subtitle": "AI-Powered Protein Analysis",
+  "description": "Comprehensive proteomics analysis powered by advanced AI models for protein identification, quantification, and functional analysis.",
+  "features": [
+    {
+      "title": "Protein Identification",
+      "description": "State-of-the-art algorithms for accurate protein identification from mass spectrometry data"
+    },
+    {
+      "title": "Quantification",
+      "description": "Precise protein quantification across samples with automated quality control"
+    },
+    {
+      "title": "Functional Analysis",
+      "description": "AI-driven functional annotation and pathway enrichment analysis"
+    }
+  ]
+}

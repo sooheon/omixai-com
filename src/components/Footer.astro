@@ -1,0 +1,17 @@
+---
+import { getTranslations } from '../i18n/utils';
+
+interface Props {
+	lang: 'en' | 'ko';
+}
+
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+---
+
+<footer class="bg-gray-900 text-white py-12">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+		<img src="/bwlogo.png" alt="OmixAI" class="h-10 mx-auto mb-4 invert" />
+		<p class="text-gray-400">{t.footer.tagline}</p>
+	</div>
+</footer>

@@ -1,0 +1,221 @@
+{
+  "meta": {
+    "title": "OmixAI - AI-Powered Omics Analysis"
+  },
+  "nav": {
+    "services": "Services",
+    "resources": "Resources",
+    "about": "About Us",
+    "contact": "Contact",
+    "cta": "Contact Us"
+  },
+  "hero": {
+    "title": "Decoding the true language of life",
+    "subtitle": "Transform your biological samples into actionable insights",
+    "description": "Advanced AI models for proteomics, genomics, and multi-omics integration",
+    "cta": "Contact Us"
+  },
+  "services": {
+    "title": "Our Services",
+    "items": [
+      {
+        "icon": "🧬",
+        "title": "Proteomics"
+      },
+      {
+        "icon": "🔬",
+        "title": "Multi-Omics"
+      },
+      {
+        "icon": "📊",
+        "title": "Biomarkers"
+      },
+      {
+        "icon": "🤖",
+        "title": "AI x BI"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Researchers Say",
+    "items": [
+      {
+        "quote": "OmixAI's machine learning models revealed patterns in our proteomics data we never would have found manually.",
+        "author": "Dr. Sarah Chen",
+        "institution": "MIT"
+      },
+      {
+        "quote": "The multi-omics integration capabilities are game-changing for precision medicine research.",
+        "author": "Dr. Michael Rodriguez",
+        "institution": "Stanford University"
+      },
+      {
+        "quote": "OmixAI accelerated our biomarker discovery timeline by months. The AI insights are incredibly accurate.",
+        "author": "Dr. Emily Watson",
+        "institution": "Harvard Medical School"
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Send Samples",
+        "description": "Send us your biological samples for analysis"
+      },
+      {
+        "number": "2",
+        "title": "AI Analysis",
+        "description": "We analyze your samples with advanced AI models"
+      },
+      {
+        "number": "3",
+        "title": "Get Insights",
+        "description": "Receive actionable biological insights"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Fast, Unbiased, Whole Proteomics"
+  },
+  "resources": {
+    "title": "Resource Center",
+    "subtitle": "Everything you need to know about our proteomics services",
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "ordering": {
+        "title": "Ordering & Pricing",
+        "items": [
+          {
+            "question": "How do I place an order?",
+            "answer": "Contact us at omixai@omixai.com with details about your project. We'll provide a customized quote and sample submission instructions."
+          },
+          {
+            "question": "What is the typical turnaround time?",
+            "answer": "Standard proteomics analysis takes 2-4 weeks from sample receipt. Rush services are available upon request."
+          },
+          {
+            "question": "What payment methods do you accept?",
+            "answer": "We accept bank transfers, purchase orders from academic institutions, and major credit cards for qualifying orders."
+          }
+        ]
+      },
+      "samplePrep": {
+        "title": "Sample Preparation",
+        "items": [
+          {
+            "question": "What sample types do you accept?",
+            "answer": "We accept cells, tissues, biofluids (plasma, serum, CSF), and protein lysates. Contact us for specific sample type requirements."
+          },
+          {
+            "question": "How much sample material do I need?",
+            "answer": "For tissue: 10-20mg, cells: 1-5 million, plasma/serum: 10-50μL. Lower amounts may be possible - please inquire."
+          },
+          {
+            "question": "How should I ship my samples?",
+            "answer": "Ship frozen samples on dry ice via overnight courier. We'll provide detailed shipping instructions and materials upon order confirmation."
+          },
+          {
+            "question": "What are the sample quality requirements?",
+            "answer": "Samples should be flash-frozen and stored at -80°C. Avoid freeze-thaw cycles. We can assess sample quality before proceeding with analysis."
+          }
+        ]
+      },
+      "technical": {
+        "title": "Technical Details",
+        "items": [
+          {
+            "question": "What mass spectrometry platform do you use?",
+            "answer": "We use the Thermo Fisher Orbitrap Astral, providing ultra-high resolution (240,000 FWHM) and sensitivity for deep proteome coverage."
+          },
+          {
+            "question": "How many proteins can you identify?",
+            "answer": "We routinely identify 8,000-12,000 proteins in human cell lines and tissues with high confidence (FDR < 1%)."
+          },
+          {
+            "question": "What quantification methods do you offer?",
+            "answer": "We support label-free quantification (LFQ), TMT/iTRAQ multiplexing, and SILAC approaches depending on your experimental design."
+          },
+          {
+            "question": "What bioinformatics analysis is included?",
+            "answer": "Standard analysis includes protein identification, quantification, statistical testing, GO enrichment, and pathway analysis. Advanced AI-powered analysis is available."
+          }
+        ]
+      }
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Leadership Team",
+    "team": [
+      {
+        "name": "Dongmyeong Shin, Ph.D.",
+        "title": "CEO",
+        "photo": "/photos/shindongmyeong.jpg",
+        "education": [
+          "2018 ~ 2022     Seoul National University, Electrical and Computer Engineering, Ph.D."
+        ],
+        "experience": [
+          "2025 ~ Present     OmixAI Co., Ltd., CEO",
+          "2024 ~ 2025     Radisen Co., Ltd., CEO",
+          "2021 ~ 2024     Radisen Co., Ltd., CTO"
+        ]
+      },
+      {
+        "name": "Jong-Bae Park, Ph.D.",
+        "title": "CTO",
+        "photo": "/photos/parkjongbae.png",
+        "education": [
+          "2002 ~ 2006     Harvard Medical School, Postdoctoral Fellow"
+        ],
+        "experience": [
+          "2025 ~ Present     OmixAI Co., Ltd., CTO",
+          "2025 ~ Present     Kyung Hee University College of Medicine, Full Professor",
+          "2024 ~ Present     Secretary General, Korean Proteome Society; Board Member, Korean Cancer Association",
+          "2019 ~ 2023     Director, Industry-Academic Cooperation Foundation",
+          "2018 ~ 2021     Director, Cancer Proteomics Research Center",
+          "2018 ~ Present     Member, Cancer Control Planning Committee",
+          "2017 ~ 2021     Graduate School Dean, National Cancer Center Graduate School of Cancer Science and Policy",
+          "2014 ~ Present     Professor, National Cancer Center Graduate School of Cancer Science and Policy",
+          "2006 ~ 2014     Principal Investigator, Rare Cancer Research Branch, National Cancer Center"
+        ]
+      },
+      {
+        "name": "Jin-Taek Kim",
+        "title": "COO",
+        "photo": "/photos/kimjintaek.png",
+        "education": [
+          "1995 ~ 1998     Kookmin University Graduate School of Law (Commercial Law)"
+        ],
+        "experience": [
+          "2025 ~ Present     OmixAI Co., Ltd., COO",
+          "2019 ~ Present     April Bio Co., Ltd., CIO",
+          "2024 ~ 2025     Radisen Co., Ltd., COO",
+          "2023 ~ 2024     Saerom Oriental Pharmaceutical, CEO",
+          "2018 ~ 2019     Castelbajac, Director",
+          "2011 ~ 2018     Fashion Group Hyungji Co., Ltd., Planning & Coordination Office Director"
+        ]
+      },
+      {
+        "name": "Ki-Baek Park",
+        "title": "CFO",
+        "photo": "/photos/parkkibaek.jpg",
+        "education": [
+          "2003 ~ 2007     Fudan University Shanghai (Law)"
+        ],
+        "experience": [
+          "2025 ~ Present     OmixAI Co., Ltd., CFO",
+          "2024 ~ 2025     Radisen Co., Ltd., CFO",
+          "2020 ~ 2024     ONCOcross Co., Ltd., Business Development Director",
+          "2018 ~ 2020     ONCOcross Co., Ltd., CFO",
+          "2019 ~ 2021     SMBina, Planning Team Leader",
+          "2016 ~ 2018     SM Sino, Technology Investment",
+          "2014 ~ 2017     Global Bridge Consulting, Director",
+          "2010 ~ 2013     Hong Kong Glo-Med Group, Director",
+          "2007 ~ 2010     Hong Kong Shanghai Development Zone Venture Investment"
+        ]
+      }
+    ]
+  }
+}

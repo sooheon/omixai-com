@@ -1,0 +1,63 @@
+---
+import '../../styles/global.css';
+import Layout from '../../components/Layout.astro';
+import { getTranslations } from '../../i18n/utils';
+
+const t = getTranslations('en');
+
+export async function getStaticPaths() {
+  const serviceFiles = import.meta.glob('../../content/services/en/*.json');
+  const services = await Promise.all(
+    Object.entries(serviceFiles).map(async ([path, resolver]) => {
+      const service = await resolver();
+      return service;
+    })
+  );
+
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+---
+
+<Layout lang="en" title={`${service.title} - OmixAI`} currentPage="services" serviceSlug={service.slug}>
+
+	<!-- Hero Section -->
+	<section class="bg-[#74b3ce]/20 py-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+					{service.title}
+				</h1>
+				<p class="text-xl text-gray-700">
+					{service.subtitle}
+				</p>
+			</div>
+		</section>
+
+		<!-- Content Section -->
+		<section class="py-20 bg-white">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				<p class="text-lg text-gray-700 mb-12 text-center">
+					{service.description}
+				</p>
+
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					{service.features.map((feature) => (
+						<div class="text-center">
+							<h3 class="text-lg font-bold text-gray-900 mb-3">{feature.title}</h3>
+							<p class="text-gray-600">{feature.description}</p>
+						</div>
+					))}
+				</div>
+
+				<div class="mt-16 text-center">
+					<a href="mailto:omixai@omixai.com" class="inline-block bg-[#09bc8a] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#004346]">
+						{t.nav.cta}
+					</a>
+				</div>
+		</div>
+	</section>
+</Layout>

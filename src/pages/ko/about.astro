@@ -1,0 +1,65 @@
+---
+import '../../styles/global.css';
+import Layout from '../../components/Layout.astro';
+import { getTranslations } from '../../i18n/utils';
+
+const t = getTranslations('ko');
+---
+
+<Layout lang="ko" title="회사 소개 - 오믹스AI" currentPage="about">
+
+	<!-- Hero Section -->
+	<section class="bg-[#74b3ce]/20 py-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+					{t.about.title}
+				</h1>
+				<p class="text-xl text-gray-700">
+					{t.about.subtitle}
+				</p>
+			</div>
+		</section>
+
+		<!-- Team Section -->
+		<section class="py-20 bg-white">
+			<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="space-y-16">
+					{t.about.team.map((member) => (
+						<div class="border-b border-gray-200 pb-12 last:border-0">
+							<div class="grid md:grid-cols-[200px_1fr] gap-8 mb-6">
+								<div>
+									<img src={member.photo} alt={member.name} class="w-full rounded-lg shadow-md" />
+								</div>
+								<div>
+									<div class="mb-6">
+										<h2 class="text-2xl font-bold text-gray-900 mb-1">{member.name}</h2>
+										<p class="text-xl text-[#09bc8a] font-semibold">{member.title}</p>
+									</div>
+
+									<div class="grid md:grid-cols-2 gap-8">
+										<div>
+											<h3 class="text-lg font-bold text-gray-900 mb-3">학력</h3>
+											<ul class="space-y-2">
+												{member.education.map((item) => (
+													<li class="text-gray-700 text-sm">{item}</li>
+												))}
+											</ul>
+										</div>
+
+										<div>
+											<h3 class="text-lg font-bold text-gray-900 mb-3">경력사항</h3>
+											<ul class="space-y-2">
+												{member.experience.map((item) => (
+													<li class="text-gray-700 text-sm">{item}</li>
+												))}
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+		</div>
+	</section>
+</Layout>

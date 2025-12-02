@@ -1,0 +1,20 @@
+{
+  "slug": "multi-omics",
+  "title": "Multi-Omics",
+  "subtitle": "Integrated Multi-Layer Analysis",
+  "description": "Integrate proteomics, genomics, transcriptomics, and metabolomics data for comprehensive biological insights.",
+  "features": [
+    {
+      "title": "Data Integration",
+      "description": "Seamlessly combine multiple omics layers for holistic biological understanding"
+    },
+    {
+      "title": "Cross-Layer Analysis",
+      "description": "Identify relationships and regulatory mechanisms across different molecular levels"
+    },
+    {
+      "title": "Systems Biology",
+      "description": "Network-based approaches to understand complex biological systems"
+    }
+  ]
+}

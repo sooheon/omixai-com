@@ -1,0 +1,169 @@
+---
+import { getTranslations } from '../i18n/utils';
+
+interface Props {
+	lang: 'en' | 'ko';
+	currentPage?: 'home' | 'services' | 'resources' | 'about';
+	serviceSlug?: string;
+}
+
+const { lang, currentPage = 'home', serviceSlug } = Astro.props;
+const t = getTranslations(lang);
+
+const homeUrl = lang === 'ko' ? '/ko' : '/';
+const resourcesUrl = lang === 'ko' ? '/ko/resources' : '/resources';
+const aboutUrl = lang === 'ko' ? '/ko/about' : '/about';
+const serviceUrlPrefix = lang === 'ko' ? '/ko/services' : '/services';
+
+const otherLangUrl = lang === 'ko'
+	? (serviceSlug ? `/services/${serviceSlug}` : currentPage === 'resources' ? '/resources' : currentPage === 'about' ? '/about' : '/')
+	: (serviceSlug ? `/ko/services/${serviceSlug}` : currentPage === 'resources' ? '/ko/resources' : currentPage === 'about' ? '/ko/about' : '/ko');
+---
+
+<header id="header" class="bg-[#172a3a]">
+	<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+		<!-- Mobile Header -->
+		<div class="flex md:hidden items-center justify-between">
+			<a href={homeUrl} class="flex items-center"><img src="/bwlogo.png" alt="OmixAI" class="h-10 invert" /></a>
+			<button id="mobile-menu-button" class="text-gray-300 hover:text-[#09bc8a]" aria-label="Toggle menu">
+				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+				</svg>
+			</button>
+		</div>
+
+		<!-- Desktop Header -->
+		<div class="hidden md:grid grid-cols-3 items-center">
+			<a href={homeUrl} class="flex items-center"><img src="/bwlogo.png" alt="OmixAI" class="h-12 invert" /></a>
+
+			<div class="flex items-center justify-center gap-8">
+				<div class="relative group">
+					<button class={`flex items-center gap-1 cursor-pointer ${currentPage === 'services' ? 'text-[#09bc8a] font-semibold' : 'text-gray-300 hover:text-[#09bc8a]'}`}>
+						{t.nav.services}
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</button>
+					<div class="absolute left-0 mt-2 w-48 bg-[#fafaf8] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+						<div class="py-2">
+							<a href={`${serviceUrlPrefix}/proteomics`} class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
+								{lang === 'ko' ? '프로테오믹스' : 'Proteomics'}
+							</a>
+							<a href={`${serviceUrlPrefix}/multi-omics`} class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
+								{lang === 'ko' ? '멀티오믹스' : 'Multi-Omics'}
+							</a>
+							<a href={`${serviceUrlPrefix}/biomarkers`} class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
+								{lang === 'ko' ? '바이오마커' : 'Biomarkers'}
+							</a>
+							<a href={`${serviceUrlPrefix}/ai-bi`} class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
+								AI x BI
+							</a>
+						</div>
+					</div>
+				</div>
+				<a href={resourcesUrl} class={currentPage === 'resources' ? 'text-[#09bc8a] font-semibold' : 'text-gray-300 hover:text-[#09bc8a]'}>{t.nav.resources}</a>
+				<a href={aboutUrl} class={currentPage === 'about' ? 'text-[#09bc8a] font-semibold' : 'text-gray-300 hover:text-[#09bc8a]'}>{t.nav.about}</a>
+			</div>
+
+			<div class="flex items-center justify-end gap-6">
+				<div class="flex items-center gap-1 text-sm">
+					{lang === 'ko' ? (
+						<>
+							<span class="text-[#09bc8a] font-semibold">한</span>
+							<span class="text-gray-600">/</span>
+							<a href={otherLangUrl} class="text-gray-400 hover:text-[#09bc8a]">EN</a>
+						</>
+					) : (
+						<>
+							<a href={otherLangUrl} class="text-gray-400 hover:text-[#09bc8a]">한</a>
+							<span class="text-gray-600">/</span>
+							<span class="text-[#09bc8a] font-semibold">EN</span>
+						</>
+					)}
+				</div>
+				<div class="flex items-center gap-3">
+					<a href="http://210.92.36.12:11331" target="_blank" rel="noopener noreferrer" class="bg-[#508991] text-white px-6 py-2 rounded-full hover:bg-[#004346]">
+						Demo
+					</a>
+					<a href="mailto:omixai@omixai.com" class="bg-[#09bc8a] text-white px-6 py-2 rounded-full hover:bg-[#004346]">
+						{t.nav.cta}
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mobile Menu -->
+		<div id="mobile-menu" class="hidden md:hidden mt-4">
+			<div class="flex flex-col space-y-4">
+				<!-- Services Dropdown -->
+				<div>
+					<button id="mobile-services-button" class={`w-full text-left flex items-center justify-between ${currentPage === 'services' ? 'text-[#09bc8a] font-semibold' : 'text-gray-300'}`}>
+						<span>{t.nav.services}</span>
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</button>
+					<div id="mobile-services-dropdown" class="hidden mt-2 ml-4 space-y-2">
+						<a href={`${serviceUrlPrefix}/proteomics`} class="block text-gray-300 hover:text-[#09bc8a]">
+							{lang === 'ko' ? '프로테오믹스' : 'Proteomics'}
+						</a>
+						<a href={`${serviceUrlPrefix}/multi-omics`} class="block text-gray-300 hover:text-[#09bc8a]">
+							{lang === 'ko' ? '멀티오믹스' : 'Multi-Omics'}
+						</a>
+						<a href={`${serviceUrlPrefix}/biomarkers`} class="block text-gray-300 hover:text-[#09bc8a]">
+							{lang === 'ko' ? '바이오마커' : 'Biomarkers'}
+						</a>
+						<a href={`${serviceUrlPrefix}/ai-bi`} class="block text-gray-300 hover:text-[#09bc8a]">
+							AI x BI
+						</a>
+					</div>
+				</div>
+
+				<a href={resourcesUrl} class={currentPage === 'resources' ? 'text-[#09bc8a] font-semibold' : 'text-gray-300 hover:text-[#09bc8a]'}>{t.nav.resources}</a>
+				<a href={aboutUrl} class={currentPage === 'about' ? 'text-[#09bc8a] font-semibold' : 'text-gray-300 hover:text-[#09bc8a]'}>{t.nav.about}</a>
+
+				<div class="border-t border-gray-600 pt-4">
+					<div class="flex items-center gap-2 mb-4">
+						{lang === 'ko' ? (
+							<>
+								<span class="text-[#09bc8a] font-semibold">한</span>
+								<span class="text-gray-600">/</span>
+								<a href={otherLangUrl} class="text-gray-400 hover:text-[#09bc8a]">EN</a>
+							</>
+						) : (
+							<>
+								<a href={otherLangUrl} class="text-gray-400 hover:text-[#09bc8a]">한</a>
+								<span class="text-gray-600">/</span>
+								<span class="text-[#09bc8a] font-semibold">EN</span>
+							</>
+						)}
+					</div>
+					<div class="flex flex-col gap-3">
+						<a href="http://210.92.36.12:11331" target="_blank" rel="noopener noreferrer" class="bg-[#508991] text-white px-6 py-2 rounded-full hover:bg-[#004346] text-center">
+							Demo
+						</a>
+						<a href="mailto:omixai@omixai.com" class="bg-[#09bc8a] text-white px-6 py-2 rounded-full hover:bg-[#004346] text-center">
+							{t.nav.cta}
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<script>
+	// Mobile menu toggle
+	const mobileMenuButton = document.getElementById('mobile-menu-button');
+	const mobileMenu = document.getElementById('mobile-menu');
+	const mobileServicesButton = document.getElementById('mobile-services-button');
+	const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
+
+	mobileMenuButton?.addEventListener('click', () => {
+		mobileMenu?.classList.toggle('hidden');
+	});
+
+	mobileServicesButton?.addEventListener('click', () => {
+		mobileServicesDropdown?.classList.toggle('hidden');
+	});
+</script>
