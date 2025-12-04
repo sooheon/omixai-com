@@ -43,10 +43,10 @@ const t = getTranslations('en');
 	<body>
 		<!-- Header -->
 		<header id="header" class="bg-[#172a3a]">
-			<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+			<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
 				<!-- Mobile Header -->
 				<div class="flex md:hidden items-center justify-between">
-					<a href="/en" class="flex items-center"><img src="/bwlogo.png" alt="OmixAI" class="h-10 invert" /></a>
+					<a href="/en" class="flex items-center"><img src="/bwlogo.png" alt="OmixAI" class="h-9 invert" /></a>
 					<button id="mobile-menu-button" class="text-gray-300 hover:text-[#09bc8a]" aria-label="Toggle menu">
 						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -56,9 +56,9 @@ const t = getTranslations('en');
 
 				<!-- Desktop Header -->
 				<div class="hidden md:grid grid-cols-3 items-center">
-					<a href="/" class="flex items-center"><img src="/bwlogo.png" alt="OmixAI" class="h-12 invert" /></a>
+					<a href="/" class="flex items-center"><img src="/bwlogo.png" alt="OmixAI" class="h-10 invert" /></a>
 
-					<div class="flex items-center justify-center gap-8">
+					<div class="flex items-center justify-center gap-6">
 						<div class="relative group">
 							<button class="text-gray-300 hover:text-[#09bc8a] flex items-center gap-1 cursor-pointer">
 								{t.nav.services}
@@ -66,20 +66,22 @@ const t = getTranslations('en');
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 								</svg>
 							</button>
-							<div class="absolute left-0 mt-2 w-48 bg-[#fafaf8] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-								<div class="py-2">
-									<a href="/en/services/proteomics" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-										Proteomics
-									</a>
-									<a href="/en/services/multi-omics" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-										Multi-Omics
-									</a>
-									<a href="/en/services/biomarkers" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-										Biomarkers
-									</a>
-									<a href="/en/services/ai-bi" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-										AI x BI
-									</a>
+							<div class="absolute left-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+								<div class="bg-[#fafaf8] rounded-lg shadow-lg">
+									<div class="py-2">
+										<a href="/en/services/proteomics" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
+											Proteomics
+										</a>
+										<a href="/en/services/multi-omics" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
+											Multi-Omics
+										</a>
+										<a href="/en/services/biomarkers" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
+											Biomarkers
+										</a>
+										<a href="/en/services/ai-bi" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
+											AI x BI
+										</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -170,7 +172,7 @@ const t = getTranslations('en');
 						</a>
 					</div>
 					<div class="flex items-center justify-center">
-						<img src="https://placehold.co/600x400/09bc8a/172a3a?text=Hero+Image" alt="OmixAI Platform" class="rounded-lg shadow-2xl w-full" />
+						<img src="/what-is-proteomics-web-graphic.jpg" alt="OmixAI Platform" class="rounded-lg shadow-2xl w-full" />
 					</div>
 				</div>
 			</div>

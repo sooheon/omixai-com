@@ -31,6 +31,9 @@ const { lang, title, currentPage, serviceSlug, lightHeader = false } = Astro.pro
 				font-family: ${lang === 'ko' ? "'Pretendard', " : ""}'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 				line-height: 1.6;
 				font-weight: 400;
+				display: flex;
+				flex-direction: column;
+				min-height: 100vh;
 			}
 			h1, h2, h3, h4, h5, h6 {
 				font-family: ${lang === 'ko' ? "'Pretendard', " : ""}'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -57,11 +60,18 @@ const { lang, title, currentPage, serviceSlug, lightHeader = false } = Astro.pro
 			#header a, #header button {
 				transition: color 0.3s ease-in-out;
 			}
+			main {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+			}
 		`}></style>
 	</head>
 	<body>
 		<Header lang={lang} currentPage={currentPage} serviceSlug={serviceSlug} lightHeader={lightHeader} />
-		<slot />
+		<main>
+			<slot />
+		</main>
 		<Footer lang={lang} />
 	</body>
 </html>
