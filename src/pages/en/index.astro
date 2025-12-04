@@ -38,6 +38,27 @@ const t = getTranslations('en');
 			#header a, #header button {
 				transition: color 0.3s ease-in-out;
 			}
+			.carousel-slide {
+				display: none;
+				opacity: 0;
+				transition: opacity 0.5s ease-in-out;
+			}
+			.carousel-slide.active {
+				display: block;
+				opacity: 1;
+			}
+			.carousel-dot {
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background-color: rgba(255, 255, 255, 0.5);
+				border: none;
+				cursor: pointer;
+				transition: background-color 0.3s ease;
+			}
+			.carousel-dot.active {
+				background-color: #09bc8a;
+			}
 		</style>
 	</head>
 	<body>
@@ -154,6 +175,34 @@ const t = getTranslations('en');
 			mobileServicesButton?.addEventListener('click', () => {
 				mobileServicesDropdown?.classList.toggle('hidden');
 			});
+
+			// Carousel functionality
+			let currentSlide = 0;
+			const slides = document.querySelectorAll('.carousel-slide');
+			const dots = document.querySelectorAll('.carousel-dot');
+
+			function showSlide(index) {
+				slides.forEach((slide, i) => {
+					slide.classList.toggle('active', i === index);
+				});
+				dots.forEach((dot, i) => {
+					dot.classList.toggle('active', i === index);
+				});
+				currentSlide = index;
+			}
+
+			function nextSlide() {
+				currentSlide = (currentSlide + 1) % slides.length;
+				showSlide(currentSlide);
+			}
+
+			// Auto-advance every 5 seconds
+			setInterval(nextSlide, 5000);
+
+			// Dot click handlers
+			dots.forEach((dot, index) => {
+				dot.addEventListener('click', () => showSlide(index));
+			});
 		</script>
 
 		<!-- Hero Section -->
@@ -171,8 +220,19 @@ const t = getTranslations('en');
 							{t.hero.cta}
 						</a>
 					</div>
-					<div class="flex items-center justify-center">
-						<img src="/what-is-proteomics-web-graphic.jpg" alt="OmixAI Platform" class="rounded-lg shadow-2xl w-full" />
+					<div class="relative">
+						<div id="carousel" class="relative overflow-hidden rounded-lg shadow-2xl">
+							<div class="carousel-slide active">
+								<img src="/carousel/what-is-proteomics-web-graphic.jpg" alt="Proteomics Overview" class="w-full" />
+							</div>
+							<div class="carousel-slide">
+								<img src="/carousel/41467_2024_51274_Fig1_HTML.png" alt="Research Figure" class="w-full" />
+							</div>
+						</div>
+						<div class="flex justify-center gap-2 mt-4">
+							<button class="carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
+							<button class="carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+						</div>
 					</div>
 				</div>
 			</div>
