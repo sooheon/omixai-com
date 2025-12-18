@@ -1,0 +1,20 @@
+{
+  "slug": "frozen-tissue",
+  "title": "Frozen Tissue",
+  "subtitle": "Frozen Tissue Proteomics Analysis",
+  "description": "Deliver highest quality proteomics data from fresh-frozen tissue samples. Achieve deep proteome coverage ideal for tissue-specific biology, disease pathology, and systems biology research.",
+  "features": [
+    {
+      "title": "Superior Data Quality",
+      "description": "Leverage excellent protein preservation in frozen tissue to provide maximum depth and accuracy in proteomics analysis. Post-translational modifications (PTMs) are also effectively preserved."
+    },
+    {
+      "title": "Diverse Tissue Types",
+      "description": "Consistent high-quality results from all tissue types including brain, liver, kidney, heart, and muscle. Tissue-specific protocols ensure optimized protein extraction."
+    },
+    {
+      "title": "Quantitative Comparative Analysis",
+      "description": "Normal vs. disease tissue, pre-/post-treatment comparisons, tissue heterogeneity studies. Accurately compare multiple samples simultaneously with TMT multiplexing."
+    }
+  ]
+}

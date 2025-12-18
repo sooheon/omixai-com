@@ -1,0 +1,114 @@
+---
+import '../styles/global.css';
+import Layout from '../components/Layout.astro';
+import { getTranslations } from '../i18n/utils';
+
+const t = getTranslations('ko');
+---
+
+<Layout lang="ko" title={`${t.contact.title} - 오믹스AI`} currentPage="contact" lightHeader={true}>
+	<!-- Hero Section -->
+	<section class="bg-[#74b3ce]/20 py-10">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+				{t.contact.title}
+			</h1>
+			<p class="text-lg text-gray-700">
+				{t.contact.subtitle}
+			</p>
+		</div>
+	</section>
+
+	<!-- Content Section -->
+	<section class="py-12 bg-white">
+		<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+				<!-- Contact Information -->
+				<div class="space-y-8">
+					<!-- Email -->
+					<div class="flex items-start gap-4">
+						<div class="flex-shrink-0 w-12 h-12 bg-[#09bc8a]/10 rounded-lg flex items-center justify-center">
+							<svg class="w-6 h-6 text-[#09bc8a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+							</svg>
+						</div>
+						<div>
+							<h3 class="font-semibold text-gray-900 mb-1">{t.contact.email.label}</h3>
+							<a href={`mailto:${t.contact.email.value}`} class="text-[#09bc8a] hover:underline">
+								{t.contact.email.value}
+							</a>
+						</div>
+					</div>
+
+					<!-- Phone -->
+					<div class="flex items-start gap-4">
+						<div class="flex-shrink-0 w-12 h-12 bg-[#09bc8a]/10 rounded-lg flex items-center justify-center">
+							<svg class="w-6 h-6 text-[#09bc8a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+							</svg>
+						</div>
+						<div>
+							<h3 class="font-semibold text-gray-900 mb-1">{t.contact.phone.label}</h3>
+							<a href={`tel:${t.contact.phone.value}`} class="text-gray-700 hover:text-[#09bc8a]">
+								{t.contact.phone.value}
+							</a>
+						</div>
+					</div>
+
+					<!-- KakaoTalk -->
+					<div class="flex items-start gap-4">
+						<div class="flex-shrink-0 w-12 h-12 bg-[#09bc8a]/10 rounded-lg flex items-center justify-center">
+							<svg class="w-6 h-6 text-[#09bc8a]" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M12 3c5.799 0 10.5 3.664 10.5 8.185 0 4.52-4.701 8.184-10.5 8.184a13.5 13.5 0 01-1.727-.11l-4.408 2.883c-.501.265-.678.236-.472-.413l.892-3.678c-2.88-1.46-4.785-3.99-4.785-6.866C1.5 6.665 6.201 3 12 3zm5.907 8.06l1.47-1.424a.472.472 0 00-.656-.678l-1.928 1.866V9.282a.472.472 0 00-.944 0v2.557a.471.471 0 000 .222V13.5a.472.472 0 00.944 0v-1.363l.427-.413 1.428 2.033a.472.472 0 10.773-.543l-1.514-2.155zm-2.958 1.924h-1.46V9.297a.472.472 0 00-.943 0v4.159c0 .26.211.472.471.472h1.932a.472.472 0 000-.944zm-5.857-1.092l.696-1.707.638 1.707H9.092zm2.523.488l.002-.016a.469.469 0 00-.127-.32l-1.046-2.8a.69.69 0 00-.627-.474.696.696 0 00-.653.447l-1.661 4.075a.472.472 0 00.874.357l.33-.813h2.07l.299.8a.472.472 0 10.884-.33l-.345-.926zM8.293 9.302a.472.472 0 00-.471-.472H4.577a.472.472 0 100 .943h1.16v3.736a.472.472 0 00.944 0V9.773h1.14a.472.472 0 00.472-.471z"/>
+							</svg>
+						</div>
+						<div>
+							<h3 class="font-semibold text-gray-900 mb-1">{t.contact.kakao.label}</h3>
+							<p class="text-gray-700">{t.contact.kakao.value}</p>
+						</div>
+					</div>
+
+					<!-- Address -->
+					<div class="flex items-start gap-4">
+						<div class="flex-shrink-0 w-12 h-12 bg-[#09bc8a]/10 rounded-lg flex items-center justify-center">
+							<svg class="w-6 h-6 text-[#09bc8a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							</svg>
+						</div>
+						<div>
+							<h3 class="font-semibold text-gray-900 mb-1">{t.contact.address.label}</h3>
+							<p class="text-gray-700">{t.contact.address.value}</p>
+							<p class="text-gray-700">{t.contact.address.detail}</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Map -->
+				<div>
+					<h3 class="font-semibold text-gray-900 mb-4">{t.contact.map.title}</h3>
+					<div class="rounded-lg overflow-hidden shadow-lg h-96">
+						<iframe
+							src="https://maps.google.com/maps?q=43+Janghan-ro,Dongdaemun-gu,Seoul,Korea&t=&z=17&ie=UTF8&iwloc=&output=embed"
+							width="100%"
+							height="100%"
+							style="border:0;"
+							allowfullscreen=""
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"
+						></iframe>
+					</div>
+					<div class="flex gap-4 mt-3 text-sm">
+						<a href="https://map.naver.com/v5/search/서울특별시 동대문구 장한로 43" target="_blank" rel="noopener noreferrer" class="text-[#09bc8a] hover:underline">
+							네이버 지도에서 보기 →
+						</a>
+						<a href="https://map.kakao.com/?q=서울특별시 동대문구 장한로 43" target="_blank" rel="noopener noreferrer" class="text-[#09bc8a] hover:underline">
+							카카오맵에서 보기 →
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

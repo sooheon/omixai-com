@@ -1,9 +1,14 @@
 @import "tailwindcss";
 
 /* Dense Technical Design - Reduced base sizes and tighter spacing */
+html {
+  background-color: #e6f0f5;
+}
+
 body {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.5;
+  background-color: #fafaf8;
 }
 
 h1 {

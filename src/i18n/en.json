@@ -7,7 +7,8 @@
     "resources": "Resources",
     "about": "About Us",
     "contact": "Contact",
-    "cta": "Contact Us"
+    "cta": "Contact Us",
+    "orderNow": "Order Now"
   },
   "hero": {
     "title": "Decoding the True Language of Life",
@@ -19,20 +20,44 @@
     "title": "Our Services",
     "items": [
       {
-        "icon": "🧬",
-        "title": "Proteomics"
+        "icon": "🧫",
+        "title": "Cell Lines",
+        "slug": "cell-lines"
       },
       {
         "icon": "🔬",
-        "title": "Multi-Omics"
+        "title": "Organoid",
+        "slug": "organoid"
       },
       {
-        "icon": "📊",
-        "title": "Biomarkers"
+        "icon": "🧪",
+        "title": "FFPE",
+        "slug": "ffpe"
       },
       {
-        "icon": "🤖",
-        "title": "AI x BI"
+        "icon": "❄️",
+        "title": "Frozen Tissue",
+        "slug": "frozen-tissue"
+      },
+      {
+        "icon": "💉",
+        "title": "Plasma",
+        "slug": "plasma"
+      },
+      {
+        "icon": "🩸",
+        "title": "Serum",
+        "slug": "serum"
+      },
+      {
+        "icon": "🧠",
+        "title": "CSF",
+        "slug": "csf"
+      },
+      {
+        "icon": "🧬",
+        "title": "Conditioned Media",
+        "slug": "conditioned-media"
       }
     ]
   },
@@ -66,13 +91,13 @@
       },
       {
         "number": "2",
-        "title": "AI Analysis",
-        "description": "We analyze your samples with advanced AI models"
+        "title": "Mass Spectrometry",
+        "description": "We analyze your samples with Orbitrap Astral"
       },
       {
         "number": "3",
-        "title": "Get Insights",
-        "description": "Receive actionable biological insights"
+        "title": "Insight Analysis",
+        "description": "Receive publication-ready results with AI-powered bioinformatics"
       }
     ]
   },
@@ -216,6 +241,39 @@
           "2007 ~ 2010     Hong Kong Shanghai Development Zone Venture Investment"
         ]
       }
-    ]
+    ],
+    "investors": {
+      "title": "Investors",
+      "list": [
+        {
+          "name": "SM Sino",
+          "logo": "/smsino.png"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us",
+    "email": {
+      "label": "Email",
+      "value": "omixai@omixai.com"
+    },
+    "phone": {
+      "label": "Phone",
+      "value": "+82-2-1234-5678"
+    },
+    "kakao": {
+      "label": "KakaoTalk",
+      "value": "@omixai"
+    },
+    "address": {
+      "label": "Seoul Headquarters",
+      "value": "5F Gwangseong Building, 43 Janghan-ro",
+      "detail": "Dongdaemun-gu, Seoul, 02629, South Korea"
+    },
+    "map": {
+      "title": "Location"
+    }
   }
 }

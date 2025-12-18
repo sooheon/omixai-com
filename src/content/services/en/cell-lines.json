@@ -1,0 +1,20 @@
+{
+  "slug": "cell-lines",
+  "title": "Cell Lines",
+  "subtitle": "Cell Line Proteomics Analysis",
+  "description": "Deep proteomics analysis of cell line samples to accurately characterize cell signaling, metabolic pathways, and protein expression profiles. Identify 8,000-12,000 proteins with Orbitrap Astral to accelerate cell biology research.",
+  "features": [
+    {
+      "title": "Broad Cell Line Support",
+      "description": "Consistent and reproducible results from diverse cell lines including mammalian, insect, and yeast cells. Optimized for common lines like HEK293, CHO, and HeLa."
+    },
+    {
+      "title": "High Sensitivity Detection",
+      "description": "Capture low-abundance regulatory proteins and transcription factors for a complete picture of cellular signaling networks. Achieve deep coverage from 1-5 million cells."
+    },
+    {
+      "title": "Comparative Analysis",
+      "description": "Treatment/control comparisons, time-course studies, and genetic manipulation effects analysis. Support robust statistical analysis with LFQ or TMT quantification."
+    }
+  ]
+}

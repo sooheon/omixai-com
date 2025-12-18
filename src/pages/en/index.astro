@@ -1,239 +1,81 @@
 ---
 import '../../styles/global.css';
+import Layout from '../../components/Layout.astro';
 import { getTranslations } from '../../i18n/utils';
 
 const t = getTranslations('en');
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/png" href="/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-		<title>{t.meta.title}</title>
-		<style>
-			body {
-				font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-				font-weight: 400;
-			}
-			h1, h2, h3, h4, h5, h6 {
-				font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-				font-weight: 700;
-				letter-spacing: -0.025em;
-			}
-			a[class*="px-"], button[class*="px-"] {
-				font-weight: 600;
-				letter-spacing: -0.01em;
-			}
-			#header img {
-				transition: height 0.3s ease-in-out, filter 0.3s ease-in-out;
-			}
-			#header nav {
-				transition: padding 0.3s ease-in-out;
-			}
-			#header a, #header button {
-				transition: color 0.3s ease-in-out;
-			}
-		</style>
-	</head>
-	<body>
-		<!-- Header -->
-		<header id="header" class="bg-[#172a3a]">
-			<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-				<!-- Mobile Header -->
-				<div class="flex md:hidden items-center justify-between">
-					<a href="/en" class="flex items-center"><img src="/bwlogo.png" alt="OmixAI" class="h-9 invert" /></a>
-					<button id="mobile-menu-button" class="text-gray-300 hover:text-[#09bc8a]" aria-label="Toggle menu">
-						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-						</svg>
-					</button>
+<Layout lang="en" title={t.meta.title} currentPage="home" lightHeader={false}>
+	<!-- Hero Section -->
+	<section class="bg-[#172a3a] py-10">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+				<div>
+					<h1 class="text-3xl md:text-4xl font-bold text-[#faf9f6] mb-3">
+						{t.hero.title}
+					</h1>
+					<p class="text-lg text-[#f5f5f0] mb-6">
+						{t.hero.subtitle}
+					</p>
+					<a href="/en/contact" class="inline-block bg-[#09bc8a] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#004346]">
+						{t.hero.cta}
+					</a>
 				</div>
-
-				<!-- Desktop Header -->
-				<div class="hidden md:grid grid-cols-3 items-center">
-					<a href="/" class="flex items-center"><img src="/bwlogo.png" alt="OmixAI" class="h-10 invert" /></a>
-
-					<div class="flex items-center justify-center gap-6">
-						<div class="relative group">
-							<button class="text-gray-300 hover:text-[#09bc8a] flex items-center gap-1 cursor-pointer">
-								{t.nav.services}
-								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-								</svg>
-							</button>
-							<div class="absolute left-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-								<div class="bg-[#fafaf8] rounded-lg shadow-lg">
-									<div class="py-2">
-										<a href="/en/services/proteomics" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-											Proteomics
-										</a>
-										<a href="/en/services/multi-omics" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-											Multi-Omics
-										</a>
-										<a href="/en/services/biomarkers" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-											Biomarkers
-										</a>
-										<a href="/en/services/ai-bi" class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-											AI x BI
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<a href="/en/resources" class="text-gray-300 hover:text-[#09bc8a]">{t.nav.resources}</a>
-						<a href="/en/about" class="text-gray-300 hover:text-[#09bc8a]">{t.nav.about}</a>
-					</div>
-
-					<div class="flex items-center justify-end gap-6">
-						<div class="flex items-center gap-1 text-sm">
-							<a href="/" class="text-gray-400 hover:text-[#09bc8a]">한</a>
-							<span class="text-gray-600">/</span>
-							<span class="text-[#09bc8a] font-semibold">EN</span>
-						</div>
-						<div class="flex items-center gap-3">
-							<a href="http://210.92.36.12:11331" target="_blank" rel="noopener noreferrer" class="bg-[#508991] text-white px-6 py-2 rounded-full hover:bg-[#004346]">
-								Demo
-							</a>
-							<a href="mailto:omixai@omixai.com" class="bg-[#09bc8a] text-white px-6 py-2 rounded-full hover:bg-[#004346]">
-								{t.nav.cta}
-							</a>
-						</div>
-					</div>
+				<div class="flex items-center justify-center">
+					<img src="/41467_2024_51274_Fig1_HTML.png" alt="OmixAI Platform" class="rounded-lg shadow-2xl w-full" />
 				</div>
+			</div>
+		</div>
+	</section>
 
-				<!-- Mobile Menu -->
-				<div id="mobile-menu" class="hidden md:hidden mt-4">
-					<div class="flex flex-col space-y-4">
-						<div>
-							<button id="mobile-services-button" class="w-full text-left flex items-center justify-between text-gray-300">
-								<span>{t.nav.services}</span>
-								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-								</svg>
-							</button>
-							<div id="mobile-services-dropdown" class="hidden mt-2 ml-4 space-y-2">
-								<a href="/en/services/proteomics" class="block text-gray-300 hover:text-[#09bc8a]">Proteomics</a>
-								<a href="/en/services/multi-omics" class="block text-gray-300 hover:text-[#09bc8a]">Multi-Omics</a>
-								<a href="/en/services/biomarkers" class="block text-gray-300 hover:text-[#09bc8a]">Biomarkers</a>
-								<a href="/en/services/ai-bi" class="block text-gray-300 hover:text-[#09bc8a]">AI x BI</a>
-							</div>
-						</div>
-						<a href="/en/resources" class="text-gray-300 hover:text-[#09bc8a]">{t.nav.resources}</a>
-						<a href="/en/about" class="text-gray-300 hover:text-[#09bc8a]">{t.nav.about}</a>
-						<div class="border-t border-gray-600 pt-4">
-							<div class="flex items-center gap-2 mb-4">
-								<a href="/" class="text-gray-400 hover:text-[#09bc8a]">한</a>
-								<span class="text-gray-600">/</span>
-								<span class="text-[#09bc8a] font-semibold">EN</span>
-							</div>
-							<div class="flex flex-col gap-3">
-								<a href="http://210.92.36.12:11331" target="_blank" rel="noopener noreferrer" class="bg-[#508991] text-white px-6 py-2 rounded-full hover:bg-[#004346] text-center">Demo</a>
-								<a href="mailto:omixai@omixai.com" class="bg-[#09bc8a] text-white px-6 py-2 rounded-full hover:bg-[#004346] text-center">{t.nav.cta}</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</nav>
-		</header>
+	<!-- Services -->
+	<section id="services" class="py-10 bg-[#fafaf8]">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex flex-wrap justify-center gap-16">
+				{t.services.items.map((service) => (
+					<a href={`/en/services/${service.slug}`} class="text-center hover:scale-105 transition-transform">
+						<h3 class="text-base font-semibold text-gray-700 mb-3">{service.title}</h3>
+						<div class="text-5xl grayscale opacity-70 hover:opacity-100 transition-opacity">{service.icon}</div>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
 
-		<script>
-			const mobileMenuButton = document.getElementById('mobile-menu-button');
-			const mobileMenu = document.getElementById('mobile-menu');
-			const mobileServicesButton = document.getElementById('mobile-services-button');
-			const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
-
-			mobileMenuButton?.addEventListener('click', () => {
-				mobileMenu?.classList.toggle('hidden');
-			});
-
-			mobileServicesButton?.addEventListener('click', () => {
-				mobileServicesDropdown?.classList.toggle('hidden');
-			});
-		</script>
-
-		<!-- Hero Section -->
-		<section class="bg-[#172a3a] py-10">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-					<div>
-						<h1 class="text-3xl md:text-4xl font-bold text-[#faf9f6] mb-3">
-							{t.hero.title}
-						</h1>
-						<p class="text-lg text-[#f5f5f0] mb-6">
-							{t.hero.subtitle}
+	<!-- Testimonials -->
+	<section class="py-12 bg-[#74b3ce]/20">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-2xl font-bold text-center mb-6">{t.testimonials.title}</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				{t.testimonials.items.map((testimonial) => (
+					<div class="bg-[#fafaf8] p-6 rounded-lg shadow">
+						<p class="text-gray-700 mb-4 italic">
+							"{testimonial.quote}"
 						</p>
-						<a href="mailto:omixai@omixai.com" class="inline-block bg-[#09bc8a] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#004346]">
-							{t.hero.cta}
-						</a>
+						<p class="font-semibold">{testimonial.author}</p>
+						<p class="text-sm text-gray-500">{testimonial.institution}</p>
 					</div>
-					<div class="flex items-center justify-center">
-						<img src="/41467_2024_51274_Fig1_HTML.png" alt="OmixAI Platform" class="rounded-lg shadow-2xl w-full" />
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- How It Works -->
+	<section id="how-it-works" class="py-12 bg-[#fafaf8]">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-2xl font-bold text-center mb-6">{t.howItWorks.title}</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				{t.howItWorks.steps.map((step) => (
+					<div class="text-center">
+						<div class="bg-[#74b3ce]/30 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+							<span class="text-2xl font-bold text-[#004346]">{step.number}</span>
+						</div>
+						<h3 class="text-lg font-bold mb-2">{step.title}</h3>
+						<p class="text-gray-600">{step.description}</p>
 					</div>
-				</div>
+				))}
 			</div>
-		</section>
-
-		<!-- Services -->
-		<section id="services" class="py-10 bg-[#fafaf8]">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="flex flex-wrap justify-center gap-16">
-					{t.services.items.map((service) => (
-						<a href={`/en/services/${service.icon === '🧬' ? 'proteomics' : service.icon === '🔬' ? 'multi-omics' : service.icon === '📊' ? 'biomarkers' : 'ai-bi'}`} class="text-center hover:scale-105 transition-transform">
-							<h3 class="text-base font-semibold text-gray-700 mb-3">{service.title}</h3>
-							<div class="text-5xl grayscale opacity-70 hover:opacity-100 transition-opacity">{service.icon}</div>
-						</a>
-					))}
-				</div>
-			</div>
-		</section>
-
-		<!-- Testimonials -->
-		<section class="py-12 bg-[#74b3ce]/20">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<h2 class="text-2xl font-bold text-center mb-6">{t.testimonials.title}</h2>
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-					{t.testimonials.items.map((testimonial) => (
-						<div class="bg-[#fafaf8] p-6 rounded-lg shadow">
-							<p class="text-gray-700 mb-4 italic">
-								"{testimonial.quote}"
-							</p>
-							<p class="font-semibold">{testimonial.author}</p>
-							<p class="text-sm text-gray-500">{testimonial.institution}</p>
-						</div>
-					))}
-				</div>
-			</div>
-		</section>
-
-		<!-- How It Works -->
-		<section id="how-it-works" class="py-12 bg-[#fafaf8]">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<h2 class="text-2xl font-bold text-center mb-6">{t.howItWorks.title}</h2>
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-					{t.howItWorks.steps.map((step) => (
-						<div class="text-center">
-							<div class="bg-[#74b3ce]/30 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-								<span class="text-2xl font-bold text-[#004346]">{step.number}</span>
-							</div>
-							<h3 class="text-lg font-bold mb-2">{step.title}</h3>
-							<p class="text-gray-600">{step.description}</p>
-						</div>
-					))}
-				</div>
-			</div>
-		</section>
-
-		<!-- Footer -->
-		<footer class="bg-gray-900 text-white py-12">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-				<img src="/bwlogo.png" alt="OmixAI" class="h-10 mx-auto mb-4 invert" />
-				<p class="text-gray-400">{t.footer.tagline}</p>
-			</div>
-		</footer>
-	</body>
-</html>
+		</div>
+	</section>
+</Layout>

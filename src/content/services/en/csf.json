@@ -1,0 +1,20 @@
+{
+  "slug": "csf",
+  "title": "CSF",
+  "subtitle": "Cerebrospinal Fluid Proteomics Analysis",
+  "description": "Discover and quantify neurological biomarkers in cerebrospinal fluid (CSF) samples. Provide specialized analysis for neurodegenerative diseases and central nervous system disorders including Alzheimer's, Parkinson's, and multiple sclerosis.",
+  "features": [
+    {
+      "title": "Neurological Biomarkers",
+      "description": "Detect brain-specific proteins, neuroinflammation markers, and neurodegeneration indicators in CSF. Maximize the value of rare and precious CSF samples."
+    },
+    {
+      "title": "Low Sample Volume",
+      "description": "Deep proteomics analysis possible from limited CSF samples of 10-50μL. Extract maximum information with highly sensitive workflows."
+    },
+    {
+      "title": "Disease Diagnosis Support",
+      "description": "Early diagnosis of neurodegenerative diseases, disease stage classification, and treatment response monitoring. Improve diagnostic accuracy by integrating with existing clinical markers."
+    }
+  ]
+}

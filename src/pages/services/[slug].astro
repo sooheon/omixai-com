@@ -54,8 +54,8 @@ const { service } = Astro.props;
 				</div>
 
 				<div class="mt-12 text-center">
-					<a href="mailto:omixai@omixai.com" class="inline-block bg-[#09bc8a] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#004346]">
-						{t.nav.cta}
+					<a href={`mailto:omixai@omixai.com?subject=[${encodeURIComponent(service.title)}] 문의`} class="inline-block bg-[#09bc8a] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#004346]">
+						{t.nav.orderNow}
 					</a>
 				</div>
 		</div>

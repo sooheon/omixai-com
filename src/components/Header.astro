@@ -3,7 +3,7 @@ import { getTranslations } from '../i18n/utils';
 
 interface Props {
 	lang: 'en' | 'ko';
-	currentPage?: 'home' | 'services' | 'resources' | 'about';
+	currentPage?: 'home' | 'services' | 'resources' | 'about' | 'contact';
 	serviceSlug?: string;
 	lightHeader?: boolean;
 }
@@ -14,11 +14,12 @@ const t = getTranslations(lang);
 const homeUrl = lang === 'en' ? '/en' : '/';
 const resourcesUrl = lang === 'en' ? '/en/resources' : '/resources';
 const aboutUrl = lang === 'en' ? '/en/about' : '/about';
+const contactUrl = lang === 'en' ? '/en/contact' : '/contact';
 const serviceUrlPrefix = lang === 'en' ? '/en/services' : '/services';
 
 const otherLangUrl = lang === 'en'
-	? (serviceSlug ? `/services/${serviceSlug}` : currentPage === 'resources' ? '/resources' : currentPage === 'about' ? '/about' : '/')
-	: (serviceSlug ? `/en/services/${serviceSlug}` : currentPage === 'resources' ? '/en/resources' : currentPage === 'about' ? '/en/about' : '/en');
+	? (serviceSlug ? `/services/${serviceSlug}` : currentPage === 'resources' ? '/resources' : currentPage === 'about' ? '/about' : currentPage === 'contact' ? '/contact' : '/')
+	: (serviceSlug ? `/en/services/${serviceSlug}` : currentPage === 'resources' ? '/en/resources' : currentPage === 'about' ? '/en/about' : currentPage === 'contact' ? '/en/contact' : '/en');
 
 // Color classes based on light/dark header
 const headerBg = lightHeader ? 'bg-[#74b3ce]/20' : 'bg-[#172a3a]';
@@ -29,7 +30,7 @@ const borderColor = lightHeader ? 'border-gray-300' : 'border-gray-600';
 const logoFilter = lightHeader ? '' : 'invert';
 ---
 
-<header id="header" class={headerBg}>
+<header id="header" class={`${headerBg}`}>
 	<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
 		<!-- Mobile Header -->
 		<div class="flex md:hidden items-center justify-between">
@@ -56,24 +57,18 @@ const logoFilter = lightHeader ? '' : 'invert';
 					<div class="absolute left-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
 						<div class="bg-[#fafaf8] rounded-lg shadow-lg">
 							<div class="py-2">
-								<a href={`${serviceUrlPrefix}/proteomics`} class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-									{lang === 'en' ? 'Proteomics' : '프로테오믹스'}
-								</a>
-								<a href={`${serviceUrlPrefix}/multi-omics`} class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-									{lang === 'en' ? 'Multi-Omics' : '멀티오믹스'}
-								</a>
-								<a href={`${serviceUrlPrefix}/biomarkers`} class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-									{lang === 'en' ? 'Biomarkers' : '바이오마커'}
-								</a>
-								<a href={`${serviceUrlPrefix}/ai-bi`} class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
-									AI x BI
-								</a>
+								{t.services.items.map((service) => (
+									<a href={`${serviceUrlPrefix}/${service.slug}`} class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
+										{service.title}
+									</a>
+								))}
 							</div>
 						</div>
 					</div>
 				</div>
 				<a href={resourcesUrl} class={currentPage === 'resources' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.resources}</a>
 				<a href={aboutUrl} class={currentPage === 'about' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.about}</a>
+				<a href={contactUrl} class={currentPage === 'contact' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.contact}</a>
 			</div>
 
 			<div class="flex items-center justify-end gap-6">
@@ -92,14 +87,12 @@ const logoFilter = lightHeader ? '' : 'invert';
 						</>
 					)}
 				</div>
-				<div class="flex items-center gap-3">
-					<a href="http://210.92.36.12:11331" target="_blank" rel="noopener noreferrer" class="bg-[#508991] text-white px-6 py-2 rounded-full hover:bg-[#004346]">
-						Demo
-					</a>
-					<a href="mailto:omixai@omixai.com" class="bg-[#09bc8a] text-white px-6 py-2 rounded-full hover:bg-[#004346]">
-						{t.nav.cta}
-					</a>
-				</div>
+				<a href="http://210.92.36.12:11331" target="_blank" rel="noopener noreferrer" class="bg-[#508991] text-white px-6 py-2 rounded-full hover:bg-[#004346] flex items-center gap-2">
+					Demo
+					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+					</svg>
+				</a>
 			</div>
 		</div>
 
@@ -115,23 +108,17 @@ const logoFilter = lightHeader ? '' : 'invert';
 						</svg>
 					</button>
 					<div id="mobile-services-dropdown" class="hidden mt-2 ml-4 space-y-2">
-						<a href={`${serviceUrlPrefix}/proteomics`} class={`block ${textColor} ${textHover}`}>
-							{lang === 'en' ? 'Proteomics' : '프로테오믹스'}
-						</a>
-						<a href={`${serviceUrlPrefix}/multi-omics`} class={`block ${textColor} ${textHover}`}>
-							{lang === 'en' ? 'Multi-Omics' : '멀티오믹스'}
-						</a>
-						<a href={`${serviceUrlPrefix}/biomarkers`} class={`block ${textColor} ${textHover}`}>
-							{lang === 'en' ? 'Biomarkers' : '바이오마커'}
-						</a>
-						<a href={`${serviceUrlPrefix}/ai-bi`} class={`block ${textColor} ${textHover}`}>
-							AI x BI
-						</a>
+						{t.services.items.map((service) => (
+							<a href={`${serviceUrlPrefix}/${service.slug}`} class={`block ${textColor} ${textHover}`}>
+								{service.title}
+							</a>
+						))}
 					</div>
 				</div>
 
 				<a href={resourcesUrl} class={currentPage === 'resources' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.resources}</a>
 				<a href={aboutUrl} class={currentPage === 'about' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.about}</a>
+				<a href={contactUrl} class={currentPage === 'contact' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.contact}</a>
 
 				<div class={`border-t ${borderColor} pt-4`}>
 					<div class="flex items-center gap-2 mb-4">
@@ -149,14 +136,12 @@ const logoFilter = lightHeader ? '' : 'invert';
 							</>
 						)}
 					</div>
-					<div class="flex flex-col gap-3">
-						<a href="http://210.92.36.12:11331" target="_blank" rel="noopener noreferrer" class="bg-[#508991] text-white px-6 py-2 rounded-full hover:bg-[#004346] text-center">
-							Demo
-						</a>
-						<a href="mailto:omixai@omixai.com" class="bg-[#09bc8a] text-white px-6 py-2 rounded-full hover:bg-[#004346] text-center">
-							{t.nav.cta}
-						</a>
-					</div>
+					<a href="http://210.92.36.12:11331" target="_blank" rel="noopener noreferrer" class="bg-[#508991] text-white px-6 py-2 rounded-full hover:bg-[#004346] flex items-center justify-center gap-2">
+						Demo
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+						</svg>
+					</a>
 				</div>
 			</div>
 		</div>

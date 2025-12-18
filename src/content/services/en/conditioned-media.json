@@ -1,0 +1,20 @@
+{
+  "slug": "conditioned-media",
+  "title": "Conditioned Media",
+  "subtitle": "Conditioned Media Proteomics Analysis",
+  "description": "Analyze secreted proteins and exosome proteomes in cell culture supernatants (conditioned media). Provide specialized proteomics solutions for cell-cell signaling, tumor microenvironment, and extracellular vesicle research.",
+  "features": [
+    {
+      "title": "Secretome Profiling",
+      "description": "Comprehensively identify proteins, growth factors, and cytokines secreted by cells. Understand cell-cell communication and microenvironment interactions."
+    },
+    {
+      "title": "Exosome Proteomics",
+      "description": "Analyze protein cargo within extracellular vesicles (exosomes, microvesicles). Apply to disease mechanisms, biomarker discovery, and therapeutic target identification."
+    },
+    {
+      "title": "Therapeutics Development Support",
+      "description": "Monitor recombinant protein production, cell therapy quality control, and biopharmaceutical development. Support culture condition optimization and product characterization."
+    }
+  ]
+}
