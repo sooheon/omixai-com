@@ -675,6 +675,7 @@ content:
     label: Korean Services
     type: collection
     path: src/content/services/ko
+    filename: "{slug}"
     format: json
     fields:
       - name: slug
@@ -714,6 +715,7 @@ content:
     label: English Services
     type: collection
     path: src/content/services/en
+    filename: "{slug}"
     format: json
     fields:
       - name: slug
