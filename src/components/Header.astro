@@ -24,7 +24,7 @@ const otherLangUrl = lang === 'en'
 	: (serviceSlug ? `/services/${serviceSlug}` : currentPage === 'resources' ? '/resources' : currentPage === 'about' ? '/about' : currentPage === 'contact' ? '/contact' : '/');
 
 // Color classes based on light/dark header
-const headerBg = lightHeader ? 'bg-[#e3eff5]' : 'bg-[#172a3a]';
+const headerBg = lightHeader ? 'bg-[#e3eff5]/90 backdrop-blur-sm' : 'bg-[#172a3a]';
 const textColor = lightHeader ? 'text-gray-700' : 'text-gray-300';
 const textHover = lightHeader ? 'hover:text-[#09bc8a]' : 'hover:text-[#09bc8a]';
 const textInactive = lightHeader ? 'text-gray-500' : 'text-gray-400';
