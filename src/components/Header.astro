@@ -32,7 +32,7 @@ const borderColor = lightHeader ? 'border-gray-300' : 'border-gray-600';
 const logoFilter = lightHeader ? '' : 'invert';
 ---
 
-<header id="header" class={`${headerBg}`}>
+<header id="header" class={`${headerBg} fixed top-0 left-0 right-0 z-50`}>
 	<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
 		<!-- Mobile Header -->
 		<div class="flex md:hidden items-center justify-between">
@@ -68,7 +68,26 @@ const logoFilter = lightHeader ? '' : 'invert';
 						</div>
 					</div>
 				</div>
-				<a href={resourcesUrl} class={currentPage === 'resources' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.resources}</a>
+				<div class="relative group">
+					<button class={`flex items-center gap-1 cursor-pointer ${currentPage === 'resources' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}`}>
+						{t.nav.resources}
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</button>
+					<div class="absolute left-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+						<div class="bg-[#fafaf8] rounded-lg shadow-lg">
+							<div class="py-2">
+								<a href={`${resourcesUrl}#faq`} class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
+									{lang === 'en' ? 'FAQ' : 'FAQ'}
+								</a>
+								<a href={`${resourcesUrl}#technical`} class="block px-4 py-2 text-gray-800 hover:bg-[#f9f9f6] hover:text-[#09bc8a]">
+									{lang === 'en' ? 'Technical Docs' : '기술 문서'}
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 				<a href={aboutUrl} class={currentPage === 'about' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.about}</a>
 				<a href={contactUrl} class={currentPage === 'contact' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.contact}</a>
 			</div>
@@ -118,7 +137,24 @@ const logoFilter = lightHeader ? '' : 'invert';
 					</div>
 				</div>
 
-				<a href={resourcesUrl} class={currentPage === 'resources' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.resources}</a>
+				<!-- Resources Dropdown -->
+				<div>
+					<button id="mobile-resources-button" class={`w-full text-left flex items-center justify-between ${currentPage === 'resources' ? 'text-[#09bc8a] font-semibold' : textColor}`}>
+						<span>{t.nav.resources}</span>
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</button>
+					<div id="mobile-resources-dropdown" class="hidden mt-2 ml-4 space-y-2">
+						<a href={`${resourcesUrl}#faq`} class={`block ${textColor} ${textHover}`}>
+							{lang === 'en' ? 'FAQ' : 'FAQ'}
+						</a>
+						<a href={`${resourcesUrl}#technical`} class={`block ${textColor} ${textHover}`}>
+							{lang === 'en' ? 'Technical Docs' : '기술 문서'}
+						</a>
+					</div>
+				</div>
+
 				<a href={aboutUrl} class={currentPage === 'about' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.about}</a>
 				<a href={contactUrl} class={currentPage === 'contact' ? 'text-[#09bc8a] font-semibold' : `${textColor} ${textHover}`}>{t.nav.contact}</a>
 
@@ -156,6 +192,8 @@ const logoFilter = lightHeader ? '' : 'invert';
 	const mobileMenu = document.getElementById('mobile-menu');
 	const mobileServicesButton = document.getElementById('mobile-services-button');
 	const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
+	const mobileResourcesButton = document.getElementById('mobile-resources-button');
+	const mobileResourcesDropdown = document.getElementById('mobile-resources-dropdown');
 
 	mobileMenuButton?.addEventListener('click', () => {
 		mobileMenu?.classList.toggle('hidden');
@@ -163,5 +201,9 @@ const logoFilter = lightHeader ? '' : 'invert';
 
 	mobileServicesButton?.addEventListener('click', () => {
 		mobileServicesDropdown?.classList.toggle('hidden');
+	});
+
+	mobileResourcesButton?.addEventListener('click', () => {
+		mobileResourcesDropdown?.classList.toggle('hidden');
 	});
 </script>
