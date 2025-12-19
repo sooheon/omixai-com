@@ -1,0 +1,32 @@
+{
+  "slug": "serum",
+  "title": { "ko": "혈청", "en": "Serum" },
+  "subtitle": { "ko": "혈청 프로테오믹스 분석", "en": "Serum Proteomics Analysis" },
+  "description": {
+    "ko": "혈청 샘플에서 순환 바이오마커와 분비 단백질을 분석합니다. 질병 바이오마커 발견, 면역 반응 모니터링, 치료 효능 평가를 위한 신뢰할 수 있는 프로테오믹스 솔루션을 제공합니다.",
+    "en": "Analyze circulating biomarkers and secreted proteins in serum samples. Provide reliable proteomics solutions for disease biomarker discovery, immune response monitoring, and therapeutic efficacy evaluation."
+  },
+  "features": [
+    {
+      "title": { "ko": "바이오마커 프로파일링", "en": "Biomarker Profiling" },
+      "description": {
+        "ko": "암, 심혈관 질환, 대사 질환 등의 질병 특이적 바이오마커를 식별합니다. 수천 개의 혈청 단백질을 정확하게 정량화합니다.",
+        "en": "Identify disease-specific biomarkers for cancer, cardiovascular diseases, metabolic disorders, and more. Accurately quantify thousands of serum proteins."
+      }
+    },
+    {
+      "title": { "ko": "면역 단백질 분석", "en": "Immune Protein Analysis" },
+      "description": {
+        "ko": "항체, 사이토카인, 보체 단백질 등 면역 관련 단백질을 포괄적으로 분석합니다. 염증 반응과 면역 상태를 평가합니다.",
+        "en": "Comprehensively analyze immune-related proteins including antibodies, cytokines, and complement proteins. Assess inflammatory responses and immune status."
+      }
+    },
+    {
+      "title": { "ko": "대규모 코호트 연구", "en": "Large Cohort Studies" },
+      "description": {
+        "ko": "표준화된 워크플로우로 수백 개의 혈청 샘플을 일관되게 처리합니다. 역학 연구와 임상 시험을 위한 확장 가능한 솔루션입니다.",
+        "en": "Consistently process hundreds of serum samples with standardized workflows. Scalable solution for epidemiological studies and clinical trials."
+      }
+    }
+  ]
+}

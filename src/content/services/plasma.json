@@ -1,0 +1,32 @@
+{
+  "slug": "plasma",
+  "title": { "ko": "플라즈마", "en": "Plasma" },
+  "subtitle": { "ko": "혈장 프로테오믹스 분석", "en": "Plasma Proteomics Analysis" },
+  "description": {
+    "ko": "혈장 샘플에서 순환 단백질 바이오마커를 발견하고 정량화합니다. 질병 진단, 예후 예측, 치료 모니터링을 위한 비침습적 프로테오믹스 접근법을 제공합니다.",
+    "en": "Discover and quantify circulating protein biomarkers in plasma samples. Provide non-invasive proteomics approaches for disease diagnosis, prognosis prediction, and treatment monitoring."
+  },
+  "features": [
+    {
+      "title": { "ko": "고감도 바이오마커 발견", "en": "High-Sensitivity Biomarker Discovery" },
+      "description": {
+        "ko": "혈장 프로테옴의 넓은 동적 범위에서 저농도 바이오마커를 검출합니다. 고농도 단백질 제거 및 농축 기술로 희귀 단백질에 접근합니다.",
+        "en": "Detect low-abundance biomarkers across the broad dynamic range of the plasma proteome. Access rare proteins through high-abundance protein depletion and enrichment techniques."
+      }
+    },
+    {
+      "title": { "ko": "임상 응용 최적화", "en": "Clinical Application Optimized" },
+      "description": {
+        "ko": "질병 스크리닝, 조기 진단, 치료 반응 모니터링을 위한 검증된 워크플로우. 소량 샘플(10-50μL)로 포괄적인 분석이 가능합니다.",
+        "en": "Validated workflows for disease screening, early diagnosis, and treatment response monitoring. Comprehensive analysis possible from small sample volumes (10-50μL)."
+      }
+    },
+    {
+      "title": { "ko": "종단 연구 지원", "en": "Longitudinal Study Support" },
+      "description": {
+        "ko": "시간 경과에 따른 단백질 변화 추적으로 질병 진행, 치료 효과, 재발 모니터링. 일관된 정량화로 신뢰할 수 있는 종단 비교를 제공합니다.",
+        "en": "Track protein changes over time for disease progression, treatment efficacy, and recurrence monitoring. Provide reliable longitudinal comparisons with consistent quantification."
+      }
+    }
+  ]
+}

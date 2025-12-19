@@ -1,0 +1,32 @@
+{
+  "slug": "conditioned-media",
+  "title": { "ko": "세포 배양액", "en": "Conditioned Media" },
+  "subtitle": { "ko": "세포 배양액 프로테오믹스 분석", "en": "Conditioned Media Proteomics Analysis" },
+  "description": {
+    "ko": "세포 배양 상층액(conditioned media)에서 분비 단백질과 엑소좀 프로테옴을 분석합니다. 세포 간 신호전달, 종양 미세환경, 세포 외 소포체 연구를 위한 전문 프로테오믹스 솔루션을 제공합니다.",
+    "en": "Analyze secreted proteins and exosome proteomes in cell culture supernatants (conditioned media). Provide specialized proteomics solutions for cell-cell signaling, tumor microenvironment, and extracellular vesicle research."
+  },
+  "features": [
+    {
+      "title": { "ko": "분비체 프로파일링", "en": "Secretome Profiling" },
+      "description": {
+        "ko": "세포가 분비하는 단백질, 성장 인자, 사이토카인을 포괄적으로 식별합니다. 세포 간 커뮤니케이션과 미세환경 상호작용을 이해합니다.",
+        "en": "Comprehensively identify proteins, growth factors, and cytokines secreted by cells. Understand cell-cell communication and microenvironment interactions."
+      }
+    },
+    {
+      "title": { "ko": "엑소좀 프로테오믹스", "en": "Exosome Proteomics" },
+      "description": {
+        "ko": "세포 외 소포체(exosome, microvesicle) 내 단백질 화물을 분석합니다. 질병 메커니즘, 바이오마커 발견, 치료 타겟 식별에 활용합니다.",
+        "en": "Analyze protein cargo within extracellular vesicles (exosomes, microvesicles). Apply to disease mechanisms, biomarker discovery, and therapeutic target identification."
+      }
+    },
+    {
+      "title": { "ko": "치료제 개발 지원", "en": "Therapeutics Development Support" },
+      "description": {
+        "ko": "재조합 단백질 생산 모니터링, 세포 치료제 품질 관리, 바이오의약품 개발. 배양 조건 최적화와 제품 특성화를 지원합니다.",
+        "en": "Monitor recombinant protein production, cell therapy quality control, and biopharmaceutical development. Support culture condition optimization and product characterization."
+      }
+    }
+  ]
+}

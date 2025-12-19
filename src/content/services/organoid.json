@@ -1,0 +1,32 @@
+{
+  "slug": "organoid",
+  "title": { "ko": "오가노이드", "en": "Organoid" },
+  "subtitle": { "ko": "오가노이드 프로테오믹스 분석", "en": "Organoid Proteomics Analysis" },
+  "description": {
+    "ko": "3D 오가노이드 배양에서 조직 특이적 단백질 발현과 세포 상호작용을 연구합니다. 정밀 의학, 질병 모델링, 약물 스크리닝 연구에 최적화된 프로테오믹스 워크플로우를 제공합니다.",
+    "en": "Study tissue-specific protein expression and cellular interactions in 3D organoid cultures. Optimized proteomics workflows for precision medicine, disease modeling, and drug screening research."
+  },
+  "features": [
+    {
+      "title": { "ko": "조직 특이적 프로파일링", "en": "Tissue-Specific Profiling" },
+      "description": {
+        "ko": "뇌, 간, 장 등 다양한 오가노이드 유형의 복잡한 단백질 네트워크를 분석합니다. 조직 특이적 마커와 분화 상태를 정확하게 특성화합니다.",
+        "en": "Analyze complex protein networks from diverse organoid types including brain, liver, and intestinal organoids. Accurately characterize tissue-specific markers and differentiation states."
+      }
+    },
+    {
+      "title": { "ko": "소량 샘플 처리", "en": "Low Sample Input" },
+      "description": {
+        "ko": "제한된 오가노이드 샘플에서도 포괄적인 프로테오믹스 데이터를 생성합니다. 10-20mg의 오가노이드 조직으로 심층 분석이 가능합니다.",
+        "en": "Generate comprehensive proteomics data from limited organoid samples. Deep analysis possible from 10-20mg of organoid tissue."
+      }
+    },
+    {
+      "title": { "ko": "약물 반응 분석", "en": "Drug Response Analysis" },
+      "description": {
+        "ko": "약물 처리 전후의 단백질 변화를 정량화하여 작용 메커니즘과 내성 경로를 밝힙니다. 개인 맞춤형 치료 전략 개발을 지원합니다.",
+        "en": "Quantify protein changes before and after drug treatment to reveal mechanisms of action and resistance pathways. Support personalized therapy strategy development."
+      }
+    }
+  ]
+}
