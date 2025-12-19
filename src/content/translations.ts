@@ -122,18 +122,9 @@ export function getTranslations(lang: Language) {
     },
     contact: {
       title: contact.title[lang],
-      subtitle: contact.subtitle[lang],
       email: {
         label: contact.email.label[lang],
         value: contact.email.value,
-      },
-      phone: {
-        label: contact.phone.label[lang],
-        value: contact.phone.value,
-      },
-      kakao: {
-        label: contact.kakao.label[lang],
-        value: contact.kakao.value,
       },
       address: {
         label: contact.address.label[lang],

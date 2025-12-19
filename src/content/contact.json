@@ -1,17 +1,8 @@
 {
   "title": { "ko": "문의", "en": "Contact" },
-  "subtitle": { "ko": "언제든지 연락 주세요", "en": "Get in touch with us" },
   "email": {
     "label": { "ko": "이메일", "en": "Email" },
     "value": "omixai@omixai.com"
-  },
-  "phone": {
-    "label": { "ko": "전화", "en": "Phone" },
-    "value": "+82-2-1234-5678"
-  },
-  "kakao": {
-    "label": { "ko": "카카오톡", "en": "KakaoTalk" },
-    "value": "@omixai"
   },
   "address": {
     "label": { "ko": "서울 본사", "en": "Seoul Headquarters" },
