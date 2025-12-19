@@ -448,6 +448,11 @@ content:
     type: collection
     path: src/content/services
     format: json
+    filename: '{slug}.json'
+    exclude: [.DS_Store]
+    view:
+      primary: slug
+      fields: [slug, title]
     fields:
       - { name: slug, label: URL Slug, type: string, required: true }
       - name: title
