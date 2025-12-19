@@ -1,0 +1,205 @@
+# PagesCMS Configuration for OmixAI Website
+# https://pagescms.org/docs/configuration
+
+media:
+  input: public
+  output: /
+
+content:
+  # Korean Site Content
+  - name: korean-content
+    label: Korean Site Content
+    type: file
+    path: src/content/ko.json
+    format: json
+    fields:
+      - name: meta
+        label: Meta Information
+        type: object
+        fields:
+          - name: title
+            label: Site Title
+            type: string
+
+      - name: nav
+        label: Navigation
+        type: object
+        fields:
+          - name: services
+            label: Services
+            type: string
+          - name: resources
+            label: Resources
+            type: string
+          - name: about
+            label: About Us
+            type: string
+          - name: contact
+            label: Contact
+            type: string
+          - name: cta
+            label: CTA Button
+            type: string
+          - name: orderNow
+            label: Order Now Button
+            type: string
+
+      - name: hero
+        label: Hero Section
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: subtitle
+            label: Subtitle
+            type: text
+          - name: cta
+            label: CTA Text
+            type: string
+
+      - name: footer
+        label: Footer
+        type: object
+        fields:
+          - name: tagline
+            label: Tagline
+            type: string
+
+  # English Site Content
+  - name: english-content
+    label: English Site Content
+    type: file
+    path: src/content/en.json
+    format: json
+    fields:
+      - name: meta
+        label: Meta Information
+        type: object
+        fields:
+          - name: title
+            label: Site Title
+            type: string
+
+      - name: nav
+        label: Navigation
+        type: object
+        fields:
+          - name: services
+            label: Services
+            type: string
+          - name: resources
+            label: Resources
+            type: string
+          - name: about
+            label: About Us
+            type: string
+          - name: contact
+            label: Contact
+            type: string
+          - name: cta
+            label: CTA Button
+            type: string
+          - name: orderNow
+            label: Order Now Button
+            type: string
+
+      - name: hero
+        label: Hero Section
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: subtitle
+            label: Subtitle
+            type: text
+          - name: cta
+            label: CTA Text
+            type: string
+
+      - name: footer
+        label: Footer
+        type: object
+        fields:
+          - name: tagline
+            label: Tagline
+            type: string
+
+  # Korean Service Pages
+  - name: korean-services
+    label: Korean Services
+    type: collection
+    path: src/content/services/ko
+    format: json
+    fields:
+      - name: slug
+        label: URL Slug
+        type: string
+        required: true
+      - name: title
+        label: Service Title
+        type: string
+        required: true
+      - name: subtitle
+        label: Subtitle
+        type: text
+      - name: description
+        label: Description
+        type: text
+      - name: features
+        label: Features
+        type: list
+        fields:
+          - name: icon
+            label: Icon
+            type: string
+          - name: title
+            label: Feature Title
+            type: string
+          - name: description
+            label: Feature Description
+            type: text
+    view:
+      fields: [title, slug]
+      sort: [title]
+
+  # English Service Pages
+  - name: english-services
+    label: English Services
+    type: collection
+    path: src/content/services/en
+    format: json
+    fields:
+      - name: slug
+        label: URL Slug
+        type: string
+        required: true
+      - name: title
+        label: Service Title
+        type: string
+        required: true
+      - name: subtitle
+        label: Subtitle
+        type: text
+      - name: description
+        label: Description
+        type: text
+      - name: features
+        label: Features
+        type: list
+        fields:
+          - name: icon
+            label: Icon
+            type: string
+          - name: title
+            label: Feature Title
+            type: string
+          - name: description
+            label: Feature Description
+            type: text
+    view:
+      fields: [title, slug]
+      sort: [title]

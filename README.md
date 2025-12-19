@@ -4,7 +4,8 @@ A modern, bilingual website for OmixAI - an AI-powered omics analysis service co
 
 ## 📚 Documentation
 
-- **[CONTENT.md](./CONTENT.md)** - **For content editors**: Complete guide to updating website content (text, images, team info, FAQ, etc.) without coding knowledge
+- **[CONTENT.md](./CONTENT.md)** - **For content editors**: Complete guide to updating website content (text, images, team info, FAQ, etc.) by editing JSON files
+- **[CMS_SETUP.md](./CMS_SETUP.md)** - **CMS option**: Set up PagesCMS for visual content editing (alternative to manual JSON editing)
 - **[CLAUDE.md](./CLAUDE.md)** - **For developers**: Technical documentation on code structure, architecture, and development guidelines
 
 ## 🌐 Live Site
