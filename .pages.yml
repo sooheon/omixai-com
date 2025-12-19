@@ -464,7 +464,6 @@ content:
     label: Services
     type: collection
     path: src/content/services
-    filename: "{slug}.json"
     format: json
     fields:
       - { name: slug, label: URL Slug, type: string, required: true }
