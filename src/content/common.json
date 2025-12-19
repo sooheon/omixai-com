@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": {
+      "ko": "오믹스AI - AI 기반 오믹스 분석",
+      "en": "OmixAI - AI-Powered Omics Analysis"
+    }
+  },
+  "nav": {
+    "services": { "ko": "서비스", "en": "Services" },
+    "resources": { "ko": "자료실", "en": "Resources" },
+    "about": { "ko": "회사 소개", "en": "About Us" },
+    "contact": { "ko": "문의", "en": "Contact" },
+    "cta": { "ko": "문의하기", "en": "Contact Us" },
+    "orderNow": { "ko": "주문하기", "en": "Order Now" }
+  },
+  "footer": {
+    "tagline": { "ko": "빠르고, 편향 없는, 전체 프로테오믹스", "en": "Fast, Unbiased, Whole Proteomics" }
+  }
+}

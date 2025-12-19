@@ -1,0 +1,137 @@
+{
+  "title": { "ko": "회사 소개", "en": "About Us" },
+  "subtitle": { "ko": "경영진", "en": "Leadership Team" },
+  "team": [
+    {
+      "name": { "ko": "신동명", "en": "Dongmyeong Shin, Ph.D." },
+      "title": "CEO",
+      "photo": "/photos/shindongmyeong.jpg",
+      "education": {
+        "ko": ["2018 ~ 2022     서울대학교 Electrical and Computer Engineering Ph. D"],
+        "en": ["2018 ~ 2022     Seoul National University, Electrical and Computer Engineering, Ph.D."]
+      },
+      "experience": {
+        "ko": [
+          "2025 ~ 현재     주식회사 오믹스에이아이 대표이사",
+          "2024 ~ 2025     주식회사 래디센 대표이사",
+          "2021 ~ 2024     주식회사 래디센 CTO"
+        ],
+        "en": [
+          "2025 ~ Present     OmixAI Co., Ltd., CEO",
+          "2024 ~ 2025     Radisen Co., Ltd., CEO",
+          "2021 ~ 2024     Radisen Co., Ltd., CTO"
+        ]
+      }
+    },
+    {
+      "name": { "ko": "박종배", "en": "Jong-Bae Park, Ph.D." },
+      "title": "CTO",
+      "photo": "/photos/parkjongbae.png",
+      "education": {
+        "ko": ["2002 ~ 2006     Havard Medical School, 박사후 연구원"],
+        "en": ["2002 ~ 2006     Harvard Medical School, Postdoctoral Fellow"]
+      },
+      "experience": {
+        "ko": [
+          "2025 ~ 현재     주식회사 오믹스에이아이 CTO",
+          "2025 ~ 현재     경희대학교 의과대학 정교수",
+          "2024 ~ 현재     한국단백유전체 사무총장, 대한암학회 이사",
+          "2019 ~ 2023     산학협력단 단장",
+          "2018 ~ 2021     암단백유전체 연구사업단 단장",
+          "2018 ~ 현재     암정복 추진 기획단 위원",
+          "2017 ~ 2021     국제암대학원대학교 대학원장",
+          "2014 ~ 현재     국립암센터 국제암대학원대학 교수",
+          "2006 ~ 2014     국립암센터 특수암연구과 책임연구원"
+        ],
+        "en": [
+          "2025 ~ Present     OmixAI Co., Ltd., CTO",
+          "2025 ~ Present     Kyung Hee University College of Medicine, Full Professor",
+          "2024 ~ Present     Secretary General, Korean Proteome Society; Board Member, Korean Cancer Association",
+          "2019 ~ 2023     Director, Industry-Academic Cooperation Foundation",
+          "2018 ~ 2021     Director, Cancer Proteomics Research Center",
+          "2018 ~ Present     Member, Cancer Control Planning Committee",
+          "2017 ~ 2021     Graduate School Dean, National Cancer Center Graduate School of Cancer Science and Policy",
+          "2014 ~ Present     Professor, National Cancer Center Graduate School of Cancer Science and Policy",
+          "2006 ~ 2014     Principal Investigator, Rare Cancer Research Branch, National Cancer Center"
+        ]
+      }
+    },
+    {
+      "name": { "ko": "김진택", "en": "Jin-Taek Kim" },
+      "title": "COO",
+      "photo": "/photos/kimjintaek.png",
+      "education": {
+        "ko": ["1995 ~ 1998     국민대 법대 대학원 (상법전공)"],
+        "en": ["1995 ~ 1998     Kookmin University Graduate School of Law (Commercial Law)"]
+      },
+      "experience": {
+        "ko": [
+          "2025 ~ 현재     주식회사 오믹스에이아이 COO",
+          "2019 ~ 현재     주식회사 에이프릴바이오 CIO",
+          "2024 ~ 2025     주식회사 래디센 COO",
+          "2023 ~ 2024     주식회사 새롬한방제약 대표",
+          "2018 ~ 2019     주식회사 까스텔바쟉 이사",
+          "2011 ~ 2018     패션그룹형지(주) 기획조정실 이사"
+        ],
+        "en": [
+          "2025 ~ Present     OmixAI Co., Ltd., COO",
+          "2019 ~ Present     April Bio Co., Ltd., CIO",
+          "2024 ~ 2025     Radisen Co., Ltd., COO",
+          "2023 ~ 2024     Saerom Oriental Pharmaceutical, CEO",
+          "2018 ~ 2019     Castelbajac, Director",
+          "2011 ~ 2018     Fashion Group Hyungji Co., Ltd., Planning & Coordination Office Director"
+        ]
+      }
+    },
+    {
+      "name": { "ko": "박기백", "en": "Ki-Baek Park" },
+      "title": "CFO",
+      "photo": "/photos/parkkibaek.jpg",
+      "education": {
+        "ko": ["2003 ~ 2007     상해복단대학교 (법학 학사)"],
+        "en": ["2003 ~ 2007     Fudan University Shanghai (Law)"]
+      },
+      "experience": {
+        "ko": [
+          "2025 ~ 현재     주식회사 오믹스에이아이 CFO",
+          "2024 ~ 2025     주식회사 래디센 CFO",
+          "2020 ~ 2024     주식회사 온코크로스 사업개발 이사",
+          "2018 ~ 2020     주식회사 온코크로스 CFO",
+          "2019 ~ 2021     에스엠비나 기획팀장",
+          "2016 ~ 2018     에스엠시노 기술투자",
+          "2014 ~ 2017     글로벌브릿지 컨설팅 이사",
+          "2010 ~ 2013     홍콩글로메드 그룹 이사",
+          "2007 ~ 2010     홍콩 상해조하경개발구 벤처투자"
+        ],
+        "en": [
+          "2025 ~ Present     OmixAI Co., Ltd., CFO",
+          "2024 ~ 2025     Radisen Co., Ltd., CFO",
+          "2020 ~ 2024     ONCOcross Co., Ltd., Business Development Director",
+          "2018 ~ 2020     ONCOcross Co., Ltd., CFO",
+          "2019 ~ 2021     SMBina, Planning Team Leader",
+          "2016 ~ 2018     SM Sino, Technology Investment",
+          "2014 ~ 2017     Global Bridge Consulting, Director",
+          "2010 ~ 2013     Hong Kong Glo-Med Group, Director",
+          "2007 ~ 2010     Hong Kong Shanghai Development Zone Venture Investment"
+        ]
+      }
+    }
+  ],
+  "investors": {
+    "title": { "ko": "투자자", "en": "Investors" },
+    "list": [{ "name": "SM Sino", "logo": "/smsino.png" }]
+  },
+  "timeline": {
+    "title": { "ko": "연혁", "en": "Timeline" },
+    "milestones": [
+      { "date": { "ko": "2024. 1", "en": "Jan 2024" }, "event": { "ko": "대한민국 제 1호 Astral 수입⋅설치", "en": "First Astral mass spectrometer imported and installed in South Korea" } },
+      { "date": { "ko": "2024. 6", "en": "Jun 2024" }, "event": { "ko": "주식회사 판테라 설립", "en": "Pantera Inc. founded" } },
+      { "date": { "ko": "2024. 6", "en": "Jun 2024" }, "event": { "ko": "단백체 분석 첫 매출", "en": "First proteomics analysis revenue" } },
+      { "date": { "ko": "2025. 6", "en": "Jun 2025" }, "event": { "ko": "DIA Proteomics 전처리 자동화 도입", "en": "Automated DIA proteomics sample preparation introduced" } },
+      { "date": { "ko": "2025. 10", "en": "Oct 2025" }, "event": { "ko": "Radisen AI 인수", "en": "Acquired Radisen AI" } },
+      { "date": { "ko": "2025. 10", "en": "Oct 2025" }, "event": { "ko": "단백체 분석 서비스 누적 매출 6억", "en": "Cumulative proteomics service revenue reached ₩600M" } },
+      { "date": { "ko": "2025. 11", "en": "Nov 2025" }, "event": { "ko": "LLM 분석 플랫폼 개발 도입", "en": "LLM-powered analysis platform launched" } },
+      { "date": { "ko": "2025. 12", "en": "Dec 2025" }, "event": { "ko": "온코크로스와 서비스 용역 계약 체결", "en": "Service contract signed with OncoCross" } }
+    ]
+  }
+}

@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { getTranslations } from '../content/translations';
+import logo from '../../public/bwlogo.png';
 
 interface Props {
 	lang: 'en' | 'ko';
@@ -16,7 +18,7 @@ const homeUrl = lang === 'en' ? '/en' : '/';
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 			<!-- Company Info -->
 			<div>
-				<a href={homeUrl}><img src="/bwlogo.png" alt="OmixAI" class="h-8 mb-3 invert" /></a>
+				<a href={homeUrl}><Image src={logo} alt="OmixAI" class="h-8 w-auto mb-3 invert" /></a>
 				<p class="text-gray-400 text-sm mb-2">{lang === 'en' ? 'CEO: Dongmyeong Shin, Ph.D.' : '대표이사: 신동명'}</p>
 				<p class="text-gray-400 text-sm">{t.footer.tagline}</p>
 			</div>

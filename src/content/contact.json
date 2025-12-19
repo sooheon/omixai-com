@@ -1,0 +1,24 @@
+{
+  "title": { "ko": "문의하기", "en": "Contact Us" },
+  "subtitle": { "ko": "언제든지 연락 주세요", "en": "Get in touch with us" },
+  "email": {
+    "label": { "ko": "이메일", "en": "Email" },
+    "value": "omixai@omixai.com"
+  },
+  "phone": {
+    "label": { "ko": "전화", "en": "Phone" },
+    "value": "+82-2-1234-5678"
+  },
+  "kakao": {
+    "label": { "ko": "카카오톡", "en": "KakaoTalk" },
+    "value": "@omixai"
+  },
+  "address": {
+    "label": { "ko": "서울 본사", "en": "Seoul Headquarters" },
+    "value": { "ko": "서울특별시 동대문구 장한로 43", "en": "5F Gwangseong Building, 43 Janghan-ro" },
+    "detail": { "ko": "광성빌딩 5층, 02629", "en": "Dongdaemun-gu, Seoul, 02629, South Korea" }
+  },
+  "map": {
+    "title": { "ko": "찾아오시는 길", "en": "Location" }
+  }
+}
