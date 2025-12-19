@@ -2,7 +2,7 @@
   "kpis": {
     "items": [
       {
-        "value": "10,000",
+        "value": "10,000+",
         "label": {
           "ko": "정량 단백질 수",
           "en": "# Proteins Quantified"
