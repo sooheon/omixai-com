@@ -36,7 +36,7 @@ const logoFilter = lightHeader ? '' : 'invert';
 	<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
 		<!-- Mobile Header -->
 		<div class="flex md:hidden items-center justify-between">
-			<a href={homeUrl} class="flex items-center"><Image src={logo} alt="OmixAI" class={`h-9 w-auto ${logoFilter}`} /></a>
+			<a href={homeUrl} class="flex items-center"><Image src={logo} alt="OmixAI" format="png" class={`h-9 w-auto ${logoFilter}`} /></a>
 			<button id="mobile-menu-button" class={`${textColor} ${textHover}`} aria-label="Toggle menu">
 				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -46,7 +46,7 @@ const logoFilter = lightHeader ? '' : 'invert';
 
 		<!-- Desktop Header -->
 		<div class="hidden md:grid grid-cols-3 items-center">
-			<a href={homeUrl} class="flex items-center"><Image src={logo} alt="OmixAI" class={`h-10 w-auto ${logoFilter}`} /></a>
+			<a href={homeUrl} class="flex items-center"><Image src={logo} alt="OmixAI" format="png" class={`h-10 w-auto ${logoFilter}`} /></a>
 
 			<div class="flex items-center justify-center gap-6">
 				<div class="relative group">
