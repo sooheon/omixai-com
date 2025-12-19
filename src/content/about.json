@@ -1,14 +1,27 @@
 {
-  "title": { "ko": "회사 소개", "en": "About Us" },
-  "subtitle": { "ko": "경영진", "en": "Leadership Team" },
+  "title": {
+    "ko": "회사 소개",
+    "en": "About Us"
+  },
+  "subtitle": {
+    "ko": "경영진",
+    "en": "Leadership Team"
+  },
   "team": [
     {
-      "name": { "ko": "신동명", "en": "Dongmyeong Shin, Ph.D." },
+      "name": {
+        "ko": "신동명",
+        "en": "Dongmyeong Shin, Ph.D."
+      },
       "title": "CEO",
       "photo": "/photos/shindongmyeong.jpg",
       "education": {
-        "ko": ["2018 ~ 2022     서울대학교 Electrical and Computer Engineering Ph. D"],
-        "en": ["2018 ~ 2022     Seoul National University, Electrical and Computer Engineering, Ph.D."]
+        "ko": [
+          "2018 ~ 2022     서울대학교 Electrical and Computer Engineering Ph. D"
+        ],
+        "en": [
+          "2018 ~ 2022     Seoul National University, Electrical and Computer Engineering, Ph.D."
+        ]
       },
       "experience": {
         "ko": [
@@ -24,12 +37,19 @@
       }
     },
     {
-      "name": { "ko": "박종배", "en": "Jong-Bae Park, Ph.D." },
+      "name": {
+        "ko": "박종배",
+        "en": "Jong-Bae Park, Ph.D."
+      },
       "title": "CTO",
       "photo": "/photos/parkjongbae.png",
       "education": {
-        "ko": ["2002 ~ 2006     Havard Medical School, 박사후 연구원"],
-        "en": ["2002 ~ 2006     Harvard Medical School, Postdoctoral Fellow"]
+        "ko": [
+          "2002 ~ 2006     Havard Medical School, 박사후 연구원"
+        ],
+        "en": [
+          "2002 ~ 2006     Harvard Medical School, Postdoctoral Fellow"
+        ]
       },
       "experience": {
         "ko": [
@@ -57,19 +77,24 @@
       }
     },
     {
-      "name": { "ko": "김진택", "en": "Jin-Taek Kim" },
+      "name": {
+        "ko": "김진택",
+        "en": "Jin-Taek Kim"
+      },
       "title": "COO",
       "photo": "/photos/kimjintaek.png",
       "education": {
-        "ko": ["1995 ~ 1998     국민대 법대 대학원 (상법전공)"],
-        "en": ["1995 ~ 1998     Kookmin University Graduate School of Law (Commercial Law)"]
+        "ko": [
+          "1995 ~ 1998     국민대 법대 대학원 (상법전공)"
+        ],
+        "en": [
+          "1995 ~ 1998     Kookmin University Graduate School of Law (Commercial Law)"
+        ]
       },
       "experience": {
         "ko": [
           "2025 ~ 현재     주식회사 오믹스에이아이 COO",
           "2019 ~ 현재     주식회사 에이프릴바이오 CIO",
-          "2024 ~ 2025     주식회사 래디센 COO",
-          "2023 ~ 2024     주식회사 새롬한방제약 대표",
           "2018 ~ 2019     주식회사 까스텔바쟉 이사",
           "2011 ~ 2018     패션그룹형지(주) 기획조정실 이사"
         ],
@@ -84,12 +109,19 @@
       }
     },
     {
-      "name": { "ko": "박기백", "en": "Ki-Baek Park" },
+      "name": {
+        "ko": "박기백",
+        "en": "Ki-Baek Park"
+      },
       "title": "CFO",
       "photo": "/photos/parkkibaek.jpg",
       "education": {
-        "ko": ["2003 ~ 2007     상해복단대학교 (법학 학사)"],
-        "en": ["2003 ~ 2007     Fudan University Shanghai (Law)"]
+        "ko": [
+          "2003 ~ 2007     상해복단대학교 (법학 학사)"
+        ],
+        "en": [
+          "2003 ~ 2007     Fudan University Shanghai (Law)"
+        ]
       },
       "experience": {
         "ko": [
@@ -118,20 +150,103 @@
     }
   ],
   "investors": {
-    "title": { "ko": "투자자", "en": "Investors" },
-    "list": [{ "name": "SM Sino", "logo": "/smsino.png" }]
+    "title": {
+      "ko": "투자자",
+      "en": "Investors"
+    },
+    "list": [
+      {
+        "name": "SM Sino",
+        "logo": "/smsino.png"
+      }
+    ]
   },
   "timeline": {
-    "title": { "ko": "연혁", "en": "Timeline" },
+    "title": {
+      "ko": "연혁",
+      "en": "Timeline"
+    },
     "milestones": [
-      { "date": { "ko": "2024. 1", "en": "Jan 2024" }, "event": { "ko": "대한민국 제 1호 Astral 수입⋅설치", "en": "First Astral mass spectrometer imported and installed in South Korea" } },
-      { "date": { "ko": "2024. 6", "en": "Jun 2024" }, "event": { "ko": "주식회사 판테라 설립", "en": "Pantera Inc. founded" } },
-      { "date": { "ko": "2024. 6", "en": "Jun 2024" }, "event": { "ko": "단백체 분석 첫 매출", "en": "First proteomics analysis revenue" } },
-      { "date": { "ko": "2025. 6", "en": "Jun 2025" }, "event": { "ko": "DIA Proteomics 전처리 자동화 도입", "en": "Automated DIA proteomics sample preparation introduced" } },
-      { "date": { "ko": "2025. 10", "en": "Oct 2025" }, "event": { "ko": "Radisen AI 인수", "en": "Acquired Radisen AI" } },
-      { "date": { "ko": "2025. 10", "en": "Oct 2025" }, "event": { "ko": "단백체 분석 서비스 누적 매출 6억", "en": "Cumulative proteomics service revenue reached ₩600M" } },
-      { "date": { "ko": "2025. 11", "en": "Nov 2025" }, "event": { "ko": "LLM 분석 플랫폼 개발 도입", "en": "LLM-powered analysis platform launched" } },
-      { "date": { "ko": "2025. 12", "en": "Dec 2025" }, "event": { "ko": "온코크로스와 서비스 용역 계약 체결", "en": "Service contract signed with OncoCross" } }
+      {
+        "date": {
+          "ko": "2024. 1",
+          "en": "Jan 2024"
+        },
+        "event": {
+          "ko": "대한민국 제 1호 Astral 수입⋅설치",
+          "en": "First Astral mass spectrometer imported and installed in South Korea"
+        }
+      },
+      {
+        "date": {
+          "ko": "2024. 6",
+          "en": "Jun 2024"
+        },
+        "event": {
+          "ko": "주식회사 판테라 설립",
+          "en": "Pantera Inc. founded"
+        }
+      },
+      {
+        "date": {
+          "ko": "2024. 6",
+          "en": "Jun 2024"
+        },
+        "event": {
+          "ko": "단백체 분석 첫 매출",
+          "en": "First proteomics analysis revenue"
+        }
+      },
+      {
+        "date": {
+          "ko": "2025. 6",
+          "en": "Jun 2025"
+        },
+        "event": {
+          "ko": "DIA Proteomics 전처리 자동화 도입",
+          "en": "Automated DIA proteomics sample preparation introduced"
+        }
+      },
+      {
+        "date": {
+          "ko": "2025. 10",
+          "en": "Oct 2025"
+        },
+        "event": {
+          "ko": "Radisen AI 인수",
+          "en": "Acquired Radisen AI"
+        }
+      },
+      {
+        "date": {
+          "ko": "2025. 10",
+          "en": "Oct 2025"
+        },
+        "event": {
+          "ko": "단백체 분석 서비스 누적 매출 6억",
+          "en": "Cumulative proteomics service revenue reached ₩600M"
+        }
+      },
+      {
+        "date": {
+          "ko": "2025. 11",
+          "en": "Nov 2025"
+        },
+        "event": {
+          "ko": "LLM 분석 플랫폼 개발 도입",
+          "en": "LLM-powered analysis platform launched"
+        }
+      },
+      {
+        "date": {
+          "ko": "2025. 12",
+          "en": "Dec 2025"
+        },
+        "event": {
+          "ko": "온코크로스와 서비스 용역 계약 체결",
+          "en": "Service contract signed with OncoCross"
+        }
+      }
     ]
   }
 }
