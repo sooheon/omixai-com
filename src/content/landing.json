@@ -5,30 +5,95 @@
       "en": "Decoding the True Language of Life"
     },
     "subtitle": {
-      "ko": "생물학의 숨겨진 암호를 드러내는 빠르고 정확한 프로테오믹스—몇 달이 아닌 몇 주 만에 논문 출판 가능한 결과",
-      "en": "Fast, accurate proteomics revealing biology's hidden code—publication-ready results in weeks, not months"
+      "ko": "생물학의 숨겨진 암호를 드러내는 빠르고 정확한 프로테오믹스—몇 달이 아닌 2주 만에 논문 출판 가능한 결과",
+      "en": "Fast, accurate proteomics revealing biology's hidden code—publication-ready results in 2 weeks, not months"
     },
     "description": {
       "ko": "프로테오믹스, 지노믹스 및 멀티오믹스 통합을 위한 고급 AI 모델",
       "en": "Advanced AI models for proteomics, genomics, and multi-omics integration"
     },
-    "cta": { "ko": "문의하기", "en": "Contact Us" }
+    "cta": {
+      "ko": "문의하기",
+      "en": "Contact Us"
+    }
   },
   "services": {
-    "title": { "ko": "서비스", "en": "Our Services" },
+    "title": {
+      "ko": "서비스",
+      "en": "Our Services"
+    },
     "items": [
-      { "icon": "🧫", "title": { "ko": "세포주", "en": "Cell Lines" }, "slug": "cell-lines" },
-      { "icon": "🔬", "title": { "ko": "오가노이드", "en": "Organoid" }, "slug": "organoid" },
-      { "icon": "🧪", "title": { "ko": "FFPE", "en": "FFPE" }, "slug": "ffpe" },
-      { "icon": "❄️", "title": { "ko": "동결 조직", "en": "Frozen Tissue" }, "slug": "frozen-tissue" },
-      { "icon": "💉", "title": { "ko": "플라즈마", "en": "Plasma" }, "slug": "plasma" },
-      { "icon": "🩸", "title": { "ko": "혈청", "en": "Serum" }, "slug": "serum" },
-      { "icon": "🧠", "title": { "ko": "뇌척수액", "en": "CSF" }, "slug": "csf" },
-      { "icon": "🧬", "title": { "ko": "세포 배양액", "en": "Conditioned Media" }, "slug": "conditioned-media" }
+      {
+        "icon": "🧫",
+        "title": {
+          "ko": "세포주",
+          "en": "Cell Lines"
+        },
+        "slug": "cell-lines"
+      },
+      {
+        "icon": "🔬",
+        "title": {
+          "ko": "오가노이드",
+          "en": "Organoid"
+        },
+        "slug": "organoid"
+      },
+      {
+        "icon": "🧪",
+        "title": {
+          "ko": "FFPE",
+          "en": "FFPE"
+        },
+        "slug": "ffpe"
+      },
+      {
+        "icon": "❄️",
+        "title": {
+          "ko": "동결 조직",
+          "en": "Frozen Tissue"
+        },
+        "slug": "frozen-tissue"
+      },
+      {
+        "icon": "💉",
+        "title": {
+          "ko": "플라즈마",
+          "en": "Plasma"
+        },
+        "slug": "plasma"
+      },
+      {
+        "icon": "🩸",
+        "title": {
+          "ko": "혈청",
+          "en": "Serum"
+        },
+        "slug": "serum"
+      },
+      {
+        "icon": "🧠",
+        "title": {
+          "ko": "뇌척수액",
+          "en": "CSF"
+        },
+        "slug": "csf"
+      },
+      {
+        "icon": "🧬",
+        "title": {
+          "ko": "세포 배양액",
+          "en": "Conditioned Media"
+        },
+        "slug": "conditioned-media"
+      }
     ]
   },
   "testimonials": {
-    "title": { "ko": "연구자들의 평가", "en": "What Researchers Say" },
+    "title": {
+      "ko": "연구자들의 평가",
+      "en": "What Researchers Say"
+    },
     "items": [
       {
         "quote": {
@@ -57,22 +122,43 @@
     ]
   },
   "howItWorks": {
-    "title": { "ko": "이용 방법", "en": "How It Works" },
+    "title": {
+      "ko": "이용 방법",
+      "en": "How It Works"
+    },
     "steps": [
       {
         "number": "1",
-        "title": { "ko": "샘플 전송", "en": "Send Samples" },
-        "description": { "ko": "분석을 위해 생물학적 샘플을 보내주세요", "en": "Send us your biological samples for analysis" }
+        "title": {
+          "ko": "샘플 전송",
+          "en": "Send Samples"
+        },
+        "description": {
+          "ko": "분석을 위해 생물학적 샘플을 보내주세요",
+          "en": "Send us your biological samples for analysis"
+        }
       },
       {
         "number": "2",
-        "title": { "ko": "질량 분석", "en": "Mass Spectrometry" },
-        "description": { "ko": "Orbitrap Astral로 샘플을 분석합니다", "en": "We analyze your samples with Orbitrap Astral" }
+        "title": {
+          "ko": "질량 분석",
+          "en": "Mass Spectrometry"
+        },
+        "description": {
+          "ko": "Orbitrap Astral로 샘플을 분석합니다",
+          "en": "We analyze your samples with Orbitrap Astral"
+        }
       },
       {
         "number": "3",
-        "title": { "ko": "인사이트 분석", "en": "Insight Analysis" },
-        "description": { "ko": "AI 기반 바이오인포매틱스로 논문 출판 가능한 결과를 받으세요", "en": "Receive publication-ready results with AI-powered bioinformatics" }
+        "title": {
+          "ko": "인사이트 분석",
+          "en": "Insight Analysis"
+        },
+        "description": {
+          "ko": "AI 기반 바이오인포매틱스로 논문 출판 가능한 결과를 받으세요",
+          "en": "Receive publication-ready results with AI-powered bioinformatics"
+        }
       }
     ]
   }
