@@ -71,7 +71,8 @@ content:
             type: string
           - name: items
             label: Service Items
-            type: list
+            type: object
+            list: true
             fields:
               - name: icon
                 label: Icon (Emoji)
@@ -92,7 +93,8 @@ content:
             type: string
           - name: items
             label: Testimonials
-            type: list
+            type: object
+            list: true
             fields:
               - name: quote
                 label: Quote
@@ -113,7 +115,8 @@ content:
             type: string
           - name: steps
             label: Steps
-            type: list
+            type: object
+            list: true
             fields:
               - name: number
                 label: Step Number
@@ -151,7 +154,8 @@ content:
                     type: string
                   - name: items
                     label: FAQ Items
-                    type: list
+                    type: object
+                    list: true
                     fields:
                       - name: question
                         label: Question
@@ -168,7 +172,8 @@ content:
                     type: string
                   - name: items
                     label: FAQ Items
-                    type: list
+                    type: object
+                    list: true
                     fields:
                       - name: question
                         label: Question
@@ -185,7 +190,8 @@ content:
                     type: string
                   - name: items
                     label: FAQ Items
-                    type: list
+                    type: object
+                    list: true
                     fields:
                       - name: question
                         label: Question
@@ -206,7 +212,8 @@ content:
             type: string
           - name: team
             label: Team Members
-            type: list
+            type: object
+            list: true
             fields:
               - name: name
                 label: Name
@@ -234,7 +241,8 @@ content:
                 type: string
               - name: list
                 label: Investor List
-                type: list
+                type: object
+                list: true
                 fields:
                   - name: name
                     label: Investor Name
@@ -251,7 +259,8 @@ content:
                 type: string
               - name: milestones
                 label: Milestones
-                type: list
+                type: object
+                list: true
                 fields:
                   - name: date
                     label: Date
@@ -394,7 +403,8 @@ content:
             type: string
           - name: items
             label: Service Items
-            type: list
+            type: object
+            list: true
             fields:
               - name: icon
                 label: Icon (Emoji)
@@ -415,7 +425,8 @@ content:
             type: string
           - name: items
             label: Testimonials
-            type: list
+            type: object
+            list: true
             fields:
               - name: quote
                 label: Quote
@@ -436,7 +447,8 @@ content:
             type: string
           - name: steps
             label: Steps
-            type: list
+            type: object
+            list: true
             fields:
               - name: number
                 label: Step Number
@@ -474,7 +486,8 @@ content:
                     type: string
                   - name: items
                     label: FAQ Items
-                    type: list
+                    type: object
+                    list: true
                     fields:
                       - name: question
                         label: Question
@@ -491,7 +504,8 @@ content:
                     type: string
                   - name: items
                     label: FAQ Items
-                    type: list
+                    type: object
+                    list: true
                     fields:
                       - name: question
                         label: Question
@@ -508,7 +522,8 @@ content:
                     type: string
                   - name: items
                     label: FAQ Items
-                    type: list
+                    type: object
+                    list: true
                     fields:
                       - name: question
                         label: Question
@@ -529,7 +544,8 @@ content:
             type: string
           - name: team
             label: Team Members
-            type: list
+            type: object
+            list: true
             fields:
               - name: name
                 label: Name
@@ -557,7 +573,8 @@ content:
                 type: string
               - name: list
                 label: Investor List
-                type: list
+                type: object
+                list: true
                 fields:
                   - name: name
                     label: Investor Name
@@ -574,7 +591,8 @@ content:
                 type: string
               - name: milestones
                 label: Milestones
-                type: list
+                type: object
+                list: true
                 fields:
                   - name: date
                     label: Date
@@ -675,7 +693,8 @@ content:
         type: text
       - name: features
         label: Features
-        type: list
+        type: object
+        list: true
         fields:
           - name: icon
             label: Icon
@@ -713,7 +732,8 @@ content:
         type: text
       - name: features
         label: Features
-        type: list
+        type: object
+        list: true
         fields:
           - name: icon
             label: Icon
