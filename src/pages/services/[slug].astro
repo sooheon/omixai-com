@@ -3,16 +3,12 @@ import '../../styles/global.css';
 import Layout from '../../components/Layout.astro';
 import { getTranslations } from '../../content/translations';
 
-const t = getTranslations('ko');
+const lang = 'ko';
+const t = getTranslations(lang);
 
 export async function getStaticPaths() {
-  const serviceFiles = import.meta.glob('../../content/services/ko/*.json');
-  const services = await Promise.all(
-    Object.entries(serviceFiles).map(async ([path, resolver]) => {
-      const service = await resolver();
-      return service;
-    })
-  );
+  const serviceFiles = import.meta.glob('../../content/services/*.json', { eager: true });
+  const services = Object.values(serviceFiles).map((mod: any) => mod.default || mod);
 
   return services.map((service) => ({
     params: { slug: service.slug },
@@ -23,16 +19,16 @@ export async function getStaticPaths() {
 const { service } = Astro.props;
 ---
 
-<Layout lang="ko" title={`${service.title} - 오믹스AI`} currentPage="services" serviceSlug={service.slug} lightHeader={true}>
+<Layout lang="ko" title={`${service.title[lang]} - 오믹스AI`} currentPage="services" serviceSlug={service.slug} lightHeader={true}>
 
 	<!-- Hero Section -->
 	<section class="bg-[#74b3ce]/20 py-10">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 				<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-					{service.title}
+					{service.title[lang]}
 				</h1>
 				<p class="text-lg text-gray-700">
-					{service.subtitle}
+					{service.subtitle[lang]}
 				</p>
 			</div>
 		</section>
@@ -41,20 +37,20 @@ const { service } = Astro.props;
 		<section class="py-12 bg-white">
 			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 				<p class="text-gray-700 mb-8 text-center">
-					{service.description}
+					{service.description[lang]}
 				</p>
 
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 					{service.features.map((feature) => (
 						<div class="text-center">
-							<h3 class="font-bold text-gray-900 mb-2">{feature.title}</h3>
-							<p class="text-gray-600 text-sm">{feature.description}</p>
+							<h3 class="font-bold text-gray-900 mb-2">{feature.title[lang]}</h3>
+							<p class="text-gray-600 text-sm">{feature.description[lang]}</p>
 						</div>
 					))}
 				</div>
 
 				<div class="mt-12 text-center">
-					<a href={`mailto:omixai@omixai.com?subject=[${encodeURIComponent(service.title)}] 문의`} class="inline-block bg-[#09bc8a] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#004346]">
+					<a href={`mailto:omixai@omixai.com?subject=[${encodeURIComponent(service.title[lang])}] 문의`} class="inline-block bg-[#09bc8a] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#004346]">
 						{t.nav.orderNow}
 					</a>
 				</div>
