@@ -43,6 +43,12 @@ export function getTranslations(lang: Language) {
       description: landing.hero.description[lang],
       cta: landing.hero.cta[lang],
     },
+    kpis: {
+      items: landing.kpis.items.map(item => ({
+        value: item.value,
+        label: item.label[lang],
+      })),
+    },
     services: {
       title: landing.services.title[lang],
       items: landing.services.items.map(item => ({

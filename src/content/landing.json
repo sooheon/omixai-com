@@ -1,4 +1,29 @@
 {
+  "kpis": {
+    "items": [
+      {
+        "value": "10,000",
+        "label": {
+          "ko": "정량 단백질 수",
+          "en": "# Proteins Quantified"
+        }
+      },
+      {
+        "value": "4~7%",
+        "label": {
+          "ko": "Evosep Eno CV",
+          "en": "CV with Evosep Eno"
+        }
+      },
+      {
+        "value": "80 SPD",
+        "label": {
+          "ko": "분석 그라디언트",
+          "en": "Analysis Gradient"
+        }
+      }
+    ]
+  },
   "hero": {
     "title": {
       "ko": "생명의 진정한 언어를 해독하다",

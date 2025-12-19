@@ -8,7 +8,7 @@
   "nav": {
     "services": { "ko": "서비스", "en": "Services" },
     "resources": { "ko": "자료실", "en": "Resources" },
-    "about": { "ko": "회사 소개", "en": "About Us" },
+    "about": { "ko": "회사 소개", "en": "About" },
     "contact": { "ko": "문의", "en": "Contact" },
     "cta": { "ko": "문의하기", "en": "Contact Us" },
     "orderNow": { "ko": "주문하기", "en": "Order Now" }
