@@ -250,6 +250,43 @@
           "logo": "/smsino.png"
         }
       ]
+    },
+    "timeline": {
+      "title": "연혁",
+      "milestones": [
+        {
+          "date": "2024. 1",
+          "event": "대한민국 제 1호 Astral 수입⋅설치"
+        },
+        {
+          "date": "2024. 6",
+          "event": "주식회사 판테라 설립"
+        },
+        {
+          "date": "2024. 6",
+          "event": "단백체 분석 첫 매출"
+        },
+        {
+          "date": "2025. 6",
+          "event": "DIA Proteomics 전처리 자동화 도입"
+        },
+        {
+          "date": "2025. 10",
+          "event": "Radisen AI 인수"
+        },
+        {
+          "date": "2025. 10",
+          "event": "단백체 분석 서비스 누적 매출 6억"
+        },
+        {
+          "date": "2025. 11",
+          "event": "LLM 분석 플랫폼 개발 도입"
+        },
+        {
+          "date": "2025. 12",
+          "event": "온코크로스와 서비스 용역 계약 체결"
+        }
+      ]
     }
   },
   "contact": {

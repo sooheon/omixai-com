@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import Layout from '../components/Layout.astro';
-import { getTranslations } from '../i18n/utils';
+import { getTranslations } from '../content/translations';
 
 const t = getTranslations('ko');
 ---
@@ -79,6 +79,71 @@ const t = getTranslations('ko');
 						</div>
 					))
 				)}
+			</div>
+		</div>
+	</section>
+
+	<!-- Timeline Section -->
+	<section class="py-10 bg-white">
+		<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-2xl font-bold text-gray-900 text-center mb-8">
+				{t.about.timeline.title}
+			</h2>
+
+			<div class="space-y-6">
+				<!-- 2025 -->
+				<div>
+					<h3 class="text-lg font-bold text-[#09bc8a] mb-3">2025</h3>
+					<ul class="space-y-2">
+						<li class="text-gray-700">
+							<span class="font-semibold">12월</span>
+							<span class="mx-2">·</span>
+							<span>온코크로스와 서비스 용역 계약 체결</span>
+						</li>
+						<li class="text-gray-700">
+							<span class="font-semibold">11월</span>
+							<span class="mx-2">·</span>
+							<span>LLM 분석 플랫폼 개발 도입</span>
+						</li>
+						<li class="text-gray-700">
+							<span class="font-semibold">10월</span>
+							<span class="mx-2">·</span>
+							<span>단백체 분석 서비스 누적 매출 6억</span>
+						</li>
+						<li class="text-gray-700">
+							<span class="font-semibold">10월</span>
+							<span class="mx-2">·</span>
+							<span>Radisen AI 인수</span>
+						</li>
+						<li class="text-gray-700">
+							<span class="font-semibold">6월</span>
+							<span class="mx-2">·</span>
+							<span>DIA Proteomics 전처리 자동화 도입</span>
+						</li>
+					</ul>
+				</div>
+
+				<!-- 2024 -->
+				<div>
+					<h3 class="text-lg font-bold text-[#09bc8a] mb-3">2024</h3>
+					<ul class="space-y-2">
+						<li class="text-gray-700">
+							<span class="font-semibold">6월</span>
+							<span class="mx-2">·</span>
+							<span>단백체 분석 첫 매출</span>
+						</li>
+						<li class="text-gray-700">
+							<span class="font-semibold">6월</span>
+							<span class="mx-2">·</span>
+							<span>주식회사 판테라 설립</span>
+						</li>
+						<li class="text-gray-700">
+							<span class="font-semibold">1월</span>
+							<span class="mx-2">·</span>
+							<span>대한민국 제 1호 Astral 수입⋅설치</span>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</section>

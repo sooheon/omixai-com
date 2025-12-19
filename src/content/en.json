@@ -250,6 +250,43 @@
           "logo": "/smsino.png"
         }
       ]
+    },
+    "timeline": {
+      "title": "Timeline",
+      "milestones": [
+        {
+          "date": "Jan 2024",
+          "event": "First Astral mass spectrometer imported and installed in South Korea"
+        },
+        {
+          "date": "Jun 2024",
+          "event": "Pantera Inc. founded"
+        },
+        {
+          "date": "Jun 2024",
+          "event": "First proteomics analysis revenue"
+        },
+        {
+          "date": "Jun 2025",
+          "event": "Automated DIA proteomics sample preparation introduced"
+        },
+        {
+          "date": "Oct 2025",
+          "event": "Acquired Radisen AI"
+        },
+        {
+          "date": "Oct 2025",
+          "event": "Cumulative proteomics service revenue reached ₩600M"
+        },
+        {
+          "date": "Nov 2025",
+          "event": "LLM-powered analysis platform launched"
+        },
+        {
+          "date": "Dec 2025",
+          "event": "Service contract signed with OncoCross"
+        }
+      ]
     }
   },
   "contact": {

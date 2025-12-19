@@ -1,7 +1,7 @@
 ---
 import '../../styles/global.css';
 import Layout from '../../components/Layout.astro';
-import { getTranslations } from '../../i18n/utils';
+import { getTranslations } from '../../content/translations';
 
 const t = getTranslations('en');
 ---
@@ -79,6 +79,71 @@ const t = getTranslations('en');
 						</div>
 					))
 				)}
+			</div>
+		</div>
+	</section>
+
+	<!-- Timeline Section -->
+	<section class="py-10 bg-white">
+		<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-2xl font-bold text-gray-900 text-center mb-8">
+				{t.about.timeline.title}
+			</h2>
+
+			<div class="space-y-6">
+				<!-- 2025 -->
+				<div>
+					<h3 class="text-lg font-bold text-[#09bc8a] mb-3">2025</h3>
+					<ul class="space-y-2">
+						<li class="text-gray-700">
+							<span class="font-semibold">Dec</span>
+							<span class="mx-2">·</span>
+							<span>Service contract signed with OncoCross</span>
+						</li>
+						<li class="text-gray-700">
+							<span class="font-semibold">Nov</span>
+							<span class="mx-2">·</span>
+							<span>LLM-powered analysis platform launched</span>
+						</li>
+						<li class="text-gray-700">
+							<span class="font-semibold">Oct</span>
+							<span class="mx-2">·</span>
+							<span>Cumulative proteomics service revenue reached ₩600M</span>
+						</li>
+						<li class="text-gray-700">
+							<span class="font-semibold">Oct</span>
+							<span class="mx-2">·</span>
+							<span>Acquired Radisen AI</span>
+						</li>
+						<li class="text-gray-700">
+							<span class="font-semibold">Jun</span>
+							<span class="mx-2">·</span>
+							<span>Automated DIA proteomics sample preparation introduced</span>
+						</li>
+					</ul>
+				</div>
+
+				<!-- 2024 -->
+				<div>
+					<h3 class="text-lg font-bold text-[#09bc8a] mb-3">2024</h3>
+					<ul class="space-y-2">
+						<li class="text-gray-700">
+							<span class="font-semibold">Jun</span>
+							<span class="mx-2">·</span>
+							<span>First proteomics analysis revenue</span>
+						</li>
+						<li class="text-gray-700">
+							<span class="font-semibold">Jun</span>
+							<span class="mx-2">·</span>
+							<span>Pantera Inc. founded</span>
+						</li>
+						<li class="text-gray-700">
+							<span class="font-semibold">Jan</span>
+							<span class="mx-2">·</span>
+							<span>First Astral mass spectrometer imported and installed in South Korea</span>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</section>

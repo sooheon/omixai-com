@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is an Astro-based static website for **OmixAI**, a company providing AI-powered omics analysis services (proteomics, multi-omics, biomarkers). The site is bilingual (Korean default, English secondary) and uses a modern design with Astro 5 and Tailwind CSS 4.
 
+**For content editing (non-developers)**: See [CONTENT.md](./CONTENT.md) for a comprehensive guide on updating text, images, and other site content without touching code.
+
 ## Development Commands
 
 ```bash
@@ -42,13 +44,12 @@ src/
 │   ├── Footer.astro     # Site footer
 │   └── Layout.astro     # Base layout (accepts lightHeader prop)
 ├── content/             # Content collections
+│   ├── en.json          # English translations (all site content)
+│   ├── ko.json          # Korean translations (all site content)
+│   ├── translations.ts  # Translation utility (getTranslations() helper)
 │   └── services/        # Service page content
 │       ├── en/          # English service descriptions (JSON)
 │       └── ko/          # Korean service descriptions (JSON)
-├── i18n/                # Internationalization
-│   ├── en.json          # English translations
-│   ├── ko.json          # Korean translations
-│   └── utils.ts         # getTranslations() helper
 ├── pages/               # File-based routing
 │   ├── index.astro      # Korean home (includes inline header)
 │   ├── about.astro      # Korean about (uses Layout component)

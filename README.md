@@ -2,6 +2,11 @@
 
 A modern, bilingual website for OmixAI - an AI-powered omics analysis service company specializing in proteomics, multi-omics integration, and biomarker discovery.
 
+## 📚 Documentation
+
+- **[CONTENT.md](./CONTENT.md)** - **For content editors**: Complete guide to updating website content (text, images, team info, FAQ, etc.) without coding knowledge
+- **[CLAUDE.md](./CLAUDE.md)** - **For developers**: Technical documentation on code structure, architecture, and development guidelines
+
 ## 🌐 Live Site
 
 - **Korean (Default)**: [https://omixai.com](https://omixai.com)
@@ -28,13 +33,12 @@ omixai-com/
 │   │   ├── Footer.astro        # Site footer
 │   │   └── Layout.astro        # Base layout wrapper
 │   ├── content/                 # Content collections
+│   │   ├── en.json             # English translations (all site content)
+│   │   ├── ko.json             # Korean translations (all site content)
+│   │   ├── translations.ts     # Translation helper function
 │   │   └── services/
 │   │       ├── en/             # English service descriptions
 │   │       └── ko/             # Korean service descriptions
-│   ├── i18n/                    # Internationalization
-│   │   ├── en.json             # English translations
-│   │   ├── ko.json             # Korean translations
-│   │   └── utils.ts            # Translation utilities
 │   ├── pages/                   # File-based routing (Korean default)
 │   │   ├── index.astro         # Home page (Korean)
 │   │   ├── about.astro         # About page (Korean)
