@@ -1,5 +1,5 @@
 {
-  "title": { "ko": "문의하기", "en": "Contact Us" },
+  "title": { "ko": "문의", "en": "Contact" },
   "subtitle": { "ko": "언제든지 연락 주세요", "en": "Get in touch with us" },
   "email": {
     "label": { "ko": "이메일", "en": "Email" },
