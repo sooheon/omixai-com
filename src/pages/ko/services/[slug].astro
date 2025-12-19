@@ -3,7 +3,7 @@ import '../../../styles/global.css';
 import Layout from '../../../components/Layout.astro';
 import { getTranslations } from '../../../content/translations';
 
-const lang = 'en';
+const lang = 'ko';
 const t = getTranslations(lang);
 
 export async function getStaticPaths() {
@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 const { service } = Astro.props;
 ---
 
-<Layout lang="en" title={`${service.title[lang]} - OmixAI`} currentPage="services" serviceSlug={service.slug} lightHeader={true}>
+<Layout lang="ko" title={`${service.title[lang]} - 오믹스AI`} currentPage="services" serviceSlug={service.slug} lightHeader={true}>
 
 	<!-- Hero Section -->
 	<section class="bg-[#74b3ce]/20 py-10">
@@ -50,7 +50,7 @@ const { service } = Astro.props;
 				</div>
 
 				<div class="mt-12 text-center">
-					<a href={`mailto:omixai@omixai.com?subject=[${encodeURIComponent(service.title[lang])}] Inquiry`} class="inline-block bg-[#09bc8a] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#004346]">
+					<a href={`mailto:omixai@omixai.com?subject=[${encodeURIComponent(service.title[lang])}] 문의`} class="inline-block bg-[#09bc8a] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#004346]">
 						{t.nav.orderNow}
 					</a>
 				</div>

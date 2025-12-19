@@ -3,10 +3,10 @@ import '../../styles/global.css';
 import Layout from '../../components/Layout.astro';
 import { getTranslations } from '../../content/translations';
 
-const t = getTranslations('en');
+const t = getTranslations('ko');
 ---
 
-<Layout lang="en" title={`${t.contact.title} - OmixAI`} currentPage="contact" lightHeader={true}>
+<Layout lang="ko" title={`${t.contact.title} - 오믹스AI`} currentPage="contact" lightHeader={true}>
 	<!-- Hero Section -->
 	<section class="bg-[#74b3ce]/20 py-10">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -70,10 +70,10 @@ const t = getTranslations('en');
 					</div>
 					<div class="flex gap-4 mt-3 text-sm">
 						<a href="https://map.naver.com/v5/search/서울특별시 동대문구 장한로 43" target="_blank" rel="noopener noreferrer" class="text-[#09bc8a] hover:underline">
-							View on Naver Map →
+							네이버 지도에서 보기 →
 						</a>
 						<a href="https://map.kakao.com/?q=서울특별시 동대문구 장한로 43" target="_blank" rel="noopener noreferrer" class="text-[#09bc8a] hover:underline">
-							View on Kakao Map →
+							카카오맵에서 보기 →
 						</a>
 					</div>
 				</div>

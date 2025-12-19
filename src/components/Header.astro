@@ -13,15 +13,15 @@ interface Props {
 const { lang, currentPage = 'home', serviceSlug, lightHeader = false } = Astro.props;
 const t = getTranslations(lang);
 
-const homeUrl = lang === 'en' ? '/en' : '/';
-const resourcesUrl = lang === 'en' ? '/en/resources' : '/resources';
-const aboutUrl = lang === 'en' ? '/en/about' : '/about';
-const contactUrl = lang === 'en' ? '/en/contact' : '/contact';
-const serviceUrlPrefix = lang === 'en' ? '/en/services' : '/services';
+const homeUrl = lang === 'en' ? '/' : '/ko';
+const resourcesUrl = lang === 'en' ? '/resources' : '/ko/resources';
+const aboutUrl = lang === 'en' ? '/about' : '/ko/about';
+const contactUrl = lang === 'en' ? '/contact' : '/ko/contact';
+const serviceUrlPrefix = lang === 'en' ? '/services' : '/ko/services';
 
 const otherLangUrl = lang === 'en'
-	? (serviceSlug ? `/services/${serviceSlug}` : currentPage === 'resources' ? '/resources' : currentPage === 'about' ? '/about' : currentPage === 'contact' ? '/contact' : '/')
-	: (serviceSlug ? `/en/services/${serviceSlug}` : currentPage === 'resources' ? '/en/resources' : currentPage === 'about' ? '/en/about' : currentPage === 'contact' ? '/en/contact' : '/en');
+	? (serviceSlug ? `/ko/services/${serviceSlug}` : currentPage === 'resources' ? '/ko/resources' : currentPage === 'about' ? '/ko/about' : currentPage === 'contact' ? '/ko/contact' : '/ko')
+	: (serviceSlug ? `/services/${serviceSlug}` : currentPage === 'resources' ? '/resources' : currentPage === 'about' ? '/about' : currentPage === 'contact' ? '/contact' : '/');
 
 // Color classes based on light/dark header
 const headerBg = lightHeader ? 'bg-[#74b3ce]/20' : 'bg-[#172a3a]';

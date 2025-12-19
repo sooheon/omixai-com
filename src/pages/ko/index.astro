@@ -3,10 +3,10 @@ import '../../styles/global.css';
 import Layout from '../../components/Layout.astro';
 import { getTranslations } from '../../content/translations';
 
-const t = getTranslations('en');
+const t = getTranslations('ko');
 ---
 
-<Layout lang="en" title={t.meta.title} currentPage="home" lightHeader={false}>
+<Layout lang="ko" title={t.meta.title} currentPage="home" lightHeader={false}>
 	<!-- Hero Section -->
 	<section class="bg-[#172a3a] py-10">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,7 +18,7 @@ const t = getTranslations('en');
 					<p class="text-lg text-[#f5f5f0] mb-6">
 						{t.hero.subtitle}
 					</p>
-					<a href="/en/contact" class="inline-block bg-[#09bc8a] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#004346]">
+					<a href="/contact" class="inline-block bg-[#09bc8a] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#004346]">
 						{t.hero.cta}
 					</a>
 				</div>
@@ -34,7 +34,7 @@ const t = getTranslations('en');
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="flex flex-wrap justify-center gap-16">
 				{t.services.items.map((service) => (
-					<a href={`/en/services/${service.slug}`} class="text-center hover:scale-105 transition-transform">
+					<a href={`/services/${service.slug}`} class="text-center hover:scale-105 transition-transform">
 						<h3 class="text-base font-semibold text-gray-700 mb-3">{service.title}</h3>
 						<div class="text-5xl grayscale opacity-70 hover:opacity-100 transition-opacity">{service.icon}</div>
 					</a>

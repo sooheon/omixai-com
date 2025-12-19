@@ -10,7 +10,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = getTranslations(lang);
 
-const homeUrl = lang === 'en' ? '/en' : '/';
+const homeUrl = lang === 'en' ? '/' : '/ko';
 ---
 
 <footer class="bg-gray-900 text-white py-8">
