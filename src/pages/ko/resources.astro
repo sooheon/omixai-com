@@ -65,6 +65,23 @@ const t = getTranslations('ko');
 		.tab-panel.active {
 			display: block;
 		}
+		.service-tab-btn {
+			transition: all 0.2s ease;
+			cursor: pointer;
+		}
+		.service-tab-btn.active {
+			color: #31c27c;
+			border-bottom-color: #31c27c;
+		}
+		.service-tab-btn:hover {
+			color: #31c27c;
+		}
+		.service-tab-content {
+			display: none;
+		}
+		.service-tab-content.active {
+			display: block;
+		}
 	</style>
 
 	<!-- Hero Section -->
@@ -257,8 +274,24 @@ const t = getTranslations('ko');
 			<div class="mb-12">
 				<h3 class="text-2xl mb-6 text-body">서비스별 샘플 요구사항</h3>
 
-				<!-- Cell Culture -->
-				<div class="mb-8">
+				<!-- Service Tabs -->
+				<div class="flex gap-2 mb-6 border-b border-subtle overflow-x-auto">
+					<button class="service-tab-btn active px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="cell-culture" data-section="requirements">
+						세포 배양
+					</button>
+					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="tissue" data-section="requirements">
+						조직
+					</button>
+					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="blood" data-section="requirements">
+						혈액
+					</button>
+					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="custom" data-section="requirements">
+						맞춤형
+					</button>
+				</div>
+
+				<!-- Tab Content -->
+				<div class="service-tab-content active" data-service="cell-culture" data-section="requirements">
 					<h4 class="text-xl text-heading mb-4">세포 배양 및 오가노이드</h4>
 					<div class="space-y-3 text-body">
 						<div class="border-b border-subtle pb-3">
@@ -279,8 +312,7 @@ const t = getTranslations('ko');
 					</div>
 				</div>
 
-				<!-- Tissue -->
-				<div class="mb-8">
+				<div class="service-tab-content" data-service="tissue" data-section="requirements">
 					<h4 class="text-xl text-heading mb-4">조직 (FFPE 및 동결)</h4>
 					<div class="space-y-3 text-body">
 						<div class="border-b border-subtle pb-3">
@@ -301,8 +333,7 @@ const t = getTranslations('ko');
 					</div>
 				</div>
 
-				<!-- Blood -->
-				<div class="mb-8">
+				<div class="service-tab-content" data-service="blood" data-section="requirements">
 					<h4 class="text-xl text-heading mb-4">혈액 (혈장 및 혈청)</h4>
 					<div class="space-y-3 text-body">
 						<div class="border-b border-subtle pb-3">
@@ -323,8 +354,7 @@ const t = getTranslations('ko');
 					</div>
 				</div>
 
-				<!-- Custom -->
-				<div class="mb-8">
+				<div class="service-tab-content" data-service="custom" data-section="requirements">
 					<h4 class="text-xl text-heading mb-4">맞춤형 샘플 (CSF, 배양액, 엑소좀)</h4>
 					<div class="space-y-3 text-body">
 						<div class="border-b border-subtle pb-3">
@@ -350,8 +380,24 @@ const t = getTranslations('ko');
 			<div class="mb-12">
 				<h3 class="text-2xl mb-6 text-body">서비스별 분석 워크플로우</h3>
 
-				<!-- Cell Culture Workflow -->
-				<div class="mb-8">
+				<!-- Service Tabs -->
+				<div class="flex gap-2 mb-6 border-b border-subtle overflow-x-auto">
+					<button class="service-tab-btn active px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="cell-culture" data-section="workflows">
+						세포 배양
+					</button>
+					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="tissue" data-section="workflows">
+						조직
+					</button>
+					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="blood" data-section="workflows">
+						혈액
+					</button>
+					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="custom" data-section="workflows">
+						맞춤형
+					</button>
+				</div>
+
+				<!-- Tab Content -->
+				<div class="service-tab-content active" data-service="cell-culture" data-section="workflows">
 					<h4 class="text-xl text-heading mb-4">세포 배양 및 오가노이드</h4>
 					<div class="space-y-4">
 						<div class="border-b border-subtle pb-4">
@@ -381,8 +427,7 @@ const t = getTranslations('ko');
 					</div>
 				</div>
 
-				<!-- Tissue Workflow -->
-				<div class="mb-8">
+				<div class="service-tab-content" data-service="tissue" data-section="workflows">
 					<h4 class="text-xl text-heading mb-4">조직 (FFPE 및 동결)</h4>
 					<div class="space-y-4">
 						<div class="border-b border-subtle pb-4">
@@ -412,8 +457,7 @@ const t = getTranslations('ko');
 					</div>
 				</div>
 
-				<!-- Blood Workflow -->
-				<div class="mb-8">
+				<div class="service-tab-content" data-service="blood" data-section="workflows">
 					<h4 class="text-xl text-heading mb-4">혈액 (혈장 및 혈청)</h4>
 					<div class="space-y-4">
 						<div class="border-b border-subtle pb-4">
@@ -443,8 +487,7 @@ const t = getTranslations('ko');
 					</div>
 				</div>
 
-				<!-- Custom Workflow -->
-				<div class="mb-8">
+				<div class="service-tab-content" data-service="custom" data-section="workflows">
 					<h4 class="text-xl text-heading mb-4">맞춤형 샘플</h4>
 					<div class="space-y-4">
 						<div class="border-b border-subtle pb-4">
@@ -561,5 +604,30 @@ const t = getTranslations('ko');
 
 		// Initialize on page load
 		handleHashChange();
+
+		// Service tab switching functionality
+		const serviceTabButtons = document.querySelectorAll('.service-tab-btn');
+
+		serviceTabButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				const service = button.dataset.service;
+				const section = button.dataset.section;
+
+				// Get all buttons and contents for this section
+				const sectionButtons = document.querySelectorAll(`.service-tab-btn[data-section="${section}"]`);
+				const sectionContents = document.querySelectorAll(`.service-tab-content[data-section="${section}"]`);
+
+				// Remove active class from all buttons and contents in this section
+				sectionButtons.forEach(btn => btn.classList.remove('active'));
+				sectionContents.forEach(content => content.classList.remove('active'));
+
+				// Add active class to clicked button and corresponding content
+				button.classList.add('active');
+				const activeContent = document.querySelector(`.service-tab-content[data-service="${service}"][data-section="${section}"]`);
+				if (activeContent) {
+					activeContent.classList.add('active');
+				}
+			});
+		});
 	</script>
 </Layout>

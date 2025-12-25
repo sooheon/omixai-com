@@ -65,6 +65,23 @@ const t = getTranslations('en');
 		.tab-panel.active {
 			display: block;
 		}
+		.service-tab-btn {
+			transition: all 0.2s ease;
+			cursor: pointer;
+		}
+		.service-tab-btn.active {
+			color: #31c27c;
+			border-bottom-color: #31c27c;
+		}
+		.service-tab-btn:hover {
+			color: #31c27c;
+		}
+		.service-tab-content {
+			display: none;
+		}
+		.service-tab-content.active {
+			display: block;
+		}
 	</style>
 
 	<!-- Hero Section -->
@@ -257,8 +274,24 @@ const t = getTranslations('en');
 			<div class="mb-12">
 				<h3 class="text-2xl mb-6 text-body">Sample Requirements by Service</h3>
 
-				<!-- Cell Culture -->
-				<div class="mb-8">
+				<!-- Service Tabs -->
+				<div class="flex gap-2 mb-6 border-b border-subtle overflow-x-auto">
+					<button class="service-tab-btn active px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="cell-culture" data-section="requirements">
+						Cell Culture
+					</button>
+					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="tissue" data-section="requirements">
+						Tissue
+					</button>
+					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="blood" data-section="requirements">
+						Blood
+					</button>
+					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="custom" data-section="requirements">
+						Custom
+					</button>
+				</div>
+
+				<!-- Tab Content -->
+				<div class="service-tab-content active" data-service="cell-culture" data-section="requirements">
 					<h4 class="text-xl text-heading mb-4">Cell Culture & Organoids</h4>
 					<div class="space-y-3 text-body">
 						<div class="border-b border-subtle pb-3">
@@ -279,8 +312,7 @@ const t = getTranslations('en');
 					</div>
 				</div>
 
-				<!-- Tissue -->
-				<div class="mb-8">
+				<div class="service-tab-content" data-service="tissue" data-section="requirements">
 					<h4 class="text-xl text-heading mb-4">Tissue (FFPE & Frozen)</h4>
 					<div class="space-y-3 text-body">
 						<div class="border-b border-subtle pb-3">
@@ -301,8 +333,7 @@ const t = getTranslations('en');
 					</div>
 				</div>
 
-				<!-- Blood -->
-				<div class="mb-8">
+				<div class="service-tab-content" data-service="blood" data-section="requirements">
 					<h4 class="text-xl text-heading mb-4">Blood (Plasma & Serum)</h4>
 					<div class="space-y-3 text-body">
 						<div class="border-b border-subtle pb-3">
@@ -323,8 +354,7 @@ const t = getTranslations('en');
 					</div>
 				</div>
 
-				<!-- Custom -->
-				<div class="mb-8">
+				<div class="service-tab-content" data-service="custom" data-section="requirements">
 					<h4 class="text-xl text-heading mb-4">Custom Samples (CSF, Media, Exosomes)</h4>
 					<div class="space-y-3 text-body">
 						<div class="border-b border-subtle pb-3">
@@ -350,8 +380,24 @@ const t = getTranslations('en');
 			<div class="mb-12">
 				<h3 class="text-2xl mb-6 text-body">Analysis Workflows by Service</h3>
 
-				<!-- Cell Culture Workflow -->
-				<div class="mb-8">
+				<!-- Service Tabs -->
+				<div class="flex gap-2 mb-6 border-b border-subtle overflow-x-auto">
+					<button class="service-tab-btn active px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="cell-culture" data-section="workflows">
+						Cell Culture
+					</button>
+					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="tissue" data-section="workflows">
+						Tissue
+					</button>
+					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="blood" data-section="workflows">
+						Blood
+					</button>
+					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="custom" data-section="workflows">
+						Custom
+					</button>
+				</div>
+
+				<!-- Tab Content -->
+				<div class="service-tab-content active" data-service="cell-culture" data-section="workflows">
 					<h4 class="text-xl text-heading mb-4">Cell Culture & Organoids</h4>
 					<div class="space-y-4">
 						<div class="border-b border-subtle pb-4">
@@ -381,8 +427,7 @@ const t = getTranslations('en');
 					</div>
 				</div>
 
-				<!-- Tissue Workflow -->
-				<div class="mb-8">
+				<div class="service-tab-content" data-service="tissue" data-section="workflows">
 					<h4 class="text-xl text-heading mb-4">Tissue (FFPE & Frozen)</h4>
 					<div class="space-y-4">
 						<div class="border-b border-subtle pb-4">
@@ -412,8 +457,7 @@ const t = getTranslations('en');
 					</div>
 				</div>
 
-				<!-- Blood Workflow -->
-				<div class="mb-8">
+				<div class="service-tab-content" data-service="blood" data-section="workflows">
 					<h4 class="text-xl text-heading mb-4">Blood (Plasma & Serum)</h4>
 					<div class="space-y-4">
 						<div class="border-b border-subtle pb-4">
@@ -443,8 +487,7 @@ const t = getTranslations('en');
 					</div>
 				</div>
 
-				<!-- Custom Workflow -->
-				<div class="mb-8">
+				<div class="service-tab-content" data-service="custom" data-section="workflows">
 					<h4 class="text-xl text-heading mb-4">Custom Samples</h4>
 					<div class="space-y-4">
 						<div class="border-b border-subtle pb-4">
@@ -561,5 +604,30 @@ const t = getTranslations('en');
 
 		// Initialize on page load
 		handleHashChange();
+
+		// Service tab switching functionality
+		const serviceTabButtons = document.querySelectorAll('.service-tab-btn');
+
+		serviceTabButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				const service = button.dataset.service;
+				const section = button.dataset.section;
+
+				// Get all buttons and contents for this section
+				const sectionButtons = document.querySelectorAll(`.service-tab-btn[data-section="${section}"]`);
+				const sectionContents = document.querySelectorAll(`.service-tab-content[data-section="${section}"]`);
+
+				// Remove active class from all buttons and contents in this section
+				sectionButtons.forEach(btn => btn.classList.remove('active'));
+				sectionContents.forEach(content => content.classList.remove('active'));
+
+				// Add active class to clicked button and corresponding content
+				button.classList.add('active');
+				const activeContent = document.querySelector(`.service-tab-content[data-service="${service}"][data-section="${section}"]`);
+				if (activeContent) {
+					activeContent.classList.add('active');
+				}
+			});
+		});
 	</script>
 </Layout>
