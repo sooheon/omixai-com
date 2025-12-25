@@ -10,9 +10,50 @@ const t = getTranslations('ko');
 	<style>
 		details > summary {
 			cursor: pointer;
+			list-style: none;
+			position: relative;
+			padding-right: 2rem;
+		}
+		details > summary::-webkit-details-marker {
+			display: none;
+		}
+		details > summary::after {
+			content: '+';
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 1.5rem;
+			font-weight: 300;
+			color: var(--brand-teal);
+			transition: all 0.3s ease;
+		}
+		details[open] > summary::after {
+			content: '−';
+			transform: translateY(-50%) rotate(180deg);
 		}
 		details[open] > summary {
 			margin-bottom: 1rem;
+		}
+		details > div {
+			overflow: hidden;
+			animation: slideDown 0.3s ease-out;
+		}
+		@keyframes slideDown {
+			from {
+				opacity: 0;
+				transform: translateY(-10px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+		.faq-item {
+			border-bottom: 1px solid var(--border-subtle);
+		}
+		.faq-item:last-child {
+			border-bottom: none;
 		}
 		.tab-button {
 			transition: all 0.2s ease;
@@ -71,13 +112,13 @@ const t = getTranslations('ko');
 				<!-- Ordering & Pricing -->
 				<div class="mb-12">
 					<h3 class="text-2xl mb-6 text-body">{t.resources.faq.ordering.title}</h3>
-					<div class="space-y-4">
+					<div>
 						{t.resources.faq.ordering.items.map((item) => (
-							<details class="glass-card rounded-lg">
-								<summary class="px-6 py-4 text-body hover:text-[var(--brand-teal)]">
+							<details class="faq-item">
+								<summary class="py-4 text-body hover:text-[var(--brand-teal)]">
 									{item.question}
 								</summary>
-								<div class="px-6 pb-4 text-muted">
+								<div class="pb-4 text-muted">
 									{item.answer}
 								</div>
 							</details>
@@ -88,13 +129,13 @@ const t = getTranslations('ko');
 				<!-- Sample Preparation -->
 				<div class="mb-12">
 					<h3 class="text-2xl mb-6 text-body">{t.resources.faq.samplePrep.title}</h3>
-					<div class="space-y-4">
+					<div>
 						{t.resources.faq.samplePrep.items.map((item) => (
-							<details class="glass-card rounded-lg">
-								<summary class="px-6 py-4 text-body hover:text-[var(--brand-teal)]">
+							<details class="faq-item">
+								<summary class="py-4 text-body hover:text-[var(--brand-teal)]">
 									{item.question}
 								</summary>
-								<div class="px-6 pb-4 text-muted">
+								<div class="pb-4 text-muted">
 									{item.answer}
 								</div>
 							</details>
@@ -105,13 +146,13 @@ const t = getTranslations('ko');
 				<!-- Technical Details -->
 				<div class="mb-12">
 					<h3 class="text-2xl mb-6 text-body">{t.resources.faq.technical.title}</h3>
-					<div class="space-y-4">
+					<div>
 						{t.resources.faq.technical.items.map((item) => (
-							<details class="glass-card rounded-lg">
-								<summary class="px-6 py-4 text-body hover:text-[var(--brand-teal)]">
+							<details class="faq-item">
+								<summary class="py-4 text-body hover:text-[var(--brand-teal)]">
 									{item.question}
 								</summary>
-								<div class="px-6 pb-4 text-muted">
+								<div class="pb-4 text-muted">
 									{item.answer}
 								</div>
 							</details>
@@ -137,7 +178,7 @@ const t = getTranslations('ko');
 			<!-- Platform Specs -->
 			<div class="mb-12">
 				<h3 class="text-2xl mb-6 text-body">질량분석 플랫폼</h3>
-				<div class="glass-card rounded-lg p-6">
+				<div class="border-b border-subtle pb-6">
 					<h4 class="text-lg text-heading mb-4">Thermo Fisher Orbitrap Astral</h4>
 					<ul class="space-y-2 text-body">
 						<li><strong class="text-body">해상도:</strong> 240,000 FWHM (m/z 200)</li>
@@ -152,20 +193,20 @@ const t = getTranslations('ko');
 			<!-- Proteomics Workflow -->
 			<div class="mb-12">
 				<h3 class="text-2xl mb-6 text-body">표준 프로테오믹스 워크플로우</h3>
-				<div class="glass-card rounded-lg p-6 space-y-4">
-					<div>
+				<div class="space-y-6">
+					<div class="border-b border-subtle pb-6">
 						<h4 class="text-heading mb-2">1. 샘플 준비 (Sample Preparation)</h4>
 						<p class="text-muted">Liquid Handler 기반의 자동화 전처리 시스템을 도입하여, 추출부터 트립신 소화(Digestion)까지의 전 과정을 단일 튜브 내에서 신속하고 재현성 있게 수행합니다.</p>
 					</div>
-					<div>
+					<div class="border-b border-subtle pb-6">
 						<h4 class="text-heading mb-2">2. 펩타이드 정제 (Peptide Purification)</h4>
 						<p class="text-muted">Magnetic Bead 기술을 활용한 고효율 세척 공정으로 염분 및 불순물을 완벽히 제거하여, 분석에 최적화된 고순도 펩타이드를 회수합니다.</p>
 					</div>
-					<div>
+					<div class="border-b border-subtle pb-6">
 						<h4 class="text-heading mb-2">3. LC-MS/MS 분석 (LC-MS/MS Analysis)</h4>
 						<p class="text-muted">Orbitrap Astral의 DIA(Data-Independent Acquisition) 모드와 20~40분의 고속 그라디언트(Short Gradient)를 결합하여, 데이터 심도와 분석 처리량(Throughput)을 동시에 극대화합니다.</p>
 					</div>
-					<div>
+					<div class="border-b border-subtle pb-6">
 						<h4 class="text-heading mb-2">4. 데이터 처리 (Data Processing)</h4>
 						<p class="text-muted">딥러닝 기반의 DIA-NN 소프트웨어를 통해 정밀한 라이브러리 검색을 수행하고, 1% FDR 필터링을 적용하여 신뢰도 높은 펩타이드 및 단백질 동정 결과를 확보합니다.</p>
 					</div>
@@ -179,22 +220,22 @@ const t = getTranslations('ko');
 			<!-- Performance Metrics -->
 			<div class="mb-12">
 				<h3 class="text-2xl mb-6 text-body">일반적인 성능 지표</h3>
-				<div class="glass-card rounded-lg p-6 overflow-x-auto">
+				<div class="overflow-x-auto">
 					<table class="w-full">
 						<thead>
-							<tr class="border-b border-white/10">
+							<tr class="border-b border-subtle">
 								<th class="text-left py-2 text-body">샘플 유형</th>
 								<th class="text-left py-2 text-body">식별된 단백질</th>
 								<th class="text-left py-2 text-body">식별된 펩타이드</th>
 							</tr>
 						</thead>
 						<tbody class="text-body">
-							<tr class="border-b border-white/10">
+							<tr class="border-b border-subtle">
 								<td class="py-2">인간 세포주 (1 μg)</td>
 								<td class="py-2">8,000-10,000</td>
 								<td class="py-2">80,000-100,000</td>
 							</tr>
-							<tr class="border-b border-white/10">
+							<tr class="border-b border-subtle">
 								<td class="py-2">인간 조직 (10 mg)</td>
 								<td class="py-2">9,000-12,000</td>
 								<td class="py-2">90,000-120,000</td>

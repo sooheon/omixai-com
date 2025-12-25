@@ -10,9 +10,50 @@ const t = getTranslations('en');
 	<style>
 		details > summary {
 			cursor: pointer;
+			list-style: none;
+			position: relative;
+			padding-right: 2rem;
+		}
+		details > summary::-webkit-details-marker {
+			display: none;
+		}
+		details > summary::after {
+			content: '+';
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 1.5rem;
+			font-weight: 300;
+			color: var(--brand-teal);
+			transition: all 0.3s ease;
+		}
+		details[open] > summary::after {
+			content: '−';
+			transform: translateY(-50%) rotate(180deg);
 		}
 		details[open] > summary {
 			margin-bottom: 1rem;
+		}
+		details > div {
+			overflow: hidden;
+			animation: slideDown 0.3s ease-out;
+		}
+		@keyframes slideDown {
+			from {
+				opacity: 0;
+				transform: translateY(-10px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+		.faq-item {
+			border-bottom: 1px solid var(--border-subtle);
+		}
+		.faq-item:last-child {
+			border-bottom: none;
 		}
 		.tab-button {
 			transition: all 0.2s ease;
@@ -71,13 +112,13 @@ const t = getTranslations('en');
 				<!-- Ordering & Pricing -->
 				<div class="mb-12">
 					<h3 class="text-2xl mb-6 text-body">{t.resources.faq.ordering.title}</h3>
-					<div class="space-y-4">
+					<div>
 						{t.resources.faq.ordering.items.map((item) => (
-							<details class="glass-card rounded-lg">
-								<summary class="px-6 py-4 text-body hover:text-[var(--brand-teal)]">
+							<details class="faq-item">
+								<summary class="py-4 text-body hover:text-[var(--brand-teal)]">
 									{item.question}
 								</summary>
-								<div class="px-6 pb-4 text-muted">
+								<div class="pb-4 text-muted">
 									{item.answer}
 								</div>
 							</details>
@@ -88,13 +129,13 @@ const t = getTranslations('en');
 				<!-- Sample Preparation -->
 				<div class="mb-12">
 					<h3 class="text-2xl mb-6 text-body">{t.resources.faq.samplePrep.title}</h3>
-					<div class="space-y-4">
+					<div>
 						{t.resources.faq.samplePrep.items.map((item) => (
-							<details class="glass-card rounded-lg">
-								<summary class="px-6 py-4 text-body hover:text-[var(--brand-teal)]">
+							<details class="faq-item">
+								<summary class="py-4 text-body hover:text-[var(--brand-teal)]">
 									{item.question}
 								</summary>
-								<div class="px-6 pb-4 text-muted">
+								<div class="pb-4 text-muted">
 									{item.answer}
 								</div>
 							</details>
@@ -105,13 +146,13 @@ const t = getTranslations('en');
 				<!-- Technical Details -->
 				<div class="mb-12">
 					<h3 class="text-2xl mb-6 text-body">{t.resources.faq.technical.title}</h3>
-					<div class="space-y-4">
+					<div>
 						{t.resources.faq.technical.items.map((item) => (
-							<details class="glass-card rounded-lg">
-								<summary class="px-6 py-4 text-body hover:text-[var(--brand-teal)]">
+							<details class="faq-item">
+								<summary class="py-4 text-body hover:text-[var(--brand-teal)]">
 									{item.question}
 								</summary>
-								<div class="px-6 pb-4 text-muted">
+								<div class="pb-4 text-muted">
 									{item.answer}
 								</div>
 							</details>
@@ -137,7 +178,7 @@ const t = getTranslations('en');
 			<!-- Platform Specs -->
 			<div class="mb-12">
 				<h3 class="text-2xl mb-6 text-body">Mass Spectrometry Platform</h3>
-				<div class="glass-card rounded-lg p-6">
+				<div class="border-b border-subtle pb-6">
 					<h4 class="text-lg text-heading mb-4">Thermo Fisher Orbitrap Astral</h4>
 					<ul class="space-y-2 text-body">
 						<li><strong class="text-body">Resolution:</strong> 240,000 FWHM at m/z 200</li>
@@ -152,20 +193,20 @@ const t = getTranslations('en');
 			<!-- Proteomics Workflow -->
 			<div class="mb-12">
 				<h3 class="text-2xl mb-6 text-body">Standard Proteomics Workflow</h3>
-				<div class="glass-card rounded-lg p-6 space-y-4">
-					<div>
+				<div class="space-y-6">
+					<div class="border-b border-subtle pb-6">
 						<h4 class="text-heading mb-2">1. Sample Preparation</h4>
 						<p class="text-muted">Protein extraction, reduction, alkylation, and tryptic digestion using optimized protocols for each sample type.</p>
 					</div>
-					<div>
+					<div class="border-b border-subtle pb-6">
 						<h4 class="text-heading mb-2">2. Peptide Cleanup</h4>
 						<p class="text-muted">C18 solid-phase extraction to remove salts and contaminants.</p>
 					</div>
-					<div>
+					<div class="border-b border-subtle pb-6">
 						<h4 class="text-heading mb-2">3. LC-MS/MS Analysis</h4>
 						<p class="text-muted">90-120 minute gradient on nanoflow HPLC coupled to Orbitrap Astral with data-dependent acquisition (DDA).</p>
 					</div>
-					<div>
+					<div class="border-b border-subtle pb-6">
 						<h4 class="text-heading mb-2">4. Data Processing</h4>
 						<p class="text-muted">Database searching with FragPipe or MaxQuant, FDR filtering at 1% protein and peptide level.</p>
 					</div>
@@ -179,22 +220,22 @@ const t = getTranslations('en');
 			<!-- Performance Metrics -->
 			<div class="mb-12">
 				<h3 class="text-2xl mb-6 text-body">Typical Performance Metrics</h3>
-				<div class="glass-card rounded-lg p-6 overflow-x-auto">
+				<div class="overflow-x-auto">
 					<table class="w-full">
 						<thead>
-							<tr class="border-b border-white/10">
+							<tr class="border-b border-subtle">
 								<th class="text-left py-2 text-body">Sample Type</th>
 								<th class="text-left py-2 text-body">Proteins Identified</th>
 								<th class="text-left py-2 text-body">Peptides Identified</th>
 							</tr>
 						</thead>
 						<tbody class="text-body">
-							<tr class="border-b border-white/10">
+							<tr class="border-b border-subtle">
 								<td class="py-2">Human cell line (1 μg)</td>
 								<td class="py-2">8,000-10,000</td>
 								<td class="py-2">80,000-100,000</td>
 							</tr>
-							<tr class="border-b border-white/10">
+							<tr class="border-b border-subtle">
 								<td class="py-2">Human tissue (10 mg)</td>
 								<td class="py-2">9,000-12,000</td>
 								<td class="py-2">90,000-120,000</td>

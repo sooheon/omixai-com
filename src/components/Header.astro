@@ -96,7 +96,7 @@ const otherLangUrl = lang === 'en'
 				<div class="flex items-center gap-1 text-sm">
 					{lang === 'en' ? (
 						<>
-							<a href={otherLangUrl} class="text-muted hover:text-[var(--brand-teal)] transition-colors">한</a>
+							<a href={otherLangUrl} class="lang-toggle text-muted hover:text-[var(--brand-teal)] transition-colors">한</a>
 							<span class="text-dim">/</span>
 							<span class="text-[var(--brand-teal)]">EN</span>
 						</>
@@ -104,7 +104,7 @@ const otherLangUrl = lang === 'en'
 						<>
 							<span class="text-[var(--brand-teal)]">한</span>
 							<span class="text-dim">/</span>
-							<a href={otherLangUrl} class="text-muted hover:text-[var(--brand-teal)] transition-colors">EN</a>
+							<a href={otherLangUrl} class="lang-toggle text-muted hover:text-[var(--brand-teal)] transition-colors">EN</a>
 						</>
 					)}
 				</div>
@@ -171,7 +171,7 @@ const otherLangUrl = lang === 'en'
 						<div class="flex items-center gap-2">
 							{lang === 'en' ? (
 								<>
-									<a href={otherLangUrl} class="text-muted hover:text-[var(--brand-teal)] transition-colors">한</a>
+									<a href={otherLangUrl} class="lang-toggle text-muted hover:text-[var(--brand-teal)] transition-colors">한</a>
 									<span class="text-dim">/</span>
 									<span class="text-[var(--brand-teal)]">EN</span>
 								</>
@@ -179,7 +179,7 @@ const otherLangUrl = lang === 'en'
 								<>
 									<span class="text-[var(--brand-teal)]">한</span>
 									<span class="text-dim">/</span>
-									<a href={otherLangUrl} class="text-muted hover:text-[var(--brand-teal)] transition-colors">EN</a>
+									<a href={otherLangUrl} class="lang-toggle text-muted hover:text-[var(--brand-teal)] transition-colors">EN</a>
 								</>
 							)}
 						</div>
@@ -226,5 +226,17 @@ const otherLangUrl = lang === 'en'
 
 	mobileResourcesButton?.addEventListener('click', () => {
 		mobileResourcesDropdown?.classList.toggle('hidden');
+	});
+
+	// Preserve hash when switching languages
+	document.querySelectorAll('.lang-toggle').forEach(link => {
+		link.addEventListener('click', (e) => {
+			const hash = window.location.hash;
+			if (hash) {
+				e.preventDefault();
+				const href = (e.target as HTMLAnchorElement).href;
+				window.location.href = href + hash;
+			}
+		});
 	});
 </script>
