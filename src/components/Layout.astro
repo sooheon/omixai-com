@@ -24,9 +24,18 @@ const { lang, title, currentPage, serviceSlug, lightHeader = false } = Astro.pro
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 		<title>{title}</title>
+		<!-- Prevent flash: set theme before render -->
+		<script is:inline>
+			(function() {
+				const saved = localStorage.getItem('theme');
+				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				const theme = saved || (prefersDark ? 'dark' : 'light');
+				document.documentElement.setAttribute('data-theme', theme);
+			})();
+		</script>
 		<style is:inline>
 			html, body {
-				background-color: #0f172a;
+				background-color: var(--bg-page, #0f172a);
 			}
 			body {
 				font-family: 'Inter', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -35,13 +44,13 @@ const { lang, title, currentPage, serviceSlug, lightHeader = false } = Astro.pro
 				display: flex;
 				flex-direction: column;
 				min-height: 100vh;
-				color: #e2e8f0;
+				color: var(--text-body, #e2e8f0);
 			}
 			h1, h2, h3, h4, h5, h6 {
 				font-family: 'Space Grotesk', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 				letter-spacing: -0.02em;
 				line-height: 1.2;
-				color: #f1f5f9;
+				color: var(--text-heading, #f1f5f9);
 			}
 			p {
 				line-height: 1.7;

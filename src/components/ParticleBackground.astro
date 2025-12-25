@@ -21,8 +21,29 @@
 	import { tsParticles } from "@tsparticles/engine";
 	import { loadSlim } from "@tsparticles/slim";
 
+	// Theme-aware color configs
+	const darkColors = {
+		particles: ["#31c27c", "#1ea4a1", "#1a5fbe"],
+		links: "#1ea4a1",
+		linksOpacity: 0.2,
+		twinkle: "#ffffff",
+	};
+
+	const lightColors = {
+		particles: ["#16a34a", "#0d9488", "#2563eb"],
+		links: "#0d9488",
+		linksOpacity: 0.15,
+		twinkle: "#1ea4a1",
+	};
+
+	function getColors() {
+		const isLight = document.documentElement.getAttribute("data-theme") === "light";
+		return isLight ? lightColors : darkColors;
+	}
+
 	async function initParticles() {
 		await loadSlim(tsParticles);
+		const colors = getColors();
 
 		const container = await tsParticles.load({
 			id: "particles-container",
@@ -43,7 +64,7 @@
 						},
 					},
 					color: {
-						value: ["#31c27c", "#1ea4a1", "#1a5fbe"],
+						value: colors.particles,
 					},
 					shape: {
 						type: "circle",
@@ -65,8 +86,8 @@
 					links: {
 						enable: true,
 						distance: 150,
-						color: "#1ea4a1",
-						opacity: 0.2,
+						color: colors.links,
+						opacity: colors.linksOpacity,
 						width: 1,
 					},
 					move: {
@@ -85,7 +106,7 @@
 							frequency: 0.01,
 							opacity: 1,
 							color: {
-								value: "#ffffff",
+								value: colors.twinkle,
 							},
 						},
 					},
@@ -139,6 +160,17 @@
 					}
 				});
 			});
+
+			// Re-init on theme change
+			const observer = new MutationObserver((mutations) => {
+				mutations.forEach((mutation) => {
+					if (mutation.attributeName === "data-theme") {
+						container.destroy();
+						initParticles();
+					}
+				});
+			});
+			observer.observe(document.documentElement, { attributes: true });
 		}
 	}
 

@@ -13,28 +13,28 @@ const t = getTranslations(lang);
 const homeUrl = lang === 'en' ? '/' : '/ko';
 ---
 
-<footer class="bg-slate-950 border-t border-white/5 text-slate-300 py-8">
+<footer class="bg-section-alt border-t border-subtle text-body py-8">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 			<!-- Company Info -->
 			<div>
-				<a href={homeUrl}><Image src={logo} alt="OmixAI" format="png" class="h-8 w-auto mb-3 invert" /></a>
-				<p class="text-slate-500 text-sm mb-2">{lang === 'en' ? 'CEO: Dongmyeong Shin, Ph.D.' : '대표이사: 신동명'}</p>
-				<p class="text-slate-500 text-sm">{t.footer.tagline}</p>
+				<a href={homeUrl}><Image src={logo} alt="OmixAI" format="png" class="h-8 w-auto mb-3 logo-invert" /></a>
+				<p class="text-dim text-sm mb-2">{lang === 'en' ? 'CEO: Dongmyeong Shin, Ph.D.' : '대표이사: 신동명'}</p>
+				<p class="text-dim text-sm">{t.footer.tagline}</p>
 			</div>
 
 			<!-- Contact Info -->
 			<div>
-				<h3 class="text-slate-200 mb-3">{lang === 'en' ? 'Contact' : '연락처'}</h3>
-				<div class="text-slate-400 text-sm space-y-1">
-					<p><a href={`mailto:${t.contact.email.value}`} class="hover:text-emerald-400 transition-colors">{t.contact.email.value}</a></p>
+				<h3 class="text-heading mb-3">{lang === 'en' ? 'Contact' : '연락처'}</h3>
+				<div class="text-muted text-sm space-y-1">
+					<p><a href={`mailto:${t.contact.email.value}`} class="hover:text-[var(--brand-teal)] transition-colors">{t.contact.email.value}</a></p>
 				</div>
 			</div>
 
 			<!-- Address -->
 			<div>
-				<h3 class="text-slate-200 mb-3">{lang === 'en' ? 'Address' : '주소'}</h3>
-				<div class="text-slate-400 text-sm space-y-1">
+				<h3 class="text-heading mb-3">{lang === 'en' ? 'Address' : '주소'}</h3>
+				<div class="text-muted text-sm space-y-1">
 					<p>{t.contact.address.value}</p>
 					<p>{t.contact.address.detail}</p>
 				</div>

@@ -22,29 +22,29 @@ const { service } = Astro.props;
 <Layout lang="ko" title={`${service.title[lang]} - 오믹스AI`} currentPage="services" serviceSlug={service.slug} lightHeader={false}>
 
 	<!-- Hero Section -->
-	<section class="bg-gradient-to-b from-slate-900 to-slate-800 py-16">
+	<section class="bg-section-alt py-16">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-			<h1 class="text-3xl md:text-4xl text-white mb-3 animate-fade-in-up">
+			<h1 class="text-3xl md:text-4xl text-heading mb-3 animate-fade-in-up">
 				{service.title[lang]}
 			</h1>
-			<p class="text-lg text-slate-300 animate-fade-in-up animate-delay-200">
+			<p class="text-lg text-body animate-fade-in-up animate-delay-200">
 				{service.subtitle[lang]}
 			</p>
 		</div>
 	</section>
 
 	<!-- Content Section -->
-	<section class="py-12 bg-slate-900">
+	<section class="py-12 bg-section">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-			<p class="text-slate-300 mb-8 text-center animate-fade-in-up animate-delay-300">
+			<p class="text-body mb-8 text-center animate-fade-in-up animate-delay-300">
 				{service.description[lang]}
 			</p>
 
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 				{service.features.map((feature, i) => (
 					<div class={`glass-card rounded-xl p-6 text-center animate-fade-in-up animate-delay-${(i + 4) * 100}`}>
-						<h3 class="text-white mb-2">{feature.title[lang]}</h3>
-						<p class="text-slate-400 text-sm">{feature.description[lang]}</p>
+						<h3 class="text-heading mb-2">{feature.title[lang]}</h3>
+						<p class="text-muted text-sm">{feature.description[lang]}</p>
 					</div>
 				))}
 			</div>

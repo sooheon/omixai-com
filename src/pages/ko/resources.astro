@@ -30,31 +30,31 @@ const t = getTranslations('ko');
 	</style>
 
 	<!-- Hero Section -->
-	<section class="bg-gradient-to-b from-slate-900 to-slate-800 py-16">
+	<section class="bg-section-alt py-16">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-			<h1 class="text-3xl md:text-4xl text-white mb-3 animate-fade-in-up">
+			<h1 class="text-3xl md:text-4xl text-heading mb-3 animate-fade-in-up">
 				{t.resources.title}
 			</h1>
-			<p class="text-lg text-slate-300 animate-fade-in-up animate-delay-200">
+			<p class="text-lg text-body animate-fade-in-up animate-delay-200">
 				{t.resources.subtitle}
 			</p>
 		</div>
 	</section>
 
 	<!-- Tabs -->
-	<section class="bg-slate-900 pt-8">
+	<section class="bg-section pt-8">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="flex justify-center gap-8 border-b border-white/10">
 				<a
 					href="#faq"
-					class="tab-button active px-4 py-3 text-slate-300 border-b-2 border-transparent no-underline"
+					class="tab-button active px-4 py-3 text-body border-b-2 border-transparent no-underline"
 					data-tab="faq"
 				>
 					FAQ
 				</a>
 				<a
 					href="#technical"
-					class="tab-button px-4 py-3 text-slate-300 border-b-2 border-transparent no-underline"
+					class="tab-button px-4 py-3 text-body border-b-2 border-transparent no-underline"
 					data-tab="technical"
 				>
 					기술 문서
@@ -64,20 +64,20 @@ const t = getTranslations('ko');
 	</section>
 
 	<!-- FAQ Tab -->
-	<section class="tab-panel active py-12 bg-slate-900" id="faq-panel">
+	<section class="tab-panel active py-12 bg-section" id="faq-panel">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl text-center text-white mb-12">자주 묻는 질문</h2>
+			<h2 class="text-3xl text-center text-heading mb-12">자주 묻는 질문</h2>
 
 				<!-- Ordering & Pricing -->
 				<div class="mb-12">
-					<h3 class="text-2xl mb-6 text-slate-200">{t.resources.faq.ordering.title}</h3>
+					<h3 class="text-2xl mb-6 text-body">{t.resources.faq.ordering.title}</h3>
 					<div class="space-y-4">
 						{t.resources.faq.ordering.items.map((item) => (
 							<details class="glass-card rounded-lg">
-								<summary class="px-6 py-4 text-slate-200 hover:text-emerald-400">
+								<summary class="px-6 py-4 text-body hover:text-[var(--brand-teal)]">
 									{item.question}
 								</summary>
-								<div class="px-6 pb-4 text-slate-400">
+								<div class="px-6 pb-4 text-muted">
 									{item.answer}
 								</div>
 							</details>
@@ -87,14 +87,14 @@ const t = getTranslations('ko');
 
 				<!-- Sample Preparation -->
 				<div class="mb-12">
-					<h3 class="text-2xl mb-6 text-slate-200">{t.resources.faq.samplePrep.title}</h3>
+					<h3 class="text-2xl mb-6 text-body">{t.resources.faq.samplePrep.title}</h3>
 					<div class="space-y-4">
 						{t.resources.faq.samplePrep.items.map((item) => (
 							<details class="glass-card rounded-lg">
-								<summary class="px-6 py-4 text-slate-200 hover:text-emerald-400">
+								<summary class="px-6 py-4 text-body hover:text-[var(--brand-teal)]">
 									{item.question}
 								</summary>
-								<div class="px-6 pb-4 text-slate-400">
+								<div class="px-6 pb-4 text-muted">
 									{item.answer}
 								</div>
 							</details>
@@ -104,14 +104,14 @@ const t = getTranslations('ko');
 
 				<!-- Technical Details -->
 				<div class="mb-12">
-					<h3 class="text-2xl mb-6 text-slate-200">{t.resources.faq.technical.title}</h3>
+					<h3 class="text-2xl mb-6 text-body">{t.resources.faq.technical.title}</h3>
 					<div class="space-y-4">
 						{t.resources.faq.technical.items.map((item) => (
 							<details class="glass-card rounded-lg">
-								<summary class="px-6 py-4 text-slate-200 hover:text-emerald-400">
+								<summary class="px-6 py-4 text-body hover:text-[var(--brand-teal)]">
 									{item.question}
 								</summary>
-								<div class="px-6 pb-4 text-slate-400">
+								<div class="px-6 pb-4 text-muted">
 									{item.answer}
 								</div>
 							</details>
@@ -121,7 +121,7 @@ const t = getTranslations('ko');
 
 			<!-- CTA -->
 			<div class="text-center mt-16">
-				<p class="text-xl text-slate-300 mb-6">더 궁금한 점이 있으신가요?</p>
+				<p class="text-xl text-body mb-6">더 궁금한 점이 있으신가요?</p>
 				<a href="mailto:omixai@omixai.com" class="btn-primary inline-block px-8 py-4 rounded-full text-lg">
 					문의하기
 				</a>
@@ -130,65 +130,65 @@ const t = getTranslations('ko');
 	</section>
 
 	<!-- Technical Documentation Tab -->
-	<section class="tab-panel py-12 bg-slate-900" id="technical-panel">
+	<section class="tab-panel py-12 bg-section" id="technical-panel">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl text-center text-white mb-12">기술 문서</h2>
+			<h2 class="text-3xl text-center text-heading mb-12">기술 문서</h2>
 
 			<!-- Platform Specs -->
 			<div class="mb-12">
-				<h3 class="text-2xl mb-6 text-slate-200">질량분석 플랫폼</h3>
+				<h3 class="text-2xl mb-6 text-body">질량분석 플랫폼</h3>
 				<div class="glass-card rounded-lg p-6">
-					<h4 class="text-lg text-white mb-4">Thermo Fisher Orbitrap Astral</h4>
-					<ul class="space-y-2 text-slate-300">
-						<li><strong class="text-slate-200">해상도:</strong> 240,000 FWHM (m/z 200)</li>
-						<li><strong class="text-slate-200">질량 정확도:</strong> &lt; 1 ppm</li>
-						<li><strong class="text-slate-200">스캔 속도:</strong> 200 Hz</li>
-						<li><strong class="text-slate-200">동적 범위:</strong> &gt; 5 orders of magnitude</li>
-						<li><strong class="text-slate-200">감도:</strong> 서브-펨토몰 검출 한계</li>
+					<h4 class="text-lg text-heading mb-4">Thermo Fisher Orbitrap Astral</h4>
+					<ul class="space-y-2 text-body">
+						<li><strong class="text-body">해상도:</strong> 240,000 FWHM (m/z 200)</li>
+						<li><strong class="text-body">질량 정확도:</strong> &lt; 1 ppm</li>
+						<li><strong class="text-body">스캔 속도:</strong> 200 Hz</li>
+						<li><strong class="text-body">동적 범위:</strong> &gt; 5 orders of magnitude</li>
+						<li><strong class="text-body">감도:</strong> 서브-펨토몰 검출 한계</li>
 					</ul>
 				</div>
 			</div>
 
 			<!-- Proteomics Workflow -->
 			<div class="mb-12">
-				<h3 class="text-2xl mb-6 text-slate-200">표준 프로테오믹스 워크플로우</h3>
+				<h3 class="text-2xl mb-6 text-body">표준 프로테오믹스 워크플로우</h3>
 				<div class="glass-card rounded-lg p-6 space-y-4">
 					<div>
-						<h4 class="text-white mb-2">1. 샘플 준비 (Sample Preparation)</h4>
-						<p class="text-slate-400">Liquid Handler 기반의 자동화 전처리 시스템을 도입하여, 추출부터 트립신 소화(Digestion)까지의 전 과정을 단일 튜브 내에서 신속하고 재현성 있게 수행합니다.</p>
+						<h4 class="text-heading mb-2">1. 샘플 준비 (Sample Preparation)</h4>
+						<p class="text-muted">Liquid Handler 기반의 자동화 전처리 시스템을 도입하여, 추출부터 트립신 소화(Digestion)까지의 전 과정을 단일 튜브 내에서 신속하고 재현성 있게 수행합니다.</p>
 					</div>
 					<div>
-						<h4 class="text-white mb-2">2. 펩타이드 정제 (Peptide Purification)</h4>
-						<p class="text-slate-400">Magnetic Bead 기술을 활용한 고효율 세척 공정으로 염분 및 불순물을 완벽히 제거하여, 분석에 최적화된 고순도 펩타이드를 회수합니다.</p>
+						<h4 class="text-heading mb-2">2. 펩타이드 정제 (Peptide Purification)</h4>
+						<p class="text-muted">Magnetic Bead 기술을 활용한 고효율 세척 공정으로 염분 및 불순물을 완벽히 제거하여, 분석에 최적화된 고순도 펩타이드를 회수합니다.</p>
 					</div>
 					<div>
-						<h4 class="text-white mb-2">3. LC-MS/MS 분석 (LC-MS/MS Analysis)</h4>
-						<p class="text-slate-400">Orbitrap Astral의 DIA(Data-Independent Acquisition) 모드와 20~40분의 고속 그라디언트(Short Gradient)를 결합하여, 데이터 심도와 분석 처리량(Throughput)을 동시에 극대화합니다.</p>
+						<h4 class="text-heading mb-2">3. LC-MS/MS 분석 (LC-MS/MS Analysis)</h4>
+						<p class="text-muted">Orbitrap Astral의 DIA(Data-Independent Acquisition) 모드와 20~40분의 고속 그라디언트(Short Gradient)를 결합하여, 데이터 심도와 분석 처리량(Throughput)을 동시에 극대화합니다.</p>
 					</div>
 					<div>
-						<h4 class="text-white mb-2">4. 데이터 처리 (Data Processing)</h4>
-						<p class="text-slate-400">딥러닝 기반의 DIA-NN 소프트웨어를 통해 정밀한 라이브러리 검색을 수행하고, 1% FDR 필터링을 적용하여 신뢰도 높은 펩타이드 및 단백질 동정 결과를 확보합니다.</p>
+						<h4 class="text-heading mb-2">4. 데이터 처리 (Data Processing)</h4>
+						<p class="text-muted">딥러닝 기반의 DIA-NN 소프트웨어를 통해 정밀한 라이브러리 검색을 수행하고, 1% FDR 필터링을 적용하여 신뢰도 높은 펩타이드 및 단백질 동정 결과를 확보합니다.</p>
 					</div>
 					<div>
-						<h4 class="text-white mb-2">5. 정량 및 분석 (Quantification & Analysis)</h4>
-						<p class="text-slate-400">고정밀 Label-Free Quantification(LFQ)을 수행하며, 이어지는 다변량 통계 분석 및 경로(Pathway) 분석을 통해 심층적인 생물학적 인사이트를 제공합니다.</p>
+						<h4 class="text-heading mb-2">5. 정량 및 분석 (Quantification & Analysis)</h4>
+						<p class="text-muted">고정밀 Label-Free Quantification(LFQ)을 수행하며, 이어지는 다변량 통계 분석 및 경로(Pathway) 분석을 통해 심층적인 생물학적 인사이트를 제공합니다.</p>
 					</div>
 				</div>
 			</div>
 
 			<!-- Performance Metrics -->
 			<div class="mb-12">
-				<h3 class="text-2xl mb-6 text-slate-200">일반적인 성능 지표</h3>
+				<h3 class="text-2xl mb-6 text-body">일반적인 성능 지표</h3>
 				<div class="glass-card rounded-lg p-6 overflow-x-auto">
 					<table class="w-full">
 						<thead>
 							<tr class="border-b border-white/10">
-								<th class="text-left py-2 text-slate-200">샘플 유형</th>
-								<th class="text-left py-2 text-slate-200">식별된 단백질</th>
-								<th class="text-left py-2 text-slate-200">식별된 펩타이드</th>
+								<th class="text-left py-2 text-body">샘플 유형</th>
+								<th class="text-left py-2 text-body">식별된 단백질</th>
+								<th class="text-left py-2 text-body">식별된 펩타이드</th>
 							</tr>
 						</thead>
-						<tbody class="text-slate-300">
+						<tbody class="text-body">
 							<tr class="border-b border-white/10">
 								<td class="py-2">인간 세포주 (1 μg)</td>
 								<td class="py-2">8,000-10,000</td>
@@ -211,7 +211,7 @@ const t = getTranslations('ko');
 
 			<!-- CTA -->
 			<div class="text-center mt-16">
-				<p class="text-xl text-slate-300 mb-6">더 자세한 기술 정보가 필요하신가요?</p>
+				<p class="text-xl text-body mb-6">더 자세한 기술 정보가 필요하신가요?</p>
 				<a href="mailto:omixai@omixai.com" class="btn-primary inline-block px-8 py-4 rounded-full text-lg">
 					문의하기
 				</a>

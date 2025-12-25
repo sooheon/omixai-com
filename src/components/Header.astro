@@ -24,12 +24,12 @@ const otherLangUrl = lang === 'en'
 	: (serviceSlug ? `/services/${serviceSlug}` : currentPage === 'resources' ? '/resources' : currentPage === 'about' ? '/about' : currentPage === 'contact' ? '/contact' : '/');
 ---
 
-<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-xl border-b border-white/10">
+<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-header backdrop-blur-xl border-b border-subtle">
 	<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
 		<!-- Mobile Header -->
 		<div class="flex md:hidden items-center justify-between">
-			<a href={homeUrl} class="flex items-center"><Image src={logo} alt="OmixAI" format="png" class="h-9 w-auto invert" /></a>
-			<button id="mobile-menu-button" class="text-slate-300 hover:text-emerald-400" aria-label="Toggle menu">
+			<a href={homeUrl} class="flex items-center"><Image src={logo} alt="OmixAI" format="png" class="h-9 w-auto logo-invert" /></a>
+			<button id="mobile-menu-button" class="text-body hover:text-[var(--brand-teal)]" aria-label="Toggle menu">
 				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
 				</svg>
@@ -38,11 +38,11 @@ const otherLangUrl = lang === 'en'
 
 		<!-- Desktop Header -->
 		<div class="hidden md:grid grid-cols-3 items-center">
-			<a href={homeUrl} class="flex items-center"><Image src={logo} alt="OmixAI" format="png" class="h-10 w-auto invert" /></a>
+			<a href={homeUrl} class="flex items-center"><Image src={logo} alt="OmixAI" format="png" class="h-10 w-auto logo-invert" /></a>
 
 			<div class="flex items-center justify-center gap-6">
 				<div class="relative group">
-					<button class={`flex items-center gap-1 cursor-pointer transition-colors ${currentPage === 'services' ? 'text-emerald-400' : 'text-slate-300 hover:text-emerald-400'}`}>
+					<button class={`flex items-center gap-1 cursor-pointer transition-colors ${currentPage === 'services' ? 'text-[var(--brand-teal)]' : 'text-body hover:text-[var(--brand-teal)]'}`}>
 						{t.nav.services}
 						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -52,7 +52,7 @@ const otherLangUrl = lang === 'en'
 						<div class="glass-card rounded-lg">
 							<div class="py-2">
 								{t.services.items.map((service) => (
-									<a href={`${serviceUrlPrefix}/${service.slug}`} class="block px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-emerald-400 transition-colors">
+									<a href={`${serviceUrlPrefix}/${service.slug}`} class="block px-4 py-2 text-body hover:bg-white/5 hover:text-[var(--brand-teal)] transition-colors">
 										{service.title}
 									</a>
 								))}
@@ -61,7 +61,7 @@ const otherLangUrl = lang === 'en'
 					</div>
 				</div>
 				<div class="relative group">
-					<button class={`flex items-center gap-1 cursor-pointer transition-colors ${currentPage === 'resources' ? 'text-emerald-400' : 'text-slate-300 hover:text-emerald-400'}`}>
+					<button class={`flex items-center gap-1 cursor-pointer transition-colors ${currentPage === 'resources' ? 'text-[var(--brand-teal)]' : 'text-body hover:text-[var(--brand-teal)]'}`}>
 						{t.nav.resources}
 						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -70,33 +70,41 @@ const otherLangUrl = lang === 'en'
 					<div class="absolute left-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out z-50">
 						<div class="glass-card rounded-lg">
 							<div class="py-2">
-								<a href={`${resourcesUrl}#faq`} class="block px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-emerald-400 transition-colors">
+								<a href={`${resourcesUrl}#faq`} class="block px-4 py-2 text-body hover:bg-white/5 hover:text-[var(--brand-teal)] transition-colors">
 									{lang === 'en' ? 'FAQ' : 'FAQ'}
 								</a>
-								<a href={`${resourcesUrl}#technical`} class="block px-4 py-2 text-slate-300 hover:bg-white/5 hover:text-emerald-400 transition-colors">
+								<a href={`${resourcesUrl}#technical`} class="block px-4 py-2 text-body hover:bg-white/5 hover:text-[var(--brand-teal)] transition-colors">
 									{lang === 'en' ? 'Technical Docs' : '기술 문서'}
 								</a>
 							</div>
 						</div>
 					</div>
 				</div>
-				<a href={aboutUrl} class={`transition-colors ${currentPage === 'about' ? 'text-emerald-400' : 'text-slate-300 hover:text-emerald-400'}`}>{t.nav.about}</a>
-				<a href={contactUrl} class={`transition-colors ${currentPage === 'contact' ? 'text-emerald-400' : 'text-slate-300 hover:text-emerald-400'}`}>{t.nav.contact}</a>
+				<a href={aboutUrl} class={`transition-colors ${currentPage === 'about' ? 'text-[var(--brand-teal)]' : 'text-body hover:text-[var(--brand-teal)]'}`}>{t.nav.about}</a>
+				<a href={contactUrl} class={`transition-colors ${currentPage === 'contact' ? 'text-[var(--brand-teal)]' : 'text-body hover:text-[var(--brand-teal)]'}`}>{t.nav.contact}</a>
 			</div>
 
 			<div class="flex items-center justify-end gap-6">
+				<button id="theme-toggle" class="theme-toggle text-muted hover:text-heading" aria-label="Toggle theme">
+					<svg class="w-5 h-5 hide-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+					</svg>
+					<svg class="w-5 h-5 hide-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+					</svg>
+				</button>
 				<div class="flex items-center gap-1 text-sm">
 					{lang === 'en' ? (
 						<>
-							<a href={otherLangUrl} class="text-slate-500 hover:text-emerald-400 transition-colors">한</a>
-							<span class="text-slate-600">/</span>
-							<span class="text-emerald-400">EN</span>
+							<a href={otherLangUrl} class="text-muted hover:text-[var(--brand-teal)] transition-colors">한</a>
+							<span class="text-dim">/</span>
+							<span class="text-[var(--brand-teal)]">EN</span>
 						</>
 					) : (
 						<>
-							<span class="text-emerald-400">한</span>
-							<span class="text-slate-600">/</span>
-							<a href={otherLangUrl} class="text-slate-500 hover:text-emerald-400 transition-colors">EN</a>
+							<span class="text-[var(--brand-teal)]">한</span>
+							<span class="text-dim">/</span>
+							<a href={otherLangUrl} class="text-muted hover:text-[var(--brand-teal)] transition-colors">EN</a>
 						</>
 					)}
 				</div>
@@ -114,7 +122,7 @@ const otherLangUrl = lang === 'en'
 			<div class="flex flex-col space-y-4">
 				<!-- Services Dropdown -->
 				<div>
-					<button id="mobile-services-button" class={`w-full text-left flex items-center justify-between ${currentPage === 'services' ? 'text-emerald-400' : 'text-slate-300'}`}>
+					<button id="mobile-services-button" class={`w-full text-left flex items-center justify-between ${currentPage === 'services' ? 'text-[var(--brand-teal)]' : 'text-body'}`}>
 						<span>{t.nav.services}</span>
 						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -122,7 +130,7 @@ const otherLangUrl = lang === 'en'
 					</button>
 					<div id="mobile-services-dropdown" class="hidden mt-2 ml-4 space-y-2">
 						{t.services.items.map((service) => (
-							<a href={`${serviceUrlPrefix}/${service.slug}`} class="block text-slate-400 hover:text-emerald-400 transition-colors">
+							<a href={`${serviceUrlPrefix}/${service.slug}`} class="block text-muted hover:text-[var(--brand-teal)] transition-colors">
 								{service.title}
 							</a>
 						))}
@@ -131,40 +139,50 @@ const otherLangUrl = lang === 'en'
 
 				<!-- Resources Dropdown -->
 				<div>
-					<button id="mobile-resources-button" class={`w-full text-left flex items-center justify-between ${currentPage === 'resources' ? 'text-emerald-400' : 'text-slate-300'}`}>
+					<button id="mobile-resources-button" class={`w-full text-left flex items-center justify-between ${currentPage === 'resources' ? 'text-[var(--brand-teal)]' : 'text-body'}`}>
 						<span>{t.nav.resources}</span>
 						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 						</svg>
 					</button>
 					<div id="mobile-resources-dropdown" class="hidden mt-2 ml-4 space-y-2">
-						<a href={`${resourcesUrl}#faq`} class="block text-slate-400 hover:text-emerald-400 transition-colors">
+						<a href={`${resourcesUrl}#faq`} class="block text-muted hover:text-[var(--brand-teal)] transition-colors">
 							{lang === 'en' ? 'FAQ' : 'FAQ'}
 						</a>
-						<a href={`${resourcesUrl}#technical`} class="block text-slate-400 hover:text-emerald-400 transition-colors">
+						<a href={`${resourcesUrl}#technical`} class="block text-muted hover:text-[var(--brand-teal)] transition-colors">
 							{lang === 'en' ? 'Technical Docs' : '기술 문서'}
 						</a>
 					</div>
 				</div>
 
-				<a href={aboutUrl} class={`${currentPage === 'about' ? 'text-emerald-400' : 'text-slate-300 hover:text-emerald-400'} transition-colors`}>{t.nav.about}</a>
-				<a href={contactUrl} class={`${currentPage === 'contact' ? 'text-emerald-400' : 'text-slate-300 hover:text-emerald-400'} transition-colors`}>{t.nav.contact}</a>
+				<a href={aboutUrl} class={`${currentPage === 'about' ? 'text-[var(--brand-teal)]' : 'text-body hover:text-[var(--brand-teal)]'} transition-colors`}>{t.nav.about}</a>
+				<a href={contactUrl} class={`${currentPage === 'contact' ? 'text-[var(--brand-teal)]' : 'text-body hover:text-[var(--brand-teal)]'} transition-colors`}>{t.nav.contact}</a>
 
-				<div class="border-t border-white/10 pt-4">
-					<div class="flex items-center gap-2 mb-4">
-						{lang === 'en' ? (
-							<>
-								<a href={otherLangUrl} class="text-slate-500 hover:text-emerald-400 transition-colors">한</a>
-								<span class="text-slate-600">/</span>
-								<span class="text-emerald-400">EN</span>
-							</>
-						) : (
-							<>
-								<span class="text-emerald-400">한</span>
-								<span class="text-slate-600">/</span>
-								<a href={otherLangUrl} class="text-slate-500 hover:text-emerald-400 transition-colors">EN</a>
-							</>
-						)}
+				<div class="border-t border-subtle pt-4">
+					<div class="flex items-center gap-4 mb-4">
+						<button id="mobile-theme-toggle" class="theme-toggle text-muted hover:text-heading" aria-label="Toggle theme">
+							<svg class="w-5 h-5 hide-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+							</svg>
+							<svg class="w-5 h-5 hide-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+							</svg>
+						</button>
+						<div class="flex items-center gap-2">
+							{lang === 'en' ? (
+								<>
+									<a href={otherLangUrl} class="text-muted hover:text-[var(--brand-teal)] transition-colors">한</a>
+									<span class="text-dim">/</span>
+									<span class="text-[var(--brand-teal)]">EN</span>
+								</>
+							) : (
+								<>
+									<span class="text-[var(--brand-teal)]">한</span>
+									<span class="text-dim">/</span>
+									<a href={otherLangUrl} class="text-muted hover:text-[var(--brand-teal)] transition-colors">EN</a>
+								</>
+							)}
+						</div>
 					</div>
 					<a href="http://210.92.36.12:11331" target="_blank" rel="noopener noreferrer" class="btn-primary px-6 py-2 rounded-full flex items-center justify-center gap-2">
 						Demo
@@ -179,6 +197,17 @@ const otherLangUrl = lang === 'en'
 </header>
 
 <script>
+	// Theme toggle
+	function toggleTheme() {
+		const current = document.documentElement.getAttribute('data-theme');
+		const next = current === 'light' ? 'dark' : 'light';
+		document.documentElement.setAttribute('data-theme', next);
+		localStorage.setItem('theme', next);
+	}
+
+	document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+	document.getElementById('mobile-theme-toggle')?.addEventListener('click', toggleTheme);
+
 	// Mobile menu toggle
 	const mobileMenuButton = document.getElementById('mobile-menu-button');
 	const mobileMenu = document.getElementById('mobile-menu');

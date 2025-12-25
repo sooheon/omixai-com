@@ -30,31 +30,31 @@ const t = getTranslations('en');
 	</style>
 
 	<!-- Hero Section -->
-	<section class="bg-gradient-to-b from-slate-900 to-slate-800 py-16">
+	<section class="bg-section-alt py-16">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-			<h1 class="text-3xl md:text-4xl text-white mb-3 animate-fade-in-up">
+			<h1 class="text-3xl md:text-4xl text-heading mb-3 animate-fade-in-up">
 				{t.resources.title}
 			</h1>
-			<p class="text-lg text-slate-300 animate-fade-in-up animate-delay-200">
+			<p class="text-lg text-body animate-fade-in-up animate-delay-200">
 				{t.resources.subtitle}
 			</p>
 		</div>
 	</section>
 
 	<!-- Tabs -->
-	<section class="bg-slate-900 pt-8">
+	<section class="bg-section pt-8">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="flex justify-center gap-8 border-b border-white/10">
 				<a
 					href="#faq"
-					class="tab-button active px-4 py-3 text-slate-300 border-b-2 border-transparent no-underline"
+					class="tab-button active px-4 py-3 text-body border-b-2 border-transparent no-underline"
 					data-tab="faq"
 				>
 					FAQ
 				</a>
 				<a
 					href="#technical"
-					class="tab-button px-4 py-3 text-slate-300 border-b-2 border-transparent no-underline"
+					class="tab-button px-4 py-3 text-body border-b-2 border-transparent no-underline"
 					data-tab="technical"
 				>
 					Technical Documentation
@@ -64,20 +64,20 @@ const t = getTranslations('en');
 	</section>
 
 	<!-- FAQ Tab -->
-	<section class="tab-panel active py-12 bg-slate-900" id="faq-panel">
+	<section class="tab-panel active py-12 bg-section" id="faq-panel">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl text-center text-white mb-12">Frequently Asked Questions</h2>
+			<h2 class="text-3xl text-center text-heading mb-12">Frequently Asked Questions</h2>
 
 				<!-- Ordering & Pricing -->
 				<div class="mb-12">
-					<h3 class="text-2xl mb-6 text-slate-200">{t.resources.faq.ordering.title}</h3>
+					<h3 class="text-2xl mb-6 text-body">{t.resources.faq.ordering.title}</h3>
 					<div class="space-y-4">
 						{t.resources.faq.ordering.items.map((item) => (
 							<details class="glass-card rounded-lg">
-								<summary class="px-6 py-4 text-slate-200 hover:text-emerald-400">
+								<summary class="px-6 py-4 text-body hover:text-[var(--brand-teal)]">
 									{item.question}
 								</summary>
-								<div class="px-6 pb-4 text-slate-400">
+								<div class="px-6 pb-4 text-muted">
 									{item.answer}
 								</div>
 							</details>
@@ -87,14 +87,14 @@ const t = getTranslations('en');
 
 				<!-- Sample Preparation -->
 				<div class="mb-12">
-					<h3 class="text-2xl mb-6 text-slate-200">{t.resources.faq.samplePrep.title}</h3>
+					<h3 class="text-2xl mb-6 text-body">{t.resources.faq.samplePrep.title}</h3>
 					<div class="space-y-4">
 						{t.resources.faq.samplePrep.items.map((item) => (
 							<details class="glass-card rounded-lg">
-								<summary class="px-6 py-4 text-slate-200 hover:text-emerald-400">
+								<summary class="px-6 py-4 text-body hover:text-[var(--brand-teal)]">
 									{item.question}
 								</summary>
-								<div class="px-6 pb-4 text-slate-400">
+								<div class="px-6 pb-4 text-muted">
 									{item.answer}
 								</div>
 							</details>
@@ -104,14 +104,14 @@ const t = getTranslations('en');
 
 				<!-- Technical Details -->
 				<div class="mb-12">
-					<h3 class="text-2xl mb-6 text-slate-200">{t.resources.faq.technical.title}</h3>
+					<h3 class="text-2xl mb-6 text-body">{t.resources.faq.technical.title}</h3>
 					<div class="space-y-4">
 						{t.resources.faq.technical.items.map((item) => (
 							<details class="glass-card rounded-lg">
-								<summary class="px-6 py-4 text-slate-200 hover:text-emerald-400">
+								<summary class="px-6 py-4 text-body hover:text-[var(--brand-teal)]">
 									{item.question}
 								</summary>
-								<div class="px-6 pb-4 text-slate-400">
+								<div class="px-6 pb-4 text-muted">
 									{item.answer}
 								</div>
 							</details>
@@ -121,7 +121,7 @@ const t = getTranslations('en');
 
 			<!-- CTA -->
 			<div class="text-center mt-16">
-				<p class="text-xl text-slate-300 mb-6">Have more questions?</p>
+				<p class="text-xl text-body mb-6">Have more questions?</p>
 				<a href="mailto:omixai@omixai.com" class="btn-primary inline-block px-8 py-4 rounded-full text-lg">
 					Contact Us
 				</a>
@@ -130,65 +130,65 @@ const t = getTranslations('en');
 	</section>
 
 	<!-- Technical Documentation Tab -->
-	<section class="tab-panel py-12 bg-slate-900" id="technical-panel">
+	<section class="tab-panel py-12 bg-section" id="technical-panel">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl text-center text-white mb-12">Technical Documentation</h2>
+			<h2 class="text-3xl text-center text-heading mb-12">Technical Documentation</h2>
 
 			<!-- Platform Specs -->
 			<div class="mb-12">
-				<h3 class="text-2xl mb-6 text-slate-200">Mass Spectrometry Platform</h3>
+				<h3 class="text-2xl mb-6 text-body">Mass Spectrometry Platform</h3>
 				<div class="glass-card rounded-lg p-6">
-					<h4 class="text-lg text-white mb-4">Thermo Fisher Orbitrap Astral</h4>
-					<ul class="space-y-2 text-slate-300">
-						<li><strong class="text-slate-200">Resolution:</strong> 240,000 FWHM at m/z 200</li>
-						<li><strong class="text-slate-200">Mass Accuracy:</strong> &lt; 1 ppm</li>
-						<li><strong class="text-slate-200">Scan Speed:</strong> 200 Hz</li>
-						<li><strong class="text-slate-200">Dynamic Range:</strong> &gt; 5 orders of magnitude</li>
-						<li><strong class="text-slate-200">Sensitivity:</strong> Sub-femtomole detection limits</li>
+					<h4 class="text-lg text-heading mb-4">Thermo Fisher Orbitrap Astral</h4>
+					<ul class="space-y-2 text-body">
+						<li><strong class="text-body">Resolution:</strong> 240,000 FWHM at m/z 200</li>
+						<li><strong class="text-body">Mass Accuracy:</strong> &lt; 1 ppm</li>
+						<li><strong class="text-body">Scan Speed:</strong> 200 Hz</li>
+						<li><strong class="text-body">Dynamic Range:</strong> &gt; 5 orders of magnitude</li>
+						<li><strong class="text-body">Sensitivity:</strong> Sub-femtomole detection limits</li>
 					</ul>
 				</div>
 			</div>
 
 			<!-- Proteomics Workflow -->
 			<div class="mb-12">
-				<h3 class="text-2xl mb-6 text-slate-200">Standard Proteomics Workflow</h3>
+				<h3 class="text-2xl mb-6 text-body">Standard Proteomics Workflow</h3>
 				<div class="glass-card rounded-lg p-6 space-y-4">
 					<div>
-						<h4 class="text-white mb-2">1. Sample Preparation</h4>
-						<p class="text-slate-400">Protein extraction, reduction, alkylation, and tryptic digestion using optimized protocols for each sample type.</p>
+						<h4 class="text-heading mb-2">1. Sample Preparation</h4>
+						<p class="text-muted">Protein extraction, reduction, alkylation, and tryptic digestion using optimized protocols for each sample type.</p>
 					</div>
 					<div>
-						<h4 class="text-white mb-2">2. Peptide Cleanup</h4>
-						<p class="text-slate-400">C18 solid-phase extraction to remove salts and contaminants.</p>
+						<h4 class="text-heading mb-2">2. Peptide Cleanup</h4>
+						<p class="text-muted">C18 solid-phase extraction to remove salts and contaminants.</p>
 					</div>
 					<div>
-						<h4 class="text-white mb-2">3. LC-MS/MS Analysis</h4>
-						<p class="text-slate-400">90-120 minute gradient on nanoflow HPLC coupled to Orbitrap Astral with data-dependent acquisition (DDA).</p>
+						<h4 class="text-heading mb-2">3. LC-MS/MS Analysis</h4>
+						<p class="text-muted">90-120 minute gradient on nanoflow HPLC coupled to Orbitrap Astral with data-dependent acquisition (DDA).</p>
 					</div>
 					<div>
-						<h4 class="text-white mb-2">4. Data Processing</h4>
-						<p class="text-slate-400">Database searching with FragPipe or MaxQuant, FDR filtering at 1% protein and peptide level.</p>
+						<h4 class="text-heading mb-2">4. Data Processing</h4>
+						<p class="text-muted">Database searching with FragPipe or MaxQuant, FDR filtering at 1% protein and peptide level.</p>
 					</div>
 					<div>
-						<h4 class="text-white mb-2">5. Quantification & Analysis</h4>
-						<p class="text-slate-400">Label-free quantification (LFQ) or isobaric labeling (TMT), statistical analysis, pathway enrichment.</p>
+						<h4 class="text-heading mb-2">5. Quantification & Analysis</h4>
+						<p class="text-muted">Label-free quantification (LFQ) or isobaric labeling (TMT), statistical analysis, pathway enrichment.</p>
 					</div>
 				</div>
 			</div>
 
 			<!-- Performance Metrics -->
 			<div class="mb-12">
-				<h3 class="text-2xl mb-6 text-slate-200">Typical Performance Metrics</h3>
+				<h3 class="text-2xl mb-6 text-body">Typical Performance Metrics</h3>
 				<div class="glass-card rounded-lg p-6 overflow-x-auto">
 					<table class="w-full">
 						<thead>
 							<tr class="border-b border-white/10">
-								<th class="text-left py-2 text-slate-200">Sample Type</th>
-								<th class="text-left py-2 text-slate-200">Proteins Identified</th>
-								<th class="text-left py-2 text-slate-200">Peptides Identified</th>
+								<th class="text-left py-2 text-body">Sample Type</th>
+								<th class="text-left py-2 text-body">Proteins Identified</th>
+								<th class="text-left py-2 text-body">Peptides Identified</th>
 							</tr>
 						</thead>
-						<tbody class="text-slate-300">
+						<tbody class="text-body">
 							<tr class="border-b border-white/10">
 								<td class="py-2">Human cell line (1 μg)</td>
 								<td class="py-2">8,000-10,000</td>
@@ -211,7 +211,7 @@ const t = getTranslations('en');
 
 			<!-- CTA -->
 			<div class="text-center mt-16">
-				<p class="text-xl text-slate-300 mb-6">Need more technical details?</p>
+				<p class="text-xl text-body mb-6">Need more technical details?</p>
 				<a href="mailto:omixai@omixai.com" class="btn-primary inline-block px-8 py-4 rounded-full text-lg">
 					Contact Us
 				</a>
