@@ -32,7 +32,7 @@
 	const lightColors = {
 		particles: ["#16a34a", "#0d9488", "#2563eb"],
 		links: "#0d9488",
-		linksOpacity: 0.15,
+		linksOpacity: 0.2,
 		twinkle: "#1ea4a1",
 	};
 
@@ -57,10 +57,9 @@
 				fpsLimit: 60,
 				particles: {
 					number: {
-						value: 175,
+						value: 180,
 						density: {
 							enable: true,
-							area: 800,
 						},
 					},
 					color: {
@@ -73,7 +72,7 @@
 						value: 0.5,
 						random: {
 							enable: true,
-							minimumValue: 0.3,
+							minimumValue: 0.2,
 						},
 					},
 					size: {
@@ -85,7 +84,7 @@
 					},
 					links: {
 						enable: true,
-						distance: 150,
+						distance: 100,
 						color: colors.links,
 						opacity: colors.linksOpacity,
 						width: 2,
@@ -127,18 +126,18 @@
 					},
 					modes: {
 						grab: {
-							distance: 250,
+							distance: 200,
 							links: {
-								opacity: 0.6,
-								color: "#f59e0b",
+								opacity: 1.0,
+								color: "#ff8400",
 							},
 						},
 						connect: {
-							distance: 150,
+							distance: 200,
 							links: {
-								opacity: 0.4,
+								opacity: 0.3,
 							},
-							radius: 200,
+							radius: 150,
 						},
 					},
 				},
@@ -146,35 +145,6 @@
 			},
 		});
 
-		// Custom effect: change particle color when near cursor
-		if (container) {
-			const canvas = document.getElementById("particles-container");
-			canvas?.addEventListener("mousemove", (e) => {
-				const rect = canvas.getBoundingClientRect();
-				const mouseX = e.clientX - rect.left;
-				const mouseY = e.clientY - rect.top;
-
-				container.particles.quadTree.queryCircle(
-					{ x: mouseX, y: mouseY },
-					150
-				).forEach((p) => {
-					if (p.particle) {
-						p.particle.color.value = { r: 245, g: 158, b: 11 }; // amber
-					}
-				});
-			});
-
-			// Re-init on theme change
-			const observer = new MutationObserver((mutations) => {
-				mutations.forEach((mutation) => {
-					if (mutation.attributeName === "data-theme") {
-						container.destroy();
-						initParticles();
-					}
-				});
-			});
-			observer.observe(document.documentElement, { attributes: true });
-		}
 	}
 
 	// Initialize when DOM is ready
