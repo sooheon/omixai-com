@@ -1,0 +1,32 @@
+{
+  "slug": "custom",
+  "title": { "ko": "맞춤형 분석", "en": "Custom" },
+  "subtitle": { "ko": "CSF, 배양액 및 특수 샘플", "en": "CSF, Conditioned Media & Specialty Samples" },
+  "description": {
+    "ko": "뇌척수액(CSF), 세포 배양액, 엑소좀 등 특수 샘플에 대한 맞춤형 프로테오믹스 분석을 제공합니다. 표준 워크플로우로 처리하기 어려운 귀중한 샘플을 위한 전문 솔루션입니다.",
+    "en": "Custom proteomics analysis for specialty samples including cerebrospinal fluid (CSF), conditioned media, and exosomes. Expert solutions for precious samples that require specialized workflows."
+  },
+  "features": [
+    {
+      "title": { "ko": "신경학적 바이오마커", "en": "Neurological Biomarkers" },
+      "description": {
+        "ko": "CSF에서 뇌 특이적 단백질과 신경퇴행 지표를 검출합니다. 알츠하이머, 파킨슨병 등 신경질환 연구에 특화된 분석을 제공합니다.",
+        "en": "Detect brain-specific proteins and neurodegeneration indicators in CSF. Specialized analysis for neurological disease research including Alzheimer's and Parkinson's."
+      }
+    },
+    {
+      "title": { "ko": "분비체 및 엑소좀", "en": "Secretome & Exosomes" },
+      "description": {
+        "ko": "세포 배양 상층액에서 분비 단백질, 성장 인자, 세포 외 소포체 내 단백질을 분석합니다. 세포 간 신호전달과 종양 미세환경 연구에 활용합니다.",
+        "en": "Analyze secreted proteins, growth factors, and extracellular vesicle cargo from conditioned media. Apply to cell-cell signaling and tumor microenvironment research."
+      }
+    },
+    {
+      "title": { "ko": "소량 귀중 샘플", "en": "Low-Volume Precious Samples" },
+      "description": {
+        "ko": "10-50uL의 제한된 샘플에서도 심층 분석이 가능합니다. 민감도 높은 워크플로우로 희귀하고 귀중한 샘플의 가치를 최대화합니다.",
+        "en": "Deep analysis possible from limited samples of 10-50uL. Maximize the value of rare and precious samples with highly sensitive workflows."
+      }
+    }
+  ]
+}

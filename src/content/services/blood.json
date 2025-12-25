@@ -1,0 +1,32 @@
+{
+  "slug": "blood",
+  "title": { "ko": "혈액", "en": "Blood" },
+  "subtitle": { "ko": "혈장 및 혈청 프로테오믹스", "en": "Plasma & Serum Proteomics" },
+  "description": {
+    "ko": "혈장 및 혈청 샘플에서 순환 단백질 바이오마커를 발견하고 정량화합니다. 질병 진단, 예후 예측, 치료 모니터링을 위한 비침습적 프로테오믹스 접근법을 제공합니다.",
+    "en": "Discover and quantify circulating protein biomarkers in plasma and serum samples. Provide non-invasive proteomics approaches for disease diagnosis, prognosis prediction, and treatment monitoring."
+  },
+  "features": [
+    {
+      "title": { "ko": "고감도 바이오마커 발견", "en": "High-Sensitivity Biomarker Discovery" },
+      "description": {
+        "ko": "넓은 동적 범위에서 저농도 바이오마커를 검출합니다. 고농도 단백질 제거 및 농축 기술로 수천 개의 순환 단백질을 정량화합니다.",
+        "en": "Detect low-abundance biomarkers across a broad dynamic range. Quantify thousands of circulating proteins through high-abundance protein depletion and enrichment techniques."
+      }
+    },
+    {
+      "title": { "ko": "임상 응용 최적화", "en": "Clinical Application Optimized" },
+      "description": {
+        "ko": "암, 심혈관 질환, 대사 질환의 스크리닝, 조기 진단, 치료 반응 모니터링. 소량 샘플(10-50uL)로 포괄적인 분석이 가능합니다.",
+        "en": "Screening, early diagnosis, and treatment response monitoring for cancer, cardiovascular, and metabolic diseases. Comprehensive analysis possible from small volumes (10-50uL)."
+      }
+    },
+    {
+      "title": { "ko": "대규모 코호트 연구", "en": "Large Cohort Studies" },
+      "description": {
+        "ko": "표준화된 워크플로우로 수백 개 샘플을 일관되게 처리합니다. 역학 연구, 임상 시험, 종단 연구를 위한 확장 가능한 솔루션입니다.",
+        "en": "Consistently process hundreds of samples with standardized workflows. Scalable solution for epidemiological studies, clinical trials, and longitudinal research."
+      }
+    }
+  ]
+}

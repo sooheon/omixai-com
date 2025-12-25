@@ -1,0 +1,32 @@
+{
+  "slug": "cell-culture",
+  "title": { "ko": "세포 배양", "en": "Cell Culture" },
+  "subtitle": { "ko": "세포주 및 오가노이드 프로테오믹스", "en": "Cell Line & Organoid Proteomics" },
+  "description": {
+    "ko": "세포주 및 3D 오가노이드 배양에서 심층 프로테오믹스 분석을 제공합니다. 세포 신호전달, 대사 경로, 단백질 발현 프로파일을 정확하게 파악하여 세포 생물학 연구를 가속화합니다.",
+    "en": "Deep proteomics analysis from cell lines and 3D organoid cultures. Accurately characterize cell signaling, metabolic pathways, and protein expression profiles to accelerate cell biology research."
+  },
+  "features": [
+    {
+      "title": { "ko": "광범위한 샘플 지원", "en": "Broad Sample Support" },
+      "description": {
+        "ko": "HEK293, CHO, HeLa 등 일반적인 세포주와 뇌, 간, 장 오가노이드까지 다양한 배양 시스템에서 일관된 결과를 제공합니다.",
+        "en": "Consistent results from diverse culture systems including common cell lines (HEK293, CHO, HeLa) and organoids (brain, liver, intestinal)."
+      }
+    },
+    {
+      "title": { "ko": "소량 샘플 처리", "en": "Low Sample Input" },
+      "description": {
+        "ko": "100만-500만 세포 또는 10-20mg 오가노이드 조직으로 심층 커버리지를 달성합니다. 제한된 샘플에서도 포괄적인 데이터를 생성합니다.",
+        "en": "Achieve deep coverage from 1-5 million cells or 10-20mg organoid tissue. Generate comprehensive data from limited samples."
+      }
+    },
+    {
+      "title": { "ko": "비교 및 약물 반응 분석", "en": "Comparative & Drug Response Analysis" },
+      "description": {
+        "ko": "처리/대조군 비교, 시간 경과 연구, 약물 처리 효과 분석. LFQ 또는 TMT 정량화로 작용 메커니즘과 내성 경로를 밝힙니다.",
+        "en": "Treatment/control comparisons, time-course studies, and drug response analysis. Reveal mechanisms of action and resistance pathways with LFQ or TMT quantification."
+      }
+    }
+  ]
+}

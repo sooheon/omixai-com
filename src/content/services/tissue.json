@@ -1,0 +1,32 @@
+{
+  "slug": "tissue",
+  "title": { "ko": "조직", "en": "Tissue" },
+  "subtitle": { "ko": "FFPE 및 동결 조직 프로테오믹스", "en": "FFPE & Frozen Tissue Proteomics" },
+  "description": {
+    "ko": "FFPE 및 동결 조직 샘플에서 고품질 프로테오믹스 데이터를 추출합니다. 보관된 임상 샘플과 신선 조직 모두에서 질병 메커니즘과 바이오마커 발견 연구를 수행합니다.",
+    "en": "Extract high-quality proteomics data from FFPE and frozen tissue samples. Conduct disease mechanism and biomarker discovery research from both archived clinical samples and fresh tissue."
+  },
+  "features": [
+    {
+      "title": { "ko": "최적화된 조직 처리", "en": "Optimized Tissue Processing" },
+      "description": {
+        "ko": "FFPE 단백질 가교 문제를 해결하는 전문 프로토콜과 동결 조직의 우수한 단백질 보존을 활용합니다. 모든 조직 유형에서 최대 회수율을 보장합니다.",
+        "en": "Specialized protocols addressing FFPE crosslinking and leveraging excellent protein preservation in frozen tissue. Ensure maximum recovery from all tissue types."
+      }
+    },
+    {
+      "title": { "ko": "다양한 조직 유형", "en": "Diverse Tissue Types" },
+      "description": {
+        "ko": "뇌, 간, 신장, 심장, 근육 등 모든 조직 유형에서 일관된 고품질 결과. 수년간 보관된 FFPE 블록도 분석 가능합니다.",
+        "en": "Consistent high-quality results from all tissue types including brain, liver, kidney, heart, and muscle. FFPE blocks stored for years can also be analyzed."
+      }
+    },
+    {
+      "title": { "ko": "임상 연구 지원", "en": "Clinical Research Support" },
+      "description": {
+        "ko": "환자 코호트 연구, 예후 마커 발견, 정상 대 질병 조직 비교. TMT 멀티플렉싱과 조직병리학 데이터 통합이 가능합니다.",
+        "en": "Patient cohort studies, prognostic marker discovery, normal vs. disease tissue comparisons. TMT multiplexing and histopathology data integration available."
+      }
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+---
+// Particle Background Component using tsparticles
+// Creates an animated particle network with mouse interaction
+---
+
+<div id="particles-container"></div>
+
+<style>
+	#particles-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		pointer-events: auto;
+	}
+</style>
+
+<script>
+	import { tsParticles } from "@tsparticles/engine";
+	import { loadSlim } from "@tsparticles/slim";
+
+	async function initParticles() {
+		await loadSlim(tsParticles);
+
+		const container = await tsParticles.load({
+			id: "particles-container",
+			options: {
+				fullScreen: false,
+				background: {
+					color: {
+						value: "transparent",
+					},
+				},
+				fpsLimit: 60,
+				particles: {
+					number: {
+						value: 149,
+						density: {
+							enable: true,
+							area: 800,
+						},
+					},
+					color: {
+						value: ["#31c27c", "#1ea4a1", "#1a5fbe"],
+					},
+					shape: {
+						type: "circle",
+					},
+					opacity: {
+						value: 0.4,
+						random: {
+							enable: true,
+							minimumValue: 0.2,
+						},
+					},
+					size: {
+						value: 2,
+						random: {
+							enable: true,
+							minimumValue: 1,
+						},
+					},
+					links: {
+						enable: true,
+						distance: 150,
+						color: "#1ea4a1",
+						opacity: 0.2,
+						width: 1,
+					},
+					move: {
+						enable: true,
+						speed: 0.8,
+						direction: "none",
+						random: true,
+						straight: false,
+						outModes: {
+							default: "out",
+						},
+					},
+					twinkle: {
+						particles: {
+							enable: true,
+							frequency: 0.01,
+							opacity: 1,
+							color: {
+								value: "#ffffff",
+							},
+						},
+					},
+				},
+				interactivity: {
+					detectsOn: "window",
+					events: {
+						onHover: {
+							enable: true,
+							mode: ["grab", "connect"],
+						},
+						resize: {
+							enable: true,
+						},
+					},
+					modes: {
+						grab: {
+							distance: 200,
+							links: {
+								opacity: 0.6,
+								color: "#f59e0b",
+							},
+						},
+						connect: {
+							distance: 150,
+							links: {
+								opacity: 0.4,
+							},
+							radius: 200,
+						},
+					},
+				},
+				detectRetina: true,
+			},
+		});
+
+		// Custom effect: change particle color when near cursor
+		if (container) {
+			const canvas = document.getElementById("particles-container");
+			canvas?.addEventListener("mousemove", (e) => {
+				const rect = canvas.getBoundingClientRect();
+				const mouseX = e.clientX - rect.left;
+				const mouseY = e.clientY - rect.top;
+
+				container.particles.quadTree.queryCircle(
+					{ x: mouseX, y: mouseY },
+					150
+				).forEach((p) => {
+					if (p.particle) {
+						p.particle.color.value = { r: 245, g: 158, b: 11 }; // amber
+					}
+				});
+			});
+		}
+	}
+
+	// Initialize when DOM is ready
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", initParticles);
+	} else {
+		initParticles();
+	}
+</script>

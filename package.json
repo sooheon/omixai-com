@@ -11,7 +11,9 @@
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",
     "@tailwindcss/vite": "^4.1.17",
+    "@tsparticles/slim": "^3.9.1",
     "astro": "^5.16.3",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.1.17",
+    "tsparticles": "^3.9.1"
   }
 }

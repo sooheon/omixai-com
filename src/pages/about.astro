@@ -6,75 +6,75 @@ import { getTranslations } from '../content/translations';
 const t = getTranslations('en');
 ---
 
-<Layout lang="en" title="About - OmixAI" currentPage="about" lightHeader={true}>
+<Layout lang="en" title="About - OmixAI" currentPage="about" lightHeader={false}>
 
 	<!-- Hero Section -->
-	<section class="bg-[#dfecf0] py-10">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-				<h1 class="text-3xl md:text-4xl font-bold text-gray-900">
-					{t.about.title}
-				</h1>
-			</div>
-		</section>
+	<section class="bg-gradient-to-b from-slate-900 to-slate-800 py-16">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h1 class="text-3xl md:text-4xl text-white animate-fade-in-up">
+				{t.about.title}
+			</h1>
+		</div>
+	</section>
 
-		<!-- Team Section -->
-		<section class="py-12 bg-white">
-			<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-				<h2 class="text-2xl font-bold text-gray-900 text-center mb-8">
-					{t.about.subtitle}
-				</h2>
-				<div class="space-y-12">
-					{t.about.team.map((member) => (
-						<div class="border-b border-gray-200 pb-8 last:border-0">
-							<div class="grid md:grid-cols-[180px_1fr] gap-6 mb-4">
-								<div>
-									<img src={member.photo} alt={member.name} class="w-full rounded-lg shadow-md" />
+	<!-- Team Section -->
+	<section class="py-12 bg-slate-900">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-2xl text-white text-center mb-8 animate-fade-in-up animate-delay-200">
+				{t.about.subtitle}
+			</h2>
+			<div class="space-y-12">
+				{t.about.team.map((member, i) => (
+					<div class={`glass-card rounded-xl p-6 border-b-0 animate-fade-in-up animate-delay-${(i + 3) * 100}`}
+						<div class="grid md:grid-cols-[140px_1fr] gap-6 mb-4">
+							<div>
+								<img src={member.photo} alt={member.name} class="w-32 h-32 object-cover rounded-lg shadow-md border border-white/10" />
+							</div>
+							<div>
+								<div class="mb-4">
+									<h2 class="text-xl text-white mb-1">{member.name}</h2>
+									<p class="text-lg text-emerald-400">{member.title}</p>
 								</div>
-								<div>
-									<div class="mb-4">
-										<h2 class="text-xl font-bold text-gray-900 mb-1">{member.name}</h2>
-										<p class="text-lg text-[#09bc8a] font-semibold">{member.title}</p>
+
+								<div class="grid md:grid-cols-2 gap-6">
+									<div>
+										<h3 class="text-lg text-slate-200 mb-3">Education</h3>
+										<ul class="space-y-2">
+											{member.education.map((item) => (
+												<li class="text-slate-400 text-sm">{item}</li>
+											))}
+										</ul>
 									</div>
 
-									<div class="grid md:grid-cols-2 gap-6">
-										<div>
-											<h3 class="text-lg font-bold text-gray-900 mb-3">Education</h3>
-											<ul class="space-y-2">
-												{member.education.map((item) => (
-													<li class="text-gray-700 text-sm">{item}</li>
-												))}
-											</ul>
-										</div>
-
-										<div>
-											<h3 class="text-lg font-bold text-gray-900 mb-3">Experience</h3>
-											<ul class="space-y-2">
-												{member.experience.map((item) => (
-													<li class="text-gray-700 text-sm">{item}</li>
-												))}
-											</ul>
-										</div>
+									<div>
+										<h3 class="text-lg text-slate-200 mb-3">Experience</h3>
+										<ul class="space-y-2">
+											{member.experience.map((item) => (
+												<li class="text-slate-400 text-sm">{item}</li>
+											))}
+										</ul>
 									</div>
 								</div>
 							</div>
 						</div>
-					))}
-				</div>
+					</div>
+				))}
+			</div>
 		</div>
 	</section>
 
 	<!-- Investors Section -->
-	<section class="py-12 bg-gray-50">
+	<section class="py-12 bg-slate-800/50">
 		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-2xl font-bold text-gray-900 text-center mb-8">
+			<h2 class="text-2xl text-white text-center mb-8">
 				{t.about.investors.title}
 			</h2>
 			<div class="flex flex-wrap justify-center items-center gap-8">
 				{t.about.investors.list.length === 0 ? (
-					<p class="text-gray-500 text-center">Coming soon</p>
+					<p class="text-slate-500 text-center">Coming soon</p>
 				) : (
 					t.about.investors.list.map((investor) => (
-						<div class="w-40 h-24 flex items-center justify-center">
+						<div class="w-40 h-24 flex items-center justify-center rounded-lg p-4 bg-white/90">
 							<img src={investor.logo} alt={investor.name} class="max-w-full max-h-full object-contain" />
 						</div>
 					))
@@ -84,40 +84,40 @@ const t = getTranslations('en');
 	</section>
 
 	<!-- Timeline Section -->
-	<section class="py-10 bg-white">
+	<section class="py-10 bg-slate-900">
 		<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-2xl font-bold text-gray-900 text-center mb-8">
+			<h2 class="text-2xl text-white text-center mb-8">
 				{t.about.timeline.title}
 			</h2>
 
 			<div class="space-y-6">
 				<!-- 2025 -->
 				<div>
-					<h3 class="text-lg font-bold text-[#09bc8a] mb-3">2025</h3>
+					<h3 class="text-lg text-emerald-400 mb-3">2025</h3>
 					<ul class="space-y-2">
-						<li class="text-gray-700">
-							<span class="font-semibold">Dec</span>
-							<span class="mx-2">·</span>
+						<li class="text-slate-300">
+							<span class="text-slate-200">Dec</span>
+							<span class="mx-2 text-slate-600">·</span>
 							<span>Service contract signed with OncoCross</span>
 						</li>
-						<li class="text-gray-700">
-							<span class="font-semibold">Nov</span>
-							<span class="mx-2">·</span>
+						<li class="text-slate-300">
+							<span class="text-slate-200">Nov</span>
+							<span class="mx-2 text-slate-600">·</span>
 							<span>LLM-powered analysis platform launched</span>
 						</li>
-						<li class="text-gray-700">
-							<span class="font-semibold">Oct</span>
-							<span class="mx-2">·</span>
+						<li class="text-slate-300">
+							<span class="text-slate-200">Oct</span>
+							<span class="mx-2 text-slate-600">·</span>
 							<span>Acquired Radisen AI</span>
 						</li>
-						<li class="text-gray-700">
-							<span class="font-semibold">Sep</span>
-							<span class="mx-2">·</span>
+						<li class="text-slate-300">
+							<span class="text-slate-200">Sep</span>
+							<span class="mx-2 text-slate-600">·</span>
 							<span>Cumulative proteomics service revenue surpassed ₩500M</span>
 						</li>
-						<li class="text-gray-700">
-							<span class="font-semibold">Jun</span>
-							<span class="mx-2">·</span>
+						<li class="text-slate-300">
+							<span class="text-slate-200">Jun</span>
+							<span class="mx-2 text-slate-600">·</span>
 							<span>Automated DIA proteomics sample preparation introduced</span>
 						</li>
 					</ul>
@@ -125,21 +125,21 @@ const t = getTranslations('en');
 
 				<!-- 2024 -->
 				<div>
-					<h3 class="text-lg font-bold text-[#09bc8a] mb-3">2024</h3>
+					<h3 class="text-lg text-emerald-400 mb-3">2024</h3>
 					<ul class="space-y-2">
-						<li class="text-gray-700">
-							<span class="font-semibold">Jun</span>
-							<span class="mx-2">·</span>
+						<li class="text-slate-300">
+							<span class="text-slate-200">Jun</span>
+							<span class="mx-2 text-slate-600">·</span>
 							<span>First proteomics analysis revenue</span>
 						</li>
-						<li class="text-gray-700">
-							<span class="font-semibold">Jun</span>
-							<span class="mx-2">·</span>
+						<li class="text-slate-300">
+							<span class="text-slate-200">Jun</span>
+							<span class="mx-2 text-slate-600">·</span>
 							<span>Pantera Inc. founded</span>
 						</li>
-						<li class="text-gray-700">
-							<span class="font-semibold">Jan</span>
-							<span class="mx-2">·</span>
+						<li class="text-slate-300">
+							<span class="text-slate-200">Jan</span>
+							<span class="mx-2 text-slate-600">·</span>
 							<span>First Astral mass spectrometer imported and installed in South Korea</span>
 						</li>
 					</ul>

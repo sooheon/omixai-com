@@ -16,10 +16,10 @@
         }
       },
       {
-        "value": "80 SPD",
+        "value": "1,000+",
         "label": {
-          "ko": "분석 그라디언트",
-          "en": "Analysis Gradient"
+          "ko": "주간 샘플 처리량",
+          "en": "Samples per Week"
         }
       }
     ]
@@ -51,66 +51,34 @@
       {
         "icon": "🧫",
         "title": {
-          "ko": "세포주",
-          "en": "Cell Lines"
+          "ko": "세포 배양",
+          "en": "Cell Culture"
         },
-        "slug": "cell-lines"
+        "slug": "cell-culture"
       },
       {
         "icon": "🔬",
         "title": {
-          "ko": "오가노이드",
-          "en": "Organoid"
+          "ko": "조직",
+          "en": "Tissue"
         },
-        "slug": "organoid"
-      },
-      {
-        "icon": "🧪",
-        "title": {
-          "ko": "FFPE",
-          "en": "FFPE"
-        },
-        "slug": "ffpe"
-      },
-      {
-        "icon": "❄️",
-        "title": {
-          "ko": "동결 조직",
-          "en": "Frozen Tissue"
-        },
-        "slug": "frozen-tissue"
-      },
-      {
-        "icon": "💉",
-        "title": {
-          "ko": "플라즈마",
-          "en": "Plasma"
-        },
-        "slug": "plasma"
+        "slug": "tissue"
       },
       {
         "icon": "🩸",
         "title": {
-          "ko": "혈청",
-          "en": "Serum"
+          "ko": "혈액",
+          "en": "Blood"
         },
-        "slug": "serum"
+        "slug": "blood"
       },
       {
-        "icon": "🧠",
+        "icon": "⚗️",
         "title": {
-          "ko": "뇌척수액",
-          "en": "CSF"
+          "ko": "맞춤형 분석",
+          "en": "Custom"
         },
-        "slug": "csf"
-      },
-      {
-        "icon": "🧬",
-        "title": {
-          "ko": "세포 배양액",
-          "en": "Conditioned Media"
-        },
-        "slug": "conditioned-media"
+        "slug": "custom"
       }
     ]
   },

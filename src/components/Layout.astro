@@ -5,7 +5,7 @@ import Footer from './Footer.astro';
 interface Props {
 	lang: 'en' | 'ko';
 	title: string;
-	currentPage?: 'home' | 'services' | 'resources' | 'about';
+	currentPage?: 'home' | 'services' | 'resources' | 'about' | 'contact';
 	serviceSlug?: string;
 	lightHeader?: boolean;
 }
@@ -19,40 +19,43 @@ const { lang, title, currentPage, serviceSlug, lightHeader = false } = Astro.pro
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 		<title>{title}</title>
-		<style is:inline set:html={`
+		<style is:inline>
 			html, body {
-				background-color: ${lightHeader ? '#dfecf0' : '#172a3a'};
+				background-color: #0f172a;
 			}
 			body {
-				font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+				font-family: 'Inter', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 				line-height: 1.6;
 				font-weight: 400;
 				display: flex;
 				flex-direction: column;
 				min-height: 100vh;
+				color: #e2e8f0;
 			}
 			h1, h2, h3, h4, h5, h6 {
-				font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-				font-weight: 700;
+				font-family: 'Space Grotesk', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 				letter-spacing: -0.02em;
 				line-height: 1.2;
+				color: #f1f5f9;
 			}
 			p {
 				line-height: 1.7;
 			}
 			a[class*="px-"], button[class*="px-"] {
-				font-weight: 600;
 				letter-spacing: -0.01em;
 			}
 			main {
 				flex: 1;
 				display: flex;
 				flex-direction: column;
-				padding-top: 64px;
+				padding-top: 80px;
 			}
-		`}></style>
+		</style>
 	</head>
 	<body>
 		<Header lang={lang} currentPage={currentPage} serviceSlug={serviceSlug} lightHeader={lightHeader} />

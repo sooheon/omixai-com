@@ -6,33 +6,33 @@ import { getTranslations } from '../content/translations';
 const t = getTranslations('en');
 ---
 
-<Layout lang="en" title={`${t.contact.title} - OmixAI`} currentPage="contact" lightHeader={true}>
+<Layout lang="en" title={`${t.contact.title} - OmixAI`} currentPage="contact" lightHeader={false}>
 	<!-- Hero Section -->
-	<section class="bg-[#dfecf0] py-10">
+	<section class="bg-gradient-to-b from-slate-900 to-slate-800 py-16">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-			<h1 class="text-3xl md:text-4xl font-bold text-gray-900">
+			<h1 class="text-3xl md:text-4xl text-white animate-fade-in-up">
 				{t.contact.title}
 			</h1>
 		</div>
 	</section>
 
 	<!-- Content Section -->
-	<section class="py-12 bg-white">
+	<section class="py-12 bg-slate-900">
 		<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
 				<!-- Contact Information -->
-				<div class="space-y-8">
+				<div class="space-y-8 animate-fade-in-up animate-delay-200">
 					<!-- Email -->
 					<div class="flex items-start gap-4">
-						<div class="flex-shrink-0 w-12 h-12 bg-[#09bc8a]/10 rounded-lg flex items-center justify-center">
-							<svg class="w-6 h-6 text-[#09bc8a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<div class="flex-shrink-0 w-12 h-12 bg-emerald-400/10 rounded-lg flex items-center justify-center glow">
+							<svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
 							</svg>
 						</div>
 						<div>
-							<h3 class="font-semibold text-gray-900 mb-1">{t.contact.email.label}</h3>
-							<a href={`mailto:${t.contact.email.value}`} class="text-[#09bc8a] hover:underline">
+							<h3 class="text-white mb-1">{t.contact.email.label}</h3>
+							<a href={`mailto:${t.contact.email.value}`} class="text-emerald-400 hover:underline">
 								{t.contact.email.value}
 							</a>
 						</div>
@@ -40,24 +40,24 @@ const t = getTranslations('en');
 
 					<!-- Address -->
 					<div class="flex items-start gap-4">
-						<div class="flex-shrink-0 w-12 h-12 bg-[#09bc8a]/10 rounded-lg flex items-center justify-center">
-							<svg class="w-6 h-6 text-[#09bc8a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<div class="flex-shrink-0 w-12 h-12 bg-emerald-400/10 rounded-lg flex items-center justify-center glow">
+							<svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
 							</svg>
 						</div>
 						<div>
-							<h3 class="font-semibold text-gray-900 mb-1">{t.contact.address.label}</h3>
-							<p class="text-gray-700">{t.contact.address.value}</p>
-							<p class="text-gray-700">{t.contact.address.detail}</p>
+							<h3 class="text-white mb-1">{t.contact.address.label}</h3>
+							<p class="text-slate-300">{t.contact.address.value}</p>
+							<p class="text-slate-300">{t.contact.address.detail}</p>
 						</div>
 					</div>
 				</div>
 
 				<!-- Map -->
-				<div>
-					<h3 class="font-semibold text-gray-900 mb-4">{t.contact.map.title}</h3>
-					<div class="rounded-lg overflow-hidden shadow-lg h-96">
+				<div class="animate-fade-in-up animate-delay-300">
+					<h3 class="text-white mb-4">{t.contact.map.title}</h3>
+					<div class="rounded-lg overflow-hidden shadow-lg h-96 border border-white/10">
 						<iframe
 							src="https://maps.google.com/maps?q=43+Janghan-ro,Dongdaemun-gu,Seoul,Korea&t=&z=17&ie=UTF8&iwloc=&output=embed"
 							width="100%"
@@ -69,10 +69,10 @@ const t = getTranslations('en');
 						></iframe>
 					</div>
 					<div class="flex gap-4 mt-3 text-sm">
-						<a href="https://map.naver.com/v5/search/서울특별시 동대문구 장한로 43" target="_blank" rel="noopener noreferrer" class="text-[#09bc8a] hover:underline">
+						<a href="https://map.naver.com/v5/search/서울특별시 동대문구 장한로 43" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">
 							View on Naver Map →
 						</a>
-						<a href="https://map.kakao.com/?q=서울특별시 동대문구 장한로 43" target="_blank" rel="noopener noreferrer" class="text-[#09bc8a] hover:underline">
+						<a href="https://map.kakao.com/?q=서울특별시 동대문구 장한로 43" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">
 							View on Kakao Map →
 						</a>
 					</div>
