@@ -27,33 +27,138 @@ const { service } = Astro.props;
 			<h1 class="text-3xl md:text-4xl text-heading mb-3 animate-fade-in-up">
 				{service.title[lang]}
 			</h1>
-			<p class="text-lg text-body animate-fade-in-up animate-delay-200">
+			<p class="text-lg text-body animate-fade-in-up">
 				{service.subtitle[lang]}
 			</p>
 		</div>
 	</section>
 
-	<!-- Content Section -->
+	<!-- Overview Section -->
 	<section class="py-12 bg-section">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-			<p class="text-body mb-8 text-center animate-fade-in-up animate-delay-300">
+			<p class="text-body mb-12 text-center animate-fade-in-up">
 				{service.description[lang]}
 			</p>
 
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-				{service.features.map((feature, i) => (
-					<div class={`glass-card rounded-xl p-6 text-center animate-fade-in-up animate-delay-${(i + 4) * 100}`}>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+				{service.features.map((feature) => (
+					<div class="glass-card rounded-xl p-6 text-center animate-fade-in-up">
 						<h3 class="text-heading mb-2">{feature.title[lang]}</h3>
 						<p class="text-muted text-sm">{feature.description[lang]}</p>
 					</div>
 				))}
 			</div>
+		</div>
+	</section>
 
-			<div class="mt-12 text-center animate-fade-in-up animate-delay-600">
-				<a href={`mailto:omixai@omixai.com?subject=[${encodeURIComponent(service.title[lang])}] 문의`} class="btn-primary inline-block px-6 py-3 rounded-full">
-					{t.nav.orderNow}
-				</a>
+	<!-- Sample Requirements Section -->
+	<section class="py-12 bg-section-alt">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl text-heading mb-8 text-center animate-fade-in-up">
+				{service.sampleRequirements[lang].title}
+			</h2>
+			<div class="glass-card rounded-xl p-8 animate-fade-in-up">
+				<div class="space-y-4">
+					{service.sampleRequirements[lang].items.map((item) => (
+						<div class="flex flex-col sm:flex-row sm:justify-between border-b border-subtle pb-4 last:border-b-0 last:pb-0">
+							<span class="text-body font-medium mb-1 sm:mb-0">{item.label}</span>
+							<span class="text-muted sm:text-right">{item.value}</span>
+						</div>
+					))}
+				</div>
 			</div>
+		</div>
+	</section>
+
+	<!-- Process Section -->
+	<section class="py-12 bg-section">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl text-heading mb-8 text-center animate-fade-in-up">
+				{service.process[lang].title}
+			</h2>
+			<div class="space-y-6">
+				{service.process[lang].steps.map((step, i) => (
+					<div class="glass-card rounded-xl p-6 animate-fade-in-up">
+						<div class="flex gap-4">
+							<div class="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--brand-teal)] text-white flex items-center justify-center font-bold">
+								{i + 1}
+							</div>
+							<div class="flex-1">
+								<h4 class="text-heading mb-2 font-semibold">{step.title}</h4>
+								<p class="text-muted">{step.description}</p>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Deliverables Section -->
+	<section class="py-12 bg-section-alt">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl text-heading mb-8 text-center animate-fade-in-up">
+				{service.deliverables[lang].title}
+			</h2>
+			<div class="glass-card rounded-xl p-8 animate-fade-in-up">
+				<ul class="space-y-3">
+					{service.deliverables[lang].items.map((item) => (
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-[var(--brand-teal)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+							</svg>
+							<span class="text-body">{item}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- Applications Section -->
+	<section class="py-12 bg-section">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl text-heading mb-8 text-center animate-fade-in-up">
+				{service.applications[lang].title}
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				{service.applications[lang].items.map((item) => (
+					<div class="glass-card rounded-xl p-6 animate-fade-in-up">
+						<h4 class="text-heading mb-2 font-semibold">{item.title}</h4>
+						<p class="text-muted text-sm">{item.description}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Technical Specs Section -->
+	<section class="py-12 bg-section-alt">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl text-heading mb-8 text-center animate-fade-in-up">
+				{service.technicalSpecs[lang].title}
+			</h2>
+			<div class="glass-card rounded-xl p-8 animate-fade-in-up">
+				<div class="space-y-4">
+					{service.technicalSpecs[lang].specs.map((spec) => (
+						<div class="flex flex-col sm:flex-row sm:justify-between border-b border-subtle pb-4 last:border-b-0 last:pb-0">
+							<span class="text-body font-medium mb-1 sm:mb-0">{spec.label}</span>
+							<span class="text-muted sm:text-right">{spec.value}</span>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="py-12 bg-section">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h3 class="text-2xl text-heading mb-4 animate-fade-in-up">지금 시작하세요</h3>
+			<p class="text-body mb-8 animate-fade-in-up">프로젝트에 대해 상담하고 맞춤 견적을 받아보세요.</p>
+			<a href={`mailto:omixai@omixai.com?subject=[${encodeURIComponent(service.title[lang])}] 문의`} class="btn-primary inline-block px-8 py-4 rounded-full text-lg animate-fade-in-up">
+				{t.nav.orderNow}
+			</a>
 		</div>
 	</section>
 </Layout>

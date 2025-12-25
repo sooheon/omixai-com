@@ -28,5 +28,265 @@
         "en": "Patient cohort studies, prognostic marker discovery, normal vs. disease tissue comparisons. TMT multiplexing and histopathology data integration available."
       }
     }
-  ]
+  ],
+  "sampleRequirements": {
+    "ko": {
+      "title": "샘플 요구사항",
+      "items": [
+        {
+          "label": "동결 조직",
+          "value": "10-30mg (습윤 중량)"
+        },
+        {
+          "label": "FFPE 블록/슬라이드",
+          "value": "3-5개 10μm 절편 또는 1-2mm³ 코어"
+        },
+        {
+          "label": "준비 (동결)",
+          "value": "신선 조직을 액체 질소 또는 드라이아이스에서 급속 동결"
+        },
+        {
+          "label": "보관",
+          "value": "동결 조직: -80°C / FFPE: 실온"
+        },
+        {
+          "label": "배송",
+          "value": "동결 조직: 드라이아이스 / FFPE: 실온 택배"
+        },
+        {
+          "label": "반복",
+          "value": "그룹당 최소 5-6회 생물학적 반복 권장 (환자 변이 고려)"
+        }
+      ]
+    },
+    "en": {
+      "title": "Sample Requirements",
+      "items": [
+        {
+          "label": "Frozen Tissue",
+          "value": "10-30mg (wet weight)"
+        },
+        {
+          "label": "FFPE Blocks/Slides",
+          "value": "3-5 sections of 10μm or 1-2mm³ core"
+        },
+        {
+          "label": "Preparation (Frozen)",
+          "value": "Snap freeze fresh tissue in liquid nitrogen or on dry ice"
+        },
+        {
+          "label": "Storage",
+          "value": "Frozen: -80°C / FFPE: Room temperature"
+        },
+        {
+          "label": "Shipping",
+          "value": "Frozen: Dry ice / FFPE: Room temperature courier"
+        },
+        {
+          "label": "Replicates",
+          "value": "Minimum 5-6 biological replicates per group recommended (considering patient variation)"
+        }
+      ]
+    }
+  },
+  "process": {
+    "ko": {
+      "title": "분석 프로세스",
+      "steps": [
+        {
+          "title": "샘플 접수 및 평가",
+          "description": "조직 유형 확인 및 품질 평가. FFPE는 H&E 염색으로 조직 상태 확인. 분석 전략 수립."
+        },
+        {
+          "title": "단백질 추출",
+          "description": "FFPE는 탈파라핀 및 열 기반 가교 회복 처리. 동결 조직은 기계적 균질화 및 용해. 최적화된 추출 버퍼 사용."
+        },
+        {
+          "title": "소화 및 정제",
+          "description": "S-Trap 또는 SP3 기반 단백질 정제 및 트립신 소화. 높은 회수율과 재현성 확보."
+        },
+        {
+          "title": "LC-MS/MS 분석",
+          "description": "Orbitrap Astral DIA 분석으로 조직당 9,000-12,000 단백질 동정. 60-90분 그라디언트 사용."
+        },
+        {
+          "title": "데이터 분석",
+          "description": "조직 특이적 라이브러리 검색 및 통계 분석. 병리 데이터와 통합 분석 가능."
+        },
+        {
+          "title": "보고서 전달",
+          "description": "임상 연관성을 포함한 종합 보고서. 3-4주 내 결과 전달."
+        }
+      ]
+    },
+    "en": {
+      "title": "Analysis Process",
+      "steps": [
+        {
+          "title": "Sample Receipt & Assessment",
+          "description": "Verify tissue type and assess quality. Confirm tissue condition with H&E staining for FFPE. Establish analysis strategy."
+        },
+        {
+          "title": "Protein Extraction",
+          "description": "Deparaffinization and heat-based crosslink reversal for FFPE. Mechanical homogenization and lysis for frozen tissue. Use optimized extraction buffers."
+        },
+        {
+          "title": "Digestion & Cleanup",
+          "description": "S-Trap or SP3-based protein cleanup and trypsin digestion. Ensure high recovery and reproducibility."
+        },
+        {
+          "title": "LC-MS/MS Analysis",
+          "description": "Orbitrap Astral DIA analysis identifies 9,000-12,000 proteins per tissue. Use 60-90 min gradient."
+        },
+        {
+          "title": "Data Analysis",
+          "description": "Tissue-specific library search and statistical analysis. Integration with pathology data available."
+        },
+        {
+          "title": "Report Delivery",
+          "description": "Comprehensive report including clinical relevance. Deliver results within 3-4 weeks."
+        }
+      ]
+    }
+  },
+  "deliverables": {
+    "ko": {
+      "title": "제공 결과물",
+      "items": [
+        "단백질 동정 및 정량 데이터 (Excel/CSV)",
+        "샘플 품질 평가 보고서",
+        "차등 발현 분석 (Volcano plot, MA plot)",
+        "다변량 분석 (PCA, 클러스터링)",
+        "경로 및 기능 농축 분석",
+        "병리 데이터 통합 분석 (요청 시)",
+        "원시 MS 데이터 및 검색 결과",
+        "임상 해석 포함 종합 보고서"
+      ]
+    },
+    "en": {
+      "title": "Deliverables",
+      "items": [
+        "Protein identification and quantification data (Excel/CSV)",
+        "Sample quality assessment report",
+        "Differential expression analysis (Volcano plot, MA plot)",
+        "Multivariate analysis (PCA, clustering)",
+        "Pathway and functional enrichment analysis",
+        "Pathology data integration (upon request)",
+        "Raw MS data and search results",
+        "Comprehensive report with clinical interpretation"
+      ]
+    }
+  },
+  "applications": {
+    "ko": {
+      "title": "응용 분야",
+      "items": [
+        {
+          "title": "암 연구",
+          "description": "종양 대 정상 조직 비교, 암 아형 분류, 전이 메커니즘 연구. 예후 마커 및 치료 표적 발견."
+        },
+        {
+          "title": "신경퇴행성 질환",
+          "description": "알츠하이머, 파킨슨병 뇌 조직 분석. 병리학적 단백질 응집 및 신경염증 연구."
+        },
+        {
+          "title": "심혈관 질환",
+          "description": "심장, 혈관 조직에서 섬유화, 비대, 염증 마커 연구. 질병 진행 메커니즘 규명."
+        },
+        {
+          "title": "간 및 신장 질환",
+          "description": "섬유화, 염증, 대사 변화 프로파일링. 만성 질환 진행 모니터링."
+        },
+        {
+          "title": "약물 효과 평가",
+          "description": "전임상 모델에서 약물 처리 후 조직 변화 분석. 독성 평가 및 효능 검증."
+        }
+      ]
+    },
+    "en": {
+      "title": "Applications",
+      "items": [
+        {
+          "title": "Cancer Research",
+          "description": "Tumor vs. normal tissue comparison, cancer subtype classification, metastasis mechanism studies. Discover prognostic markers and therapeutic targets."
+        },
+        {
+          "title": "Neurodegenerative Diseases",
+          "description": "Alzheimer's and Parkinson's disease brain tissue analysis. Study pathological protein aggregation and neuroinflammation."
+        },
+        {
+          "title": "Cardiovascular Diseases",
+          "description": "Study fibrosis, hypertrophy, and inflammation markers in heart and vascular tissue. Elucidate disease progression mechanisms."
+        },
+        {
+          "title": "Liver & Kidney Diseases",
+          "description": "Profile fibrosis, inflammation, and metabolic changes. Monitor chronic disease progression."
+        },
+        {
+          "title": "Drug Effect Evaluation",
+          "description": "Analyze tissue changes after drug treatment in preclinical models. Toxicity assessment and efficacy validation."
+        }
+      ]
+    }
+  },
+  "technicalSpecs": {
+    "ko": {
+      "title": "기술 사양",
+      "specs": [
+        {
+          "label": "플랫폼",
+          "value": "Thermo Orbitrap Astral"
+        },
+        {
+          "label": "분석 모드",
+          "value": "DIA with tissue-specific libraries"
+        },
+        {
+          "label": "단백질 커버리지",
+          "value": "9,000-12,000 proteins (조직 유형에 따라)"
+        },
+        {
+          "label": "정량 방법",
+          "value": "Label-Free (LFQ) 또는 TMT 16-plex"
+        },
+        {
+          "label": "FFPE 호환성",
+          "value": "최대 10년 보관 샘플"
+        },
+        {
+          "label": "최소 샘플량",
+          "value": "10mg (동결) / 3 sections (FFPE)"
+        }
+      ]
+    },
+    "en": {
+      "title": "Technical Specifications",
+      "specs": [
+        {
+          "label": "Platform",
+          "value": "Thermo Orbitrap Astral"
+        },
+        {
+          "label": "Analysis Mode",
+          "value": "DIA with tissue-specific libraries"
+        },
+        {
+          "label": "Protein Coverage",
+          "value": "9,000-12,000 proteins (depending on tissue type)"
+        },
+        {
+          "label": "Quantification",
+          "value": "Label-Free (LFQ) or TMT 16-plex"
+        },
+        {
+          "label": "FFPE Compatibility",
+          "value": "Up to 10 years archived samples"
+        },
+        {
+          "label": "Minimum Sample",
+          "value": "10mg (frozen) / 3 sections (FFPE)"
+        }
+      ]
+    }
+  }
 }

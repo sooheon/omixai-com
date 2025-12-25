@@ -35,25 +35,22 @@ const t = getTranslations('en');
 		details[open] > summary {
 			margin-bottom: 1rem;
 		}
-		details > div {
-			overflow: hidden;
-			animation: slideDown 0.3s ease-out;
-		}
-		@keyframes slideDown {
-			from {
-				opacity: 0;
-				transform: translateY(-10px);
-			}
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
 		.faq-item {
 			border-bottom: 1px solid var(--border-subtle);
 		}
 		.faq-item:last-child {
 			border-bottom: none;
+		}
+		.faq-content {
+			display: grid;
+			grid-template-rows: 0fr;
+			transition: grid-template-rows 0.3s ease-out;
+		}
+		details[open] .faq-content {
+			grid-template-rows: 1fr;
+		}
+		.faq-content > div {
+			overflow: hidden;
 		}
 		.tab-button {
 			transition: all 0.2s ease;
@@ -118,8 +115,10 @@ const t = getTranslations('en');
 								<summary class="py-4 text-body hover:text-[var(--brand-teal)]">
 									{item.question}
 								</summary>
-								<div class="pb-4 text-muted">
-									{item.answer}
+								<div class="faq-content">
+									<div class="pb-4 text-muted">
+										{item.answer}
+									</div>
 								</div>
 							</details>
 						))}
@@ -135,8 +134,10 @@ const t = getTranslations('en');
 								<summary class="py-4 text-body hover:text-[var(--brand-teal)]">
 									{item.question}
 								</summary>
-								<div class="pb-4 text-muted">
-									{item.answer}
+								<div class="faq-content">
+									<div class="pb-4 text-muted">
+										{item.answer}
+									</div>
 								</div>
 							</details>
 						))}
@@ -152,8 +153,10 @@ const t = getTranslations('en');
 								<summary class="py-4 text-body hover:text-[var(--brand-teal)]">
 									{item.question}
 								</summary>
-								<div class="pb-4 text-muted">
-									{item.answer}
+								<div class="faq-content">
+									<div class="pb-4 text-muted">
+										{item.answer}
+									</div>
 								</div>
 							</details>
 						))}
