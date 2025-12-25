@@ -25,35 +25,29 @@ const t = getTranslations('en');
 			</h2>
 			<div class="space-y-12">
 				{t.about.team.map((member, i) => (
-					<div class={`glass-card rounded-xl p-6 border-b-0 animate-fade-in-up animate-delay-${(i + 3) * 100}`}
-						<div class="grid md:grid-cols-[140px_1fr] gap-6 mb-4">
-							<div>
-								<img src={member.photo} alt={member.name} class="w-32 h-32 object-cover rounded-lg shadow-md border border-white/10" />
+					<div class={`glass-card rounded-xl p-6 animate-fade-in-up animate-delay-${(i + 3) * 100}`}>
+						<div class="grid md:grid-cols-[180px_1fr] gap-6">
+							<div class="text-center md:text-left">
+								<img src={member.photo} alt={member.name} class="w-32 h-32 object-cover rounded-lg shadow-md border border-white/10 mx-auto md:mx-0 mb-3" />
+								<h2 class="text-xl text-white mb-1">{member.name}</h2>
+								<p class="text-emerald-400">{member.title}</p>
 							</div>
-							<div>
-								<div class="mb-4">
-									<h2 class="text-xl text-white mb-1">{member.name}</h2>
-									<p class="text-lg text-emerald-400">{member.title}</p>
+							<div class="space-y-4">
+								<div>
+									<h3 class="text-sm text-slate-500 mb-1">Education</h3>
+									<ul class="space-y-1">
+										{member.education.map((item) => (
+											<li class="text-slate-300 text-sm">{item}</li>
+										))}
+									</ul>
 								</div>
-
-								<div class="grid md:grid-cols-2 gap-6">
-									<div>
-										<h3 class="text-lg text-slate-200 mb-3">Education</h3>
-										<ul class="space-y-2">
-											{member.education.map((item) => (
-												<li class="text-slate-400 text-sm">{item}</li>
-											))}
-										</ul>
-									</div>
-
-									<div>
-										<h3 class="text-lg text-slate-200 mb-3">Experience</h3>
-										<ul class="space-y-2">
-											{member.experience.map((item) => (
-												<li class="text-slate-400 text-sm">{item}</li>
-											))}
-										</ul>
-									</div>
+								<div>
+									<h3 class="text-sm text-slate-500 mb-1">Experience</h3>
+									<ul class="space-y-1">
+										{member.experience.map((item) => (
+											<li class="text-slate-300 text-sm">{item}</li>
+										))}
+									</ul>
 								</div>
 							</div>
 						</div>
