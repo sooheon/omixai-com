@@ -140,6 +140,50 @@ export function getTranslations(lang: Language) {
       map: {
         title: contact.map.title[lang],
       },
+      form: {
+        title: contact.form.title[lang],
+        subtitle: contact.form.subtitle[lang],
+        fields: {
+          sampleType: {
+            label: contact.form.fields.sampleType.label[lang],
+            placeholder: contact.form.fields.sampleType.placeholder[lang],
+            options: {
+              cellCulture: contact.form.fields.sampleType.options.cellCulture[lang],
+              tissue: contact.form.fields.sampleType.options.tissue[lang],
+              blood: contact.form.fields.sampleType.options.blood[lang],
+              custom: contact.form.fields.sampleType.options.custom[lang],
+            },
+          },
+          name: {
+            label: contact.form.fields.name.label[lang],
+            placeholder: contact.form.fields.name.placeholder[lang],
+          },
+          email: {
+            label: contact.form.fields.email.label[lang],
+            placeholder: contact.form.fields.email.placeholder[lang],
+          },
+          cc: {
+            label: contact.form.fields.cc.label[lang],
+            placeholder: contact.form.fields.cc.placeholder[lang],
+          },
+          message: {
+            label: contact.form.fields.message.label[lang],
+            placeholder: contact.form.fields.message.placeholder[lang],
+          },
+        },
+        button: {
+          submit: contact.form.button.submit[lang],
+          sending: contact.form.button.sending[lang],
+        },
+        validation: {
+          required: contact.form.validation.required[lang],
+          invalidEmail: contact.form.validation.invalidEmail[lang],
+        },
+        messages: {
+          success: contact.form.messages.success[lang],
+          error: contact.form.messages.error[lang],
+        },
+      },
     },
   };
 }

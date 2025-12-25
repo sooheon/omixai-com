@@ -11,5 +11,49 @@
   },
   "map": {
     "title": { "ko": "찾아오시는 길", "en": "Location" }
+  },
+  "form": {
+    "title": { "ko": "분석 주문", "en": "Order Analysis" },
+    "subtitle": { "ko": "샘플 정보를 입력하시면 빠르게 견적을 보내드립니다", "en": "Submit your sample details and we'll send you a quote promptly" },
+    "fields": {
+      "sampleType": {
+        "label": { "ko": "샘플 유형", "en": "Sample Type" },
+        "placeholder": { "ko": "샘플 유형을 선택하세요", "en": "Select sample type" },
+        "options": {
+          "cellCulture": { "ko": "세포 배양", "en": "Cell Culture" },
+          "tissue": { "ko": "조직", "en": "Tissue" },
+          "blood": { "ko": "혈액", "en": "Blood" },
+          "custom": { "ko": "맞춤형 분석", "en": "Custom" }
+        }
+      },
+      "name": {
+        "label": { "ko": "이름", "en": "Name" },
+        "placeholder": { "ko": "성함을 입력하세요", "en": "Enter your name" }
+      },
+      "email": {
+        "label": { "ko": "이메일", "en": "Email" },
+        "placeholder": { "ko": "이메일 주소를 입력하세요", "en": "Enter your email address" }
+      },
+      "cc": {
+        "label": { "ko": "참조 (선택)", "en": "CC (optional)" },
+        "placeholder": { "ko": "참조할 이메일 주소 (선택)", "en": "CC email address (optional)" }
+      },
+      "message": {
+        "label": { "ko": "메시지 / 요청사항 (선택)", "en": "Message / Notes (optional)" },
+        "placeholder": { "ko": "추가 요청사항이나 질문을 입력하세요", "en": "Enter any additional requests or questions" }
+      }
+    },
+    "button": {
+      "submit": { "ko": "주문 문의 보내기", "en": "Send Order Inquiry" },
+      "sending": { "ko": "전송 중...", "en": "Sending..." }
+    },
+    "validation": {
+      "required": { "ko": "필수 항목입니다", "en": "This field is required" },
+      "invalidEmail": { "ko": "올바른 이메일 주소를 입력하세요", "en": "Please enter a valid email address" }
+    },
+    "messages": {
+      "success": { "ko": "주문 문의가 성공적으로 전송되었습니다. 곧 연락드리겠습니다!", "en": "Your order inquiry has been sent successfully. We'll contact you soon!" },
+      "error": { "ko": "전송 중 오류가 발생했습니다. 다시 시도하거나 이메일로 직접 연락해 주세요.", "en": "An error occurred while sending. Please try again or email us directly." }
+    }
   }
 }
