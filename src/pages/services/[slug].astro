@@ -51,21 +51,19 @@ const { service } = Astro.props;
 		</div>
 	</section>
 
-	<!-- Sample Requirements Section -->
+	<!-- Applications Section -->
 	<section class="py-12 bg-section-alt">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 			<h2 class="text-3xl text-heading mb-8 text-center animate-fade-in-up">
-				{service.sampleRequirements[lang].title}
+				{service.applications[lang].title}
 			</h2>
-			<div class="glass-card rounded-xl p-8 animate-fade-in-up">
-				<div class="space-y-4">
-					{service.sampleRequirements[lang].items.map((item) => (
-						<div class="flex flex-col sm:flex-row sm:justify-between border-b border-subtle pb-4 last:border-b-0 last:pb-0">
-							<span class="text-body font-medium mb-1 sm:mb-0">{item.label}</span>
-							<span class="text-muted sm:text-right">{item.value}</span>
-						</div>
-					))}
-				</div>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				{service.applications[lang].items.map((item) => (
+					<div class="glass-card rounded-xl p-6 animate-fade-in-up">
+						<h4 class="text-heading mb-2 font-semibold">{item.title}</h4>
+						<p class="text-muted text-sm">{item.description}</p>
+					</div>
+				))}
 			</div>
 		</div>
 	</section>
@@ -115,35 +113,18 @@ const { service } = Astro.props;
 		</div>
 	</section>
 
-	<!-- Applications Section -->
+	<!-- Sample Requirements Section -->
 	<section class="py-12 bg-section">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 			<h2 class="text-3xl text-heading mb-8 text-center animate-fade-in-up">
-				{service.applications[lang].title}
-			</h2>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-				{service.applications[lang].items.map((item) => (
-					<div class="glass-card rounded-xl p-6 animate-fade-in-up">
-						<h4 class="text-heading mb-2 font-semibold">{item.title}</h4>
-						<p class="text-muted text-sm">{item.description}</p>
-					</div>
-				))}
-			</div>
-		</div>
-	</section>
-
-	<!-- Technical Specs Section -->
-	<section class="py-12 bg-section-alt">
-		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl text-heading mb-8 text-center animate-fade-in-up">
-				{service.technicalSpecs[lang].title}
+				{service.sampleRequirements[lang].title}
 			</h2>
 			<div class="glass-card rounded-xl p-8 animate-fade-in-up">
 				<div class="space-y-4">
-					{service.technicalSpecs[lang].specs.map((spec) => (
+					{service.sampleRequirements[lang].items.map((item) => (
 						<div class="flex flex-col sm:flex-row sm:justify-between border-b border-subtle pb-4 last:border-b-0 last:pb-0">
-							<span class="text-body font-medium mb-1 sm:mb-0">{spec.label}</span>
-							<span class="text-muted sm:text-right">{spec.value}</span>
+							<span class="text-body font-medium mb-1 sm:mb-0">{item.label}</span>
+							<span class="text-muted sm:text-right">{item.value}</span>
 						</div>
 					))}
 				</div>
