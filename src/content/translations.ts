@@ -34,13 +34,11 @@ export function getTranslations(lang: Language) {
       resources: common.nav.resources[lang],
       about: common.nav.about[lang],
       contact: common.nav.contact[lang],
-      cta: common.nav.cta[lang],
       orderNow: common.nav.orderNow[lang],
     },
     hero: {
       title: landing.hero.title[lang],
       subtitle: landing.hero.subtitle[lang],
-      description: landing.hero.description[lang],
       cta: landing.hero.cta[lang],
     },
     kpis: {
@@ -183,6 +181,12 @@ export function getTranslations(lang: Language) {
           success: contact.form.messages.success[lang],
           error: contact.form.messages.error[lang],
         },
+      },
+    },
+    cta: {
+      service: {
+        title: common.cta.service.title[lang],
+        description: common.cta.service.description[lang],
       },
     },
   };

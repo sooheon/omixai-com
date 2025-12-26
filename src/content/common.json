@@ -10,10 +10,15 @@
     "resources": { "ko": "자료실", "en": "Resources" },
     "about": { "ko": "회사 소개", "en": "About" },
     "contact": { "ko": "문의", "en": "Contact" },
-    "cta": { "ko": "문의하기", "en": "Contact Us" },
     "orderNow": { "ko": "주문하기", "en": "Order Now" }
   },
   "footer": {
     "tagline": { "ko": "빠르고, 편향 없는, 전체 프로테오믹스", "en": "Fast, Unbiased, Whole Proteomics" }
+  },
+  "cta": {
+    "service": {
+      "title": { "ko": "지금 시작하세요", "en": "Ready to get started?" },
+      "description": { "ko": "프로젝트에 대해 상담하고 맞춤 견적을 받아보세요.", "en": "Contact us to discuss your project and receive a customized quote." }
+    }
   }
 }
