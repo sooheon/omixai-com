@@ -27,14 +27,16 @@
 		links: "#1ea4a1",
 		linksOpacity: 0.2,
 		twinkle: "#ffffff",
+        linkColor: "#ff9900",
 	};
 
-	const lightColors = {
-		particles: ["#31c27c", "#1ea4a1", "#1a5fbe"],
-		links: "#0d9488",
-		linksOpacity: 0.2,
-		twinkle: "#1ea4a1",
-	};
+    const lightColors = {
+        particles: ["#229b63", "#178884", "#1751ad"], // slightly lighter + more saturated
+        links: "#0e7a71",                              // a touch lighter/saturated
+        linksOpacity: 0.2,
+        twinkle: "#178884",
+        linkColor: "#e06200",                          // slightly lighter + more saturated orange
+    };
 
 	function getColors() {
 		const isLight = document.documentElement.getAttribute("data-theme") === "light";
@@ -72,14 +74,14 @@
 						value: 0.5,
 					},
 					size: {
-						value: 1.0,
+						value: 1.5,
 					},
 					links: {
 						enable: true,
 						distance: 100,
 						color: colors.links,
 						opacity: colors.linksOpacity,
-						width: 1,
+						width: 1.5,
 					},
 					move: {
 						enable: true,
