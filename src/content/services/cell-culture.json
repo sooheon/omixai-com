@@ -185,6 +185,10 @@
       {
         "label": { "ko": "배송", "en": "Shipping" },
         "value": { "ko": "드라이아이스로 배송", "en": "Ship on dry ice" }
+      },
+      {
+        "label": { "ko": "반복 수", "en": "Replicates" },
+        "value": { "ko": "그룹당 3개 이상 권장", "en": "3+ per group recommended" }
       }
     ]
   }
