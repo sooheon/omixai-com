@@ -1,272 +1,88 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Developer reference for the OmixAI website. For content editing, see [CONTENT.md](./CONTENT.md).
 
-## Project Overview
-
-This is an Astro-based static website for **OmixAI**, a company providing AI-powered omics analysis services (proteomics, multi-omics, biomarkers). The site is bilingual (Korean default, English secondary) and uses a modern design with Astro 5 and Tailwind CSS 4.
-
-**For content editing (non-developers)**: See [CONTENT.md](./CONTENT.md) for a comprehensive guide on updating text, images, and other site content without touching code.
-
-## Development Commands
+## Commands
 
 ```bash
-# Install dependencies
-npm install
-
-# Start development server (runs on localhost:4321)
-npm run dev
-
-# Build for production (outputs to ./dist/)
-npm run build
-
-# Preview production build locally
-npm run preview
-
-# Run Astro CLI commands
-npm run astro [command]
+npm run dev      # localhost:4321
+npm run build    # outputs to ./dist/
+npm run preview  # preview production build
 ```
 
-## Architecture
-
-### Technology Stack
-- **Framework**: Astro 5.16.3 (static site generation)
-- **Styling**: Tailwind CSS 4.1.17 (via Vite plugin)
-- **TypeScript**: Configured with strict type checking (extends `astro/tsconfigs/strict`)
-- **No JavaScript framework**: Pure Astro components with minimal client-side JS
-
-### Project Structure
+## Structure
 
 ```
 src/
-├── components/           # Reusable Astro components
-│   ├── Header.astro     # Navigation with language switcher (supports light/dark mode)
-│   ├── Footer.astro     # Site footer
-│   └── Layout.astro     # Base layout (accepts lightHeader prop)
-├── content/             # Content collections
-│   ├── en.json          # English translations (all site content)
-│   ├── ko.json          # Korean translations (all site content)
-│   ├── translations.ts  # Translation utility (getTranslations() helper)
-│   └── services/        # Service page content
-│       ├── en/          # English service descriptions (JSON)
-│       └── ko/          # Korean service descriptions (JSON)
-├── pages/               # File-based routing
-│   ├── index.astro      # Korean home (includes inline header)
-│   ├── about.astro      # Korean about (uses Layout component)
-│   ├── resources.astro  # Korean resources (uses Layout component)
-│   ├── services/
-│   │   └── [slug].astro # Korean dynamic service pages
-│   └── en/              # English pages mirror structure
-│       ├── index.astro
-│       ├── about.astro
-│       ├── resources.astro
-│       └── services/[slug].astro
-├── styles/
-│   └── global.css       # Tailwind imports + custom styles
-└── public/              # Static assets (logos, images, favicons)
+├── content/                 # Bilingual JSON content
+│   ├── common.json         # Nav, footer, meta
+│   ├── landing.json        # Homepage
+│   ├── about.json          # Team, investors, timeline
+│   ├── resources.json      # FAQ
+│   ├── contact.json        # Contact info, form
+│   ├── translations.ts     # getTranslations() helper
+│   └── services/           # cell-culture.json, tissue.json, blood.json, custom.json
+├── components/
+│   ├── Layout.astro        # Base layout (lightHeader prop)
+│   ├── Header.astro        # Nav with lang switcher
+│   ├── Footer.astro
+│   ├── AnnouncementBanner.astro
+│   └── ParticleBackground.astro
+├── pages/                   # English (default)
+│   ├── index.astro         # Has inline header
+│   ├── about.astro
+│   ├── resources.astro
+│   ├── contact.astro
+│   ├── services/[slug].astro
+│   └── ko/                 # Korean mirror
+└── styles/global.css
 ```
 
-### URL Structure
+## URLs
 
-**Korean (Default Language)**:
-- Home: `/`
-- About: `/about`
-- Resources: `/resources`
-- Services: `/services/{proteomics|multi-omics|biomarkers|ai-bi}`
+| English | Korean |
+|---------|--------|
+| `/` | `/ko` |
+| `/about` | `/ko/about` |
+| `/services/cell-culture` | `/ko/services/cell-culture` |
 
-**English**:
-- Home: `/en`
-- About: `/en/about`
-- Resources: `/en/resources`
-- Services: `/en/services/{proteomics|multi-omics|biomarkers|ai-bi}`
+## i18n
 
-### Key Files
-
-**`src/components/Layout.astro`**
-- Base layout wrapper for all pages (except home which has inline structure)
-- Props: `lang`, `title`, `currentPage`, `serviceSlug`, `lightHeader`
-- Includes Header and Footer components
-- Handles font loading (Pretendard for Korean, Plus Jakarta Sans for English)
-
-**`src/components/Header.astro`**
-- Navigation with services dropdown, language switcher
-- Supports two modes via `lightHeader` prop:
-  - `false` (default): Dark background (#172a3a), light text, inverted logo
-  - `true`: Light background (#74b3ce/20), dark text, normal logo
-- Props: `lang`, `currentPage`, `serviceSlug`, `lightHeader`
-
-**`src/pages/index.astro` (Korean)** and **`src/pages/en/index.astro` (English)**
-- Home pages have inline header (not using Header component)
-- Full-page layout with hero, services, testimonials, how-it-works sections
-- Uses dark header style
-
-**`src/pages/about.astro`, `resources.astro`, `services/[slug].astro`**
-- Use Layout component with `lightHeader={true}`
-- About: Team profiles with education/experience
-- Resources: Tabbed interface (FAQ + Technical Docs) with hash-based navigation (#faq, #technical)
-- Services: Dynamic pages generated from content collections
-
-### Configuration Notes
-
-- **Tailwind**: Integrated via Vite plugin (not standard Astro integration)
-- **i18n**: Simple JSON-based system, no routing library
-- **Content**: Service descriptions stored as JSON in `src/content/services/{lang}/`
-- **Fonts**:
-  - Korean: Pretendard (loaded from CDN)
-  - English: Plus Jakarta Sans (loaded from Google Fonts)
-
-## Internationalization (i18n)
-
-### Translation System
-
-Translation files are in `src/i18n/{lang}.json` with nested structure:
-
+Content uses bilingual fields:
 ```json
-{
-  "meta": { "title": "..." },
-  "nav": { "services": "...", "resources": "...", ... },
-  "hero": { "title": "...", "subtitle": "...", ... },
-  "services": { "items": [...] },
-  ...
-}
+{ "title": { "ko": "한국어", "en": "English" } }
 ```
 
-**Usage in components:**
+Usage:
 ```typescript
-import { getTranslations } from '../i18n/utils';
-const t = getTranslations('ko'); // or 'en'
-
+import { getTranslations } from '../content/translations';
+const t = getTranslations('en');
 <h1>{t.hero.title}</h1>
 ```
 
-### Adding New Translatable Content
+## Header Modes
 
-1. Add key/value to **both** `src/i18n/en.json` and `src/i18n/ko.json`
-2. Keep structure consistent between files
-3. Reference in templates: `{t.section.key}`
+- **Dark**: Home page only (default)
+- **Light**: All other pages - set `lightHeader={true}` on Layout
 
-### Language Switcher Logic
-
-**Header.astro** constructs language-switching URLs:
-- Korean → English: Adds `/en` prefix
-- English → Korean: Removes `/en` prefix
-- Preserves current page context (home, about, resources, services)
-
-## Design System
-
-### Colors
-- **Primary**: `#09bc8a` (Teal/Green) - CTAs, active states
-- **Dark**: `#172a3a` (Navy) - Dark header, text
-- **Light Blue**: `#74b3ce` - Light header background (with 20% opacity)
-- **Accent**: `#508991` - Demo button
-- **Background**: `#fafaf8` (Off-white), `#ffffff` (White)
-- **Text**: Gray scale (`text-gray-700`, `text-gray-800`, etc.)
-
-### Typography
-- **Headings**: Bold, tight letter-spacing (-0.02em), line-height 1.2
-- **Body**: Regular weight, line-height 1.7
-- **Buttons**: Semi-bold, slight letter-spacing (-0.01em)
-
-### Components
-
-**Header Modes**:
-- Dark header: Home page only
-- Light header: All other pages (about, resources, services)
-- Set via `lightHeader={true}` prop on Layout component
-
-**Buttons**:
-- Primary: `bg-[#09bc8a] hover:bg-[#004346]`
-- Secondary: `bg-[#508991] hover:bg-[#004346]`
-- Shape: `rounded-full` with `px-6 py-2` or `px-8 py-4`
-
-## Development Guidelines
-
-### When Making Changes
-
-1. **Always update both languages**: If you modify English content, update Korean too
-2. **Test both languages**: Navigate to `/` and `/en` to verify changes
-3. **Check header modes**: Verify light/dark header works on all pages
-4. **Verify navigation**: All links should work in both languages
-5. **Build before committing**: Run `npm run build` to catch errors
-
-### Adding a New Page
-
-1. Create Korean version in `src/pages/{pagename}.astro`
-2. Create English version in `src/pages/en/{pagename}.astro`
-3. Add translations to `src/i18n/en.json` and `src/i18n/ko.json`
-4. Update Header.astro if adding to navigation
-5. Set `currentPage` prop on Layout component
-6. Choose `lightHeader={true}` or `{false}` based on design
-
-### Adding a New Service
-
-1. Create JSON files:
-   - `src/content/services/ko/{slug}.json`
-   - `src/content/services/en/{slug}.json`
-2. Structure: `{ "slug": "...", "title": "...", "subtitle": "...", "description": "...", "features": [...] }`
-3. Add service link to navigation in both home pages
-4. Service pages auto-generate via `[slug].astro` dynamic routes
-
-### Modifying Translations
-
-Edit `src/i18n/{lang}.json` files:
-- Keep structure identical between languages
-- Use consistent key naming (camelCase)
-- Test changes by running dev server
-
-## Common Patterns
-
-### Layout Component Usage
 ```astro
-<Layout
-  lang="ko"
-  title="페이지 제목 - 오믹스AI"
-  currentPage="resources"
-  lightHeader={true}
->
-  <!-- Page content -->
-</Layout>
+<Layout lang="en" title="About" currentPage="about" lightHeader={true}>
 ```
 
-### Resources Page Tabs
-Uses hash-based navigation (`#faq`, `#technical`):
-- JavaScript listens for hash changes
-- Switches active tab panel
-- No page reload needed
+## Adding Content
 
-### Service Pages
-Dynamic routes using `[slug].astro`:
-- `getStaticPaths()` reads all JSON files from content collections
-- Generates pages for each service
-- Slug matches JSON filename
+**New page:**
+1. Create `src/pages/{name}.astro` and `src/pages/ko/{name}.astro`
+2. Add content to appropriate JSON file
+3. Update Header.astro nav if needed
 
-## Important Notes
+**New service:**
+1. Create `src/content/services/{slug}.json`
+2. Add to `landing.json` services.items
 
-- **Home pages** (`index.astro` and `en/index.astro`) have inline headers, not using Header component
-- **All other pages** use Layout component with Header/Footer
-- **Light header** should be used on all non-home pages
-- **Service content** is in JSON, not MDX or Markdown
-- **No client-side routing** - pure static site generation
-- **Language switcher** maintains page context (if on /about, switches to /en/about)
+## Colors
 
-## Troubleshooting
-
-**Translations not showing:**
-- Verify key exists in both `en.json` and `ko.json`
-- Check spelling and structure match
-- Ensure `getTranslations()` is called with correct language
-
-**Links broken after language switch:**
-- Check Header.astro `otherLangUrl` logic
-- Verify URL structure matches pages directory
-- Test all navigation paths in both languages
-
-**Build fails:**
-- Check TypeScript errors: `npm run astro check`
-- Verify all imports are correct
-- Ensure all required props are passed to components
-
-**Header not showing correctly:**
-- Verify `lightHeader` prop is set correctly on Layout
-- Check if page is using Layout component or inline header
-- Confirm `currentPage` prop matches page context
+- Primary: `#09bc8a` (teal)
+- Dark: `#172a3a` (navy)
+- Light: `#74b3ce` (blue)
+- Background: `#fafaf8`
