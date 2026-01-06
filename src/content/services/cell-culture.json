@@ -39,8 +39,8 @@
         "en": "Comparative & Drug Response Analysis"
       },
       "description": {
-        "ko": "96웰 단위로 처리/대조군 비교, 시간 경과 연구, 약물 처리 효과 분석. LFQ 또는 TMT 정량화로 작용 메커니즘과 내성 경로를 밝힙니다.",
-        "en": "Treatment/control comparisons, time-course studies, and drug response analysis at 96-well scale. Reveal mechanisms of action and resistance pathways with LFQ or TMT quantification."
+        "ko": "96웰 단위로 처리/대조군 비교, 시간 경과 연구, 약물 처리 효과 분석. LFQ 정량화로 작용 메커니즘과 내성 경로를 밝힙니다.",
+        "en": "Treatment/control comparisons, time-course studies, and drug response analysis at 96-well scale. Reveal mechanisms of action and resistance pathways with LFQ quantification."
       }
     }
   ],
@@ -124,8 +124,8 @@
           "en": "LC-MS/MS Analysis"
         },
         "description": {
-          "ko": "Orbitrap Astral DIA로 심층 프로파일링. 6,000-10,000 단백질 동정.",
-          "en": "Deep profiling with Orbitrap Astral DIA. Identify 6,000-10,000 proteins."
+          "ko": "Orbitrap Astral DIA로 심층 프로파일링. 9,000-12,000 단백질 동정.",
+          "en": "Deep profiling with Orbitrap Astral DIA. Identify 9,000-12,000 proteins."
         }
       },
       {
