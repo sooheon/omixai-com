@@ -91,9 +91,9 @@
 	const header = document.getElementById('header');
 
 	function updateHeaderPosition() {
-		if (!banner) return;
+		if (!banner || !header) return;
 		const bannerHeight = banner.offsetHeight;
-		if (header) header.style.top = bannerHeight + 'px';
+		header.style.top = bannerHeight + 'px';
 	}
 
 	function openModal() {
@@ -110,8 +110,12 @@
 		}
 	}
 
-	// Initial position update
-	updateHeaderPosition();
+	// Update position after render and fonts load
+	requestAnimationFrame(() => {
+		updateHeaderPosition();
+		setTimeout(updateHeaderPosition, 100);
+	});
+	document.fonts?.ready.then(updateHeaderPosition);
 
 	// Event listeners
 	bannerOpen?.addEventListener('click', openModal);
