@@ -130,23 +130,23 @@
       {
         "number": "2",
         "title": {
-          "ko": "질량 분석",
-          "en": "Mass Spectrometry"
+          "ko": "자동화 전처리 및 고감도 질량분석",
+          "en": "Automated Pre-processing and Deep Proteomics"
         },
         "description": {
-          "ko": "Orbitrap Astral로 샘플을 분석합니다",
-          "en": "We analyze your samples with Orbitrap Astral"
+          "ko": "인적 오류 없는 비편향적이고 재현 가능한 자동화 시료 준비 후 Orbitrap Astral, Evosep Eno, Vanquish Neo로 샘플을 분석합니다",
+          "en": "Unbiased, reproducible automated sample preparation with zero human error. LC/MS with Orbitrap Astral, Evosep Eno, and Vanquish Neo"
         }
       },
       {
         "number": "3",
         "title": {
-          "ko": "인사이트 분석",
-          "en": "Insight Analysis"
+          "ko": "클라우드기반 분석 플랫폼을 통한 신속한 결과 전달 ",
+          "en": "Fast Results via Cloud Analysis Platform"
         },
         "description": {
-          "ko": "AI 기반 바이오인포매틱스로 논문 출판 가능한 결과를 받으세요",
-          "en": "Receive publication-ready results with AI-powered bioinformatics"
+          "ko": "샘플 수령 20일 내에 최종 결과 보고서 전달",
+          "en": "Receive your final report within 20 days of sample reception"
         }
       }
     ]
