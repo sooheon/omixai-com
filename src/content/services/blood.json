@@ -43,5 +43,179 @@
         "en": "Consistently process hundreds of samples with standardized workflows. Scalable solution for epidemiological studies, clinical trials, and longitudinal research."
       }
     }
-  ]
+  ],
+  "applications": {
+    "ko": {
+      "title": "응용 분야",
+      "items": [
+        {
+          "title": "암 조기 진단",
+          "description": "순환 종양 단백질 검출을 통한 암 조기 발견. 암종별 특이적 바이오마커 패널 개발."
+        },
+        {
+          "title": "심혈관 질환 위험 평가",
+          "description": "심근경색, 심부전 관련 바이오마커 분석. 심혈관 위험도 예측 및 모니터링."
+        },
+        {
+          "title": "치료 반응 모니터링",
+          "description": "약물 치료 전후 단백질 변화 추적. 치료 효과 평가 및 용량 최적화."
+        },
+        {
+          "title": "대사 질환 연구",
+          "description": "당뇨병, 비만 관련 대사 경로 분석. 인슐린 저항성 및 대사 이상 마커 발굴."
+        }
+      ]
+    },
+    "en": {
+      "title": "Applications",
+      "items": [
+        {
+          "title": "Early Cancer Detection",
+          "description": "Early cancer detection through circulating tumor protein identification. Develop cancer-type specific biomarker panels."
+        },
+        {
+          "title": "Cardiovascular Risk Assessment",
+          "description": "Analyze biomarkers related to myocardial infarction and heart failure. Predict and monitor cardiovascular risk."
+        },
+        {
+          "title": "Treatment Response Monitoring",
+          "description": "Track protein changes before and after drug treatment. Evaluate treatment efficacy and optimize dosing."
+        },
+        {
+          "title": "Metabolic Disease Research",
+          "description": "Analyze metabolic pathways related to diabetes and obesity. Discover insulin resistance and metabolic dysfunction markers."
+        }
+      ]
+    }
+  },
+  "process": {
+    "ko": {
+      "title": "분석 프로세스",
+      "steps": [
+        {
+          "title": "샘플 접수 및 품질 평가",
+          "description": "혈장/혈청 샘플 접수. 용혈, 지질혈증 등 품질 평가."
+        },
+        {
+          "title": "전처리 및 단백질 준비",
+          "description": "고농도 단백질 제거 (선택적). 단백질 소화 및 펩타이드 정제."
+        },
+        {
+          "title": "LC-MS/MS 분석",
+          "description": "Orbitrap Astral DIA로 심층 프로파일링. 1,500-3,000 단백질 동정."
+        },
+        {
+          "title": "데이터 분석",
+          "description": "통계 분석, 바이오마커 후보 선정, 경로 분석. 임상 변수와 연관 분석."
+        },
+        {
+          "title": "결과 보고",
+          "description": "상세 보고서 및 시각화 자료 제공. 2-3주 내 결과 전달."
+        }
+      ]
+    },
+    "en": {
+      "title": "Analysis Process",
+      "steps": [
+        {
+          "title": "Sample Receipt & Quality Assessment",
+          "description": "Receive plasma/serum samples. Assess quality for hemolysis, lipemia, etc."
+        },
+        {
+          "title": "Preprocessing & Protein Preparation",
+          "description": "High-abundance protein depletion (optional). Protein digestion and peptide cleanup."
+        },
+        {
+          "title": "LC-MS/MS Analysis",
+          "description": "Deep profiling with Orbitrap Astral DIA. Identify 1,500-3,000 proteins."
+        },
+        {
+          "title": "Data Analysis",
+          "description": "Statistical analysis, biomarker candidate selection, pathway analysis. Correlation with clinical variables."
+        },
+        {
+          "title": "Results Reporting",
+          "description": "Detailed report and visualization materials. Deliver results within 2-3 weeks."
+        }
+      ]
+    }
+  },
+  "deliverables": {
+    "ko": {
+      "title": "제공 결과물",
+      "items": [
+        "단백질 동정 및 정량 데이터",
+        "샘플별 QC 보고서",
+        "통계 분석 결과 (차등 발현 분석)",
+        "바이오마커 후보 목록",
+        "경로 분석 및 기능 해석",
+        "시각화 자료",
+        "분석 결과 보고서"
+      ]
+    },
+    "en": {
+      "title": "Deliverables",
+      "items": [
+        "Protein identification and quantification data",
+        "Sample-specific QC report",
+        "Statistical analysis results (differential expression)",
+        "Biomarker candidate list",
+        "Pathway analysis and functional interpretation",
+        "Visualization materials",
+        "Analysis report"
+      ]
+    }
+  },
+  "sampleRequirements": {
+    "ko": {
+      "title": "샘플 요구사항",
+      "items": [
+        {
+          "label": "혈장",
+          "value": "≥120μL (EDTA 또는 헤파린 튜브)"
+        },
+        {
+          "label": "혈청",
+          "value": "≥120μL"
+        },
+        {
+          "label": "채혈 후 처리",
+          "value": "2시간 내 원심분리 (2,000g, 10분)"
+        },
+        {
+          "label": "보관",
+          "value": "-80°C, 반복 동결/해동 피함"
+        },
+        {
+          "label": "배송",
+          "value": "드라이아이스로 배송"
+        }
+      ]
+    },
+    "en": {
+      "title": "Sample Requirements",
+      "items": [
+        {
+          "label": "Plasma",
+          "value": "≥120μL (EDTA or heparin tube)"
+        },
+        {
+          "label": "Serum",
+          "value": "≥120μL"
+        },
+        {
+          "label": "Post-collection Processing",
+          "value": "Centrifuge within 2 hours (2,000g, 10 min)"
+        },
+        {
+          "label": "Storage",
+          "value": "-80°C, avoid repeated freeze/thaw"
+        },
+        {
+          "label": "Shipping",
+          "value": "Ship on dry ice"
+        }
+      ]
+    }
+  }
 }
