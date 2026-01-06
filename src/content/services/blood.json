@@ -1,240 +1,47 @@
 {
   "slug": "blood",
-  "title": { "ko": "혈액", "en": "Blood" },
-  "subtitle": { "ko": "혈장 및 혈청 프로테오믹스", "en": "Plasma & Serum Proteomics" },
+  "title": {
+    "ko": "혈액",
+    "en": "Blood"
+  },
+  "subtitle": {
+    "ko": "혈장 및 혈청 프로테오믹스",
+    "en": "Plasma & Serum Proteomics"
+  },
   "description": {
     "ko": "혈장 및 혈청 샘플에서 순환 단백질 바이오마커를 발견하고 정량화합니다. 질병 진단, 예후 예측, 치료 모니터링을 위한 비침습적 프로테오믹스 접근법을 제공합니다.",
     "en": "Discover and quantify circulating protein biomarkers in plasma and serum samples. Provide non-invasive proteomics approaches for disease diagnosis, prognosis prediction, and treatment monitoring."
   },
   "features": [
     {
-      "title": { "ko": "고감도 바이오마커 발견", "en": "High-Sensitivity Biomarker Discovery" },
+      "title": {
+        "ko": "고감도 바이오마커 발견",
+        "en": "High-Sensitivity Biomarker Discovery"
+      },
       "description": {
         "ko": "넓은 동적 범위에서 저농도 바이오마커를 검출합니다. 고농도 단백질 제거 및 농축 기술로 수천 개의 순환 단백질을 정량화합니다.",
         "en": "Detect low-abundance biomarkers across a broad dynamic range. Quantify thousands of circulating proteins through high-abundance protein depletion and enrichment techniques."
       }
     },
     {
-      "title": { "ko": "임상 응용 최적화", "en": "Clinical Application Optimized" },
+      "title": {
+        "ko": "임상 응용 최적화",
+        "en": "Clinical Application Optimized"
+      },
       "description": {
-        "ko": "암, 심혈관 질환, 대사 질환의 스크리닝, 조기 진단, 치료 반응 모니터링. 소량 샘플(10-50uL)로 포괄적인 분석이 가능합니다.",
-        "en": "Screening, early diagnosis, and treatment response monitoring for cancer, cardiovascular, and metabolic diseases. Comprehensive analysis possible from small volumes (10-50uL)."
+        "ko": "암, 심혈관 질환, 대사 질환의 스크리닝, 조기 진단, 치료 반응 모니터링. 소량 샘플(>120uL)로 포괄적인 분석이 가능합니다.",
+        "en": "Screening, early diagnosis, and treatment response monitoring for cancer, cardiovascular, and metabolic diseases. Comprehensive analysis possible from small volumes (>120uL)."
       }
     },
     {
-      "title": { "ko": "대규모 코호트 연구", "en": "Large Cohort Studies" },
+      "title": {
+        "ko": "대규모 코호트 연구",
+        "en": "Large Cohort Studies"
+      },
       "description": {
         "ko": "표준화된 워크플로우로 수백 개 샘플을 일관되게 처리합니다. 역학 연구, 임상 시험, 종단 연구를 위한 확장 가능한 솔루션입니다.",
         "en": "Consistently process hundreds of samples with standardized workflows. Scalable solution for epidemiological studies, clinical trials, and longitudinal research."
       }
     }
-  ],
-  "sampleRequirements": {
-    "ko": {
-      "title": "샘플 요구사항",
-      "items": [
-        {
-          "label": "혈장/혈청",
-          "value": "10-50μL (분석 유형에 따라)"
-        },
-        {
-          "label": "채혈 튜브",
-          "value": "EDTA (혈장) 또는 SST/무첨가 (혈청)"
-        },
-        {
-          "label": "처리",
-          "value": "채혈 후 2시간 내 원심분리 (1,500-2,000g, 10분)"
-        },
-        {
-          "label": "분취",
-          "value": "상층액을 소량(100-200μL)씩 분취하여 동결"
-        },
-        {
-          "label": "보관",
-          "value": "-80°C (장기) 또는 -20°C (단기, 1주 이내)"
-        },
-        {
-          "label": "배송",
-          "value": "드라이아이스로 배송"
-        },
-        {
-          "label": "반복",
-          "value": "그룹당 최소 10-20 샘플 권장 (개체 변이 고려)"
-        }
-      ]
-    },
-    "en": {
-      "title": "Sample Requirements",
-      "items": [
-        {
-          "label": "Plasma/Serum",
-          "value": "10-50μL (depending on analysis type)"
-        },
-        {
-          "label": "Collection Tube",
-          "value": "EDTA (plasma) or SST/plain (serum)"
-        },
-        {
-          "label": "Processing",
-          "value": "Centrifuge within 2h of collection (1,500-2,000g, 10 min)"
-        },
-        {
-          "label": "Aliquoting",
-          "value": "Freeze supernatant in small aliquots (100-200μL)"
-        },
-        {
-          "label": "Storage",
-          "value": "-80°C (long-term) or -20°C (short-term, within 1 week)"
-        },
-        {
-          "label": "Shipping",
-          "value": "Ship on dry ice"
-        },
-        {
-          "label": "Replicates",
-          "value": "Minimum 10-20 samples per group recommended (considering inter-individual variation)"
-        }
-      ]
-    }
-  },
-  "process": {
-    "ko": {
-      "title": "분석 프로세스",
-      "steps": [
-        {
-          "title": "샘플 접수 및 QC",
-          "description": "샘플 도착 확인 및 용혈 여부 검사. BCA 정량 및 품질 평가."
-        },
-        {
-          "title": "고농도 단백질 제거 (선택)",
-          "description": "알부민, 면역글로불린 등 고농도 단백질 제거로 동적 범위 확장. 저농도 바이오마커 검출 향상."
-        },
-        {
-          "title": "단백질 소화",
-          "description": "S-Trap 기반 정제 및 트립신 소화. 혈장/혈청 특화 워크플로우 적용."
-        },
-        {
-          "title": "LC-MS/MS 분석",
-          "description": "Orbitrap Astral DIA 분석으로 500-1,000 단백질 정량 (제거 없음) 또는 2,000-3,000 단백질 (고농도 제거 후)."
-        },
-        {
-          "title": "데이터 분석 및 검증",
-          "description": "혈장 특이적 라이브러리로 정밀 검색. 임상 변수와 연관 분석. 통계적 검증."
-        },
-        {
-          "title": "바이오마커 보고",
-          "description": "후보 바이오마커 목록 및 임상 의의 해석. 2-3주 내 결과 전달."
-        }
-      ]
-    },
-    "en": {
-      "title": "Analysis Process",
-      "steps": [
-        {
-          "title": "Sample Receipt & QC",
-          "description": "Confirm sample arrival and check for hemolysis. BCA quantification and quality assessment."
-        },
-        {
-          "title": "High-Abundance Protein Depletion (Optional)",
-          "description": "Remove albumin, immunoglobulins, and other high-abundance proteins to extend dynamic range. Enhance low-abundance biomarker detection."
-        },
-        {
-          "title": "Protein Digestion",
-          "description": "S-Trap-based cleanup and trypsin digestion. Apply plasma/serum-specialized workflow."
-        },
-        {
-          "title": "LC-MS/MS Analysis",
-          "description": "Orbitrap Astral DIA analysis quantifies 500-1,000 proteins (without depletion) or 2,000-3,000 proteins (with depletion)."
-        },
-        {
-          "title": "Data Analysis & Validation",
-          "description": "Precise search with plasma-specific library. Correlation with clinical variables. Statistical validation."
-        },
-        {
-          "title": "Biomarker Reporting",
-          "description": "Candidate biomarker list and clinical significance interpretation. Deliver results within 2-3 weeks."
-        }
-      ]
-    }
-  },
-  "deliverables": {
-    "ko": {
-      "title": "제공 결과물",
-      "items": [
-        "단백질 정량 데이터 (Excel/CSV)",
-        "샘플 품질 보고서 (용혈, CV 등)",
-        "차등 발현 분석 및 통계 검정",
-        "ROC 곡선 및 바이오마커 성능 평가",
-        "임상 변수 상관 분석",
-        "경로 농축 분석",
-        "원시 MS 데이터 및 검색 결과",
-        "바이오마커 후보 및 임상 해석 보고서"
-      ]
-    },
-    "en": {
-      "title": "Deliverables",
-      "items": [
-        "Protein quantification data (Excel/CSV)",
-        "Sample quality report (hemolysis, CV, etc.)",
-        "Differential expression analysis and statistical testing",
-        "ROC curves and biomarker performance evaluation",
-        "Clinical variable correlation analysis",
-        "Pathway enrichment analysis",
-        "Raw MS data and search results",
-        "Biomarker candidate and clinical interpretation report"
-      ]
-    }
-  },
-  "applications": {
-    "ko": {
-      "title": "응용 분야",
-      "items": [
-        {
-          "title": "암 진단 및 예후",
-          "description": "조기 검출 바이오마커, 암 재발 예측, 치료 반응 모니터링. 액체 생검 기반 비침습 진단."
-        },
-        {
-          "title": "심혈관 질환",
-          "description": "심근경색, 심부전 리스크 예측 및 진단. 트로포닌 외 추가 바이오마커 발견."
-        },
-        {
-          "title": "대사 질환",
-          "description": "당뇨병, 비만, 지방간 관련 순환 단백질 프로파일링. 대사 증후군 바이오마커."
-        },
-        {
-          "title": "신경퇴행성 질환",
-          "description": "알츠하이머, 파킨슨병 조기 진단 마커. 뇌 유래 단백질 혈중 검출."
-        },
-        {
-          "title": "염증성 질환",
-          "description": "자가면역 질환, 패혈증, COVID-19 등 염증 프로파일링. 사이토카인 및 급성기 단백질 정량."
-        }
-      ]
-    },
-    "en": {
-      "title": "Applications",
-      "items": [
-        {
-          "title": "Cancer Diagnosis & Prognosis",
-          "description": "Early detection biomarkers, cancer recurrence prediction, treatment response monitoring. Non-invasive diagnosis based on liquid biopsy."
-        },
-        {
-          "title": "Cardiovascular Diseases",
-          "description": "Myocardial infarction and heart failure risk prediction and diagnosis. Discover additional biomarkers beyond troponin."
-        },
-        {
-          "title": "Metabolic Diseases",
-          "description": "Circulating protein profiling related to diabetes, obesity, and fatty liver. Metabolic syndrome biomarkers."
-        },
-        {
-          "title": "Neurodegenerative Diseases",
-          "description": "Early diagnostic markers for Alzheimer's and Parkinson's disease. Detect brain-derived proteins in blood."
-        },
-        {
-          "title": "Inflammatory Diseases",
-          "description": "Inflammation profiling for autoimmune diseases, sepsis, COVID-19. Quantify cytokines and acute phase proteins."
-        }
-      ]
-    }
-  }
+  ]
 }
