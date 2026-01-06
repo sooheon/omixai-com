@@ -27,8 +27,8 @@
         }
       },
       "name": {
-        "label": { "ko": "이름", "en": "Name" },
-        "placeholder": { "ko": "성함을 입력하세요", "en": "Enter your name" }
+        "label": { "ko": "이름 / 기관", "en": "Name / Organization" },
+        "placeholder": { "ko": "성함 및 기관명", "en": "Your name and organization" }
       },
       "email": {
         "label": { "ko": "이메일", "en": "Email" },

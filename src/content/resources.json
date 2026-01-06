@@ -1,8 +1,16 @@
 {
   "title": { "ko": "자료실", "en": "Resources" },
   "subtitle": { "ko": "프로테오믹스 서비스에 대해 알아야 할 모든 것", "en": "Everything you need to know about our proteomics services" },
+  "tabs": {
+    "faq": { "ko": "FAQ", "en": "FAQ" },
+    "technical": { "ko": "기술 문서", "en": "Technical Docs" }
+  },
   "faq": {
     "title": { "ko": "자주 묻는 질문", "en": "Frequently Asked Questions" },
+    "cta": {
+      "question": { "ko": "더 궁금한 점이 있으신가요?", "en": "Have more questions?" },
+      "button": { "ko": "문의하기", "en": "Contact Us" }
+    },
     "ordering": {
       "title": { "ko": "주문 및 가격", "en": "Ordering & Pricing" },
       "items": [
@@ -54,11 +62,69 @@
         },
         {
           "question": { "ko": "어떤 정량화 방법을 제공하나요?", "en": "What quantification methods do you offer?" },
-          "answer": { "ko": "실험 설계에 따라 라벨 프리 정량화(LFQ), TMT/iTRAQ 멀티플렉싱 및 SILAC 접근 방식을 지원합니다.", "en": "We support label-free quantification (LFQ), TMT/iTRAQ multiplexing, and SILAC approaches depending on your experimental design." }
+          "answer": { "ko": "데이터 독립 수집 및 라벨 프리 정량화(DIA-LFQ)를 지원합니다. TMT/iTRAQ 또는 SILAC 맞춤 주문은 문의해 주세요.", "en": "We support data independent acquisition and label-free quantification (DIA-LFQ). Please contact us for custom orders with TMT/iTRAQ or SILAC." }
         },
         {
           "question": { "ko": "어떤 생물정보학 분석이 포함되나요?", "en": "What bioinformatics analysis is included?" },
-          "answer": { "ko": "표준 분석에는 단백질 식별, 정량화, 통계 테스트, GO 농축 및 경로 분석이 포함됩니다. 고급 AI 기반 분석도 이용 가능합니다.", "en": "Standard analysis includes protein identification, quantification, statistical testing, GO enrichment, and pathway analysis. Advanced AI-powered analysis is available." }
+          "answer": { "ko": "표준 분석에는 단백질 식별, 정량화, 통계 테스트, GO 농축 및 경로 분석이 포함됩니다.", "en": "Standard analysis includes protein identification, quantification, statistical testing, GO enrichment, and pathway analysis." }
+        }
+      ]
+    }
+  },
+  "technicalDocs": {
+    "title": { "ko": "기술 문서", "en": "Technical Documentation" },
+    "cta": {
+      "question": { "ko": "더 자세한 기술 정보가 필요하신가요?", "en": "Need more technical information?" },
+      "button": { "ko": "문의하기", "en": "Contact Us" }
+    },
+    "platform": {
+      "title": { "ko": "질량분석 플랫폼", "en": "Mass Spectrometry Platform" },
+      "name": "Thermo Fisher Orbitrap Astral",
+      "specs": [
+        { "label": { "ko": "해상도", "en": "Resolution" }, "value": "240,000 FWHM (m/z 200)" },
+        { "label": { "ko": "질량 정확도", "en": "Mass Accuracy" }, "value": "< 1 ppm" },
+        { "label": { "ko": "스캔 속도", "en": "Scan Speed" }, "value": "200 Hz" },
+        { "label": { "ko": "감도", "en": "Sensitivity" }, "value": { "ko": "서브-펨토몰 검출 한계", "en": "Sub-femtomole detection limits" } }
+      ]
+    },
+    "performance": {
+      "title": { "ko": "일반적인 성능 지표", "en": "Typical Performance Metrics" },
+      "headers": {
+        "sampleType": { "ko": "샘플 유형", "en": "Sample Type" },
+        "proteins": { "ko": "식별된 단백질", "en": "Proteins Identified" }
+      },
+      "rows": [
+        { "sampleType": { "ko": "인간 세포주 ", "en": "Human cell line " }, "proteins": "9,000-12,000" },
+        { "sampleType": { "ko": "인간 조직 ", "en": "Human tissue " }, "proteins": "8,000-10,000" },
+        { "sampleType": { "ko": "인간 혈장 ", "en": "Human plasma " }, "proteins": "5,000-8,000" }
+      ]
+    },
+    "deliverables": {
+      "title": { "ko": "표준 제공 결과물", "en": "Standard Deliverables" },
+      "sections": [
+        {
+          "title": { "ko": "핵심 데이터 파일", "en": "Core Data Files" },
+          "items": [
+            { "ko": "단백질 동정 및 정량 데이터 (Excel/CSV)", "en": "Protein identification and quantification data (Excel/CSV)" },
+            { "ko": "품질 관리 지표 및 샘플 평가 보고서", "en": "Quality control metrics and sample assessment report" }
+          ]
+        },
+        {
+          "title": { "ko": "분석 및 시각화", "en": "Analysis & Visualization" },
+          "items": [
+            { "ko": "차등 발현 분석 (Volcano plot, MA plot)", "en": "Differential expression analysis (Volcano plot, MA plot)" },
+            { "ko": "다변량 분석 (PCA, 계층적 클러스터링, Heatmap)", "en": "Multivariate analysis (PCA, hierarchical clustering, Heatmap)" },
+            { "ko": "통계 검정 결과 (t-test, ANOVA, FDR 보정)", "en": "Statistical test results (t-test, ANOVA, FDR correction)" },
+            { "ko": "경로 농축 분석 (GO, KEGG, Reactome)", "en": "Pathway enrichment analysis (GO, KEGG, Reactome)" }
+          ]
+        },
+        {
+          "title": { "ko": "보고서", "en": "Reports" },
+          "items": [
+            { "ko": "종합 분석 보고서 (PDF)", "en": "Comprehensive analysis report (PDF)" },
+            { "ko": "방법론 문서", "en": "Methodology documentation" },
+            { "ko": "결과 해석 및 생물학적 인사이트", "en": "Result interpretation and biological insights" }
+          ]
         }
       ]
     }

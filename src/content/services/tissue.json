@@ -39,181 +39,157 @@
         "en": "Clinical Research Support"
       },
       "description": {
-        "ko": "환자 코호트 연구, 예후 마커 발견, 정상 대 질병 조직 비교. ",
-        "en": "Patient cohort studies, prognostic marker discovery, normal vs. disease tissue comparisons. "
+        "ko": "환자 코호트 연구, 예후 마커 발견, 정상 대 질병 조직 비교.",
+        "en": "Patient cohort studies, prognostic marker discovery, normal vs. disease tissue comparisons."
       }
     }
   ],
   "applications": {
-    "ko": {
-      "title": "응용 분야",
-      "items": [
-        {
-          "title": "암 바이오마커 발견",
-          "description": "종양 조직과 정상 조직 비교를 통한 암 특이적 단백질 마커 발굴. 예후 및 치료 반응 예측 마커 연구."
-        },
-        {
-          "title": "신경퇴행성 질환 연구",
-          "description": "뇌 조직에서 알츠하이머, 파킨슨병 관련 단백질 변화 분석. 질병 진행 메커니즘 규명."
-        },
-        {
-          "title": "약물 반응 연구",
-          "description": "치료 전후 조직 샘플 비교 분석. 약물 작용 메커니즘 및 내성 경로 연구."
-        },
-        {
-          "title": "임상 코호트 연구",
-          "description": "대규모 환자 샘플에서 질병 아형 분류 및 예후 마커 발견. 정밀 의료 적용."
-        }
-      ]
+    "title": {
+      "ko": "응용 분야",
+      "en": "Applications"
     },
-    "en": {
-      "title": "Applications",
-      "items": [
-        {
-          "title": "Cancer Biomarker Discovery",
-          "description": "Identify cancer-specific protein markers through tumor vs. normal tissue comparison. Study prognostic and treatment response markers."
+    "items": [
+      {
+        "title": {
+          "ko": "암 바이오마커 발견",
+          "en": "Cancer Biomarker Discovery"
         },
-        {
-          "title": "Neurodegenerative Disease Research",
-          "description": "Analyze protein changes related to Alzheimer's and Parkinson's in brain tissue. Elucidate disease progression mechanisms."
-        },
-        {
-          "title": "Drug Response Studies",
-          "description": "Compare tissue samples before and after treatment. Study drug mechanisms of action and resistance pathways."
-        },
-        {
-          "title": "Clinical Cohort Studies",
-          "description": "Disease subtype classification and prognostic marker discovery from large patient samples. Apply to precision medicine."
+        "description": {
+          "ko": "종양 조직과 정상 조직 비교를 통한 암 특이적 단백질 마커 발굴. 예후 및 치료 반응 예측 마커 연구.",
+          "en": "Identify cancer-specific protein markers through tumor vs. normal tissue comparison. Study prognostic and treatment response markers."
         }
-      ]
-    }
+      },
+      {
+        "title": {
+          "ko": "신경퇴행성 질환 연구",
+          "en": "Neurodegenerative Disease Research"
+        },
+        "description": {
+          "ko": "뇌 조직에서 알츠하이머, 파킨슨병 관련 단백질 변화 분석. 질병 진행 메커니즘 규명.",
+          "en": "Analyze protein changes related to Alzheimer's and Parkinson's in brain tissue. Elucidate disease progression mechanisms."
+        }
+      },
+      {
+        "title": {
+          "ko": "약물 반응 연구",
+          "en": "Drug Response Studies"
+        },
+        "description": {
+          "ko": "치료 전후 조직 샘플 비교 분석. 약물 작용 메커니즘 및 내성 경로 연구.",
+          "en": "Compare tissue samples before and after treatment. Study drug mechanisms of action and resistance pathways."
+        }
+      },
+      {
+        "title": {
+          "ko": "임상 코호트 연구",
+          "en": "Clinical Cohort Studies"
+        },
+        "description": {
+          "ko": "대규모 환자 샘플에서 질병 아형 분류 및 예후 마커 발견. 정밀 의료 적용.",
+          "en": "Disease subtype classification and prognostic marker discovery from large patient samples. Apply to precision medicine."
+        }
+      }
+    ]
   },
   "process": {
-    "ko": {
-      "title": "분석 프로세스",
-      "steps": [
-        {
-          "title": "샘플 접수 및 품질 평가",
-          "description": "FFPE 블록 또는 동결 조직 접수. 조직 품질 및 단백질 보존 상태 평가."
-        },
-        {
-          "title": "조직 처리 및 단백질 추출",
-          "description": "FFPE: 탈파라핀화 및 가교 역전. 동결 조직: 균질화 및 용해. 최적화된 프로토콜로 단백질 추출."
-        },
-        {
-          "title": "LC-MS/MS 분석",
-          "description": "Orbitrap Astral DIA로 심층 프로파일링. 조직 유형에 따라 4,000-8,000 단백질 동정."
-        },
-        {
-          "title": "데이터 분석 및 해석",
-          "description": "통계 분석, 경로 분석, 기능 해석. 임상 데이터와 통합 분석 가능."
-        },
-        {
-          "title": "결과 보고",
-          "description": "상세 보고서 및 시각화 자료 제공. 2-3주 내 결과 전달."
-        }
-      ]
+    "title": {
+      "ko": "분석 프로세스",
+      "en": "Analysis Process"
     },
-    "en": {
-      "title": "Analysis Process",
-      "steps": [
-        {
-          "title": "Sample Receipt & Quality Assessment",
-          "description": "Receive FFPE blocks or frozen tissue. Assess tissue quality and protein preservation status."
+    "steps": [
+      {
+        "title": {
+          "ko": "샘플 접수 및 분석 준비",
+          "en": "Sample Receipt & Planning"
         },
-        {
-          "title": "Tissue Processing & Protein Extraction",
-          "description": "FFPE: Deparaffinization and crosslink reversal. Frozen tissue: Homogenization and lysis. Extract proteins with optimized protocols."
-        },
-        {
-          "title": "LC-MS/MS Analysis",
-          "description": "Deep profiling with Orbitrap Astral DIA. Identify 4,000-8,000 proteins depending on tissue type."
-        },
-        {
-          "title": "Data Analysis & Interpretation",
-          "description": "Statistical analysis, pathway analysis, functional interpretation. Integration with clinical data available."
-        },
-        {
-          "title": "Results Reporting",
-          "description": "Detailed report and visualization materials. Deliver results within 2-3 weeks."
+        "description": {
+          "ko": "FFPE 블록 또는 동결 조직 접수. 분석 전략 수립",
+          "en": "Receive FFPE blocks or frozen tissue. Prepare analysis strategy."
         }
-      ]
-    }
+      },
+      {
+        "title": {
+          "ko": "조직 처리 및 단백질 추출",
+          "en": "Tissue Processing & Protein Extraction"
+        },
+        "description": {
+          "ko": "FFPE: 탈파라핀화 및 가교 역전. 동결 조직: 균질화 및 용해. 최적화된 프로토콜로 단백질 추출.",
+          "en": "FFPE: Deparaffinization and crosslink reversal. Frozen tissue: Homogenization and lysis. Extract proteins with optimized protocols."
+        }
+      },
+      {
+        "title": {
+          "ko": "LC-MS/MS 분석",
+          "en": "LC-MS/MS Analysis"
+        },
+        "description": {
+          "ko": "Orbitrap Astral DIA로 심층 프로파일링. 조직 유형에 따라 4,000-8,000 단백질 동정.",
+          "en": "Deep profiling with Orbitrap Astral DIA. Identify 4,000-8,000 proteins depending on tissue type."
+        }
+      },
+      {
+        "title": {
+          "ko": "데이터 분석 및 해석",
+          "en": "Data Analysis & Interpretation"
+        },
+        "description": {
+          "ko": "통계 분석, 경로 분석, 기능 해석. 임상 데이터와 통합 분석 가능.",
+          "en": "Statistical analysis, pathway analysis, functional interpretation. Integration with clinical data available."
+        }
+      },
+      {
+        "title": {
+          "ko": "결과 보고",
+          "en": "Results Reporting"
+        },
+        "description": {
+          "ko": "상세 보고서 및 시각화 자료 제공. 영업일 20일 내 결과 전달.",
+          "en": "Detailed report and visualization materials. Results within 20 working days."
+        }
+      }
+    ]
   },
   "deliverables": {
-    "ko": {
-      "title": "제공 결과물",
-      "items": [
-        "단백질 동정 및 정량 데이터",
-        "샘플별 QC 보고서",
-        "통계 분석 결과 (차등 발현 분석)",
-        "경로 분석 및 기능 해석",
-        "시각화 자료 (히트맵, 화산 플롯 등)",
-        "분석 결과 보고서"
-      ]
+    "title": {
+      "ko": "제공 결과물",
+      "en": "Deliverables"
     },
-    "en": {
-      "title": "Deliverables",
-      "items": [
-        "Protein identification and quantification data",
-        "Sample-specific QC report",
-        "Statistical analysis results (differential expression)",
-        "Pathway analysis and functional interpretation",
-        "Visualization materials (heatmaps, volcano plots, etc.)",
-        "Analysis report"
-      ]
-    }
+    "items": [
+      { "ko": "단백질 동정 및 정량 데이터", "en": "Protein identification and quantification data" },
+      { "ko": "샘플별 QC 및 전처리 보고서", "en": "Sample-specific QC and processing report" },
+      { "ko": "통계 분석 및 시각화", "en": "Statistical analysis and visualization" },
+      { "ko": "샘플 특이적 경로 분석", "en": "Sample-specific pathway analysis" },
+      { "ko": "분석 결과 보고서", "en": "Analysis report" },
+      { "ko": "맞춤 분석 결과 보고서 (의뢰 가능)", "en": "Custom analysis report (on request)" }
+    ]
   },
   "sampleRequirements": {
-    "ko": {
-      "title": "샘플 요구사항",
-      "items": [
-        {
-          "label": "FFPE 조직",
-          "value": "10μm 절편 5-10장 또는 1mm³ 이상"
-        },
-        {
-          "label": "동결 조직",
-          "value": "10-50mg (습윤 중량)"
-        },
-        {
-          "label": "FFPE 보관",
-          "value": "실온 보관 가능 (수년간 보관된 샘플도 분석 가능)"
-        },
-        {
-          "label": "동결 조직 보관",
-          "value": "-80°C"
-        },
-        {
-          "label": "배송",
-          "value": "FFPE: 실온, 동결 조직: 드라이아이스"
-        }
-      ]
+    "title": {
+      "ko": "샘플 요구사항",
+      "en": "Sample Requirements"
     },
-    "en": {
-      "title": "Sample Requirements",
-      "items": [
-        {
-          "label": "FFPE Tissue",
-          "value": "5-10 sections at 10μm or ≥1mm³"
-        },
-        {
-          "label": "Frozen Tissue",
-          "value": "10-50mg (wet weight)"
-        },
-        {
-          "label": "FFPE Storage",
-          "value": "Room temperature (samples stored for years can be analyzed)"
-        },
-        {
-          "label": "Frozen Tissue Storage",
-          "value": "-80°C"
-        },
-        {
-          "label": "Shipping",
-          "value": "FFPE: Room temperature, Frozen tissue: Dry ice"
-        }
-      ]
-    }
+    "items": [
+      {
+        "label": { "ko": "FFPE 조직", "en": "FFPE Tissue" },
+        "value": { "ko": "10μm 절편 5-10장 또는 1mm³ 이상", "en": "5-10 sections at 10μm or ≥1mm³" }
+      },
+      {
+        "label": { "ko": "동결 조직", "en": "Frozen Tissue" },
+        "value": { "ko": "10-50mg (습윤 중량)", "en": "10-50mg (wet weight)" }
+      },
+      {
+        "label": { "ko": "FFPE 보관", "en": "FFPE Storage" },
+        "value": { "ko": "실온 보관 가능 (수년간 보관된 샘플도 분석 가능)", "en": "Room temperature (samples stored for years can be analyzed)" }
+      },
+      {
+        "label": { "ko": "동결 조직 보관", "en": "Frozen Tissue Storage" },
+        "value": { "ko": "-80°C", "en": "-80°C" }
+      },
+      {
+        "label": { "ko": "배송", "en": "Shipping" },
+        "value": { "ko": "FFPE: 실온, 동결 조직: 드라이아이스", "en": "FFPE: Room temperature, Frozen tissue: Dry ice" }
+      }
+    ]
   }
 }

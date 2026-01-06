@@ -45,175 +45,147 @@
     }
   ],
   "applications": {
-    "ko": {
-      "title": "응용 분야",
-      "items": [
-        {
-          "title": "약물 작용 메커니즘",
-          "description": "약물 처리 후 단백질 발현 및 인산화 변화 분석. 표적 확인 및 오프타겟 효과 평가."
-        },
-        {
-          "title": "세포 신호전달 연구",
-          "description": "성장 인자, 사이토카인 자극에 따른 신호전달 경로 분석. 시간 경과에 따른 동적 변화 추적."
-        },
-        {
-          "title": "오가노이드 특성화",
-          "description": "환자 유래 오가노이드 단백질 프로파일링. 개인 맞춤형 약물 반응 예측."
-        },
-        {
-          "title": "세포주 품질 관리",
-          "description": "세포주 정체성 확인 및 계대 배양 간 일관성 평가. 오염 및 변이 모니터링."
-        }
-      ]
+    "title": {
+      "ko": "응용 분야",
+      "en": "Applications"
     },
-    "en": {
-      "title": "Applications",
-      "items": [
-        {
-          "title": "Drug Mechanism of Action",
-          "description": "Analyze protein expression and phosphorylation changes after drug treatment. Confirm targets and evaluate off-target effects."
+    "items": [
+      {
+        "title": {
+          "ko": "약물 작용 메커니즘",
+          "en": "Drug Mechanism of Action"
         },
-        {
-          "title": "Cell Signaling Studies",
-          "description": "Analyze signaling pathways upon growth factor and cytokine stimulation. Track dynamic changes over time."
-        },
-        {
-          "title": "Organoid Characterization",
-          "description": "Protein profiling of patient-derived organoids. Predict personalized drug responses."
-        },
-        {
-          "title": "Cell Line Quality Control",
-          "description": "Verify cell line identity and assess consistency across passages. Monitor contamination and mutations."
+        "description": {
+          "ko": "약물 처리 후 단백질 발현 및 인산화 변화 분석. 표적 확인 및 오프타겟 효과 평가.",
+          "en": "Analyze protein expression and phosphorylation changes after drug treatment. Confirm targets and evaluate off-target effects."
         }
-      ]
-    }
+      },
+      {
+        "title": {
+          "ko": "세포 신호전달 연구",
+          "en": "Cell Signaling Studies"
+        },
+        "description": {
+          "ko": "성장 인자, 사이토카인 자극에 따른 신호전달 경로 분석. 시간 경과에 따른 동적 변화 추적.",
+          "en": "Analyze signaling pathways upon growth factor and cytokine stimulation. Track dynamic changes over time."
+        }
+      },
+      {
+        "title": {
+          "ko": "오가노이드 특성화",
+          "en": "Organoid Characterization"
+        },
+        "description": {
+          "ko": "환자 유래 오가노이드 단백질 프로파일링. 개인 맞춤형 약물 반응 예측.",
+          "en": "Protein profiling of patient-derived organoids. Predict personalized drug responses."
+        }
+      },
+      {
+        "title": {
+          "ko": "세포주 품질 관리",
+          "en": "Cell Line Quality Control"
+        },
+        "description": {
+          "ko": "세포주 정체성 확인 및 계대 배양 간 일관성 평가. 오염 및 변이 모니터링.",
+          "en": "Verify cell line identity and assess consistency across passages. Monitor contamination and mutations."
+        }
+      }
+    ]
   },
   "process": {
-    "ko": {
-      "title": "분석 프로세스",
-      "steps": [
-        {
-          "title": "샘플 접수 및 품질 평가",
-          "description": "세포 펠릿 또는 용해물 접수. 세포 수, 생존율, 단백질 농도 확인."
-        },
-        {
-          "title": "단백질 추출 및 전처리",
-          "description": "세포 용해 및 단백질 추출. 소화 및 펩타이드 정제."
-        },
-        {
-          "title": "LC-MS/MS 분석",
-          "description": "Orbitrap Astral DIA로 심층 프로파일링. 6,000-10,000 단백질 동정."
-        },
-        {
-          "title": "데이터 분석",
-          "description": "통계 분석, 차등 발현 분석, 경로 분석. 처리군 간 비교 분석."
-        },
-        {
-          "title": "결과 보고",
-          "description": "상세 보고서 및 시각화 자료 제공. 2-3주 내 결과 전달."
-        }
-      ]
+    "title": {
+      "ko": "분석 프로세스",
+      "en": "Analysis Process"
     },
-    "en": {
-      "title": "Analysis Process",
-      "steps": [
-        {
-          "title": "Sample Receipt & Quality Assessment",
-          "description": "Receive cell pellets or lysates. Verify cell count, viability, and protein concentration."
+    "steps": [
+      {
+        "title": {
+          "ko": "샘플 접수 및 품질 평가",
+          "en": "Sample Receipt & Quality Assessment"
         },
-        {
-          "title": "Protein Extraction & Preparation",
-          "description": "Cell lysis and protein extraction. Digestion and peptide cleanup."
-        },
-        {
-          "title": "LC-MS/MS Analysis",
-          "description": "Deep profiling with Orbitrap Astral DIA. Identify 6,000-10,000 proteins."
-        },
-        {
-          "title": "Data Analysis",
-          "description": "Statistical analysis, differential expression analysis, pathway analysis. Comparative analysis between treatment groups."
-        },
-        {
-          "title": "Results Reporting",
-          "description": "Detailed report and visualization materials. Deliver results within 2-3 weeks."
+        "description": {
+          "ko": "세포 펠릿 또는 용해물 접수. 세포 수, 생존율, 단백질 농도 확인.",
+          "en": "Receive cell pellets or lysates. Verify cell count, viability, and protein concentration."
         }
-      ]
-    }
+      },
+      {
+        "title": {
+          "ko": "단백질 추출 및 전처리",
+          "en": "Protein Extraction & Preparation"
+        },
+        "description": {
+          "ko": "세포 용해 및 단백질 추출. 소화 및 펩타이드 정제.",
+          "en": "Cell lysis and protein extraction. Digestion and peptide cleanup."
+        }
+      },
+      {
+        "title": {
+          "ko": "LC-MS/MS 분석",
+          "en": "LC-MS/MS Analysis"
+        },
+        "description": {
+          "ko": "Orbitrap Astral DIA로 심층 프로파일링. 6,000-10,000 단백질 동정.",
+          "en": "Deep profiling with Orbitrap Astral DIA. Identify 6,000-10,000 proteins."
+        }
+      },
+      {
+        "title": {
+          "ko": "데이터 분석",
+          "en": "Data Analysis"
+        },
+        "description": {
+          "ko": "통계 분석, 차등 발현 분석, 경로 분석. 처리군 간 비교 분석.",
+          "en": "Statistical analysis, differential expression analysis, pathway analysis. Comparative analysis between treatment groups."
+        }
+      },
+      {
+        "title": {
+          "ko": "결과 보고",
+          "en": "Results Reporting"
+        },
+        "description": {
+          "ko": "상세 보고서 및 시각화 자료 제공. 2-3주 내 결과 전달.",
+          "en": "Detailed report and visualization materials. Deliver results within 2-3 weeks."
+        }
+      }
+    ]
   },
   "deliverables": {
-    "ko": {
-      "title": "제공 결과물",
-      "items": [
-        "단백질 동정 및 정량 데이터",
-        "샘플별 QC 보고서",
-        "통계 분석 결과 (차등 발현 분석)",
-        "경로 분석 및 기능 해석",
-        "시각화 자료 (히트맵, 화산 플롯, PCA 등)",
-        "분석 결과 보고서"
-      ]
+    "title": {
+      "ko": "제공 결과물",
+      "en": "Deliverables"
     },
-    "en": {
-      "title": "Deliverables",
-      "items": [
-        "Protein identification and quantification data",
-        "Sample-specific QC report",
-        "Statistical analysis results (differential expression)",
-        "Pathway analysis and functional interpretation",
-        "Visualization materials (heatmaps, volcano plots, PCA, etc.)",
-        "Analysis report"
-      ]
-    }
+    "items": [
+      { "ko": "단백질 동정 및 정량 데이터", "en": "Protein identification and quantification data" },
+      { "ko": "샘플별 QC 및 전처리 보고서", "en": "Sample-specific QC and processing report" },
+      { "ko": "통계 분석 및 시각화", "en": "Statistical analysis and visualization" },
+      { "ko": "샘플 특이적 경로 분석", "en": "Sample-specific pathway analysis" },
+      { "ko": "분석 결과 보고서", "en": "Analysis report" },
+      { "ko": "맞춤 분석 결과 보고서 (의뢰 가능)", "en": "Custom analysis report (on request)" }
+    ]
   },
   "sampleRequirements": {
-    "ko": {
-      "title": "샘플 요구사항",
-      "items": [
-        {
-          "label": "세포 펠릿",
-          "value": "1천-100만 세포 (실험 목적에 따라)"
-        },
-        {
-          "label": "세포 용해물",
-          "value": "≥10μg 단백질"
-        },
-        {
-          "label": "오가노이드",
-          "value": "5-50개 오가노이드 (크기에 따라)"
-        },
-        {
-          "label": "보관",
-          "value": "-80°C (펠릿) 또는 적절한 용해 버퍼"
-        },
-        {
-          "label": "배송",
-          "value": "드라이아이스로 배송"
-        }
-      ]
+    "title": {
+      "ko": "샘플 요구사항",
+      "en": "Sample Requirements"
     },
-    "en": {
-      "title": "Sample Requirements",
-      "items": [
-        {
-          "label": "Cell Pellet",
-          "value": "1K-1M cells (depending on experiment)"
-        },
-        {
-          "label": "Cell Lysate",
-          "value": "≥10μg protein"
-        },
-        {
-          "label": "Organoids",
-          "value": "5-50 organoids (depending on size)"
-        },
-        {
-          "label": "Storage",
-          "value": "-80°C (pellet) or in appropriate lysis buffer"
-        },
-        {
-          "label": "Shipping",
-          "value": "Ship on dry ice"
-        }
-      ]
-    }
+    "items": [
+      {
+        "label": { "ko": "세포 및 오가노이드", "en": "Cell and Organoid" },
+        "value": { "ko": "96-well 규모", "en": "96-well plate scale" }
+      },
+      {
+        "label": { "ko": "세포 용해물", "en": "Cell Lysate" },
+        "value": { "ko": "≥20μg 단백질", "en": "≥20μg protein" }
+      },
+      {
+        "label": { "ko": "보관", "en": "Storage" },
+        "value": { "ko": "-80°C (펠릿) 또는 적절한 용해 버퍼 (OmixAI 제공)", "en": "-80°C (pellet) or in appropriate lysis buffer (provided by OmixAI)" }
+      },
+      {
+        "label": { "ko": "배송", "en": "Shipping" },
+        "value": { "ko": "드라이아이스로 배송", "en": "Ship on dry ice" }
+      }
+    ]
   }
 }

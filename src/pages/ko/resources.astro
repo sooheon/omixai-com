@@ -2,8 +2,11 @@
 import '../../styles/global.css';
 import Layout from '../../components/Layout.astro';
 import { getTranslations } from '../../content/translations';
+import resourcesData from '../../content/resources.json';
 
 const t = getTranslations('ko');
+const lang = 'ko';
+const r = resourcesData;
 ---
 
 <Layout lang="ko" title={`${t.resources.title} - ${t.meta.title}`} currentPage="resources" lightHeader={false}>
@@ -65,33 +68,16 @@ const t = getTranslations('ko');
 		.tab-panel.active {
 			display: block;
 		}
-		.service-tab-btn {
-			transition: all 0.2s ease;
-			cursor: pointer;
-		}
-		.service-tab-btn.active {
-			color: #31c27c;
-			border-bottom-color: #31c27c;
-		}
-		.service-tab-btn:hover {
-			color: #31c27c;
-		}
-		.service-tab-content {
-			display: none;
-		}
-		.service-tab-content.active {
-			display: block;
-		}
-	</style>
+		</style>
 
 	<!-- Hero Section -->
 	<section class="bg-section-alt py-16">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 			<h1 class="text-3xl md:text-4xl text-heading mb-3 animate-fade-in-up">
-				{t.resources.title}
+				{r.title[lang]}
 			</h1>
 			<p class="text-lg text-body animate-fade-in-up animate-delay-200">
-				{t.resources.subtitle}
+				{r.subtitle[lang]}
 			</p>
 		</div>
 	</section>
@@ -105,14 +91,14 @@ const t = getTranslations('ko');
 					class="tab-button active px-4 py-3 text-body border-b-2 border-transparent no-underline"
 					data-tab="faq"
 				>
-					FAQ
+					{r.tabs.faq[lang]}
 				</a>
 				<a
 					href="#technical"
 					class="tab-button px-4 py-3 text-body border-b-2 border-transparent no-underline"
 					data-tab="technical"
 				>
-					기술 문서
+					{r.tabs.technical[lang]}
 				</a>
 			</div>
 		</div>
@@ -121,39 +107,20 @@ const t = getTranslations('ko');
 	<!-- FAQ Tab -->
 	<section class="tab-panel active py-12 bg-section" id="faq-panel">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl text-center text-heading mb-12">자주 묻는 질문</h2>
+			<h2 class="text-3xl text-center text-heading mb-12">{r.faq.title[lang]}</h2>
 
 				<!-- Ordering & Pricing -->
 				<div class="mb-12">
-					<h3 class="text-2xl mb-6 text-body">{t.resources.faq.ordering.title}</h3>
+					<h3 class="text-2xl mb-6 text-body">{r.faq.ordering.title[lang]}</h3>
 					<div>
-						{t.resources.faq.ordering.items.map((item) => (
+						{r.faq.ordering.items.map((item) => (
 							<details class="faq-item">
 								<summary class="py-4 text-body hover:text-[var(--brand-teal)]">
-									{item.question}
+									{item.question[lang]}
 								</summary>
 								<div class="faq-content">
 									<div class="pb-4 text-muted">
-										{item.answer}
-									</div>
-								</div>
-							</details>
-						))}
-					</div>
-				</div>
-
-				<!-- Sample Preparation -->
-				<div class="mb-12">
-					<h3 class="text-2xl mb-6 text-body">{t.resources.faq.samplePrep.title}</h3>
-					<div>
-						{t.resources.faq.samplePrep.items.map((item) => (
-							<details class="faq-item">
-								<summary class="py-4 text-body hover:text-[var(--brand-teal)]">
-									{item.question}
-								</summary>
-								<div class="faq-content">
-									<div class="pb-4 text-muted">
-										{item.answer}
+										{item.answer[lang]}
 									</div>
 								</div>
 							</details>
@@ -163,16 +130,16 @@ const t = getTranslations('ko');
 
 				<!-- Technical Details -->
 				<div class="mb-12">
-					<h3 class="text-2xl mb-6 text-body">{t.resources.faq.technical.title}</h3>
+					<h3 class="text-2xl mb-6 text-body">{r.faq.technical.title[lang]}</h3>
 					<div>
-						{t.resources.faq.technical.items.map((item) => (
+						{r.faq.technical.items.map((item) => (
 							<details class="faq-item">
 								<summary class="py-4 text-body hover:text-[var(--brand-teal)]">
-									{item.question}
+									{item.question[lang]}
 								</summary>
 								<div class="faq-content">
 									<div class="pb-4 text-muted">
-										{item.answer}
+										{item.answer[lang]}
 									</div>
 								</div>
 							</details>
@@ -182,9 +149,9 @@ const t = getTranslations('ko');
 
 			<!-- CTA -->
 			<div class="text-center mt-16">
-				<p class="text-xl text-body mb-6">더 궁금한 점이 있으신가요?</p>
+				<p class="text-xl text-body mb-6">{r.faq.cta.question[lang]}</p>
 				<a href="mailto:omixai@omixai.com" class="btn-primary inline-block px-8 py-4 rounded-full text-lg">
-					문의하기
+					{r.faq.cta.button[lang]}
 				</a>
 			</div>
 		</div>
@@ -193,377 +160,69 @@ const t = getTranslations('ko');
 	<!-- Technical Documentation Tab -->
 	<section class="tab-panel py-12 bg-section" id="technical-panel">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-			<h2 class="text-3xl text-center text-heading mb-12">기술 문서</h2>
+			<h2 class="text-3xl text-center text-heading mb-12">{r.technicalDocs.title[lang]}</h2>
 
 			<!-- Platform Specs -->
 			<div class="mb-12">
-				<h3 class="text-2xl mb-6 text-body">질량분석 플랫폼</h3>
+				<h3 class="text-2xl mb-6 text-body">{r.technicalDocs.platform.title[lang]}</h3>
 				<div class="border-b border-subtle pb-6">
-					<h4 class="text-lg text-heading mb-4">Thermo Fisher Orbitrap Astral</h4>
+					<h4 class="text-lg text-heading mb-4">{r.technicalDocs.platform.name}</h4>
 					<ul class="space-y-2 text-body">
-						<li><strong class="text-body">해상도:</strong> 240,000 FWHM (m/z 200)</li>
-						<li><strong class="text-body">질량 정확도:</strong> &lt; 1 ppm</li>
-						<li><strong class="text-body">스캔 속도:</strong> 200 Hz</li>
-						<li><strong class="text-body">동적 범위:</strong> &gt; 5 orders of magnitude</li>
-						<li><strong class="text-body">감도:</strong> 서브-펨토몰 검출 한계</li>
+						{r.technicalDocs.platform.specs.map((spec) => (
+							<li>
+								<strong class="text-body">{typeof spec.label === 'string' ? spec.label : spec.label[lang]}:</strong>{' '}
+								{typeof spec.value === 'string' ? spec.value : spec.value[lang]}
+							</li>
+						))}
 					</ul>
-				</div>
-			</div>
-
-			<!-- Proteomics Workflow -->
-			<div class="mb-12">
-				<h3 class="text-2xl mb-6 text-body">표준 프로테오믹스 워크플로우</h3>
-				<div class="space-y-6">
-					<div class="border-b border-subtle pb-6">
-						<h4 class="text-heading mb-2">1. 샘플 준비 (Sample Preparation)</h4>
-						<p class="text-muted">Liquid Handler 기반의 자동화 전처리 시스템을 도입하여, 추출부터 트립신 소화(Digestion)까지의 전 과정을 단일 튜브 내에서 신속하고 재현성 있게 수행합니다.</p>
-					</div>
-					<div class="border-b border-subtle pb-6">
-						<h4 class="text-heading mb-2">2. 펩타이드 정제 (Peptide Purification)</h4>
-						<p class="text-muted">Magnetic Bead 기술을 활용한 고효율 세척 공정으로 염분 및 불순물을 완벽히 제거하여, 분석에 최적화된 고순도 펩타이드를 회수합니다.</p>
-					</div>
-					<div class="border-b border-subtle pb-6">
-						<h4 class="text-heading mb-2">3. LC-MS/MS 분석 (LC-MS/MS Analysis)</h4>
-						<p class="text-muted">Orbitrap Astral의 DIA(Data-Independent Acquisition) 모드와 20~40분의 고속 그라디언트(Short Gradient)를 결합하여, 데이터 심도와 분석 처리량(Throughput)을 동시에 극대화합니다.</p>
-					</div>
-					<div class="border-b border-subtle pb-6">
-						<h4 class="text-heading mb-2">4. 데이터 처리 (Data Processing)</h4>
-						<p class="text-muted">딥러닝 기반의 DIA-NN 소프트웨어를 통해 정밀한 라이브러리 검색을 수행하고, 1% FDR 필터링을 적용하여 신뢰도 높은 펩타이드 및 단백질 동정 결과를 확보합니다.</p>
-					</div>
-					<div>
-						<h4 class="text-heading mb-2">5. 정량 및 분석 (Quantification & Analysis)</h4>
-						<p class="text-muted">고정밀 Label-Free Quantification(LFQ)을 수행하며, 이어지는 다변량 통계 분석 및 경로(Pathway) 분석을 통해 심층적인 생물학적 인사이트를 제공합니다.</p>
-					</div>
 				</div>
 			</div>
 
 			<!-- Performance Metrics -->
 			<div class="mb-12">
-				<h3 class="text-2xl mb-6 text-body">일반적인 성능 지표</h3>
+				<h3 class="text-2xl mb-6 text-body">{r.technicalDocs.performance.title[lang]}</h3>
 				<div class="overflow-x-auto">
 					<table class="w-full">
 						<thead>
 							<tr class="border-b border-subtle">
-								<th class="text-left py-2 text-body">샘플 유형</th>
-								<th class="text-left py-2 text-body">식별된 단백질</th>
-								<th class="text-left py-2 text-body">식별된 펩타이드</th>
+								<th class="text-left py-2 text-body">{r.technicalDocs.performance.headers.sampleType[lang]}</th>
+								<th class="text-left py-2 text-body">{r.technicalDocs.performance.headers.proteins[lang]}</th>
 							</tr>
 						</thead>
 						<tbody class="text-body">
-							<tr class="border-b border-subtle">
-								<td class="py-2">인간 세포주 (1 μg)</td>
-								<td class="py-2">8,000-10,000</td>
-								<td class="py-2">80,000-100,000</td>
-							</tr>
-							<tr class="border-b border-subtle">
-								<td class="py-2">인간 조직 (10 mg)</td>
-								<td class="py-2">9,000-12,000</td>
-								<td class="py-2">90,000-120,000</td>
-							</tr>
-							<tr>
-								<td class="py-2">인간 혈장 (10 μL)</td>
-								<td class="py-2">500-800</td>
-								<td class="py-2">5,000-8,000</td>
-							</tr>
+							{r.technicalDocs.performance.rows.map((row, index) => (
+								<tr class={index < r.technicalDocs.performance.rows.length - 1 ? "border-b border-subtle" : ""}>
+									<td class="py-2">{row.sampleType[lang]}</td>
+									<td class="py-2">{row.proteins}</td>
+								</tr>
+							))}
 						</tbody>
 					</table>
 				</div>
 			</div>
 
-			<!-- Service-Specific Sample Requirements -->
+				<!-- Standard Deliverables -->
 			<div class="mb-12">
-				<h3 class="text-2xl mb-6 text-body">서비스별 샘플 요구사항</h3>
-
-				<!-- Service Tabs -->
-				<div class="flex gap-2 mb-6 border-b border-subtle overflow-x-auto">
-					<button class="service-tab-btn active px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="cell-culture" data-section="requirements">
-						세포 배양
-					</button>
-					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="tissue" data-section="requirements">
-						조직
-					</button>
-					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="blood" data-section="requirements">
-						혈액
-					</button>
-					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="custom" data-section="requirements">
-						맞춤형
-					</button>
-				</div>
-
-				<!-- Tab Content -->
-				<div class="service-tab-content active" data-service="cell-culture" data-section="requirements">
-					<h4 class="text-xl text-heading mb-4">세포 배양 및 오가노이드</h4>
-					<div class="space-y-3 text-body">
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">세포주:</span> 1-5백만 세포 (세포 펠렛 또는 용해물)
-						</div>
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">오가노이드:</span> 10-20mg 조직 (습윤 중량)
-						</div>
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">준비:</span> PBS로 세척, 드라이아이스에서 급속 동결
-						</div>
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">보관:</span> -80°C, 드라이아이스로 배송
-						</div>
-						<div>
-							<span class="font-medium">반복:</span> 그룹당 최소 3-4회 생물학적 반복 권장
-						</div>
-					</div>
-				</div>
-
-				<div class="service-tab-content" data-service="tissue" data-section="requirements">
-					<h4 class="text-xl text-heading mb-4">조직 (FFPE 및 동결)</h4>
-					<div class="space-y-3 text-body">
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">동결 조직:</span> 10-30mg (습윤 중량)
-						</div>
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">FFPE 블록/슬라이드:</span> 3-5개 10μm 절편 또는 1-2mm³ 코어
-						</div>
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">준비:</span> 신선 조직을 액체 질소 또는 드라이아이스에서 급속 동결
-						</div>
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">보관:</span> 동결 조직: -80°C / FFPE: 실온
-						</div>
-						<div>
-							<span class="font-medium">반복:</span> 그룹당 최소 5-6회 생물학적 반복 권장 (환자 변이 고려)
-						</div>
-					</div>
-				</div>
-
-				<div class="service-tab-content" data-service="blood" data-section="requirements">
-					<h4 class="text-xl text-heading mb-4">혈액 (혈장 및 혈청)</h4>
-					<div class="space-y-3 text-body">
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">용량:</span> 10-50μL (분석 유형에 따라)
-						</div>
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">채혈 튜브:</span> EDTA (혈장) 또는 SST/무첨가 (혈청)
-						</div>
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">처리:</span> 채혈 후 2시간 내 원심분리 (1,500-2,000g, 10분)
-						</div>
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">보관:</span> -80°C (장기) 또는 -20°C (단기, 1주 이내)
-						</div>
-						<div>
-							<span class="font-medium">반복:</span> 그룹당 최소 10-20 샘플 권장 (개체 변이 고려)
-						</div>
-					</div>
-				</div>
-
-				<div class="service-tab-content" data-service="custom" data-section="requirements">
-					<h4 class="text-xl text-heading mb-4">맞춤형 샘플 (CSF, 배양액, 엑소좀)</h4>
-					<div class="space-y-3 text-body">
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">CSF:</span> 50-200μL (분석 유형에 따라)
-						</div>
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">배양 상층액:</span> 0.5-2mL (세포 수 및 배양 시간에 따라)
-						</div>
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">엑소좀:</span> 10-100μg 단백질 (정제 후)
-						</div>
-						<div class="border-b border-subtle pb-3">
-							<span class="font-medium">보관:</span> -80°C, 반복 동결/해동 피함
-						</div>
-						<div>
-							<span class="font-medium">배송:</span> 드라이아이스로 배송
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Analysis Workflows by Service -->
-			<div class="mb-12">
-				<h3 class="text-2xl mb-6 text-body">서비스별 분석 워크플로우</h3>
-
-				<!-- Service Tabs -->
-				<div class="flex gap-2 mb-6 border-b border-subtle overflow-x-auto">
-					<button class="service-tab-btn active px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="cell-culture" data-section="workflows">
-						세포 배양
-					</button>
-					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="tissue" data-section="workflows">
-						조직
-					</button>
-					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="blood" data-section="workflows">
-						혈액
-					</button>
-					<button class="service-tab-btn px-4 py-2 text-body border-b-2 border-transparent whitespace-nowrap" data-service="custom" data-section="workflows">
-						맞춤형
-					</button>
-				</div>
-
-				<!-- Tab Content -->
-				<div class="service-tab-content active" data-service="cell-culture" data-section="workflows">
-					<h4 class="text-xl text-heading mb-4">세포 배양 및 오가노이드</h4>
-					<div class="space-y-4">
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">1. 샘플 접수 및 QC</p>
-							<p class="text-muted text-sm">샘플 도착 시 품질 확인 및 BCA 단백질 정량. 전처리 가능성 평가 후 결과 통보.</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">2. 자동화 전처리</p>
-							<p class="text-muted text-sm">Liquid Handler 기반 자동화 시스템으로 추출, 환원, 알킬화, 트립신 소화를 단일 튜브에서 수행.</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">3. 펩타이드 정제</p>
-							<p class="text-muted text-sm">Magnetic Bead 기술로 염분 및 불순물 제거. 고순도 펩타이드 회수.</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">4. LC-MS/MS 분석</p>
-							<p class="text-muted text-sm">Orbitrap Astral DIA 모드로 20-40분 고속 그라디언트 분석. 샘플당 8,000-10,000 단백질 동정.</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">5. 데이터 분석</p>
-							<p class="text-muted text-sm">DIA-NN 딥러닝 소프트웨어로 정밀 검색. 통계 분석 및 경로 분석 수행.</p>
-						</div>
-						<div>
-							<p class="text-heading mb-1">6. 보고서 전달</p>
-							<p class="text-muted text-sm">종합 보고서, 원시 데이터, 분석 결과 파일 제공. 2-3주 내 결과 전달.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="service-tab-content" data-service="tissue" data-section="workflows">
-					<h4 class="text-xl text-heading mb-4">조직 (FFPE 및 동결)</h4>
-					<div class="space-y-4">
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">1. 샘플 접수 및 평가</p>
-							<p class="text-muted text-sm">조직 유형 확인 및 품질 평가. FFPE는 H&E 염색으로 조직 상태 확인.</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">2. 단백질 추출</p>
-							<p class="text-muted text-sm">FFPE는 탈파라핀 및 열 기반 가교 회복 처리. 동결 조직은 기계적 균질화 및 용해.</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">3. 소화 및 정제</p>
-							<p class="text-muted text-sm">S-Trap 또는 SP3 기반 단백질 정제 및 트립신 소화.</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">4. LC-MS/MS 분석</p>
-							<p class="text-muted text-sm">Orbitrap Astral DIA 분석으로 조직당 9,000-12,000 단백질 동정. 60-90분 그라디언트 사용.</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">5. 데이터 분석</p>
-							<p class="text-muted text-sm">조직 특이적 라이브러리 검색 및 통계 분석. 병리 데이터와 통합 분석 가능.</p>
-						</div>
-						<div>
-							<p class="text-heading mb-1">6. 보고서 전달</p>
-							<p class="text-muted text-sm">임상 연관성을 포함한 종합 보고서. 3-4주 내 결과 전달.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="service-tab-content" data-service="blood" data-section="workflows">
-					<h4 class="text-xl text-heading mb-4">혈액 (혈장 및 혈청)</h4>
-					<div class="space-y-4">
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">1. 샘플 접수 및 QC</p>
-							<p class="text-muted text-sm">샘플 도착 확인 및 용혈 여부 검사. BCA 정량 및 품질 평가.</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">2. 고농도 단백질 제거 (선택)</p>
-							<p class="text-muted text-sm">알부민, 면역글로불린 등 고농도 단백질 제거로 동적 범위 확장. 저농도 바이오마커 검출 향상.</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">3. 단백질 소화</p>
-							<p class="text-muted text-sm">S-Trap 기반 정제 및 트립신 소화. 혈장/혈청 특화 워크플로우 적용.</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">4. LC-MS/MS 분석</p>
-							<p class="text-muted text-sm">Orbitrap Astral DIA 분석으로 500-1,000 단백질 정량 (제거 없음) 또는 2,000-3,000 단백질 (고농도 제거 후).</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">5. 데이터 분석 및 검증</p>
-							<p class="text-muted text-sm">혈장 특이적 라이브러리로 정밀 검색. 임상 변수와 연관 분석. 통계적 검증.</p>
-						</div>
-						<div>
-							<p class="text-heading mb-1">6. 바이오마커 보고</p>
-							<p class="text-muted text-sm">후보 바이오마커 목록 및 임상 의의 해석. 2-3주 내 결과 전달.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="service-tab-content" data-service="custom" data-section="workflows">
-					<h4 class="text-xl text-heading mb-4">맞춤형 샘플</h4>
-					<div class="space-y-4">
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">1. 샘플 평가 및 맞춤 설계</p>
-							<p class="text-muted text-sm">샘플 유형 확인 및 품질 평가. 연구 목표에 맞는 최적 워크플로우 설계. 사전 상담 진행.</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">2. 농축 및 정제 (필요시)</p>
-							<p class="text-muted text-sm">저농도 샘플은 TCA 침전, 아세톤 침전, 또는 초원심분리로 농축. 엑소좀은 추가 정제 단계 적용.</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">3. 특화 전처리</p>
-							<p class="text-muted text-sm">샘플 유형별 최적화 프로토콜 적용. CSF는 알부민 제거 옵션, 배양액은 BSA/FBS 제거.</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">4. LC-MS/MS 분석</p>
-							<p class="text-muted text-sm">Orbitrap Astral DIA로 심층 프로파일링. 샘플 유형에 따라 200-2,000 단백질 동정.</p>
-						</div>
-						<div class="border-b border-subtle pb-4">
-							<p class="text-heading mb-1">5. 맞춤 데이터 분석</p>
-							<p class="text-muted text-sm">연구 질문에 특화된 통계 및 생물정보학 분석. 문헌 기반 해석 포함.</p>
-						</div>
-						<div>
-							<p class="text-heading mb-1">6. 보고 및 상담</p>
-							<p class="text-muted text-sm">상세 보고서 및 결과 해석 상담. 후속 실험 제안. 3-4주 내 결과 전달.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Standard Deliverables -->
-			<div class="mb-12">
-				<h3 class="text-2xl mb-6 text-body">표준 제공 결과물</h3>
+				<h3 class="text-2xl mb-6 text-body">{r.technicalDocs.deliverables.title[lang]}</h3>
 				<div class="space-y-6">
-					<div>
-						<h4 class="text-lg text-heading mb-3">핵심 데이터 파일</h4>
-						<ul class="space-y-2 text-body">
-							<li>• 단백질 동정 및 정량 데이터 (Excel/CSV)</li>
-							<li>• 원시 MS 데이터 파일 (.raw 형식)</li>
-							<li>• 데이터베이스 검색 결과 (FragPipe/MaxQuant/DIA-NN 출력)</li>
-							<li>• 품질 관리 지표 및 샘플 평가 보고서</li>
-						</ul>
-					</div>
-					<div>
-						<h4 class="text-lg text-heading mb-3">분석 및 시각화</h4>
-						<ul class="space-y-2 text-body">
-							<li>• 차등 발현 분석 (Volcano plot, MA plot)</li>
-							<li>• 다변량 분석 (PCA, 계층적 클러스터링, Heatmap)</li>
-							<li>• 통계 검정 결과 (t-test, ANOVA, FDR 보정)</li>
-							<li>• 경로 농축 분석 (GO, KEGG, Reactome)</li>
-						</ul>
-					</div>
-					<div>
-						<h4 class="text-lg text-heading mb-3">서비스별 특화 결과물</h4>
-						<ul class="space-y-2 text-body">
-							<li>• <strong>혈액/혈장:</strong> ROC 곡선, 바이오마커 성능 평가, 임상 변수 상관 분석</li>
-							<li>• <strong>조직:</strong> 병리 데이터 통합 분석 (요청 시), 임상 해석</li>
-							<li>• <strong>맞춤형:</strong> 샘플 특이적 경로 분석, 문헌 기반 기능 해석, 1시간 상담</li>
-						</ul>
-					</div>
-					<div>
-						<h4 class="text-lg text-heading mb-3">보고서</h4>
-						<ul class="space-y-2 text-body">
-							<li>• 종합 분석 보고서 (PDF)</li>
-							<li>• 방법론 문서</li>
-							<li>• 결과 해석 및 생물학적 인사이트</li>
-						</ul>
-					</div>
+					{r.technicalDocs.deliverables.sections.map((section) => (
+						<div>
+							<h4 class="text-lg text-heading mb-3">{section.title[lang]}</h4>
+							<ul class="space-y-2 text-body">
+								{section.items.map((item) => (
+									<li>• {item[lang]}</li>
+								))}
+							</ul>
+						</div>
+					))}
 				</div>
 			</div>
 
 			<!-- CTA -->
 			<div class="text-center mt-16">
-				<p class="text-xl text-body mb-6">더 자세한 기술 정보가 필요하신가요?</p>
+				<p class="text-xl text-body mb-6">{r.technicalDocs.cta.question[lang]}</p>
 				<a href="mailto:omixai@omixai.com" class="btn-primary inline-block px-8 py-4 rounded-full text-lg">
-					문의하기
+					{r.technicalDocs.cta.button[lang]}
 				</a>
 			</div>
 		</div>
@@ -604,30 +263,5 @@ const t = getTranslations('ko');
 
 		// Initialize on page load
 		handleHashChange();
-
-		// Service tab switching functionality
-		const serviceTabButtons = document.querySelectorAll('.service-tab-btn');
-
-		serviceTabButtons.forEach(button => {
-			button.addEventListener('click', () => {
-				const service = button.dataset.service;
-				const section = button.dataset.section;
-
-				// Get all buttons and contents for this section
-				const sectionButtons = document.querySelectorAll(`.service-tab-btn[data-section="${section}"]`);
-				const sectionContents = document.querySelectorAll(`.service-tab-content[data-section="${section}"]`);
-
-				// Remove active class from all buttons and contents in this section
-				sectionButtons.forEach(btn => btn.classList.remove('active'));
-				sectionContents.forEach(content => content.classList.remove('active'));
-
-				// Add active class to clicked button and corresponding content
-				button.classList.add('active');
-				const activeContent = document.querySelector(`.service-tab-content[data-service="${service}"][data-section="${section}"]`);
-				if (activeContent) {
-					activeContent.classList.add('active');
-				}
-			});
-		});
 	</script>
 </Layout>
