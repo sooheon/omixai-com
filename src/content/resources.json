@@ -20,7 +20,7 @@
         },
         {
           "question": { "ko": "일반적인 소요 시간은 얼마나 되나요?", "en": "What is the typical turnaround time?" },
-          "answer": { "ko": "표준 프로테오믹스 분석은 샘플 수령 후 2-4주가 소요됩니다. 긴급 서비스도 요청 시 이용 가능합니다.", "en": "Standard proteomics analysis takes 2-4 weeks from sample receipt. Rush services are available upon request." }
+          "answer": { "ko": "표준 프로테오믹스 분석은 샘플 수령 후 영업일 20일이 소요됩니다. 긴급 서비스도 요청 시 이용 가능합니다.", "en": "Standard proteomics analysis takes 20 business days from sample receipt. Rush services are available upon request." }
         },
         {
           "question": { "ko": "어떤 결제 방법을 사용할 수 있나요?", "en": "What payment methods do you accept?" },

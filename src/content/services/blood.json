@@ -124,8 +124,8 @@
           "en": "LC-MS/MS Analysis"
         },
         "description": {
-          "ko": "Orbitrap Astral DIA로 심층 프로파일링. 1,500-3,000 단백질 동정.",
-          "en": "Deep profiling with Orbitrap Astral DIA. Identify 1,500-3,000 proteins."
+          "ko": "Orbitrap Astral DIA로 심층 프로파일링. 5,000-8,000 단백질 동정.",
+          "en": "Deep profiling with Orbitrap Astral DIA. Identify 5,000-8,000 proteins."
         }
       },
       {

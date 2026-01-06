@@ -79,26 +79,6 @@
           "ko": "세포 외 소포체 단백질 프로파일링. 암 진단, 약물 전달, 세포 간 신호 연구.",
           "en": "Profile extracellular vesicle proteins. Study cancer diagnosis, drug delivery, and intercellular signaling."
         }
-      },
-      {
-        "title": {
-          "ko": "희귀 체액 분석",
-          "en": "Rare Biofluid Analysis"
-        },
-        "description": {
-          "ko": "관절액, 복수, 눈물, 타액 등 특수 체액 프로테오믹스. 질병별 특이 바이오마커 탐색.",
-          "en": "Proteomics of specialty biofluids: synovial fluid, ascites, tears, saliva. Explore disease-specific biomarkers."
-        }
-      },
-      {
-        "title": {
-          "ko": "단일 세포 프로테오믹스",
-          "en": "Single Cell Proteomics"
-        },
-        "description": {
-          "ko": "극소량 샘플 (수백-수천 세포)에서 프로테오믹스 프로파일링. 희귀 세포군 연구.",
-          "en": "Proteomics profiling from minimal samples (hundreds-thousands of cells). Study rare cell populations."
-        }
       }
     ]
   },
@@ -124,8 +104,8 @@
           "en": "Specialized Processing"
         },
         "description": {
-          "ko": "샘플 유형별 최적화 프로토콜 적용. CSF는 알부민 제거 옵션, 배양액은 BSA/FBS 제거.",
-          "en": "Apply optimized protocols per sample type. CSF: albumin depletion option, conditioned media: BSA/FBS removal."
+          "ko": "샘플 유형별 최적화 프로토콜 적용. 나노입자 농축으로 저농도 단백질 검출.",
+          "en": "Apply optimized protocols per sample type. Nanoparticle enrichment of low abundance proteins."
         }
       },
       {
@@ -134,8 +114,8 @@
           "en": "LC-MS/MS Analysis"
         },
         "description": {
-          "ko": "Orbitrap Astral DIA로 심층 프로파일링. 샘플 유형에 따라 200-2,000 단백질 동정.",
-          "en": "Deep profiling with Orbitrap Astral DIA. Identify 200-2,000 proteins depending on sample type."
+          "ko": "Orbitrap Astral DIA로 심층 프로파일링. 샘플 유형에 따라 5,000-10,000 단백질 동정.",
+          "en": "Deep profiling with Orbitrap Astral DIA. Identify 5,000-10,000 proteins depending on sample type."
         }
       },
       {
@@ -146,16 +126,6 @@
         "description": {
           "ko": "연구 질문에 특화된 통계 및 생물정보학 분석. 문헌 기반 해석 포함.",
           "en": "Statistical and bioinformatics analysis specialized for research questions. Include literature-based interpretation."
-        }
-      },
-      {
-        "title": {
-          "ko": "보고 및 상담",
-          "en": "Reporting & Consultation"
-        },
-        "description": {
-          "ko": "상세 보고서 및 결과 해석 상담. 후속 실험 제안. 3-4주 내 결과 전달.",
-          "en": "Detailed report and result interpretation consultation. Suggest follow-up experiments. Deliver results within 3-4 weeks."
         }
       }
     ]
