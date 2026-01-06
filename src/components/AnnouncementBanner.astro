@@ -1,0 +1,129 @@
+---
+// Unobtrusive banner that opens modal on click
+---
+
+<!-- Banner -->
+<div id="announcement-banner" class="fixed top-0 left-0 right-0 z-[60] bg-[#1e3a4c] text-white/90 text-sm cursor-pointer hover:bg-[#254555] transition-colors">
+	<div class="max-w-7xl mx-auto px-4 py-2">
+		<button id="banner-open" class="flex items-center gap-2 text-left w-full">
+			<svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+			</svg>
+			<span class="font-medium">신주발행공고</span>
+			<span class="text-white/70 text-xs hidden sm:inline">- 클릭하여 자세히 보기</span>
+		</button>
+	</div>
+</div>
+
+<!-- Modal -->
+<div id="announcement-modal" class="fixed inset-0 z-[100] hidden">
+	<div id="modal-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+	<div id="modal-wrapper" class="absolute inset-0 flex items-center justify-center p-4">
+		<div id="modal-content" class="relative bg-[var(--bg-card)] border border-subtle rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-auto" onclick="event.stopPropagation()">
+			<!-- Header -->
+			<div class="sticky top-0 bg-[var(--brand-teal)] text-white px-6 py-4 rounded-t-2xl">
+				<div class="flex items-center justify-between">
+					<div class="flex items-center gap-3">
+						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+						</svg>
+						<h2 class="text-xl font-semibold">신주발행공고</h2>
+					</div>
+					<button id="modal-close" class="p-1.5 hover:bg-white/20 rounded-lg transition-colors" aria-label="Close">
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<!-- Content -->
+			<div class="px-6 py-5 text-body text-sm leading-relaxed">
+				<p class="mb-4">2025년 12월 23일 개최한 당사 이사회결의로 3자배정 유상증자를 결의하였으므로 상법 제418조 및 당사 정관규정에 의거하여 아래와 같이 공고 합니다.</p>
+
+				<ol class="list-decimal list-inside space-y-2 mb-5 text-body">
+					<li><span class="text-muted">신주의 종류와 수 :</span> 기명식 상환전환우선주식 50,736주</li>
+					<li><span class="text-muted">신주의 발행가액 :</span> 1주당 39,420원</li>
+					<li><span class="text-muted">신주의 납입기일(예정일) :</span> 2026년 01월 08일</li>
+					<li><span class="text-muted">신주배정방법 :</span> 상법 제418조 및 당사 정관 의거하여 발행주식 전부를 3자에게 배정한다.</li>
+					<li><span class="text-muted">기타사항 :</span> 기타 신주발행에 필요한 사항은 대표이사에게 일임한다.</li>
+				</ol>
+
+				<div class="pt-4 border-t border-subtle text-muted text-xs">
+					<p>2025년 12월 23일</p>
+					<p>주식회사 오믹스에이아이 대표이사 신동명</p>
+				</div>
+			</div>
+
+			<!-- Footer -->
+			<div class="px-6 py-4 border-t border-subtle bg-[var(--bg-section-alt)] rounded-b-2xl">
+				<button id="modal-confirm" class="w-full py-3 rounded-full font-medium bg-[var(--bg-card)] border border-subtle text-body hover:bg-[var(--bg-section)] transition-colors">
+					확인
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	#modal-content {
+		animation: modal-in 0.2s ease-out;
+	}
+	@keyframes modal-in {
+		from {
+			opacity: 0;
+			transform: translateY(10px) scale(0.98);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+		}
+	}
+</style>
+
+<script>
+	const banner = document.getElementById('announcement-banner');
+	const bannerOpen = document.getElementById('banner-open');
+	const modal = document.getElementById('announcement-modal');
+	const modalWrapper = document.getElementById('modal-wrapper');
+	const modalClose = document.getElementById('modal-close');
+	const modalConfirm = document.getElementById('modal-confirm');
+	const header = document.getElementById('header');
+
+	function updateHeaderPosition() {
+		if (!banner) return;
+		const bannerHeight = banner.offsetHeight;
+		if (header) header.style.top = bannerHeight + 'px';
+	}
+
+	function openModal() {
+		if (modal) {
+			modal.classList.remove('hidden');
+			document.body.style.overflow = 'hidden';
+		}
+	}
+
+	function closeModal() {
+		if (modal) {
+			modal.classList.add('hidden');
+			document.body.style.overflow = '';
+		}
+	}
+
+	// Initial position update
+	updateHeaderPosition();
+
+	// Event listeners
+	bannerOpen?.addEventListener('click', openModal);
+	modalClose?.addEventListener('click', closeModal);
+	modalConfirm?.addEventListener('click', closeModal);
+	modalWrapper?.addEventListener('click', closeModal);
+
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+			closeModal();
+		}
+	});
+
+	window.addEventListener('resize', updateHeaderPosition);
+</script>

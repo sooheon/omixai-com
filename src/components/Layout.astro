@@ -1,6 +1,7 @@
 ---
 import Header from './Header.astro';
 import Footer from './Footer.astro';
+import AnnouncementBanner from './AnnouncementBanner.astro';
 
 interface Props {
 	lang: 'en' | 'ko';
@@ -66,6 +67,7 @@ const { lang, title, currentPage, serviceSlug, lightHeader = false } = Astro.pro
 		</style>
 	</head>
 	<body>
+		<AnnouncementBanner />
 		<Header lang={lang} currentPage={currentPage} serviceSlug={serviceSlug} lightHeader={lightHeader} />
 		<main>
 			<slot />
