@@ -1,248 +1,47 @@
 {
   "slug": "custom",
-  "title": { "ko": "맞춤형 분석", "en": "Custom" },
-  "subtitle": { "ko": "CSF, 배양액 및 특수 샘플", "en": "CSF, Conditioned Media & Specialty Samples" },
+  "title": {
+    "ko": "맞춤형 분석",
+    "en": "Custom"
+  },
+  "subtitle": {
+    "ko": "CSF, 배양액, 소변 및 특수 샘플",
+    "en": "CSF, Conditioned Media, Urine & Specialty Samples"
+  },
   "description": {
     "ko": "뇌척수액(CSF), 세포 배양액, 엑소좀 등 특수 샘플에 대한 맞춤형 프로테오믹스 분석을 제공합니다. 표준 워크플로우로 처리하기 어려운 귀중한 샘플을 위한 전문 솔루션입니다.",
     "en": "Custom proteomics analysis for specialty samples including cerebrospinal fluid (CSF), conditioned media, and exosomes. Expert solutions for precious samples that require specialized workflows."
   },
   "features": [
     {
-      "title": { "ko": "신경학적 바이오마커", "en": "Neurological Biomarkers" },
+      "title": {
+        "ko": "신경학적 바이오마커",
+        "en": "Neurological Biomarkers"
+      },
       "description": {
         "ko": "CSF에서 뇌 특이적 단백질과 신경퇴행 지표를 검출합니다. 알츠하이머, 파킨슨병 등 신경질환 연구에 특화된 분석을 제공합니다.",
         "en": "Detect brain-specific proteins and neurodegeneration indicators in CSF. Specialized analysis for neurological disease research including Alzheimer's and Parkinson's."
       }
     },
     {
-      "title": { "ko": "분비체 및 엑소좀", "en": "Secretome & Exosomes" },
+      "title": {
+        "ko": "분비체 및 엑소좀",
+        "en": "Secretome & Exosomes"
+      },
       "description": {
         "ko": "세포 배양 상층액에서 분비 단백질, 성장 인자, 세포 외 소포체 내 단백질을 분석합니다. 세포 간 신호전달과 종양 미세환경 연구에 활용합니다.",
         "en": "Analyze secreted proteins, growth factors, and extracellular vesicle cargo from conditioned media. Apply to cell-cell signaling and tumor microenvironment research."
       }
     },
     {
-      "title": { "ko": "소량 귀중 샘플", "en": "Low-Volume Precious Samples" },
+      "title": {
+        "ko": "소량 귀중 샘플",
+        "en": "Low-Volume Precious Samples"
+      },
       "description": {
         "ko": "10-50uL의 제한된 샘플에서도 심층 분석이 가능합니다. 민감도 높은 워크플로우로 희귀하고 귀중한 샘플의 가치를 최대화합니다.",
         "en": "Deep analysis possible from limited samples of 10-50uL. Maximize the value of rare and precious samples with highly sensitive workflows."
       }
     }
-  ],
-  "sampleRequirements": {
-    "ko": {
-      "title": "샘플 요구사항",
-      "items": [
-        {
-          "label": "CSF",
-          "value": "50-200μL (분석 유형에 따라)"
-        },
-        {
-          "label": "배양 상층액",
-          "value": "0.5-2mL (세포 수 및 배양 시간에 따라)"
-        },
-        {
-          "label": "엑소좀",
-          "value": "10-100μg 단백질 (정제 후)"
-        },
-        {
-          "label": "기타 체액",
-          "value": "샘플별 맞춤 상담"
-        },
-        {
-          "label": "처리 (CSF)",
-          "value": "채취 후 즉시 원심분리 (2,000g, 10분), 상층액 회수"
-        },
-        {
-          "label": "처리 (배양액)",
-          "value": "세포 제거 (300g, 5분 후 2,000g, 10분), 프로테아제 억제제 추가"
-        },
-        {
-          "label": "보관",
-          "value": "-80°C, 반복 동결/해동 피함"
-        },
-        {
-          "label": "배송",
-          "value": "드라이아이스로 배송"
-        }
-      ]
-    },
-    "en": {
-      "title": "Sample Requirements",
-      "items": [
-        {
-          "label": "CSF",
-          "value": "50-200μL (depending on analysis type)"
-        },
-        {
-          "label": "Conditioned Media",
-          "value": "0.5-2mL (depending on cell number and culture time)"
-        },
-        {
-          "label": "Exosomes",
-          "value": "10-100μg protein (after purification)"
-        },
-        {
-          "label": "Other Biofluids",
-          "value": "Custom consultation per sample"
-        },
-        {
-          "label": "Processing (CSF)",
-          "value": "Centrifuge immediately after collection (2,000g, 10 min), collect supernatant"
-        },
-        {
-          "label": "Processing (Media)",
-          "value": "Remove cells (300g, 5 min then 2,000g, 10 min), add protease inhibitors"
-        },
-        {
-          "label": "Storage",
-          "value": "-80°C, avoid repeated freeze/thaw"
-        },
-        {
-          "label": "Shipping",
-          "value": "Ship on dry ice"
-        }
-      ]
-    }
-  },
-  "process": {
-    "ko": {
-      "title": "분석 프로세스",
-      "steps": [
-        {
-          "title": "샘플 평가 및 맞춤 설계",
-          "description": "샘플 유형 확인 및 품질 평가. 연구 목표에 맞는 최적 워크플로우 설계. 사전 상담 진행."
-        },
-        {
-          "title": "농축 및 정제 (필요시)",
-          "description": "저농도 샘플은 TCA 침전, 아세톤 침전, 또는 초원심분리로 농축. 엑소좀은 추가 정제 단계 적용."
-        },
-        {
-          "title": "특화 전처리",
-          "description": "샘플 유형별 최적화 프로토콜 적용. CSF는 알부민 제거 옵션, 배양액은 BSA/FBS 제거."
-        },
-        {
-          "title": "LC-MS/MS 분석",
-          "description": "Orbitrap Astral DIA로 심층 프로파일링. 샘플 유형에 따라 200-2,000 단백질 동정."
-        },
-        {
-          "title": "맞춤 데이터 분석",
-          "description": "연구 질문에 특화된 통계 및 생물정보학 분석. 문헌 기반 해석 포함."
-        },
-        {
-          "title": "보고 및 상담",
-          "description": "상세 보고서 및 결과 해석 상담. 후속 실험 제안. 3-4주 내 결과 전달."
-        }
-      ]
-    },
-    "en": {
-      "title": "Analysis Process",
-      "steps": [
-        {
-          "title": "Sample Assessment & Custom Design",
-          "description": "Verify sample type and assess quality. Design optimal workflow for research goals. Conduct pre-analysis consultation."
-        },
-        {
-          "title": "Concentration & Cleanup (If Needed)",
-          "description": "Concentrate low-abundance samples by TCA precipitation, acetone precipitation, or ultracentrifugation. Apply additional purification for exosomes."
-        },
-        {
-          "title": "Specialized Processing",
-          "description": "Apply optimized protocols per sample type. CSF: albumin depletion option, conditioned media: BSA/FBS removal."
-        },
-        {
-          "title": "LC-MS/MS Analysis",
-          "description": "Deep profiling with Orbitrap Astral DIA. Identify 200-2,000 proteins depending on sample type."
-        },
-        {
-          "title": "Custom Data Analysis",
-          "description": "Statistical and bioinformatics analysis specialized for research questions. Include literature-based interpretation."
-        },
-        {
-          "title": "Reporting & Consultation",
-          "description": "Detailed report and result interpretation consultation. Suggest follow-up experiments. Deliver results within 3-4 weeks."
-        }
-      ]
-    }
-  },
-  "deliverables": {
-    "ko": {
-      "title": "제공 결과물",
-      "items": [
-        "단백질 동정 및 정량 데이터",
-        "샘플별 QC 및 전처리 보고서",
-        "통계 분석 및 시각화",
-        "샘플 특이적 경로 분석",
-        "문헌 기반 기능 해석",
-        "원시 MS 데이터",
-        "맞춤 분석 결과 보고서",
-        "결과 해석 상담 (1시간)"
-      ]
-    },
-    "en": {
-      "title": "Deliverables",
-      "items": [
-        "Protein identification and quantification data",
-        "Sample-specific QC and processing report",
-        "Statistical analysis and visualization",
-        "Sample-specific pathway analysis",
-        "Literature-based functional interpretation",
-        "Raw MS data",
-        "Custom analysis report",
-        "Result interpretation consultation (1 hour)"
-      ]
-    }
-  },
-  "applications": {
-    "ko": {
-      "title": "응용 분야",
-      "items": [
-        {
-          "title": "신경질환 CSF 바이오마커",
-          "description": "알츠하이머(Aβ, tau, NFL), 파킨슨병, ALS 등의 진단 및 예후 마커 발견. 뇌 특이적 단백질 프로파일링."
-        },
-        {
-          "title": "세포 분비체 연구",
-          "description": "암세포, 줄기세포, 면역세포 분비 단백질 분석. 세포 간 커뮤니케이션 및 종양 미세환경 연구."
-        },
-        {
-          "title": "엑소좀 카고 분석",
-          "description": "세포 외 소포체 단백질 프로파일링. 암 진단, 약물 전달, 세포 간 신호 연구."
-        },
-        {
-          "title": "희귀 체액 분석",
-          "description": "관절액, 복수, 눈물, 타액 등 특수 체액 프로테오믹스. 질병별 특이 바이오마커 탐색."
-        },
-        {
-          "title": "단일 세포 프로테오믹스",
-          "description": "극소량 샘플 (수백-수천 세포)에서 프로테오믹스 프로파일링. 희귀 세포군 연구."
-        }
-      ]
-    },
-    "en": {
-      "title": "Applications",
-      "items": [
-        {
-          "title": "Neurological CSF Biomarkers",
-          "description": "Discover diagnostic and prognostic markers for Alzheimer's (Aβ, tau, NFL), Parkinson's, ALS. Profile brain-specific proteins."
-        },
-        {
-          "title": "Cell Secretome Studies",
-          "description": "Analyze secreted proteins from cancer, stem, and immune cells. Study cell-cell communication and tumor microenvironment."
-        },
-        {
-          "title": "Exosome Cargo Analysis",
-          "description": "Profile extracellular vesicle proteins. Study cancer diagnosis, drug delivery, and intercellular signaling."
-        },
-        {
-          "title": "Rare Biofluid Analysis",
-          "description": "Proteomics of specialty biofluids: synovial fluid, ascites, tears, saliva. Explore disease-specific biomarkers."
-        },
-        {
-          "title": "Single Cell Proteomics",
-          "description": "Proteomics profiling from minimal samples (hundreds-thousands of cells). Study rare cell populations."
-        }
-      ]
-    }
-  }
+  ]
 }
