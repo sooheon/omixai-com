@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",
+    "@astrojs/sitemap": "^3.6.1",
     "@tailwindcss/vite": "^4.1.17",
     "@tsparticles/slim": "^3.9.1",
     "astro": "^5.16.3",
