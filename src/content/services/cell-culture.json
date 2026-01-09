@@ -1,5 +1,6 @@
 {
   "slug": "cell-culture",
+  "sampleReport": "/samples/OmixAI_cellline_report_example_Jan2026.pdf",
   "title": {
     "ko": "세포 배양",
     "en": "Cell Culture"

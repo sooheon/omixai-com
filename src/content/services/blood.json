@@ -1,5 +1,6 @@
 {
   "slug": "blood",
+  "sampleReport": "/samples/OmixAI_SEER_report_example_Jan2026.pdf",
   "title": {
     "ko": "혈액",
     "en": "Blood"

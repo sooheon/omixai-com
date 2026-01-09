@@ -1,5 +1,6 @@
 {
   "slug": "tissue",
+  "sampleReport": "/samples/OmixAI_FFPE_report_example_Jan2026.pdf",
   "title": {
     "ko": "조직",
     "en": "Tissue"
