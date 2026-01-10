@@ -128,11 +128,16 @@ const text = t[lang];
 	const modalClose = document.getElementById('modal-close');
 	const modalConfirm = document.getElementById('modal-confirm');
 	const header = document.getElementById('header');
+	const main = document.querySelector('main');
 
-	function updateHeaderPosition() {
+	function updateLayoutForBanner() {
 		if (!banner || !header) return;
 		const bannerHeight = banner.offsetHeight;
+		const headerHeight = 80; // Base header height
 		header.style.top = bannerHeight + 'px';
+		if (main) {
+			main.style.paddingTop = (bannerHeight + headerHeight) + 'px';
+		}
 	}
 
 	function openModal() {
@@ -149,12 +154,12 @@ const text = t[lang];
 		}
 	}
 
-	// Update position after render and fonts load
+	// Update layout after render and fonts load
 	requestAnimationFrame(() => {
-		updateHeaderPosition();
-		setTimeout(updateHeaderPosition, 100);
+		updateLayoutForBanner();
+		setTimeout(updateLayoutForBanner, 100);
 	});
-	document.fonts?.ready.then(updateHeaderPosition);
+	document.fonts?.ready.then(updateLayoutForBanner);
 
 	// Event listeners
 	banner?.addEventListener('click', openModal);
@@ -168,5 +173,5 @@ const text = t[lang];
 		}
 	});
 
-	window.addEventListener('resize', updateHeaderPosition);
+	window.addEventListener('resize', updateLayoutForBanner);
 </script>
