@@ -19,9 +19,11 @@ const aboutUrl = lang === 'en' ? '/about' : '/ko/about';
 const contactUrl = lang === 'en' ? '/contact' : '/ko/contact';
 const serviceUrlPrefix = lang === 'en' ? '/services' : '/ko/services';
 
+// Generalized language switcher: transform current path to other language
+const currentPath = Astro.url.pathname;
 const otherLangUrl = lang === 'en'
-	? (serviceSlug ? `/ko/services/${serviceSlug}` : currentPage === 'resources' ? '/ko/resources' : currentPage === 'about' ? '/ko/about' : currentPage === 'contact' ? '/ko/contact' : '/ko')
-	: (serviceSlug ? `/services/${serviceSlug}` : currentPage === 'resources' ? '/resources' : currentPage === 'about' ? '/about' : currentPage === 'contact' ? '/contact' : '/');
+	? (currentPath === '/' ? '/ko' : `/ko${currentPath}`)
+	: (currentPath === '/ko' || currentPath === '/ko/' ? '/' : currentPath.replace(/^\/ko/, ''));
 ---
 
 <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-header backdrop-blur-xl border-b border-subtle">

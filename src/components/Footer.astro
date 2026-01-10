@@ -11,6 +11,7 @@ const { lang } = Astro.props;
 const t = getTranslations(lang);
 
 const homeUrl = lang === 'en' ? '/' : '/ko';
+const privacyUrl = lang === 'en' ? '/privacy' : '/ko/privacy';
 ---
 
 <footer class="bg-section-alt border-t border-subtle text-body py-8">
@@ -39,6 +40,14 @@ const homeUrl = lang === 'en' ? '/' : '/ko';
 					<p>{t.contact.address.detail}</p>
 				</div>
 			</div>
+		</div>
+
+		<!-- Bottom Bar -->
+		<div class="mt-8 pt-6 border-t border-subtle flex flex-col sm:flex-row justify-between items-center gap-4">
+			<p class="text-dim text-sm">&copy; {new Date().getFullYear()} OmixAI Inc. All rights reserved.</p>
+			<a href={privacyUrl} class="text-dim text-sm hover:text-[var(--brand-teal)] transition-colors">
+				{lang === 'en' ? 'Privacy Policy' : '개인정보처리방침'}
+			</a>
 		</div>
 	</div>
 </footer>
