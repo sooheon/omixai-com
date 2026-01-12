@@ -224,9 +224,10 @@ const otherLangUrl = lang === 'en'
 		mobileResourcesDropdown?.classList.toggle('hidden');
 	});
 
-	// Preserve hash when switching languages
+	// Preserve scroll position when switching languages
 	document.querySelectorAll('.lang-toggle').forEach(link => {
 		link.addEventListener('click', (e) => {
+			sessionStorage.setItem('scrollY', window.scrollY.toString());
 			const hash = window.location.hash;
 			if (hash) {
 				e.preventDefault();
@@ -235,4 +236,11 @@ const otherLangUrl = lang === 'en'
 			}
 		});
 	});
+
+	// Restore scroll position after language switch
+	const savedScrollY = sessionStorage.getItem('scrollY');
+	if (savedScrollY) {
+		sessionStorage.removeItem('scrollY');
+		window.scrollTo(0, parseInt(savedScrollY, 10));
+	}
 </script>
