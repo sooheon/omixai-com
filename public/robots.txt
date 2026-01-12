@@ -1,4 +1,1 @@
-User-agent: *
-Allow: /
-
 Sitemap: https://www.omixai.com/sitemap-index.xml

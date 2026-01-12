@@ -37,9 +37,6 @@ const enPath = lang === 'en' ? currentPath : (currentPath === '/ko' || currentPa
 const koPath = lang === 'ko' ? currentPath : (currentPath === '/' ? '/ko' : `/ko${currentPath}`);
 const enUrl = `${baseUrl}${enPath}`;
 const koUrl = `${baseUrl}${koPath}`;
-
-// Only index production site
-const isProduction = Astro.url.hostname === 'www.omixai.com' || Astro.url.hostname === 'omixai.com';
 ---
 
 <html lang={lang}>
@@ -52,7 +49,6 @@ const isProduction = Astro.url.hostname === 'www.omixai.com' || Astro.url.hostna
 		<!-- SEO Meta Tags -->
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		{!isProduction && <meta name="robots" content="noindex, nofollow" />}
 		<link rel="canonical" href={canonicalUrl} />
 
 		<!-- Hreflang for language alternates -->
