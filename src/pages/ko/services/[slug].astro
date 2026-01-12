@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 const { service } = Astro.props;
 ---
 
-<Layout lang="ko" title={`${service.title[lang]} - 오믹스AI`} currentPage="services" serviceSlug={service.slug} lightHeader={false}>
+<Layout lang="ko" title={`${service.title[lang]} - 오믹스AI`} description={service.description[lang]} currentPage="services" serviceSlug={service.slug} lightHeader={false}>
 
 	<!-- Hero Section -->
 	<section class="bg-section-alt py-16">
