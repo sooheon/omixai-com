@@ -6,12 +6,40 @@ import AnnouncementBanner from './AnnouncementBanner.astro';
 interface Props {
 	lang: 'en' | 'ko';
 	title: string;
+	description?: string;
 	currentPage?: 'home' | 'services' | 'resources' | 'about' | 'contact';
 	serviceSlug?: string;
 	lightHeader?: boolean;
+	ogImage?: string;
 }
 
-const { lang, title, currentPage, serviceSlug, lightHeader = false } = Astro.props;
+const { lang, title, currentPage, serviceSlug, lightHeader = false, ogImage = '/og-image.png' } = Astro.props;
+
+// Default descriptions
+const defaultDescriptions = {
+	en: 'OmixAI provides AI-powered multi-omics analysis services for cell culture, tissue, and blood samples. Fast, accurate proteomics and metabolomics for researchers.',
+	ko: 'OmixAI는 세포 배양, 조직, 혈액 샘플을 위한 AI 기반 멀티오믹스 분석 서비스를 제공합니다. 연구자를 위한 빠르고 정확한 프로테오믹스 및 대사체학 분석.'
+};
+const description = Astro.props.description || defaultDescriptions[lang];
+
+// Canonical and alternate URLs
+const currentPath = Astro.url.pathname;
+const baseUrl = 'https://www.omixai.com';
+
+// Normalize path for canonical
+const canonicalPath = currentPath.endsWith('/') && currentPath !== '/'
+	? currentPath.slice(0, -1)
+	: currentPath;
+const canonicalUrl = `${baseUrl}${canonicalPath}`;
+
+// Generate hreflang URLs
+const enPath = lang === 'en' ? currentPath : (currentPath === '/ko' || currentPath === '/ko/' ? '/' : currentPath.replace(/^\/ko/, ''));
+const koPath = lang === 'ko' ? currentPath : (currentPath === '/' ? '/ko' : `/ko${currentPath}`);
+const enUrl = `${baseUrl}${enPath}`;
+const koUrl = `${baseUrl}${koPath}`;
+
+// Only index production site
+const isProduction = Astro.url.hostname === 'www.omixai.com' || Astro.url.hostname === 'omixai.com';
 ---
 
 <html lang={lang}>
@@ -20,13 +48,69 @@ const { lang, title, currentPage, serviceSlug, lightHeader = false } = Astro.pro
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		{!isProduction && <meta name="robots" content="noindex, nofollow" />}
+		<link rel="canonical" href={canonicalUrl} />
+
+		<!-- Hreflang for language alternates -->
+		<link rel="alternate" hreflang="en" href={enUrl} />
+		<link rel="alternate" hreflang="ko" href={koUrl} />
+		<link rel="alternate" hreflang="x-default" href={enUrl} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={`${baseUrl}${ogImage}`} />
+		<meta property="og:locale" content={lang === 'ko' ? 'ko_KR' : 'en_US'} />
+		<meta property="og:site_name" content="OmixAI" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonicalUrl} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={`${baseUrl}${ogImage}`} />
+
+		<!-- Search Engine Verification -->
 		<meta name="google-site-verification" content="kN6uY4QFgi3IE87l3l8ZenJ1zduAASO2GVdfaGbjRmA" />
 		<meta name="naver-site-verification" content="9737a4d3c43d0ca09fcc72e421b92323e78c92c6" />
+
+		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-		<title>{title}</title>
+
+		<!-- JSON-LD Structured Data -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "OmixAI",
+			"url": "https://www.omixai.com",
+			"logo": "https://www.omixai.com/bwlogo.png",
+			"description": defaultDescriptions.en,
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "43 Janghan-ro",
+				"addressLocality": "Dongdaemun-gu",
+				"addressRegion": "Seoul",
+				"addressCountry": "KR"
+			},
+			"sameAs": []
+		})} />
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "OmixAI",
+			"url": "https://www.omixai.com",
+			"inLanguage": ["en", "ko"]
+		})} />
+
 		<!-- Prevent flash: set theme before render -->
 		<script is:inline>
 			(function() {
