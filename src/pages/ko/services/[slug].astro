@@ -1,6 +1,7 @@
 ---
 import '../../../styles/global.css';
 import Layout from '../../../components/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { getTranslations } from '../../../content/translations';
 
 const lang = 'ko';
@@ -19,17 +20,23 @@ export async function getStaticPaths() {
 const { service } = Astro.props;
 ---
 
-<Layout lang="ko" title={`${service.title[lang]} - 오믹스AI`} description={service.description[lang]} currentPage="services" serviceSlug={service.slug} lightHeader={false}>
+<Layout lang="ko" title={`${service.title[lang]} - 오믹스AI | 오믹스에이아이`} description={service.description[lang]} currentPage="services" serviceSlug={service.slug} lightHeader={false}>
 
 	<!-- Hero Section -->
 	<section class="bg-section-alt py-16">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-			<h1 class="text-3xl md:text-4xl text-heading mb-3 animate-fade-in-up">
-				{service.title[lang]}
-			</h1>
-			<p class="text-lg text-body animate-fade-in-up">
-				{service.subtitle[lang]}
-			</p>
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<Breadcrumb lang={lang} items={[
+				{ name: t.nav.services, url: '/ko/#services' },
+				{ name: service.title[lang], url: `/ko/services/${service.slug}` }
+			]} />
+			<div class="text-center">
+				<h1 class="text-3xl md:text-4xl text-heading mb-3 animate-fade-in-up">
+					{service.title[lang]}
+				</h1>
+				<p class="text-lg text-body animate-fade-in-up">
+					{service.subtitle[lang]}
+				</p>
+			</div>
 		</div>
 	</section>
 

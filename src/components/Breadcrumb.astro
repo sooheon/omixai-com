@@ -1,0 +1,49 @@
+---
+interface BreadcrumbItem {
+	name: string;
+	url: string;
+}
+
+interface Props {
+	items: BreadcrumbItem[];
+	lang: 'en' | 'ko';
+}
+
+const { items, lang } = Astro.props;
+const baseUrl = 'https://www.omixai.com';
+
+// Build full breadcrumb list with Home
+const homeLabel = lang === 'ko' ? '홈' : 'Home';
+const fullItems = [{ name: homeLabel, url: lang === 'ko' ? '/ko' : '/' }, ...items];
+
+// Generate JSON-LD structured data
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": fullItems.map((item, index) => ({
+		"@type": "ListItem",
+		"position": index + 1,
+		"name": item.name,
+		"item": `${baseUrl}${item.url}`
+	}))
+};
+---
+
+<!-- Visual Breadcrumb -->
+<nav aria-label="Breadcrumb" class="text-sm text-muted mb-4">
+	<ol class="flex items-center gap-2 flex-wrap">
+		{fullItems.map((item, index) => (
+			<li class="flex items-center gap-2">
+				{index > 0 && <span class="text-dim">/</span>}
+				{index === fullItems.length - 1 ? (
+					<span class="text-body">{item.name}</span>
+				) : (
+					<a href={item.url} class="hover:text-[var(--brand-teal)] transition-colors">{item.name}</a>
+				)}
+			</li>
+		))}
+	</ol>
+</nav>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

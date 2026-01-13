@@ -7,9 +7,29 @@ import resourcesData from '../../content/resources.json';
 const t = getTranslations('ko');
 const lang = 'ko';
 const r = resourcesData;
+
+// Generate FAQ Schema
+const allFaqItems = [
+	...r.faq.ordering.items,
+	...r.faq.samplePrep.items,
+	...r.faq.technical.items
+];
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": allFaqItems.map(item => ({
+		"@type": "Question",
+		"name": item.question[lang],
+		"acceptedAnswer": {
+			"@type": "Answer",
+			"text": item.answer[lang]
+		}
+	}))
+};
 ---
 
-<Layout lang="ko" title={`${t.resources.title} - ${t.meta.title}`} description="오믹스AI 프로테오믹스 서비스 FAQ 및 기술 문서. 샘플 준비, 처리 시간, 분석 방법에 대해 알아보세요." currentPage="resources" lightHeader={false}>
+<Layout lang="ko" title={`${t.resources.title} - 오믹스AI | 오믹스에이아이`} description="오믹스AI(오믹스에이아이) 프로테오믹스 서비스 FAQ 및 기술 문서. 샘플 준비, 처리 시간, 분석 방법에 대해 알아보세요." currentPage="resources" lightHeader={false}>
 	<style>
 		details > summary {
 			cursor: pointer;
@@ -69,6 +89,9 @@ const r = resourcesData;
 			display: block;
 		}
 		</style>
+
+	<!-- FAQ Schema -->
+	<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 	<!-- Hero Section -->
 	<section class="bg-section-alt py-16">
