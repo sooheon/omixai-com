@@ -15,6 +15,7 @@ const t = getTranslations(lang);
 
 const homeUrl = lang === 'en' ? '/' : '/ko';
 const resourcesUrl = lang === 'en' ? '/resources' : '/ko/resources';
+const noticesUrl = lang === 'en' ? '/notices' : '/ko/notices';
 const aboutUrl = lang === 'en' ? '/about' : '/ko/about';
 const contactUrl = lang === 'en' ? '/contact' : '/ko/contact';
 const serviceUrlPrefix = lang === 'en' ? '/services' : '/ko/services';
@@ -77,6 +78,9 @@ const otherLangUrl = lang === 'en'
 								</a>
 								<a href={`${resourcesUrl}#technical`} class="block px-4 py-2 text-body hover:bg-white/5 hover:text-[var(--brand-teal)] transition-colors">
 									{lang === 'en' ? 'Technical Docs' : '기술 문서'}
+								</a>
+								<a href={noticesUrl} class="block px-4 py-2 text-body hover:bg-white/5 hover:text-[var(--brand-teal)] transition-colors">
+									{lang === 'en' ? 'Notices' : '공고'}
 								</a>
 							</div>
 						</div>
@@ -150,6 +154,9 @@ const otherLangUrl = lang === 'en'
 						</a>
 						<a href={`${resourcesUrl}#technical`} class="block text-muted hover:text-[var(--brand-teal)] transition-colors">
 							{lang === 'en' ? 'Technical Docs' : '기술 문서'}
+						</a>
+						<a href={noticesUrl} class="block text-muted hover:text-[var(--brand-teal)] transition-colors">
+							{lang === 'en' ? 'Notices' : '공고'}
 						</a>
 					</div>
 				</div>

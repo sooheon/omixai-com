@@ -1,0 +1,47 @@
+{
+  "slug": "2025-12-23-share-issuance",
+  "date": "2025-12-23",
+  "active": true,
+  "title": {
+    "ko": "신주발행공고",
+    "en": "New Share Issuance Notice"
+  },
+  "bannerSubtitle": {
+    "ko": "- 클릭하여 자세히 보기",
+    "en": "- Click for details"
+  },
+  "intro": {
+    "ko": "2025년 12월 23일 개최한 당사 이사회결의로 3자배정 유상증자를 결의하였으므로 상법 제418조 및 당사 정관규정에 의거하여 아래와 같이 공고 합니다.",
+    "en": "The Board of Directors resolved on December 23, 2025 to issue new shares through a third-party allotment. In accordance with Article 418 of the Commercial Act and the company's Articles of Incorporation, we hereby announce the following:"
+  },
+  "items": [
+    {
+      "label": { "ko": "신주의 종류와 수", "en": "Type and Number of New Shares" },
+      "value": { "ko": "기명식 상환전환우선주식 50,736주", "en": "50,736 Redeemable Convertible Preferred Shares" }
+    },
+    {
+      "label": { "ko": "신주의 발행가액", "en": "Issue Price per Share" },
+      "value": { "ko": "1주당 39,420원", "en": "KRW 39,420" }
+    },
+    {
+      "label": { "ko": "신주의 납입기일(예정일)", "en": "Payment Date (Expected)" },
+      "value": { "ko": "2026년 01월 08일", "en": "January 8, 2026" }
+    },
+    {
+      "label": { "ko": "신주배정방법", "en": "Allocation Method" },
+      "value": { "ko": "상법 제418조 및 당사 정관 의거하여 발행주식 전부를 3자에게 배정한다.", "en": "All shares to be allocated to third parties pursuant to Article 418 of the Commercial Act and the company's Articles of Incorporation." }
+    },
+    {
+      "label": { "ko": "기타사항", "en": "Other Matters" },
+      "value": { "ko": "기타 신주발행에 필요한 사항은 대표이사에게 일임한다.", "en": "Other matters necessary for the issuance of new shares are delegated to the CEO." }
+    }
+  ],
+  "dateDisplay": {
+    "ko": "2025년 12월 23일",
+    "en": "December 23, 2025"
+  },
+  "signature": {
+    "ko": "주식회사 오믹스에이아이 대표이사 신동명",
+    "en": "Dongmyung Shin, CEO, OmixAI Inc."
+  }
+}

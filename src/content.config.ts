@@ -24,6 +24,27 @@ const services = defineCollection({
   }),
 });
 
+const notices = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/notices' }),
+  schema: z.object({
+    slug: z.string(),
+    date: z.string(),
+    active: z.boolean().optional().default(false),
+    title: bilingual(z.string()),
+    bannerSubtitle: bilingual(z.string()).optional(),
+    intro: bilingual(z.string()),
+    items: z.array(
+      z.object({
+        label: bilingual(z.string()),
+        value: bilingual(z.string()),
+      })
+    ),
+    dateDisplay: bilingual(z.string()),
+    signature: bilingual(z.string()),
+  }),
+});
+
 export const collections = {
   services,
+  notices,
 };
