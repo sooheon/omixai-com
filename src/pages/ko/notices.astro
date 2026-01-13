@@ -33,10 +33,10 @@ const formatDate = (dateStr: string) => {
 const signature = '주식회사 오믹스에이아이 대표이사 신동명';
 
 const pageTitle = '회사 공고';
-const pageDescription = '주식회사 오믹스에이아이의 공식 공고 및 발표';
+const pageSubtitle = '공식 공고 및 규정 관련 안내';
 ---
 
-<Layout lang="ko" title={`${pageTitle} - ${t.meta.title}`} description={pageDescription} currentPage="resources" lightHeader={false}>
+<Layout lang="ko" title={`${pageTitle} - ${t.meta.title}`} description="주식회사 오믹스에이아이의 공식 공고 및 발표" currentPage="resources" lightHeader={false}>
 	<!-- Hero Section -->
 	<section class="bg-section-alt py-16">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,8 +48,8 @@ const pageDescription = '주식회사 오믹스에이아이의 공식 공고 및
 				<h1 class="text-3xl md:text-4xl text-heading mb-3 animate-fade-in-up">
 					{pageTitle}
 				</h1>
-				<p class="text-lg text-body animate-fade-in-up animate-delay-200">
-					{pageDescription}
+				<p class="text-lg text-body animate-fade-in-up">
+					{pageSubtitle}
 				</p>
 			</div>
 		</div>
