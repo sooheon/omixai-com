@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { marked } from 'marked';
 
 interface Props {
 	lang: 'en' | 'ko';
@@ -16,6 +17,9 @@ const sortedNotices = allNotices
 // Show most recent active notice, or fall back to most recent notice if none active
 // If multiple notices are active, the most recent one by date takes priority
 const activeNotice = sortedNotices.find(n => n.active) || sortedNotices[0];
+
+// Parse markdown content
+const contentHtml = activeNotice ? await marked.parse(activeNotice.content[lang]) : '';
 
 // Format date for display
 const formatDate = (dateStr: string, lang: 'en' | 'ko') => {
@@ -77,7 +81,7 @@ const viewAllText = lang === 'en' ? 'View all notices' : '모든 공고 보기';
 
 					<!-- Content -->
 					<div class="px-6 py-5 text-body text-sm leading-relaxed">
-						<div class="whitespace-pre-line mb-5">{activeNotice.content[lang]}</div>
+						<div class="prose prose-sm prose-invert mb-5" set:html={contentHtml} />
 
 						<div class="pt-4 border-t border-subtle text-muted text-xs">
 							<p>{formatDate(activeNotice.date, lang)}</p>

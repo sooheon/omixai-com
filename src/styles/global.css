@@ -224,3 +224,42 @@ a[class*="px-"], button[class*="px-"] {
 .logo-invert { filter: invert(0); }
 [data-theme="dark"] .logo-invert,
 :root:not([data-theme]) .logo-invert { filter: invert(1); }
+
+/* Prose styles for markdown content */
+.prose {
+  color: var(--text-body);
+  line-height: 1.7;
+}
+.prose p {
+  margin-bottom: 1em;
+}
+.prose ol, .prose ul {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+.prose ol {
+  list-style-type: decimal;
+}
+.prose ul {
+  list-style-type: disc;
+}
+.prose li {
+  margin-bottom: 0.5em;
+}
+.prose strong {
+  font-weight: 600;
+  color: var(--text-heading);
+}
+.prose a {
+  color: var(--brand-teal);
+  text-decoration: underline;
+}
+.prose a:hover {
+  color: var(--brand-green);
+}
+.prose-sm {
+  font-size: 0.875rem;
+}
+.prose-invert {
+  color: var(--text-body);
+}

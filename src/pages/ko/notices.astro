@@ -4,15 +4,24 @@ import Layout from '../../components/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import { getCollection } from 'astro:content';
 import { getTranslations } from '../../content/translations';
+import { marked } from 'marked';
 
 const t = getTranslations('ko');
 const lang = 'ko';
 
 // Get all notices sorted by date (most recent first)
 const allNotices = await getCollection('notices');
-const notices = allNotices
+const noticesRaw = allNotices
 	.map(n => n.data)
 	.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+// Parse markdown content for all notices
+const notices = await Promise.all(
+	noticesRaw.map(async (notice) => ({
+		...notice,
+		contentHtml: await marked.parse(notice.content[lang])
+	}))
+);
 
 // Format date for display
 const formatDate = (dateStr: string) => {
@@ -69,7 +78,7 @@ const pageDescription = '주식회사 오믹스에이아이의 공식 공고 및
 
 						<!-- Notice Content -->
 						<div class="px-6 py-5 text-body text-sm leading-relaxed">
-							<div class="whitespace-pre-line mb-5">{notice.content[lang]}</div>
+							<div class="prose prose-sm prose-invert max-w-none mb-5" set:html={notice.contentHtml} />
 
 							<div class="pt-4 border-t border-subtle text-muted text-xs">
 								<p>{signature}</p>
