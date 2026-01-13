@@ -68,7 +68,7 @@ const pageSubtitle = '공식 공고 및 규정 관련 안내';
 								<div class="flex items-center gap-3">
 									{notice.active && (
 										<span class="px-3 py-1 text-xs font-medium bg-[var(--brand-teal)] text-white rounded-full">
-											현재
+											최신
 										</span>
 									)}
 									<time class="text-sm text-muted">{formatDate(notice.date)}</time>
@@ -90,7 +90,7 @@ const pageSubtitle = '공식 공고 및 규정 관련 안내';
 
 			{notices.length === 0 && (
 				<div class="text-center py-16">
-					<p class="text-muted text-lg">현재 공고가 없습니다.</p>
+					<p class="text-muted text-lg">공고가 없습니다.</p>
 				</div>
 			)}
 		</div>
