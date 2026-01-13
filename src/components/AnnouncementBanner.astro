@@ -7,13 +7,14 @@ interface Props {
 
 const { lang } = Astro.props;
 
-// Get all notices and find the active one (or most recent if none active)
+// Get all notices sorted by date (most recent first)
 const allNotices = await getCollection('notices');
 const sortedNotices = allNotices
 	.map(n => n.data)
 	.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-// Find active notice, or fall back to most recent
+// Show most recent active notice, or fall back to most recent notice if none active
+// If multiple notices are active, the most recent one by date takes priority
 const activeNotice = sortedNotices.find(n => n.active) || sortedNotices[0];
 
 // UI strings
