@@ -458,6 +458,34 @@ content:
               - { name: ko, label: Korean, type: string }
               - { name: en, label: English, type: string }
 
+  # Notices/Announcements (bilingual collection)
+  - name: notices
+    label: Notices
+    type: collection
+    path: src/content/notices
+    format: json
+    filename: '{slug}.json'
+    exclude: [.DS_Store]
+    view:
+      primary: title
+      fields: [date, active, title]
+    fields:
+      - { name: slug, label: URL Slug, type: string, required: true }
+      - { name: date, label: Date (YYYY-MM-DD), type: string, required: true }
+      - { name: active, label: Show in Banner, type: boolean }
+      - name: title
+        label: Notice Title
+        type: object
+        fields:
+          - { name: ko, label: Korean, type: string }
+          - { name: en, label: English, type: string }
+      - name: content
+        label: Content
+        type: object
+        fields:
+          - { name: ko, label: Korean, type: text }
+          - { name: en, label: English, type: text }
+
   # Service Pages (bilingual collection)
   - name: services
     label: Services
