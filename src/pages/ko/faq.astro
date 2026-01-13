@@ -1,0 +1,155 @@
+---
+import '../../styles/global.css';
+import Layout from '../../components/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getTranslations } from '../../content/translations';
+import resourcesData from '../../content/resources.json';
+
+const t = getTranslations('ko');
+const lang = 'ko';
+const r = resourcesData;
+
+// Generate FAQ Schema
+const allFaqItems = [
+	...r.faq.ordering.items,
+	...r.faq.samplePrep.items,
+	...r.faq.technical.items
+];
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": allFaqItems.map(item => ({
+		"@type": "Question",
+		"name": item.question[lang],
+		"acceptedAnswer": {
+			"@type": "Answer",
+			"text": item.answer[lang]
+		}
+	}))
+};
+
+const pageTitle = 'FAQ';
+const pageSubtitle = '프로테오믹스 서비스에 대해 자주 묻는 질문';
+---
+
+<Layout lang="ko" title={`${pageTitle} - ${t.meta.title}`} description="오믹스AI 프로테오믹스 서비스 FAQ. 주문, 샘플 준비, 처리 시간에 대해 알아보세요." currentPage="resources" lightHeader={false}>
+	<style>
+		details > summary {
+			cursor: pointer;
+			list-style: none;
+			position: relative;
+			padding-right: 2rem;
+		}
+		details > summary::-webkit-details-marker {
+			display: none;
+		}
+		details > summary::after {
+			content: '+';
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 1.5rem;
+			font-weight: 300;
+			color: var(--brand-teal);
+			transition: all 0.3s ease;
+		}
+		details[open] > summary::after {
+			content: '−';
+			transform: translateY(-50%) rotate(180deg);
+		}
+		details[open] > summary {
+			margin-bottom: 1rem;
+		}
+		.faq-item {
+			border-bottom: 1px solid var(--border-subtle);
+		}
+		.faq-item:last-child {
+			border-bottom: none;
+		}
+		.faq-content {
+			display: grid;
+			grid-template-rows: 0fr;
+			transition: grid-template-rows 0.3s ease-out;
+		}
+		details[open] .faq-content {
+			grid-template-rows: 1fr;
+		}
+		.faq-content > div {
+			overflow: hidden;
+		}
+	</style>
+
+	<!-- FAQ Schema -->
+	<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+	<!-- Hero Section -->
+	<section class="bg-section-alt py-16">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<Breadcrumb lang={lang} items={[
+				{ name: t.nav.resources, url: '/ko/resources' },
+				{ name: pageTitle, url: '/ko/faq' }
+			]} />
+			<div class="text-center">
+				<h1 class="text-3xl md:text-4xl text-heading mb-3 animate-fade-in-up">
+					{pageTitle}
+				</h1>
+				<p class="text-lg text-body animate-fade-in-up">
+					{pageSubtitle}
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ Content -->
+	<section class="py-12 bg-section">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<!-- Ordering & Pricing -->
+			<div class="mb-12">
+				<h2 class="text-2xl mb-6 text-body">{r.faq.ordering.title[lang]}</h2>
+				<div>
+					{r.faq.ordering.items.map((item) => (
+						<details class="faq-item">
+							<summary class="py-4 text-body hover:text-[var(--brand-teal)]">
+								{item.question[lang]}
+							</summary>
+							<div class="faq-content">
+								<div class="pb-4 text-muted">
+									{item.answer[lang]}
+								</div>
+							</div>
+						</details>
+					))}
+				</div>
+			</div>
+
+			<!-- Technical Details -->
+			<div class="mb-12">
+				<h2 class="text-2xl mb-6 text-body">{r.faq.technical.title[lang]}</h2>
+				<div>
+					{r.faq.technical.items.map((item) => (
+						<details class="faq-item">
+							<summary class="py-4 text-body hover:text-[var(--brand-teal)]">
+								{item.question[lang]}
+							</summary>
+							<div class="faq-content">
+								<div class="pb-4 text-muted">
+									{item.answer[lang]}
+								</div>
+							</div>
+						</details>
+					))}
+				</div>
+			</div>
+
+			<!-- CTA -->
+			<div class="text-center mt-16">
+				<p class="text-xl text-body mb-6">{r.faq.cta.question[lang]}</p>
+				<a href="mailto:omixai@omixai.com" class="btn-primary inline-block px-8 py-4 rounded-full text-lg">
+					{r.faq.cta.button[lang]}
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>
