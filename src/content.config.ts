@@ -31,16 +31,7 @@ const notices = defineCollection({
     date: z.string(),
     active: z.boolean().optional().default(false),
     title: bilingual(z.string()),
-    bannerSubtitle: bilingual(z.string()).optional(),
-    intro: bilingual(z.string()),
-    items: z.array(
-      z.object({
-        label: bilingual(z.string()),
-        value: bilingual(z.string()),
-      })
-    ),
-    dateDisplay: bilingual(z.string()),
-    signature: bilingual(z.string()),
+    content: bilingual(z.string()),
   }),
 });
 

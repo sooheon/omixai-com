@@ -17,6 +17,21 @@ const sortedNotices = allNotices
 // If multiple notices are active, the most recent one by date takes priority
 const activeNotice = sortedNotices.find(n => n.active) || sortedNotices[0];
 
+// Format date for display
+const formatDate = (dateStr: string, lang: 'en' | 'ko') => {
+	const date = new Date(dateStr);
+	if (lang === 'ko') {
+		return `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`;
+	}
+	return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+};
+
+// Auto-filled signature
+const signature = {
+	ko: '주식회사 오믹스에이아이 대표이사 신동명',
+	en: 'Dongmyung Shin, CEO, OmixAI Inc.'
+};
+
 // UI strings
 const confirmText = lang === 'en' ? 'OK' : '확인';
 const noticesUrl = lang === 'en' ? '/notices' : '/ko/notices';
@@ -33,9 +48,7 @@ const viewAllText = lang === 'en' ? 'View all notices' : '모든 공고 보기';
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
 					</svg>
 					<span class="font-medium">{activeNotice.title[lang]}</span>
-					{activeNotice.bannerSubtitle && (
-						<span class="text-white/70 text-xs hidden sm:inline">{activeNotice.bannerSubtitle[lang]}</span>
-					)}
+					<span class="text-white/70 text-xs hidden sm:inline">- {lang === 'en' ? 'Click for details' : '클릭하여 자세히 보기'}</span>
 				</div>
 			</div>
 		</button>
@@ -64,17 +77,11 @@ const viewAllText = lang === 'en' ? 'View all notices' : '모든 공고 보기';
 
 					<!-- Content -->
 					<div class="px-6 py-5 text-body text-sm leading-relaxed">
-						<p class="mb-4">{activeNotice.intro[lang]}</p>
-
-						<ol class="list-decimal list-inside space-y-2 mb-5 text-body">
-							{activeNotice.items.map((item) => (
-								<li><span class="text-muted">{item.label[lang]}:</span> {item.value[lang]}</li>
-							))}
-						</ol>
+						<div class="whitespace-pre-line mb-5">{activeNotice.content[lang]}</div>
 
 						<div class="pt-4 border-t border-subtle text-muted text-xs">
-							<p>{activeNotice.dateDisplay[lang]}</p>
-							<p>{activeNotice.signature[lang]}</p>
+							<p>{formatDate(activeNotice.date, lang)}</p>
+							<p>{signature[lang]}</p>
 						</div>
 					</div>
 

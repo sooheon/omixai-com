@@ -479,47 +479,12 @@ content:
         fields:
           - { name: ko, label: Korean, type: string }
           - { name: en, label: English, type: string }
-      - name: bannerSubtitle
-        label: Banner Subtitle
-        type: object
-        fields:
-          - { name: ko, label: Korean, type: string }
-          - { name: en, label: English, type: string }
-      - name: intro
-        label: Introduction Text
+      - name: content
+        label: Content
         type: object
         fields:
           - { name: ko, label: Korean, type: text }
           - { name: en, label: English, type: text }
-      - name: items
-        label: Notice Items
-        type: object
-        list: true
-        fields:
-          - name: label
-            label: Label
-            type: object
-            fields:
-              - { name: ko, label: Korean, type: string }
-              - { name: en, label: English, type: string }
-          - name: value
-            label: Value
-            type: object
-            fields:
-              - { name: ko, label: Korean, type: text }
-              - { name: en, label: English, type: text }
-      - name: dateDisplay
-        label: Display Date
-        type: object
-        fields:
-          - { name: ko, label: Korean, type: string }
-          - { name: en, label: English, type: string }
-      - name: signature
-        label: Signature
-        type: object
-        fields:
-          - { name: ko, label: Korean, type: string }
-          - { name: en, label: English, type: string }
 
   # Service Pages (bilingual collection)
   - name: services
