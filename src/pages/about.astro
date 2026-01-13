@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Layout from '../components/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import { getTranslations } from '../content/translations';
 
 const t = getTranslations('en');
@@ -10,10 +11,13 @@ const t = getTranslations('en');
 
 	<!-- Hero Section -->
 	<section class="bg-section-alt py-16">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-			<h1 class="text-3xl md:text-4xl text-heading animate-fade-in-up">
-				{t.about.title}
-			</h1>
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<Breadcrumb lang="en" items={[{ name: t.nav.about, url: '/about' }]} />
+			<div class="text-center">
+				<h1 class="text-3xl md:text-4xl text-heading animate-fade-in-up">
+					{t.about.title}
+				</h1>
+			</div>
 		</div>
 	</section>
 

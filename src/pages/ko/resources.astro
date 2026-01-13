@@ -1,6 +1,7 @@
 ---
 import '../../styles/global.css';
 import Layout from '../../components/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import { getTranslations } from '../../content/translations';
 import resourcesData from '../../content/resources.json';
 
@@ -95,13 +96,16 @@ const faqSchema = {
 
 	<!-- Hero Section -->
 	<section class="bg-section-alt py-16">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-			<h1 class="text-3xl md:text-4xl text-heading mb-3 animate-fade-in-up">
-				{r.title[lang]}
-			</h1>
-			<p class="text-lg text-body animate-fade-in-up animate-delay-200">
-				{r.subtitle[lang]}
-			</p>
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<Breadcrumb lang="ko" items={[{ name: t.nav.resources, url: '/ko/resources' }]} />
+			<div class="text-center">
+				<h1 class="text-3xl md:text-4xl text-heading mb-3 animate-fade-in-up">
+					{r.title[lang]}
+				</h1>
+				<p class="text-lg text-body animate-fade-in-up animate-delay-200">
+					{r.subtitle[lang]}
+				</p>
+			</div>
 		</div>
 	</section>
 
