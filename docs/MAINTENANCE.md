@@ -7,20 +7,18 @@
 
 ## 1. 계정 및 접근 권한
 
-| 서비스 | 용도 | URL | 로그인 |
-|--------|------|-----|--------|
-| **GitHub** | 코드 및 콘텐츠 호스팅 | [github.com/sooheon/omixai-com](https://github.com/sooheon/omixai-com) | @sooheon |
-| **Cloudflare** | 호스팅, DNS, 빌드 | [dash.cloudflare.com](https://dash.cloudflare.com) | shk@omixai.com |
-| **PagesCMS** | 시각적 콘텐츠 편집기 | [pagescms.org](https://pagescms.org) | GitHub OAuth |
-| **EmailJS** | 문의 폼 이메일 발송 | [emailjs.com](https://www.emailjs.com) | - |
-| **Google Search Console** | SEO, 사이트맵 | [search.google.com/search-console](https://search.google.com/search-console) | omixai0612 |
-| **Naver Search Advisor** | 한국 SEO | [searchadvisor.naver.com](https://searchadvisor.naver.com) | omixai@omixai.com |
+| 서비스 | 용도          | URL | 로그인  | 계정 추가 방법  |
+|--------|-------------|-----|-------|-----------|
+| **GitHub** | 코드 및 콘텐츠 내용 | [github.com/sooheon/omixai-com](https://github.com/sooheon/omixai-com) | @sooheon | GitHub 계정 초대 
+| **Cloudflare** | 호스팅, DNS, 빌드 | [dash.cloudflare.com](https://dash.cloudflare.com) | shk@omixai.com | Cloudflare 계정 초대 
+| **PagesCMS** | 콘텐츠 편집기 | [pagescms.org](https://pagescms.org) | GitHub OAuth | 이메일 계정 초대 
+| **Google Search Console** | SEO, 사이트맵   | [search.google.com/search-console](https://search.google.com/search-console) | omixai0612 |
+| **Naver Search Advisor** | 한국 SEO      | [searchadvisor.naver.com](https://searchadvisor.naver.com) | omixai@omixai.com |
 
 ### 도메인 및 DNS
 - 도메인 등록: GoDaddy
 - DNS, SSL, CDN: Cloudflare에서 관리
 - **www.omixai.com** → 메인 사이트
-- **omixai.com** → www로 리다이렉트
 
 ---
 
@@ -36,15 +34,18 @@ GitHub (master 브랜치) → Cloudflare Pages → 라이브 사이트
 
 ### 배포 상태 확인
 1. https://dash.cloudflare.com 접속
-2. **Pages** → **omixai-com** 이동
+2. **Compute & AI → Workers & Pages** → **omixai-com** 이동
 3. **Deployments** 탭 확인
-4. 녹색 체크 표시 = 배포 성공
+
+![cloudflare-pages.png](cloudflare-pages.png)
 
 ---
 
 ## 3. PagesCMS로 콘텐츠 편집하기
 
 PagesCMS는 코드 수정 없이 웹사이트 콘텐츠를 편집하는 주요 도구입니다.
+
+계정이 없으면 
 
 ### 접속 방법
 1. https://pagescms.org 접속
