@@ -2,8 +2,8 @@
 
 Bilingual (EN/KO) static website for OmixAI - AI-powered proteomics services.
 
-- **[Maintenance.md](./Maintenance.md)** - 인수인계서 / Content & maintenance guide
-- **[claude.md](./claude.md)** - Developer docs
+- **[docs/MAINTENANCE.md](./docs/MAINTENANCE.md)** - 인수인계서 / Content & maintenance guide
+- **[docs/CLAUDE.md](./docs/CLAUDE.md)** - Developer docs
 
 ## Quick Start
 
