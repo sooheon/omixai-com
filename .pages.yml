@@ -467,8 +467,8 @@ content:
     filename: '{slug}.json'
     exclude: [.DS_Store]
     view:
-      primary: title
-      fields: [date, active, title]
+      primary: slug
+      fields: [date, active]
     fields:
       - { name: slug, label: URL Slug, type: string, required: true }
       - { name: date, label: Date (YYYY-MM-DD), type: string, required: true }
