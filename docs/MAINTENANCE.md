@@ -5,6 +5,14 @@
 
 ---
 
+## TODO: 계정 이전 작업
+
+- [ ] Cloudflare 계정에 회사 계정을 관리자(admin)로 추가
+- [ ] GitHub 저장소에 회사 계정 추가
+- [ ] PagesCMS에 회사 계정 추가
+
+---
+
 ## 1. 계정 및 접근 권한
 
 | 서비스 | 용도          | URL | 로그인  | 계정 추가 방법  |
@@ -20,8 +28,8 @@
 ```mermaid
 flowchart TB
     subgraph 콘텐츠["콘텐츠 편집"]
-        PagesCMS["PagesCMS<br/>(콘텐츠 편집기)"]
-        Dev["개발자<br/>(VS Code)"]
+        PagesCMS["PagesCMS<br/>(콘텐츠 편집)"]
+        Dev["개발자<br/>(코드 컨텐츠 수정)"]
     end
 
     subgraph 저장소["코드 저장소"]
@@ -54,16 +62,9 @@ flowchart TB
 
 ## 2. 배포 파이프라인
 
-```mermaid
-flowchart LR
-    A["PagesCMS 저장<br/>또는 GitHub 푸시"] --> B["GitHub<br/>(master)"]
-    B -->|자동 트리거| C["Cloudflare Pages<br/>빌드 ~2분"]
-    C --> D["www.omixai.com"]
-```
-
-- **자동화**: `master`에 푸시하면 Cloudflare Pages 빌드가 자동 실행됨
+- **자동화**: `master`에 푸시하면 Cloudflare Pages 빌드가 자동 실행됨. PagesCMS는 GitHub에 푸쉬하는 더 편리한 WSIWYG UI임.
 - **빌드 시간**: 약 2분
-- **프리뷰 빌드**: master가 아닌 브랜치는 프리뷰 URL 생성 (예: `{BRANCH}.omixai-com.pages.dev`)
+- **프리뷰 빌드**: master가 아닌 브랜치는 프리뷰 URL 생성됨. 클라우드플레어에서 확인 가능. (예: `{BRANCH}.omixai-com.pages.dev`)
 
 ### 배포 상태 확인
 1. https://dash.cloudflare.com 접속
