@@ -32,6 +32,7 @@ const notices = defineCollection({
     active: z.boolean().optional().default(false),
     title: bilingual(z.string()),
     content: bilingual(z.string()),
+    signature: bilingual(z.string()).optional(),
   }),
 });
 

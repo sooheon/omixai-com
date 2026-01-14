@@ -485,6 +485,12 @@ content:
         fields:
           - { name: ko, label: Korean, type: text }
           - { name: en, label: English, type: text }
+      - name: signature
+        label: Signature
+        type: object
+        fields:
+          - { name: ko, label: Korean, type: string }
+          - { name: en, label: English, type: string }
 
   # Service Pages (bilingual collection)
   - name: services

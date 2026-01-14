@@ -152,11 +152,12 @@ PagesCMS → **Contact** → 이메일/주소 편집
 | **Active** | 체크하면 배너에 표시됨 |
 | **Title (ko/en)** | 공지 제목 (한국어, 영어 둘 다) |
 | **Content (ko/en)** | 공지 본문 (마크다운 지원) |
+| **Signature (ko/en)** | 서명 (미입력시 기본 대표이사 서명 사용) |
 
 ### 공지사항 동작 방식
 - 배너에는 **공지 1개만** 표시됨 ("Active" 체크된 것 중 가장 최근 것)
 - **모든 공지**는 공지사항 페이지에 표시됨
-- **대표이사 서명**은 자동으로 추가됨
+- **서명** 미입력시 기본값: "주식회사 오믹스에이아이 대표이사 신동명"
 
 ### 마크다운 서식
 ```
@@ -167,6 +168,8 @@ PagesCMS → **Contact** → 이메일/주소 편집
 
 - 글머리 기호
 ```
+
+![new-notice.png](new-notice.png)
 
 ---
 
@@ -206,18 +209,7 @@ PagesCMS → **Services** → 서비스 선택 → 섹션 편집:
 
 ---
 
-## 8. 문의 폼 (EmailJS)
-
-`/contact` 페이지의 문의 폼은 EmailJS를 통해 이메일을 발송합니다.
-
-Cloudflare Pages 환경 변수:
-- `PUBLIC_EMAILJS_SERVICE_ID`
-- `PUBLIC_EMAILJS_TEMPLATE_ID`
-- `PUBLIC_EMAILJS_PUBLIC_KEY`
-
----
-
-## 9. Analytics
+## 8. Analytics
 
 Cloudflare 대쉬보드에서 기본적인 접속자 분석 가능.
 
@@ -225,20 +217,16 @@ Cloudflare 대쉬보드에서 기본적인 접속자 분석 가능.
 
 ---
 
-## 10. 문제 해결
+## 9. 문제 해결
 
 ### PagesCMS 저장 후 콘텐츠가 업데이트되지 않음
 - 배포까지 2-3분 대기
 - Cloudflare Pages에서 배포 상태 확인
-- 브라우저 캐시 삭제 후 새로고침 (Cmd+Shift+R)
+- 브라우저 캐시 삭제 후 새로고침 (Cmd+Shift+R / Cmd+Alt+R)
 
 ### 공지사항이 배너에 표시되지 않음
 - **Active**가 체크되어 있는지 확인
 - 날짜 형식이 올바른지 확인 (YYYY-MM-DD)
-
-### 문의 폼이 발송되지 않음
-- EmailJS 대시보드에서 오류/할당량 확인
-- Cloudflare 환경 변수 확인
 
 ### 빌드 실패
 - Cloudflare에서 배포 로그 확인
@@ -246,14 +234,3 @@ Cloudflare 대쉬보드에서 기본적인 접속자 분석 가능.
 - 빌드가 계속 실패하면 개발자에게 연락
 
 ---
-
-## 11. 빠른 참조
-
-| 작업 | 경로 |
-|------|------|
-| 홈페이지 콘텐츠 수정 | PagesCMS → Landing |
-| 공지사항 추가 | PagesCMS → Notices → Add new |
-| FAQ 편집 | PagesCMS → Resources |
-| 팀 정보 수정 | PagesCMS → About → Team |
-| 서비스 페이지 편집 | PagesCMS → Services → 서비스 선택 |
-| 배포 상태 확인 | Cloudflare → Pages → omixai-com → Deployments |

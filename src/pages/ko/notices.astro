@@ -29,8 +29,8 @@ const formatDate = (dateStr: string) => {
 	return `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`;
 };
 
-// Auto-filled signature
-const signature = '주식회사 오믹스에이아이 대표이사 신동명';
+// Default signature (used if not specified in notice)
+const defaultSignature = '주식회사 오믹스에이아이 대표이사 신동명';
 
 const pageTitle = '공지사항';
 const pageSubtitle = '회사 공시 및 주요 안내';
@@ -81,7 +81,7 @@ const pageSubtitle = '회사 공시 및 주요 안내';
 							<div class="prose prose-sm prose-invert max-w-none mb-5" set:html={notice.contentHtml} />
 
 							<div class="pt-4 border-t border-subtle text-muted text-xs">
-								<p>{signature}</p>
+								<p>{notice.signature?.[lang] || defaultSignature}</p>
 							</div>
 						</div>
 					</article>
