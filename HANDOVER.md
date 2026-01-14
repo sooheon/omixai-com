@@ -1,417 +1,319 @@
 # OmixAI Website - 인수인계서 (Handover Document)
 
-> **Last Updated:** 2026-01-14
 > **Site:** https://www.omixai.com
-> **Stack:** Astro 5 + Tailwind CSS 4 + Cloudflare Pages
+> **Last Updated:** 2026-01-14
 
 ---
 
-## Quick Start
+## 1. Accounts & Access
 
-```bash
-# Install dependencies
-npm install
+### Required Accounts
 
-# Run development server (localhost:4321)
-npm run dev
+| Service | Purpose | URL |
+|---------|---------|-----|
+| **GitHub** | Code repository | https://github.com/sooheon/omixai-com |
+| **Cloudflare** | Hosting & deployment | https://dash.cloudflare.com |
+| **PagesCMS** | Content editing | https://pagescms.org |
+| **EmailJS** | Contact form emails | https://www.emailjs.com |
+| **Google Search Console** | SEO monitoring | https://search.google.com/search-console |
+| **Naver Search Console** | Korean SEO | https://searchadvisor.naver.com |
 
-# Build for production
-npm run build
+### Access Requirements
 
-# Preview production build
-npm run preview
-```
-
----
-
-## 1. Project Structure
-
-```
-omixai-com/
-├── src/
-│   ├── pages/                    # URL routes
-│   │   ├── index.astro          # / (English homepage)
-│   │   ├── about.astro          # /about
-│   │   ├── contact.astro        # /contact
-│   │   ├── faq.astro            # /faq
-│   │   ├── technical.astro      # /technical
-│   │   ├── notices.astro        # /notices (공지사항)
-│   │   ├── privacy.astro        # /privacy
-│   │   ├── services/
-│   │   │   └── [slug].astro     # /services/{slug} (dynamic)
-│   │   └── ko/                  # Korean versions (/ko/*)
-│   │       └── (same structure)
-│   │
-│   ├── components/
-│   │   ├── Layout.astro         # Master layout (SEO, fonts, structure)
-│   │   ├── Header.astro         # Navigation + language/theme toggle
-│   │   ├── Footer.astro         # Footer
-│   │   ├── AnnouncementBanner.astro  # Notice banner + modal
-│   │   ├── Breadcrumb.astro     # Breadcrumb with JSON-LD
-│   │   └── ParticleBackground.astro  # Animated background
-│   │
-│   ├── content/                 # All content data
-│   │   ├── translations.ts      # Translation helper functions
-│   │   ├── content.config.ts    # Collection schemas (Zod)
-│   │   ├── common.json          # Nav, footer text
-│   │   ├── landing.json         # Homepage content
-│   │   ├── about.json           # Team, investors, timeline
-│   │   ├── resources.json       # FAQ sections
-│   │   ├── contact.json         # Contact info
-│   │   ├── services/            # Service pages (collection)
-│   │   │   ├── blood.json
-│   │   │   ├── cell-culture.json
-│   │   │   ├── tissue.json
-│   │   │   └── custom.json
-│   │   └── notices/             # Announcements (collection)
-│   │       └── 2025-12-23-share-issuance.json
-│   │
-│   └── styles/
-│       └── global.css           # Tailwind + theme variables
-│
-├── public/                      # Static assets (images, favicon)
-├── .pages.yml                   # PagesCMS configuration
-├── astro.config.mjs             # Astro configuration
-├── wrangler.jsonc               # Cloudflare Workers config
-└── package.json
-```
+- **GitHub:** Need collaborator access to repository
+- **Cloudflare:** Need access to the Pages project
+- **PagesCMS:** Login with GitHub (auto-connects to repo)
+- **EmailJS:** Account credentials for contact form service
+- **Search Consoles:** Google/Naver account with site verification
 
 ---
 
-## 2. Bilingual Content System
+## 2. Editing Content with PagesCMS
 
-**All user-facing text uses this pattern:**
+PagesCMS is the primary way to edit website content without touching code.
 
-```json
-{
-  "title": {
-    "ko": "한글 제목",
-    "en": "English Title"
-  }
-}
-```
+### How to Access
 
-**In Astro pages:**
+1. Go to https://pagescms.org
+2. Click "Login with GitHub"
+3. Select the `omixai-com` repository
+4. You'll see the content sections
 
-```astro
----
-import { getTranslations } from '../content/translations';
-const t = getTranslations('en');  // or 'ko'
-const lang = 'en';
----
-<h1>{t.hero.title}</h1>
-```
+### Content Sections
 
-**Language routing:**
-- English: `/`, `/about`, `/services/blood`
-- Korean: `/ko`, `/ko/about`, `/ko/services/blood`
+| Section | What It Controls |
+|---------|------------------|
+| **Common** | Navigation menu labels, footer text |
+| **Landing** | Homepage: hero, stats, services preview, testimonials |
+| **Resources** | FAQ questions and answers |
+| **About** | Team members, investors, company timeline |
+| **Contact** | Email address, office address |
+| **Services** | Individual service pages (Blood, Tissue, etc.) |
+| **Notices** | Company announcements (공지사항) |
 
----
+### Editing Tips
 
-## 3. Content Management
-
-### 3.1 Using PagesCMS
-
-The site is configured for [PagesCMS](https://pagescms.org). Configuration is in `.pages.yml`.
-
-**To edit content via CMS:**
-1. Go to PagesCMS and connect the repository
-2. Edit content through the visual interface
-3. Changes are saved to JSON files in `src/content/`
-4. Commit and deploy
-
-### 3.2 Manual Content Editing
-
-**Homepage (`src/content/landing.json`):**
-- Hero section (title, subtitle, CTA buttons)
-- KPIs (4 stats displayed)
-- Services showcase
-- Testimonials
-- How it works steps
-
-**Navigation & Footer (`src/content/common.json`):**
-- Nav labels
-- Footer tagline
-
-**FAQ (`src/content/resources.json`):**
-- Three sections: ordering, samplePrep, technical
-- Each has title + items array
-
-**About Page (`src/content/about.json`):**
-- Team members (name, title, image)
-- Investors
-- Timeline milestones
+- **All text fields have Korean (ko) and English (en)** - edit both
+- **Save** your changes in PagesCMS
+- **Changes auto-deploy** to the live site within 2-3 minutes
 
 ---
 
-## 4. Adding/Editing Services
+## 3. Common Content Tasks
 
-Services are in `src/content/services/`. Each service is a JSON file.
+### Change Homepage Text
 
-**To add a new service:**
+1. Open PagesCMS → **Landing**
+2. Edit the **Hero** section for main headline
+3. Edit **KPIs** for the statistics
+4. Save changes
 
-1. Create `src/content/services/{slug}.json`:
+### Update FAQ
 
-```json
-{
-  "slug": "new-service",
-  "title": { "ko": "새 서비스", "en": "New Service" },
-  "subtitle": { "ko": "부제목", "en": "Subtitle" },
-  "description": { "ko": "설명", "en": "Description" },
-  "features": [
-    {
-      "title": { "ko": "특징 1", "en": "Feature 1" },
-      "description": { "ko": "설명", "en": "Description" }
-    }
-  ],
-  "applications": {
-    "title": { "ko": "응용 분야", "en": "Applications" },
-    "items": [
-      {
-        "title": { "ko": "응용 1", "en": "Application 1" },
-        "description": { "ko": "설명", "en": "Description" }
-      }
-    ]
-  },
-  "process": {
-    "title": { "ko": "분석 과정", "en": "Analysis Process" },
-    "steps": [
-      {
-        "title": { "ko": "1단계", "en": "Step 1" },
-        "description": { "ko": "설명", "en": "Description" }
-      }
-    ]
-  },
-  "deliverables": {
-    "title": { "ko": "제공 결과", "en": "Deliverables" },
-    "items": [
-      { "ko": "결과물 1", "en": "Deliverable 1" }
-    ]
-  },
-  "sampleRequirements": {
-    "title": { "ko": "샘플 요구사항", "en": "Sample Requirements" },
-    "items": [
-      {
-        "label": { "ko": "양", "en": "Volume" },
-        "value": { "ko": "100μL", "en": "100μL" }
-      }
-    ]
-  }
-}
-```
+1. Open PagesCMS → **Resources**
+2. Find the FAQ section (Ordering, Technical, etc.)
+3. Add/edit/remove questions
+4. Save changes
 
-2. The page will be auto-generated at `/services/{slug}` and `/ko/services/{slug}`
+### Add/Edit Team Member
 
-3. Add to nav dropdown in `src/content/common.json` if needed
+1. Open PagesCMS → **About**
+2. Find **Team → Members**
+3. Add new member or edit existing
+4. Upload photo to `public/photos/` folder
+5. Save changes
+
+### Update Contact Information
+
+1. Open PagesCMS → **Contact**
+2. Edit email or address fields
+3. Save changes
 
 ---
 
-## 5. Notices System (공지사항)
+## 4. Managing Notices (공지사항)
 
-Notices appear in a banner at the top of the site and on the `/notices` page.
+Notices appear as a banner at the top of the website and on the `/notices` page.
 
-### Adding a Notice
+### Add a New Notice
 
-Create `src/content/notices/{YYYY-MM-DD-slug}.json`:
+1. Open PagesCMS → **Notices**
+2. Click **"Add new"**
+3. Fill in the fields:
 
-```json
-{
-  "slug": "2025-12-23-share-issuance",
-  "date": "2025-12-23",
-  "active": true,
-  "title": {
-    "ko": "신주발행공고",
-    "en": "New Share Issuance Notice"
-  },
-  "content": {
-    "ko": "공고 내용 (마크다운 지원)\n\n1. 항목 1\n2. 항목 2",
-    "en": "Notice content (markdown supported)\n\n1. Item 1\n2. Item 2"
-  }
-}
-```
+| Field | Description |
+|-------|-------------|
+| **Slug** | URL-friendly ID (e.g., `2026-01-15-new-announcement`) |
+| **Date** | Publication date (YYYY-MM-DD format) |
+| **Active** | Check this to show in the banner |
+| **Title (ko/en)** | Notice title in both languages |
+| **Content (ko/en)** | Notice body text (supports markdown) |
+
+4. Save changes
 
 ### Notice Behavior
 
-- **Banner:** Shows the most recent notice with `active: true`
-- **If no active notices:** Shows most recent by date
-- **Notices page:** Shows all notices, newest first
-- **Badge:** "Latest" / "최신" shown for active notice
-- **Signature:** Auto-appended (CEO name)
-- **Date:** Auto-formatted per language
+- Only **one notice** shows in the banner (the most recent with "Active" checked)
+- **All notices** appear on the Notices page (`/notices` or `/ko/notices`)
+- The **CEO signature** is automatically added
+- **Dates** are automatically formatted per language
+
+### Markdown in Notice Content
+
+You can use simple formatting:
+
+```
+**Bold text**
+
+1. Numbered list item
+2. Another item
+
+- Bullet point
+- Another bullet
+```
 
 ---
 
-## 6. Theme System (Dark/Light Mode)
+## 5. Managing Services
 
-**CSS Variables** in `src/styles/global.css`:
+### Edit Existing Service
 
-```css
-:root {
-  /* Dark theme (default) */
-  --bg-page: #0f172a;
-  --text-heading: #ffffff;
-  --text-body: #e2e8f0;
-  /* ... */
-}
+1. Open PagesCMS → **Services**
+2. Select the service (Blood, Tissue, Cell Culture, Custom)
+3. Edit any section:
+   - **Title/Subtitle/Description**
+   - **Features** (key benefits)
+   - **Applications** (use cases)
+   - **Process** (analysis steps)
+   - **Deliverables** (what customer receives)
+   - **Sample Requirements** (volume, storage, etc.)
+4. Save changes
 
-[data-theme="light"] {
-  /* Light theme */
-  --bg-page: #f8fafc;
-  --text-heading: #0f172a;
-  --text-body: #334155;
-  /* ... */
-}
-```
+### Add New Service
 
-**Brand colors (constant):**
-- `--brand-green: #31c27c`
-- `--brand-teal: #1ea4a1`
-- `--brand-blue: #1a5fbe`
-
-**Toggle logic** is in `Header.astro`. Theme is stored in `localStorage.theme`.
+1. Open PagesCMS → **Services**
+2. Click **"Add new"**
+3. Fill in all sections (Korean and English)
+4. The **slug** field determines the URL (e.g., `new-service` → `/services/new-service`)
+5. Save changes
 
 ---
 
-## 7. Deployment
+## 6. How Deployment Works
 
-### Cloudflare Pages (Automatic)
+**Automatic deployment:** When content is saved in PagesCMS, it triggers a rebuild on Cloudflare Pages. The site updates within 2-3 minutes.
 
-1. Push to `master` branch
-2. Cloudflare Pages auto-builds and deploys
-3. Build command: `npm run build`
-4. Output directory: `dist/`
+### Check Deployment Status
 
-### Manual Deploy
+1. Go to https://dash.cloudflare.com
+2. Navigate to **Pages** → **omixai-com**
+3. View **Deployments** tab
+4. Green checkmark = successful deployment
 
-```bash
-npm run build
-npx wrangler pages deploy dist/
-```
+### If Something Goes Wrong
 
-### Environment Variables
+1. Check the deployment logs in Cloudflare
+2. If a deployment fails, the previous version stays live
+3. Contact a developer if builds consistently fail
 
-For contact form (EmailJS), set in Cloudflare Pages dashboard:
+---
+
+## 7. Domain & DNS (Cloudflare)
+
+The domain `omixai.com` is managed in Cloudflare.
+
+### Current Setup
+
+- **www.omixai.com** → Main site
+- **omixai.com** → Redirects to www
+
+### SSL/HTTPS
+
+- Handled automatically by Cloudflare
+- Certificate auto-renews
+
+---
+
+## 8. Contact Form (EmailJS)
+
+The contact form on `/contact` sends emails via EmailJS.
+
+### Configuration
+
+Stored in Cloudflare Pages environment variables:
 - `PUBLIC_EMAILJS_SERVICE_ID`
 - `PUBLIC_EMAILJS_TEMPLATE_ID`
 - `PUBLIC_EMAILJS_PUBLIC_KEY`
 
----
+### If Contact Form Stops Working
 
-## 8. Key Files Reference
-
-| File | Purpose |
-|------|---------|
-| `astro.config.mjs` | Build config, integrations |
-| `wrangler.jsonc` | Cloudflare Workers settings |
-| `.pages.yml` | PagesCMS schema |
-| `src/content/translations.ts` | `getTranslations()` helper |
-| `src/content/content.config.ts` | Collection schemas (Zod) |
-| `src/components/Layout.astro` | SEO, fonts, page structure |
-| `src/components/Header.astro` | Navigation, theme/language toggle |
-| `src/styles/global.css` | Theme variables, custom styles |
+1. Check EmailJS dashboard for quota/errors
+2. Verify environment variables in Cloudflare Pages settings
+3. EmailJS free tier has monthly limits
 
 ---
 
-## 9. Common Tasks
+## 9. SEO & Search Consoles
 
-### Change navigation labels
-Edit `src/content/common.json` → `nav` section
+### Google Search Console
 
-### Update homepage hero
-Edit `src/content/landing.json` → `hero` section
+- URL: https://search.google.com/search-console
+- Monitors search performance for English queries
+- Sitemap submitted: `https://www.omixai.com/sitemap-index.xml`
 
-### Add team member
-Edit `src/content/about.json` → `team.members` array
+### Naver Search Console
 
-### Add FAQ question
-Edit `src/content/resources.json` → appropriate section's `items` array
+- URL: https://searchadvisor.naver.com
+- Monitors search performance for Korean queries
+- Important for Korean market visibility
 
-### Change footer text
-Edit `src/content/common.json` → `footer` section
+### Sitemap
 
-### Update SEO meta
-Edit the `<Layout>` props in each page file (title, description)
+Automatically generated at `/sitemap-index.xml` on each deployment.
 
 ---
 
-## 10. Troubleshooting
+## 10. Website Structure
 
-### Content not showing
-- Check JSON has both `ko` and `en` keys
-- Verify `getTranslations()` called with correct language
-- Rebuild after editing content files
+### Pages
 
-### Theme not persisting
-- Check `localStorage.theme` in browser DevTools
-- Verify `data-theme` attribute on `<html>`
+| URL | Korean URL | Description |
+|-----|------------|-------------|
+| `/` | `/ko` | Homepage |
+| `/about` | `/ko/about` | About us, team, investors |
+| `/contact` | `/ko/contact` | Contact form |
+| `/faq` | `/ko/faq` | Frequently asked questions |
+| `/technical` | `/ko/technical` | Technical documentation |
+| `/notices` | `/ko/notices` | Company announcements |
+| `/services/blood` | `/ko/services/blood` | Blood proteomics |
+| `/services/tissue` | `/ko/services/tissue` | Tissue proteomics |
+| `/services/cell-culture` | `/ko/services/cell-culture` | Cell culture proteomics |
+| `/services/custom` | `/ko/services/custom` | Custom analysis |
+| `/privacy` | `/ko/privacy` | Privacy policy |
 
-### New service page not appearing
-- Verify JSON file is in `src/content/services/`
-- Check `slug` field matches desired URL
-- Rebuild: `npm run build`
+### Theme Toggle
+
+Users can switch between dark and light mode using the moon/sun icon in the header. Their preference is saved in their browser.
+
+### Language Toggle
+
+Users switch between English and Korean using the 한/EN toggle in the header.
+
+---
+
+## 11. Troubleshooting
+
+### Content not updating after PagesCMS save
+
+- Wait 2-3 minutes for deployment
+- Check Cloudflare Pages for deployment status
+- Clear browser cache and refresh
 
 ### Notice not showing in banner
-- Set `active: true` in notice JSON
-- Verify date format: `YYYY-MM-DD`
-- Check for JSON syntax errors
 
-### Build fails
-```bash
-# Check TypeScript errors
-npx tsc --noEmit
+- Ensure **Active** is checked
+- Verify date format is correct (YYYY-MM-DD)
+- Only one notice shows at a time (most recent active one)
 
-# Check for missing dependencies
-npm install
-```
+### Contact form not sending
 
----
+- Check EmailJS dashboard for errors
+- Verify monthly quota hasn't been exceeded
+- Check Cloudflare environment variables
 
-## 11. Tech Stack
+### Site showing old version
 
-| Technology | Version | Docs |
-|------------|---------|------|
-| Astro | 5.16.3 | https://docs.astro.build |
-| Tailwind CSS | 4.1.17 | https://tailwindcss.com/docs |
-| TypeScript | Latest | https://www.typescriptlang.org |
-| Cloudflare Pages | - | https://developers.cloudflare.com/pages |
-| marked | 17.0.1 | https://marked.js.org |
-| tsparticles | 3.9.1 | https://particles.js.org |
+- Clear browser cache (Cmd+Shift+R or Ctrl+Shift+R)
+- Check Cloudflare for recent deployments
+- May take a few minutes for CDN cache to update
 
 ---
 
-## 12. SEO Checklist
+## 12. Emergency Contacts
 
-- [x] Sitemap auto-generated at `/sitemap-index.xml`
-- [x] Hreflang tags for EN/KO alternates
-- [x] JSON-LD structured data (Organization, Breadcrumb, FAQ)
-- [x] Google Search Console verified
-- [x] Naver Search Console verified
-- [x] Canonical URLs set
-- [x] Open Graph / Twitter Cards configured
+For technical issues requiring code changes:
 
-**Verification codes** (in `Layout.astro`):
-- Google: `kN6uY4QFgi3IE87l3l8ZenJ1zduAASO2GVdfaGbjRmA`
-- Naver: `9737a4d3c43d0ca09fcc72e421b92323e78c92c6`
+- **Repository:** https://github.com/sooheon/omixai-com
+- **Issues:** https://github.com/sooheon/omixai-com/issues
 
 ---
 
-## 13. File Naming Conventions
+## 13. Quick Reference
 
-- **Pages:** `kebab-case.astro`
-- **Components:** `PascalCase.astro`
-- **Content JSON:** `kebab-case.json`
-- **Notices:** `YYYY-MM-DD-slug.json`
-- **Services:** `{slug}.json` (matches URL)
+### To update homepage content
+PagesCMS → Landing
 
----
+### To add a notice/announcement
+PagesCMS → Notices → Add new
 
-## Summary
+### To edit FAQ
+PagesCMS → Resources
 
-This is a static Astro site with:
-- **Bilingual support** (EN/KO) via JSON content files
-- **PagesCMS integration** for non-technical content editing
-- **Theme system** (dark/light mode)
-- **Notices system** with banner + archive page
-- **Cloudflare Pages** deployment with SSR capability
+### To update team info
+PagesCMS → About → Team
 
-All content is in `src/content/`. Edit JSON files, rebuild, deploy. For structural changes, edit `.astro` files in `src/pages/` and `src/components/`.
+### To edit a service page
+PagesCMS → Services → Select service
+
+### To check if site deployed
+Cloudflare Dashboard → Pages → omixai-com → Deployments
