@@ -7,19 +7,19 @@
 
 ## TODO: 계정 이전 작업
 
-- [ ] Cloudflare 계정에 회사 계정을 관리자(admin)로 추가
-- [ ] GitHub 저장소에 회사 계정 추가
-- [ ] PagesCMS에 회사 계정 추가
+- [ ] Cloudflare 계정에 법인 관리 계정을 관리자로 초대 
+- [ ] GitHub 저장소에 법인 관리 계정 초대 
+- [ ] PagesCMS에 법인 관리 계정 초대 
 
 ---
 
 ## 1. 계정 및 접근 권한
 
-| 서비스 | 용도          | URL | 로그인  | 계정 추가 방법  |
-|--------|-------------|-----|-------|-----------|
-| **GitHub** | 코드 및 콘텐츠 내용 | [github.com/sooheon/omixai-com](https://github.com/sooheon/omixai-com) | @sooheon | GitHub 계정 초대 
-| **Cloudflare** | 호스팅, DNS, 빌드 | [dash.cloudflare.com](https://dash.cloudflare.com) | shk@omixai.com | Cloudflare 계정 초대 
-| **PagesCMS** | 콘텐츠 편집기 | [pagescms.org](https://pagescms.org) | GitHub OAuth | 이메일 계정 초대 
+| 서비스 | 용도          | URL | 로그인  | 
+|--------|-------------|-----|-------|
+| **GitHub** | 코드 및 콘텐츠 내용 | [github.com/sooheon/omixai-com](https://github.com/sooheon/omixai-com) | @sooheon | 
+| **Cloudflare** | 호스팅, DNS, 빌드 | [dash.cloudflare.com](https://dash.cloudflare.com) | shk@omixai.com | 
+| **PagesCMS** | 콘텐츠 편집기 | [pagescms.org](https://pagescms.org) | GitHub OAuth | 
 | **Google Search Console** | SEO, 사이트맵   | [search.google.com/search-console](https://search.google.com/search-console) | omixai0612 |
 | **Naver Search Advisor** | 한국 SEO      | [searchadvisor.naver.com](https://searchadvisor.naver.com) | omixai@omixai.com |
 
@@ -29,53 +29,40 @@
 flowchart TB
     subgraph 콘텐츠["콘텐츠 편집"]
         PagesCMS["PagesCMS<br/>(콘텐츠 편집)"]
-        Dev["개발자<br/>(코드 컨텐츠 수정)"]
+        Dev["개발자<br/>(코드 수정)"]
     end
 
-    subgraph 저장소["코드 저장소"]
-        GitHub["GitHub<br/>sooheon/omixai-com"]
+    subgraph GitHub["GitHub 저장소"]
+        Master["master 브랜치"]
+        Other["기타 브랜치<br/>(cms, feature 등)"]
     end
 
-    subgraph 호스팅["호스팅 & 배포"]
-        CF_Pages["Cloudflare Pages<br/>(빌드 & 호스팅)"]
-        CF_DNS["Cloudflare DNS<br/>(SSL, CDN)"]
+    subgraph Cloudflare["Cloudflare"]
+        CF_Pages["Cloudflare Pages<br/>(빌드 ~2분)"]
+        CF_DNS["DNS + SSL + CDN"]
     end
 
-    subgraph 도메인["도메인"]
-        GoDaddy["GoDaddy<br/>omixai.com"]
-    end
+    PagesCMS -->|저장| Master
+    PagesCMS -->|브랜치 저장| Other
+    Dev -->|푸시| Master
+    Dev -->|브랜치 푸시| Other
 
-    PagesCMS -->|저장| GitHub
-    Dev -->|푸시| GitHub
-    GitHub -->|자동 배포| CF_Pages
-    CF_Pages --> CF_DNS
-    CF_DNS --> GoDaddy
-    GoDaddy -->|"🌐"| Site["www.omixai.com"]
+    Master -->|자동 배포| CF_Pages
+    Other -->|프리뷰 배포| CF_Pages
+
+    CF_Pages -->|master| CF_DNS
+    CF_DNS --> Live["🌐 www.omixai.com"]
+
+    CF_Pages -->|브랜치| Preview["🔍 {branch}.omixai-com.pages.dev<br/>(프리뷰 URL)"]
 ```
 
 ### 도메인 및 DNS
 - 도메인 등록: GoDaddy (omixai.com)
 - DNS, SSL, CDN: Cloudflare에서 관리
 - **www.omixai.com** → 메인 사이트
-
 ---
 
-## 2. 배포 파이프라인
-
-- **자동화**: `master`에 푸시하면 Cloudflare Pages 빌드가 자동 실행됨. PagesCMS는 GitHub에 푸쉬하는 더 편리한 WSIWYG UI임.
-- **빌드 시간**: 약 2분
-- **프리뷰 빌드**: master가 아닌 브랜치는 프리뷰 URL 생성됨. 클라우드플레어에서 확인 가능. (예: `{BRANCH}.omixai-com.pages.dev`)
-
-### 배포 상태 확인
-1. https://dash.cloudflare.com 접속
-2. **Compute & AI → Workers & Pages** → **omixai-com** 이동
-3. **Deployments** 탭 확인
-
-![cloudflare-pages.png](cloudflare-pages.png)
-
----
-
-## 3. PagesCMS로 콘텐츠 편집하기
+## 2. PagesCMS로 콘텐츠 편집하기
 
 웹사이트의 모든 컨텐츠는 GitHub 저장소에서 관리됩니다. 
 PagesCMS는 코드 수정 없이 웹사이트 콘텐츠를 편집하는 주요 도구입니다.
@@ -109,10 +96,27 @@ PagesCMS는 코드 수정 없이 웹사이트 콘텐츠를 편집하는 주요 �
 라이브 배포 전 변경사항을 미리보려면:
 
 1. PagesCMS에서 사이드바 상단의 저장소 이름 클릭
-2. 브랜치 드롭다운에 새 브랜치명 입력 (예: `content-update`)
+2. 브랜치 드롭다운에 새 브랜치명 입력 (예: `cms`)
 3. 콘텐츠 편집 후 저장
-4. Cloudflare가 `[브랜치명].omixai-com.pages.dev`에 프리뷰 빌드
+4. Cloudflare가 `[브랜치명].omixai-com.pages.dev`에 프리뷰 빌드 생성. 이 프리뷰 빌드 완성 대기
 5. 확인 후 GitHub에서 Pull Request 생성 및 병합
+
+![pagescms-branch.png](pagescms-branch.png)
+
+---
+
+## 3. 배포 파이프라인
+
+- **자동화**: `master`에 푸시하면 Cloudflare Pages 빌드가 자동 실행됨. PagesCMS는 GitHub에 푸쉬하는 더 편리한 WSIWYG UI임.
+- **빌드 시간**: 약 2분
+- **프리뷰 빌드**: master가 아닌 브랜치는 프리뷰 URL 생성됨. 클라우드플레어에서 확인 가능. (예: `{BRANCH}.omixai-com.pages.dev`)
+
+### 배포 상태 확인
+1. https://dash.cloudflare.com 접속
+2. **Compute & AI → Workers & Pages** → **omixai-com** 이동
+3. **Deployments** 탭 확인
+
+![cloudflare-pages.png](cloudflare-pages.png)
 
 ---
 
