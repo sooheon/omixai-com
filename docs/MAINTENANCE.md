@@ -64,10 +64,8 @@ flowchart TB
 
 ## 2. PagesCMS로 콘텐츠 편집하기
 
-웹사이트의 모든 컨텐츠는 GitHub 저장소에서 관리됩니다. 
-PagesCMS는 코드 수정 없이 웹사이트 콘텐츠를 편집하는 주요 도구입니다.
-
-계정이 없으면 
+웹사이트의 모든 컨텐츠는 GitHub 저장소에서 관리됩니다. PagesCMS는 코드 수정 없이 웹사이트 콘텐츠를 편집하는 주요 도구입니다. PagesCMS에서 수정 후 저장하면 GitHub 저장소로 
+commit & push 작업이 이루어집니다. Cloudflare에서는 변경사항을 탐지하고 새로 배포합니다. 
 
 ### 접속 방법
 1. https://pagescms.org 접속
