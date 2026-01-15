@@ -51,9 +51,9 @@ flowchart TB
     Other -->|프리뷰 배포| CF_Pages
 
     CF_Pages -->|master| CF_DNS
-    CF_DNS --> Live["🌐 www.omixai.com"]
+    CF_DNS --> Live["www.omixai.com<br/>(라이브)"]
 
-    CF_Pages -->|브랜치| Preview["🔍 {branch}.omixai-com.pages.dev<br/>(프리뷰 URL)"]
+    CF_Pages -->|브랜치| Preview["{branch}.omixai-com.pages.dev<br/>(프리뷰)"]
 ```
 
 ### 도메인 및 DNS
